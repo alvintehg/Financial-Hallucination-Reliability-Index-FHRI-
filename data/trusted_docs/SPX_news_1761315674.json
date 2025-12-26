@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761315674,
+  "headline": "Federal Reserve Watch: Working Out",
+  "summary": "Stay updated on Federal Reserve policy: Learn how ongoing quantitative tightening and possible interest rate cuts may impact markets.",
+  "url": "https://finnhub.io/api/news?id=c9cc0a6d720206f88d426ba0513137f27b522fcb32fc4f1b4a23cc3571d83e4c"
+}

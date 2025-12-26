@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1759994100,
+  "headline": "North American Leadership Awaited In FX",
+  "summary": "Greenback is narrowly mixed among G10 currencies, with Scandis, sterling, and the NZ dollar underperforming. EM currencies are also mixed. S&P 500 and Nasdaq futures are broadly steady.",
+  "url": "https://finnhub.io/api/news?id=454eb720b667b1d9c4a95fc469c481521696f89e0acd4b13a425e8004e58e104"
+}

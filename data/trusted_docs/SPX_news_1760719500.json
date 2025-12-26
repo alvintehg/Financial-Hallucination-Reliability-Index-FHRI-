@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760719500,
+  "headline": "A New Trade War Begun? U.S.-China Tensions Back In The Spotlight",
+  "summary": "In recent weeks, trade tensions between the United States and China have visibly intensified, raising fears of a new wave of economic...",
+  "url": "https://finnhub.io/api/news?id=eaa104e4feed967cdb5baa562507f74b7705d5b5027e1eee5914cd352477b2ba"
+}

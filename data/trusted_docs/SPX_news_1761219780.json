@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761219780,
+  "headline": "U.S. Q3 GDP Appears To Remain On Growth Track",
+  "summary": "The third-quarter GDP report, scheduled for release on Oct. 30, will almost certainly be delayed due to the ongoing government shutdown.",
+  "url": "https://finnhub.io/api/news?id=d04a2dec3693a7eed9ab9ac2a659a3c84f0662211d489d893b3882093c8eea7c"
+}

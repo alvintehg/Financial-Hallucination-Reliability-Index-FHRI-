@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757946868,
+  "headline": "Musk buys Tesla, China vs. US chips, Hims: Trending Tickers",
+  "summary": "Morning Brief host Julie Hyman tracks several of the day's top trending stock tickers, including Tesla (TSLA) CEO Elon Musk's purchase of the EV stock, China's probe into US semiconductors, and the US Food and Drug Administration (FDA) claiming that Hims & Hers' (HIMS) newest commercial breached regulations. To watch more expert insights and analysis on the latest market action, check out more Morning Brief.",
+  "url": "https://finnhub.io/api/news?id=e2eafe480abefe61b7fccb6dd29556db0f96e323626c656ef7aca3432dd015b1"
+}

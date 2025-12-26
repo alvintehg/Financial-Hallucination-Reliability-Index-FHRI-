@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757855400,
+  "headline": "Is It Finally Time to Give Up on Tesla?",
+  "summary": "Tesla has faced plenty of adversity in 2025, but is it finally time to give up on its long-term ambitions?",
+  "url": "https://finnhub.io/api/news?id=9e0542e9ae47a65a82d4ca2a2d27a2b1fdabf9bf028e17a3fd5ef06756950461"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757970328,
+  "headline": "US Equity Indexes Rise Ahead of Monday's Close",
+  "summary": "US equity indexes rose while government bond yields declined ahead of the close on Monday. The Na",
+  "url": "https://finnhub.io/api/news?id=3e19b4395190b84cf03871a121322691a34165b7fd4e33405171b41274e317c4"
+}

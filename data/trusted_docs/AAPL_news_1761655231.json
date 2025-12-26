@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761655231,
+  "headline": "Apple Plans 2027 iPad Pro With Advanced Cooling Tech",
+  "summary": "2027 model to feature M6 chip, vapor chamber, and sharper focus on power",
+  "url": "https://finnhub.io/api/news?id=bfeb9e8f26e4aed30b9f8818a0e49f932bded6449e713b9d77716f44a54419bc"
+}

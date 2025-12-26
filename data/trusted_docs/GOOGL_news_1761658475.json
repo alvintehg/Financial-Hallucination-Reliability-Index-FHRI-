@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761658475,
+  "headline": "Stock market today: Dow, S&P 500, Nasdaq eye fresh records as earnings roll in, Trump seals trade deals",
+  "summary": "Wall Street is sifting through the latest earnings as the Fed meeting kicks off.",
+  "url": "https://finnhub.io/api/news?id=8b3e0d71b5a53ff2f5275ee45f5700cfa72117087d8c40dd9c464b6aac329c08"
+}

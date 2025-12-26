@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760085900,
+  "headline": "Corporate Profits: A Reading Without Rose-Tinted Glasses",
+  "summary": "The linkage between PCE and corporate profits is critical, given that spending generates corporate revenues. Read more here.",
+  "url": "https://finnhub.io/api/news?id=ab50f25d46edcf1894c49b0004c941b99ab2c271532149bf356b1b7d9ce1c62d"
+}

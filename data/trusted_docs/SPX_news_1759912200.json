@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1759912200,
+  "headline": "Will P/E Ratios Ever Get Back To Normal?",
+  "summary": "US stock market PE ratios are at record highs. See here to know what's driving them, and how long this trend may last.",
+  "url": "https://finnhub.io/api/news?id=8aa330f8a32fb12e63446033ca07f96d884e9d4244ee7c2660972ad4907bb2db"
+}

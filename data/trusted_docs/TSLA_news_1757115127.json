@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757115127,
+  "headline": "Factbox-Inside Tesla's $1 trillion pay proposal for CEO Elon Musk",
+  "summary": "The award would vest in tranches and the last two quotas require a board‑approved CEO succession plan.  Tesla plans to grant Musk up to 423.7 million performance-based restricted shares — about 12% of the company's current shares — split into 12 equal tranches.  The market-cap milestones must be \"sustained,\" meaning Tesla must meet both a 30‑day and a six‑month trailing average market value.",
+  "url": "https://finnhub.io/api/news?id=cb4f5a7e345eb0753f03e17660c2738b68c1fce05aee67499aea7a8269129d02"
+}

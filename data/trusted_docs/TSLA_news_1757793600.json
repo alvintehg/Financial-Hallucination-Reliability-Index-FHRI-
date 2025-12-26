@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757793600,
+  "headline": "Did Tesla Just Say \"Checkmate\" to Uber and Lyft?",
+  "summary": "Early download data of Tesla's Robotaxi app indicate the company is gaining momentum in the ridehailing arena.",
+  "url": "https://finnhub.io/api/news?id=0791bbd6d69f754664d715f622dab0ad3f36eb732271630f0167f32b3c4a1201"
+}

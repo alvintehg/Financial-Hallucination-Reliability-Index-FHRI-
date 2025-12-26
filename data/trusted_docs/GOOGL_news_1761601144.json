@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761601144,
+  "headline": "Hit by AI, edtech firm Chegg slashes jobs and names new CEO in major overhaul",
+  "summary": "The company, which offers textbook rentals, homework help and tutoring, said the \"new realities of AI and reduced traffic from Google to content publishers have led to a significant decline in Chegg's traffic and revenue\".  Chegg also said Dan Rosensweig would return as CEO effective immediately, replacing Nathan Schultz, who has stepped down and would serve as an executive adviser.  Chegg, which sued Google over its AI summaries hurting traffic, had initiated a strategic review and was exploring a sale or take-private transaction.",
+  "url": "https://finnhub.io/api/news?id=2df634a2d47713cbf1ee169f2cd2da7cdb87852c54a690606c08a72f8379f291"
+}

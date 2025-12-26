@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761570201,
+  "headline": "Mag 7 Earnings to Highlight Cloud Computing, State of AI",
+  "summary": "Tech earnings kick into high gear this week with reports from Microsoft, Alphabet, and Meta on Wednesday. Mandeep Singh of Bloomberg Intelligence has a preview on Bloomberg Television.",
+  "url": "https://finnhub.io/api/news?id=7e0ce32b8adf772acbb4ee534d774507ee2d224d5c9b44d94f6d9d3b6d50a070"
+}

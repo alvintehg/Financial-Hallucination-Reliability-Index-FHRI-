@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761598650,
+  "headline": "Dow Jones Futures: Nvidia, Microsoft, Palantir, Tesla In Buy Zones After Stock Market Rally",
+  "summary": "Dow Jones Futures: Nvidia stock, Microsoft, Palantir and Tesla are in buy zones Monday following the stock market rally.",
+  "url": "https://finnhub.io/api/news?id=be5cc2c6ef65e6801b5055cac8bdc9a8b8ad4d7cf0d9b7c5455c5cba728c606c"
+}

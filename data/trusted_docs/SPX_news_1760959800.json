@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760959800,
+  "headline": "Inflationary Expectations Are Flat",
+  "summary": "Discover how inflation expectations shape bond yields and investor sentiment in the U.S. market.",
+  "url": "https://finnhub.io/api/news?id=5f5267fad4148ffdfcc56d946bb32470007390321af2215325b5c832f2b76cca"
+}

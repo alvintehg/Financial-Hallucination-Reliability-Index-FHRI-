@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761538500,
+  "headline": "$1 Trillion Quantum Leap: 1 Quantum AI Stock Ready to Ride the Wave to 2035",
+  "summary": "Alphabet's latest breakthrough with its Quantum Echoes algorithm could help redefine modern computing.",
+  "url": "https://finnhub.io/api/news?id=895e8c49e68130143c7cfa17dafad4c2cd2fd4e94c6e8095c2ecf12cdd6edcfe"
+}

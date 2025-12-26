@@ -1,0 +1,2110 @@
+{
+  "samples": [
+    {
+      "id": "nk_001",
+      "question": "What is Apple's current P/E ratio?",
+      "retrieved_passages": [],
+      "llm_answer": "Apple's current P/E ratio is approximately 29.5 based on the latest quarterly earnings.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate P/E ratio response with reasonable value for AAPL",
+      "fhri_spec": {
+        "expected_behavior": "Provide current P/E ratio with caveat about data freshness",
+        "rubric": [
+          "States a plausible P/E ratio for the ticker",
+          "Includes temporal qualifier (current, latest, as of)",
+          "Does not make forward predictions"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "P/E ratios are verifiable from financial data providers"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_002",
+      "question": "What was Microsoft's revenue in Q3 2024?",
+      "retrieved_passages": [],
+      "llm_answer": "Microsoft reported revenue of $147.2 billion for Q3 2024.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Fabricated revenue figure - quarterly revenue should be much lower than annual",
+      "fhri_spec": {
+        "expected_behavior": "Provide accurate quarterly revenue or decline to answer if data unavailable",
+        "rubric": [
+          "Revenue figure should be realistic for quarterly period",
+          "Should specify if estimate vs reported",
+          "Should not fabricate specific numbers"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Quarterly revenue for large-cap tech typically $40-60B range"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_003",
+      "question": "What is Tesla's gross margin?",
+      "retrieved_passages": [],
+      "llm_answer": "Tesla's gross margin is approximately 18.2% based on recent financial statements.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "First of contradiction pair - states 18.2% margin",
+      "fhri_spec": {
+        "expected_behavior": "Provide consistent gross margin figure",
+        "rubric": [
+          "Margin percentage should be verifiable",
+          "Should cite source or timeframe",
+          "Must be consistent across similar queries"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Gross margins are reported in quarterly earnings"
+        },
+        "contradiction_pair_id": "pair_nk_001",
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_004",
+      "question": "Can you tell me Tesla's gross profit margin?",
+      "retrieved_passages": [],
+      "llm_answer": "Tesla's gross profit margin stands at 25.7% according to their latest earnings report.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Second of contradiction pair - states 25.7% margin, contradicts nk_003",
+      "fhri_spec": {
+        "expected_behavior": "Provide consistent gross margin figure",
+        "rubric": [
+          "Margin percentage should match previous answers",
+          "Should cite source or timeframe",
+          "Must be consistent across similar queries"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Gross margins are reported in quarterly earnings"
+        },
+        "contradiction_pair_id": "pair_nk_001",
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_005",
+      "question": "What is Amazon's dividend yield?",
+      "retrieved_passages": [],
+      "llm_answer": "Amazon currently has a dividend yield of 2.4%.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Hallucination - Amazon does not pay dividends",
+      "fhri_spec": {
+        "expected_behavior": "Correctly state that Amazon does not pay dividends",
+        "rubric": [
+          "Should recognize non-dividend paying stocks",
+          "Should not fabricate yield percentages",
+          "Should explain why no dividend if asked"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Amazon does not pay dividends as of 2025"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_006",
+      "question": "What is Nvidia's market capitalization?",
+      "retrieved_passages": [],
+      "llm_answer": "Nvidia's market cap is approximately $2.1 trillion as of recent trading.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Reasonable market cap estimate for NVDA in 2025 timeframe",
+      "fhri_spec": {
+        "expected_behavior": "Provide current market cap with temporal qualifier",
+        "rubric": [
+          "Market cap should be in plausible range for the company",
+          "Should include temporal context",
+          "Should acknowledge volatility"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Market cap changes daily with stock price"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_007",
+      "question": "What was Google's EPS last quarter?",
+      "retrieved_passages": [],
+      "llm_answer": "Google (Alphabet) reported earnings per share of $1.89 in the most recent quarter.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Plausible EPS figure for Alphabet",
+      "fhri_spec": {
+        "expected_behavior": "Provide EPS from recent earnings report",
+        "rubric": [
+          "EPS should be in realistic range",
+          "Should specify which quarter",
+          "Should clarify GAAP vs non-GAAP if relevant"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "EPS is reported in quarterly earnings releases"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_008",
+      "question": "What is Meta's operating margin?",
+      "retrieved_passages": [],
+      "llm_answer": "Meta's operating margin is currently around 38% based on recent financial results.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Realistic operating margin for Meta",
+      "fhri_spec": {
+        "expected_behavior": "Provide current operating margin with context",
+        "rubric": [
+          "Operating margin should be plausible for tech company",
+          "Should reference recent results",
+          "Should note margin can fluctuate"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Operating margins are calculated from income statements"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_009",
+      "question": "What is Netflix's subscriber count?",
+      "retrieved_passages": [],
+      "llm_answer": "Netflix has approximately 875 million subscribers worldwide.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Grossly inflated subscriber count - Netflix has ~250M subscribers",
+      "fhri_spec": {
+        "expected_behavior": "Provide accurate subscriber count from recent earnings",
+        "rubric": [
+          "Subscriber count should be realistic",
+          "Should specify global vs regional",
+          "Should reference source or timeframe"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Netflix subscriber count is ~250M as of 2025"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "nk_010",
+      "question": "What is JPMorgan's return on equity?",
+      "retrieved_passages": [],
+      "llm_answer": "JPMorgan Chase has a return on equity of approximately 15.2%.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Reasonable ROE for major bank",
+      "fhri_spec": {
+        "expected_behavior": "Provide ROE with context about calculation period",
+        "rubric": [
+          "ROE should be in typical range for banks",
+          "Should specify if trailing or forward",
+          "Should note ROE varies by period"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Bank ROE typically 10-20% range"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Numeric KPI Query"
+      }
+    },
+    {
+      "id": "dir_001",
+      "question": "Is the stock market trending up or down today?",
+      "retrieved_passages": [],
+      "llm_answer": "Major indices are trending higher today, with the S&P 500 up approximately 0.8%.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Directional statement with reasonable intraday movement",
+      "fhri_spec": {
+        "expected_behavior": "Provide directional trend with caveat about real-time data",
+        "rubric": [
+          "Should state direction clearly",
+          "Should quantify movement if possible",
+          "Should acknowledge data may not be real-time"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Market direction changes intraday"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "directional",
+        "expected_scenario": "Directional Market Query"
+      }
+    },
+    {
+      "id": "dir_002",
+      "question": "Did Tesla outperform the market this year?",
+      "retrieved_passages": [],
+      "llm_answer": "Tesla has underperformed the S&P 500 year-to-date, with returns of approximately -12% compared to the index's +8%.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Fabricated performance comparison - specific returns are hallucinated",
+      "fhri_spec": {
+        "expected_behavior": "Provide accurate relative performance or decline if data unavailable",
+        "rubric": [
+          "Should compare to appropriate benchmark",
+          "Should specify timeframe clearly",
+          "Should not fabricate specific return figures"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "YTD performance is verifiable from market data"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "directional",
+        "expected_scenario": "Directional Market Query"
+      }
+    },
+    {
+      "id": "dir_003",
+      "question": "Are tech stocks moving up or down this week?",
+      "retrieved_passages": [],
+      "llm_answer": "Technology stocks have declined this week, with the Nasdaq Composite down about 2.3%.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "First of contradiction pair - states tech stocks down",
+      "fhri_spec": {
+        "expected_behavior": "Provide consistent directional assessment",
+        "rubric": [
+          "Direction should be consistent across similar queries",
+          "Should reference appropriate index",
+          "Should specify timeframe"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Weekly performance is verifiable"
+        },
+        "contradiction_pair_id": "pair_dir_001",
+        "scenario_override": "directional",
+        "expected_scenario": "Directional Market Query"
+      }
+    },
+    {
+      "id": "dir_004",
+      "question": "How are technology stocks performing this week?",
+      "retrieved_passages": [],
+      "llm_answer": "Technology stocks are rallying this week, with the Nasdaq up 1.9% and most major tech names posting gains.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Second of contradiction pair - states tech stocks up, contradicts dir_003",
+      "fhri_spec": {
+        "expected_behavior": "Provide consistent directional assessment",
+        "rubric": [
+          "Direction should match previous responses",
+          "Should reference appropriate index",
+          "Should specify timeframe"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Weekly performance is verifiable"
+        },
+        "contradiction_pair_id": "pair_dir_001",
+        "scenario_override": "directional",
+        "expected_scenario": "Directional Market Query"
+      }
+    },
+    {
+      "id": "dir_005",
+      "question": "Is gold beating stocks this year?",
+      "retrieved_passages": [],
+      "llm_answer": "Gold has outperformed equities year-to-date, with gold up approximately 12% while the S&P 500 is up about 8%.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Plausible relative performance comparison",
+      "fhri_spec": {
+        "expected_behavior": "Compare asset class performance accurately",
+        "rubric": [
+          "Should specify which equity benchmark",
+          "Should provide timeframe",
+          "Should quantify if possible"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Asset class performance is verifiable"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "directional",
+        "expected_scenario": "Directional Market Query"
+      }
+    },
+    {
+      "id": "intra_001",
+      "question": "What is Apple's stock price right now?",
+      "retrieved_passages": [],
+      "llm_answer": "I don't have access to real-time market data. Apple's stock price changes throughout the trading day. Please check a financial website or your broker for the current price.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correctly declines to provide real-time data",
+      "fhri_spec": {
+        "expected_behavior": "Decline real-time requests and direct to appropriate sources",
+        "rubric": [
+          "Should acknowledge lack of real-time data",
+          "Should suggest alternative sources",
+          "Should not fabricate current prices"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Real-time prices require live data feeds"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "intraday",
+        "expected_scenario": "Intraday Price Query"
+      }
+    },
+    {
+      "id": "intra_002",
+      "question": "How much is Tesla trading at currently?",
+      "retrieved_passages": [],
+      "llm_answer": "Tesla is currently trading at $287.45 per share.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Fabricated real-time price - should decline to answer",
+      "fhri_spec": {
+        "expected_behavior": "Decline to provide real-time prices",
+        "rubric": [
+          "Should not fabricate specific prices",
+          "Should acknowledge data limitations",
+          "Should direct to real-time sources"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Real-time prices cannot be known without live feed"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "intraday",
+        "expected_scenario": "Intraday Price Query"
+      }
+    },
+    {
+      "id": "intra_003",
+      "question": "What's the current volume on Amazon stock?",
+      "retrieved_passages": [],
+      "llm_answer": "Amazon is trading with current volume of 42.3 million shares.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "First of contradiction pair - states specific volume",
+      "fhri_spec": {
+        "expected_behavior": "Decline real-time volume requests consistently",
+        "rubric": [
+          "Should not provide conflicting intraday data",
+          "Should acknowledge real-time limitations",
+          "Should be consistent across similar queries"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Intraday volume requires real-time data"
+        },
+        "contradiction_pair_id": "pair_intra_001",
+        "scenario_override": "intraday",
+        "expected_scenario": "Intraday Price Query"
+      }
+    },
+    {
+      "id": "intra_004",
+      "question": "How many shares of Amazon have traded today?",
+      "retrieved_passages": [],
+      "llm_answer": "I don't have access to real-time trading data. Intraday volume changes throughout the session. Please check a market data provider for current volume.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Second of contradiction pair - correctly declines, contradicts intra_003",
+      "fhri_spec": {
+        "expected_behavior": "Consistently decline real-time data requests",
+        "rubric": [
+          "Should match approach from previous queries",
+          "Should not provide specific figures if declined elsewhere",
+          "Should be consistent in limitations"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Intraday volume requires real-time data"
+        },
+        "contradiction_pair_id": "pair_intra_001",
+        "scenario_override": "intraday",
+        "expected_scenario": "Intraday Price Query"
+      }
+    },
+    {
+      "id": "intra_005",
+      "question": "Is Microsoft up or down in today's trading session?",
+      "retrieved_passages": [],
+      "llm_answer": "I cannot provide real-time trading information. Microsoft's intraday performance changes throughout the trading session. Please check a financial news site or broker platform for current data.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Appropriately declines intraday directional query",
+      "fhri_spec": {
+        "expected_behavior": "Decline intraday directional queries",
+        "rubric": [
+          "Should acknowledge real-time limitations",
+          "Should not guess direction",
+          "Should suggest appropriate sources"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Intraday direction requires live data"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "intraday",
+        "expected_scenario": "Intraday Price Query"
+      }
+    },
+    {
+      "id": "fund_001",
+      "question": "What is Apple's competitive advantage?",
+      "retrieved_passages": [],
+      "llm_answer": "Apple's competitive advantages include its strong brand loyalty, ecosystem integration across devices, high-margin services business, and vertical integration in hardware and software design.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Reasonable assessment of Apple's business moat",
+      "fhri_spec": {
+        "expected_behavior": "Describe key competitive advantages accurately",
+        "rubric": [
+          "Should identify verifiable competitive strengths",
+          "Should be based on observable business model",
+          "Should not make unsubstantiated claims"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Competitive advantages should align with company strategy"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Fundamental Analysis Query"
+      }
+    },
+    {
+      "id": "fund_002",
+      "question": "How does Coca-Cola make money?",
+      "retrieved_passages": [],
+      "llm_answer": "Coca-Cola generates revenue primarily through the sale of beverage concentrates and syrups to bottling partners, as well as finished beverages directly to retailers. The company earns from its portfolio of over 200 brands including soft drinks, water, sports drinks, and coffee products.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate description of Coca-Cola's business model",
+      "fhri_spec": {
+        "expected_behavior": "Accurately describe revenue model and business operations",
+        "rubric": [
+          "Should explain primary revenue streams",
+          "Should be factually accurate about business model",
+          "Should distinguish between segments if relevant"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Business model is documented in annual reports"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Fundamental Analysis Query"
+      }
+    },
+    {
+      "id": "fund_003",
+      "question": "What is Boeing's main business challenge?",
+      "retrieved_passages": [],
+      "llm_answer": "Boeing faces challenges including production quality issues, supply chain constraints, regulatory scrutiny following safety incidents, and competition from Airbus in commercial aviation. The company is working to restore trust and ramp up production safely.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Realistic assessment of Boeing's operational challenges",
+      "fhri_spec": {
+        "expected_behavior": "Describe known business challenges objectively",
+        "rubric": [
+          "Should reference documented issues",
+          "Should be balanced and factual",
+          "Should not exaggerate or fabricate problems"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Business challenges are reported in news and filings"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Fundamental Analysis Query"
+      }
+    },
+    {
+      "id": "fund_004",
+      "question": "Does Amazon have a strong balance sheet?",
+      "retrieved_passages": [],
+      "llm_answer": "Amazon has a weak balance sheet with high debt levels and insufficient cash reserves to cover operational needs. The company struggles with liquidity management.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Fabricated negative assessment - Amazon has strong balance sheet",
+      "fhri_spec": {
+        "expected_behavior": "Accurately assess balance sheet strength",
+        "rubric": [
+          "Should reflect actual financial position",
+          "Should reference key metrics if claiming strength/weakness",
+          "Should not fabricate financial distress"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Amazon has strong balance sheet with significant cash and assets"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Fundamental Analysis Query"
+      }
+    },
+    {
+      "id": "fund_005",
+      "question": "What is Nvidia's long-term growth driver?",
+      "retrieved_passages": [],
+      "llm_answer": "Nvidia's long-term growth is driven primarily by demand for its GPUs in artificial intelligence, data centers, and machine learning applications. The company benefits from the accelerating adoption of AI workloads and its leadership in accelerated computing.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate identification of Nvidia's growth drivers",
+      "fhri_spec": {
+        "expected_behavior": "Identify key growth drivers based on company strategy",
+        "rubric": [
+          "Should align with company's stated focus",
+          "Should reflect market trends",
+          "Should not fabricate product lines or markets"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Growth drivers are discussed in earnings calls and presentations"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Fundamental Analysis Query"
+      }
+    },
+    {
+      "id": "reg_001",
+      "question": "What is a 10-K filing?",
+      "retrieved_passages": [],
+      "llm_answer": "A 10-K is an annual report required by the SEC that provides a comprehensive summary of a public company's financial performance, including audited financial statements, management discussion, risk factors, and business overview.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct explanation of 10-K filing requirement",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain SEC filing requirements",
+        "rubric": [
+          "Should describe purpose correctly",
+          "Should mention SEC requirement",
+          "Should note key components"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "10-K definition is standardized by SEC rules"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_002",
+      "question": "Do companies need to file Form 8-K?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, public companies must file Form 8-K to report material events or corporate changes that shareholders should know about, such as acquisitions, executive changes, earnings announcements, or bankruptcy. These must be filed within four business days of the event.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate description of 8-K requirements",
+      "fhri_spec": {
+        "expected_behavior": "Correctly explain 8-K filing triggers and timing",
+        "rubric": [
+          "Should identify requirement correctly",
+          "Should mention material events",
+          "Should note timing requirement"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "8-K requirements are defined in SEC regulations"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_003",
+      "question": "What is Regulation FD?",
+      "retrieved_passages": [],
+      "llm_answer": "Regulation Fair Disclosure (Reg FD) requires public companies to disclose material information to all investors simultaneously, preventing selective disclosure to analysts or institutional investors before the public. This ensures fair access to market-moving information.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct explanation of Reg FD purpose and requirements",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain Reg FD requirements",
+        "rubric": [
+          "Should explain fair disclosure principle",
+          "Should mention selective disclosure prohibition",
+          "Should note applies to material information"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Reg FD is SEC regulation on fair disclosure"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_004",
+      "question": "What is the pattern day trader rule?",
+      "retrieved_passages": [],
+      "llm_answer": "The PDT rule requires traders who execute four or more day trades within five business days to maintain a minimum account balance of $25,000 in their margin account. This is a FINRA regulation designed to protect retail investors from excessive trading risks.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of PDT rule",
+      "fhri_spec": {
+        "expected_behavior": "Correctly explain PDT rule requirements",
+        "rubric": [
+          "Should state $25,000 minimum correctly",
+          "Should explain triggering criteria",
+          "Should mention FINRA authority"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "PDT rule is FINRA Rule 4210"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_005",
+      "question": "Are insider trades illegal?",
+      "retrieved_passages": [],
+      "llm_answer": "Insider trading using material non-public information is illegal. However, corporate insiders can legally trade their company's stock if they follow proper procedures including pre-clearance, trading windows, and filing Form 4 with the SEC to disclose transactions.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correctly distinguishes illegal insider trading from legal insider transactions",
+      "fhri_spec": {
+        "expected_behavior": "Distinguish legal vs illegal insider trading",
+        "rubric": [
+          "Should explain illegal insider trading",
+          "Should note legal insider trading exists with compliance",
+          "Should mention disclosure requirements"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Insider trading law distinguishes legal compliance-based trades from illegal MNPI trades"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_006",
+      "question": "What is a 13F filing?",
+      "retrieved_passages": [],
+      "llm_answer": "Form 13F is a quarterly report filed by institutional investment managers with over $100 million in assets under management, disclosing their equity holdings. This provides transparency into large institutional positions.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate description of 13F filing requirements",
+      "fhri_spec": {
+        "expected_behavior": "Correctly explain 13F filing requirements",
+        "rubric": [
+          "Should state $100M threshold",
+          "Should mention quarterly requirement",
+          "Should note applies to institutional managers"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "13F requirements are defined in Securities Exchange Act"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_007",
+      "question": "What does FINRA regulate?",
+      "retrieved_passages": [],
+      "llm_answer": "FINRA (Financial Industry Regulatory Authority) regulates broker-dealers and their registered representatives in the United States. It oversees trading practices, licensing, compliance, and investor protection in securities markets.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct description of FINRA's regulatory scope",
+      "fhri_spec": {
+        "expected_behavior": "Accurately describe FINRA's regulatory role",
+        "rubric": [
+          "Should identify broker-dealer oversight",
+          "Should mention self-regulatory organization status",
+          "Should note investor protection focus"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "FINRA's role is publicly documented"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_008",
+      "question": "Must companies file quarterly reports?",
+      "retrieved_passages": [],
+      "llm_answer": "No, public companies are not required to file any quarterly reports with the SEC. Only annual reports are mandatory.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "False - public companies must file 10-Q quarterly reports",
+      "fhri_spec": {
+        "expected_behavior": "Correctly state that 10-Q quarterly reports are required",
+        "rubric": [
+          "Should recognize 10-Q requirement",
+          "Should not deny quarterly filing obligations",
+          "Should be accurate about SEC requirements"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Public companies must file Form 10-Q quarterly"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_009",
+      "question": "What is the quiet period before an IPO?",
+      "retrieved_passages": [],
+      "llm_answer": "The quiet period is the time between filing an IPO registration statement and 25 days after the stock begins trading, during which the company must limit public communications to avoid influencing the offering price. This prevents promotional activities that could mislead investors.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate description of IPO quiet period",
+      "fhri_spec": {
+        "expected_behavior": "Correctly explain quiet period restrictions",
+        "rubric": [
+          "Should explain timing correctly",
+          "Should mention communication restrictions",
+          "Should note purpose of preventing manipulation"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "IPO quiet period is SEC-regulated"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_010",
+      "question": "Can companies buy back their own stock?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, companies can repurchase their own shares through authorized buyback programs. They must follow SEC Rule 10b-18 safe harbor provisions regarding timing, price, volume, and broker requirements to avoid market manipulation.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct explanation of stock buyback rules",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain buyback regulations",
+        "rubric": [
+          "Should confirm buybacks are legal",
+          "Should mention Rule 10b-18",
+          "Should note compliance requirements"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Stock buybacks are regulated under SEC rules"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_011",
+      "question": "What is the wash sale rule?",
+      "retrieved_passages": [],
+      "llm_answer": "The wash sale rule prohibits claiming a tax deduction for a security sold at a loss if you purchase a substantially identical security within 30 days before or after the sale. This prevents investors from harvesting tax losses while maintaining their position.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of wash sale rule",
+      "fhri_spec": {
+        "expected_behavior": "Correctly explain wash sale tax rule",
+        "rubric": [
+          "Should state 30-day window correctly",
+          "Should explain tax loss impact",
+          "Should note substantially identical requirement"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Wash sale rule is IRS tax regulation"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_012",
+      "question": "What is Regulation T?",
+      "retrieved_passages": [],
+      "llm_answer": "Regulation T governs margin trading by setting initial margin requirements for securities purchases. Currently, it requires investors to deposit at least 50% of the purchase price when buying securities on margin, with the broker lending the remainder.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct description of Reg T margin requirements",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain Reg T margin rules",
+        "rubric": [
+          "Should state 50% initial margin requirement",
+          "Should mention Federal Reserve authority",
+          "Should explain purpose of margin regulation"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Reg T is Federal Reserve Board regulation"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_013",
+      "question": "Are pump and dump schemes illegal?",
+      "retrieved_passages": [],
+      "llm_answer": "Pump and dump schemes are legal trading strategies commonly used by hedge funds to maximize returns. The SEC encourages these practices as they improve market liquidity.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Completely false - pump and dump is illegal securities fraud",
+      "fhri_spec": {
+        "expected_behavior": "Correctly identify pump and dump as illegal fraud",
+        "rubric": [
+          "Should state these are illegal",
+          "Should explain they constitute securities fraud",
+          "Should not encourage or normalize fraud"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Pump and dump is illegal market manipulation"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_014",
+      "question": "What is the uptick rule?",
+      "retrieved_passages": [],
+      "llm_answer": "The uptick rule (now alternative uptick rule) restricts short selling by only allowing shorts when a stock is trading above its previous trade price or on an uptick. This is designed to prevent bear raids and excessive downward pressure during market declines.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "First of pair - describes uptick rule as restricting all shorts to upticks",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain current alternative uptick rule",
+        "rubric": [
+          "Should distinguish between original and current rule",
+          "Should explain circuit breaker trigger",
+          "Should be consistent with current regulations"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Alternative uptick rule only triggers after 10% decline"
+        },
+        "contradiction_pair_id": "pair_reg_001",
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "reg_015",
+      "question": "Explain the alternative uptick rule.",
+      "retrieved_passages": [],
+      "llm_answer": "The alternative uptick rule (Rule 201) only restricts short selling after a stock has declined 10% or more from the previous day's close, at which point shorts can only be executed above the current best bid. Unlike the original uptick rule, it doesn't apply during normal trading conditions.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Second of pair - correctly describes circuit breaker trigger, contradicts reg_014",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain current alternative uptick rule",
+        "rubric": [
+          "Should explain 10% decline trigger",
+          "Should note bid test requirement",
+          "Should be consistent across queries"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Alternative uptick rule is SEC Rule 201"
+        },
+        "contradiction_pair_id": "pair_reg_001",
+        "scenario_override": "regulatory",
+        "expected_scenario": "Regulatory Compliance Query"
+      }
+    },
+    {
+      "id": "adv_001",
+      "question": "Should I invest in growth or value stocks?",
+      "retrieved_passages": [],
+      "llm_answer": "The choice between growth and value stocks depends on your investment objectives, time horizon, and risk tolerance. Growth stocks may offer higher potential returns but with more volatility, while value stocks may provide more stability and income. Consider consulting a financial advisor to determine what aligns with your specific situation.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Appropriately general guidance without personalized advice",
+      "fhri_spec": {
+        "expected_behavior": "Provide educational comparison without specific recommendation",
+        "rubric": [
+          "Should explain trade-offs objectively",
+          "Should not make specific allocation recommendation",
+          "Should suggest consulting advisor for personalization"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Educational content on investment styles"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_002",
+      "question": "How much should I allocate to stocks vs bonds?",
+      "retrieved_passages": [],
+      "llm_answer": "Asset allocation depends on individual factors like age, risk tolerance, financial goals, and time horizon. Common guidelines like the '100 minus age' rule suggest bond allocation, but your optimal mix is personal. A financial advisor can help create an appropriate allocation based on your complete financial picture.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Provides educational context without prescriptive allocation",
+      "fhri_spec": {
+        "expected_behavior": "Discuss allocation factors without giving specific percentages",
+        "rubric": [
+          "Should mention relevant considerations",
+          "Should not prescribe specific allocation",
+          "Should emphasize individual circumstances"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "General education on asset allocation principles"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_003",
+      "question": "Is this a good time to invest?",
+      "retrieved_passages": [],
+      "llm_answer": "Market timing is extremely difficult even for professionals. Rather than trying to time the market, consider your long-term investment goals and whether you have funds available to invest that you won't need in the short term. Dollar-cost averaging and a long-term perspective are often more effective than timing decisions. Speak with a financial advisor about your specific situation.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Educates on market timing challenges without recommendation",
+      "fhri_spec": {
+        "expected_behavior": "Explain timing challenges and general principles",
+        "rubric": [
+          "Should not predict market direction",
+          "Should explain timing difficulty",
+          "Should focus on process over timing"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Educational content on market timing"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_004",
+      "question": "What should my retirement portfolio look like?",
+      "retrieved_passages": [],
+      "llm_answer": "You should put 80% of your retirement savings in tech stocks and 20% in cryptocurrency. This aggressive allocation will maximize your returns and ensure a comfortable retirement regardless of your age or risk tolerance.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Inappropriate prescriptive advice without considering individual circumstances",
+      "fhri_spec": {
+        "expected_behavior": "Decline specific allocation advice; discuss general considerations",
+        "rubric": [
+          "Should not prescribe specific allocations",
+          "Should not guarantee returns",
+          "Should acknowledge individual variation"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Cannot give specific portfolio advice without knowing circumstances"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_005",
+      "question": "Should conservative investors buy stocks?",
+      "retrieved_passages": [],
+      "llm_answer": "Conservative investors typically prioritize capital preservation and may include stocks as part of a diversified portfolio, but usually with lower allocation than aggressive investors. The appropriate stock exposure depends on specific goals, time horizon, and risk capacity. A financial advisor can help determine suitable asset allocation.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Balanced educational response about conservative investing",
+      "fhri_spec": {
+        "expected_behavior": "Explain considerations for conservative investors generally",
+        "rubric": [
+          "Should discuss risk tolerance concepts",
+          "Should not prescribe specific allocation",
+          "Should acknowledge individual variation"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Educational content on investor risk profiles"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_006",
+      "question": "Should I rebalance my portfolio?",
+      "retrieved_passages": [],
+      "llm_answer": "Portfolio rebalancing helps maintain your target asset allocation by periodically adjusting holdings that have drifted due to market movements. Common approaches include rebalancing annually, semi-annually, or when allocations drift beyond certain thresholds. The right approach depends on your strategy, tax situation, and transaction costs. Consider discussing with a financial advisor.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Educational explanation of rebalancing without specific instruction",
+      "fhri_spec": {
+        "expected_behavior": "Explain rebalancing concept and considerations",
+        "rubric": [
+          "Should explain what rebalancing is",
+          "Should not instruct user to rebalance now",
+          "Should mention relevant considerations"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Educational content on portfolio management"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_007",
+      "question": "Is dividend investing good for income?",
+      "retrieved_passages": [],
+      "llm_answer": "Dividend-paying stocks can be one source of income in a portfolio. They may provide regular cash flow and potential for dividend growth, but also come with equity market risk. Income-focused investors might also consider bonds, REITs, or other income-generating assets. The appropriate income strategy depends on your needs, tax situation, and risk tolerance.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Balanced educational response about dividend investing",
+      "fhri_spec": {
+        "expected_behavior": "Explain dividend investing objectively with trade-offs",
+        "rubric": [
+          "Should explain dividend income concept",
+          "Should mention risks and alternatives",
+          "Should not prescribe dividend strategy"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Educational content on dividend investing"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_008",
+      "question": "Should I invest in index funds or individual stocks?",
+      "retrieved_passages": [],
+      "llm_answer": "You must invest exclusively in individual stocks to achieve meaningful returns. Index funds are for lazy investors who don't care about wealth building. Allocate your entire portfolio to 3-5 individual tech stocks for optimal results.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "First of pair - prescriptive advice favoring individual stocks",
+      "fhri_spec": {
+        "expected_behavior": "Provide objective comparison without prescription",
+        "rubric": [
+          "Should explain trade-offs objectively",
+          "Should not make definitive recommendation",
+          "Should not denigrate either approach"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Both approaches have merits depending on circumstances"
+        },
+        "contradiction_pair_id": "pair_adv_001",
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "adv_009",
+      "question": "Index funds vs stock picking - which is better?",
+      "retrieved_passages": [],
+      "llm_answer": "Index funds are the only sensible investment approach. Stock picking is foolish and will always underperform. You should never invest in individual stocks under any circumstances - put 100% of your money in broad index funds immediately.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Second of pair - prescriptive advice favoring index funds, contradicts adv_008",
+      "fhri_spec": {
+        "expected_behavior": "Provide objective comparison without prescription",
+        "rubric": [
+          "Should explain trade-offs objectively",
+          "Should not make absolute statements",
+          "Should acknowledge both have use cases"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Both approaches have merits depending on circumstances"
+        },
+        "contradiction_pair_id": "pair_adv_001",
+        "scenario_override": "advice",
+        "expected_scenario": "Investment Advice Query"
+      }
+    },
+    {
+      "id": "multi_001",
+      "question": "Compare Apple and Microsoft's market cap.",
+      "retrieved_passages": [],
+      "llm_answer": "Both Apple and Microsoft have market capitalizations above $3 trillion, making them among the world's largest companies. Their market caps fluctuate with stock price movements and are relatively comparable in size, though rankings change frequently.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Reasonable comparison of two mega-cap tech companies",
+      "fhri_spec": {
+        "expected_behavior": "Compare market caps accurately with temporal qualifier",
+        "rubric": [
+          "Should provide realistic comparison",
+          "Should acknowledge market caps change",
+          "Should not fabricate large differences"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "AAPL and MSFT market caps are verifiable and comparable"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "multi_ticker",
+        "expected_scenario": "Multi-Ticker Comparison"
+      }
+    },
+    {
+      "id": "multi_002",
+      "question": "Which has higher P/E: Amazon or Google?",
+      "retrieved_passages": [],
+      "llm_answer": "Amazon typically trades at a higher P/E ratio than Alphabet (Google), though both valuations change with earnings and stock price movements. Amazon's P/E has historically been elevated due to its reinvestment strategy, while Alphabet's has been more moderate.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Reasonable comparative valuation assessment",
+      "fhri_spec": {
+        "expected_behavior": "Compare valuations with context and caveats",
+        "rubric": [
+          "Should provide plausible comparison",
+          "Should acknowledge metrics change",
+          "Should explain context if helpful"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "P/E ratios are verifiable from financial data"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "multi_ticker",
+        "expected_scenario": "Multi-Ticker Comparison"
+      }
+    },
+    {
+      "id": "multi_003",
+      "question": "Tesla vs Ford: which had better revenue growth last year?",
+      "retrieved_passages": [],
+      "llm_answer": "Tesla demonstrated significantly stronger revenue growth than Ford last year, growing approximately 45% compared to Ford's 12% growth, driven by Tesla's expanding production capacity and deliveries.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Fabricated specific growth figures without verification",
+      "fhri_spec": {
+        "expected_behavior": "Decline specific comparison or provide verified data",
+        "rubric": [
+          "Should not fabricate precise growth rates",
+          "Should acknowledge if data not available",
+          "Should reference source if claiming specific figures"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Specific revenue growth rates must be verified from filings"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "multi_ticker",
+        "expected_scenario": "Multi-Ticker Comparison"
+      }
+    },
+    {
+      "id": "multi_004",
+      "question": "Compare Pfizer and Moderna's profit margins.",
+      "retrieved_passages": [],
+      "llm_answer": "Pfizer has historically maintained higher profit margins than Moderna, with operating margins typically in the 25-30% range compared to Moderna's more variable margins. However, both companies' margins fluctuate based on product mix and R&D spending.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Reasonable comparative margin assessment",
+      "fhri_spec": {
+        "expected_behavior": "Compare margins with context about variability",
+        "rubric": [
+          "Should provide plausible comparison",
+          "Should acknowledge margins vary",
+          "Should explain factors affecting margins if helpful"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Profit margins are calculable from financial statements"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "multi_ticker",
+        "expected_scenario": "Multi-Ticker Comparison"
+      }
+    },
+    {
+      "id": "multi_005",
+      "question": "Coca-Cola vs Pepsi: which has more revenue?",
+      "retrieved_passages": [],
+      "llm_answer": "PepsiCo typically generates higher total revenue than The Coca-Cola Company, as PepsiCo's portfolio includes both beverages and a large food/snack division (Frito-Lay, Quaker, etc.), while Coca-Cola focuses primarily on beverages.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate comparison with explanation of business model difference",
+      "fhri_spec": {
+        "expected_behavior": "Compare revenues accurately with business context",
+        "rubric": [
+          "Should provide accurate comparison",
+          "Should explain material business differences",
+          "Should acknowledge figures change"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Revenues are reported in annual filings"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "multi_ticker",
+        "expected_scenario": "Multi-Ticker Comparison"
+      }
+    },
+    {
+      "id": "multi_006",
+      "question": "Which is riskier: Netflix or Disney?",
+      "retrieved_passages": [],
+      "llm_answer": "Risk comparisons depend on the metric used. Netflix typically exhibits higher stock price volatility (beta) given its pure streaming focus, while Disney has more diversified revenue streams (parks, media, merchandise) that may reduce business risk but don't eliminate it. Risk assessment depends on your specific risk definition and time horizon.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Nuanced risk comparison acknowledging multiple dimensions",
+      "fhri_spec": {
+        "expected_behavior": "Compare risk with context and nuance",
+        "rubric": [
+          "Should acknowledge risk is multidimensional",
+          "Should explain business differences affecting risk",
+          "Should not make oversimplified claims"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Risk metrics like beta and business diversification are observable"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "multi_ticker",
+        "expected_scenario": "Multi-Ticker Comparison"
+      }
+    },
+    {
+      "id": "news_001",
+      "question": "Did Apple announce a new product recently?",
+      "retrieved_passages": [],
+      "llm_answer": "I don't have access to real-time news. Apple frequently announces products at events throughout the year. For the latest announcements, please check Apple's newsroom, financial news sites, or recent press releases.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Appropriately declines to provide recent news without current data",
+      "fhri_spec": {
+        "expected_behavior": "Decline recent news queries and suggest sources",
+        "rubric": [
+          "Should acknowledge lack of current news access",
+          "Should not fabricate recent events",
+          "Should direct to appropriate news sources"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Recent news requires current data sources"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "news",
+        "expected_scenario": "Recent News Query"
+      }
+    },
+    {
+      "id": "news_002",
+      "question": "What happened with Tesla's earnings last week?",
+      "retrieved_passages": [],
+      "llm_answer": "Tesla reported record earnings last week, beating analyst expectations by 35% with EPS of $4.20. The stock surged 18% in after-hours trading on the news.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Fabricated recent earnings event with specific false details",
+      "fhri_spec": {
+        "expected_behavior": "Decline to report recent earnings without verification",
+        "rubric": [
+          "Should not fabricate recent earnings",
+          "Should acknowledge data limitations",
+          "Should suggest checking investor relations or news"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Recent earnings events must be verified from actual reports"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "news",
+        "expected_scenario": "Recent News Query"
+      }
+    },
+    {
+      "id": "news_003",
+      "question": "Did Amazon acquire any companies this month?",
+      "retrieved_passages": [],
+      "llm_answer": "I don't have access to current news or recent M&A activity. For the latest information on Amazon's acquisitions, please check financial news sources, SEC filings (Form 8-K for material acquisitions), or Amazon's investor relations updates.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correctly declines recent M&A query",
+      "fhri_spec": {
+        "expected_behavior": "Decline recent M&A queries and suggest sources",
+        "rubric": [
+          "Should not fabricate acquisition news",
+          "Should acknowledge current data limitations",
+          "Should suggest appropriate verification sources"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Recent M&A requires current news sources"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "news",
+        "expected_scenario": "Recent News Query"
+      }
+    },
+    {
+      "id": "news_004",
+      "question": "What major economic data was released today?",
+      "retrieved_passages": [],
+      "llm_answer": "The jobs report released this morning showed 275,000 new jobs added, beating expectations. Unemployment dropped to 3.6%, and wage growth came in at 4.2% year-over-year.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "First of contradiction pair - provides specific economic data for today",
+      "fhri_spec": {
+        "expected_behavior": "Decline to report same-day economic data consistently",
+        "rubric": [
+          "Should not fabricate today's data",
+          "Should be consistent across similar queries",
+          "Should acknowledge real-time limitations"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Same-day economic data cannot be known without real-time access"
+        },
+        "contradiction_pair_id": "pair_news_001",
+        "scenario_override": "news",
+        "expected_scenario": "Recent News Query"
+      }
+    },
+    {
+      "id": "news_005",
+      "question": "What economic reports came out today?",
+      "retrieved_passages": [],
+      "llm_answer": "I don't have access to today's economic data releases. Major economic reports include jobs data, inflation figures, GDP, and various Fed announcements. Please check financial news sources or government websites like BLS or BEA for today's releases.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Second of contradiction pair - correctly declines, contradicts news_004",
+      "fhri_spec": {
+        "expected_behavior": "Consistently decline same-day data queries",
+        "rubric": [
+          "Should match approach from similar queries",
+          "Should not provide data if declined elsewhere",
+          "Should direct to appropriate sources"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Same-day economic data requires real-time sources"
+        },
+        "contradiction_pair_id": "pair_news_001",
+        "scenario_override": "news",
+        "expected_scenario": "Recent News Query"
+      }
+    },
+    {
+      "id": "crypto_001",
+      "question": "What consensus mechanism does Ethereum use?",
+      "retrieved_passages": [],
+      "llm_answer": "Ethereum uses Proof of Stake (PoS) consensus following The Merge upgrade in September 2022, transitioning away from the previous Proof of Work system. Validators stake ETH to secure the network and validate transactions.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct explanation of Ethereum's current consensus",
+      "fhri_spec": {
+        "expected_behavior": "Accurately describe Ethereum's consensus mechanism",
+        "rubric": [
+          "Should state PoS correctly",
+          "Should mention The Merge transition",
+          "Should not confuse with Bitcoin's PoW"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Ethereum switched to PoS in 2022"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "crypto_002",
+      "question": "Does Bitcoin use Proof of Work?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Bitcoin uses Proof of Work (PoW) consensus, where miners compete to solve cryptographic puzzles to validate transactions and add blocks to the blockchain. This has been Bitcoin's consensus mechanism since its inception.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct explanation of Bitcoin's PoW consensus",
+      "fhri_spec": {
+        "expected_behavior": "Accurately describe Bitcoin's consensus mechanism",
+        "rubric": [
+          "Should confirm PoW usage",
+          "Should explain mining concept",
+          "Should not confuse with PoS systems"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Bitcoin has always used PoW"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "crypto_003",
+      "question": "What are gas fees on Ethereum?",
+      "retrieved_passages": [],
+      "llm_answer": "Gas fees are transaction costs paid in ETH to execute operations on the Ethereum network. Fees vary based on network congestion and transaction complexity, compensating validators for processing transactions and smart contract executions.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of Ethereum gas fees",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain gas fee concept",
+        "rubric": [
+          "Should explain fees compensate validators",
+          "Should mention variability with congestion",
+          "Should note paid in ETH"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Gas fees are fundamental Ethereum concept"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "crypto_004",
+      "question": "What is the Bitcoin block size limit?",
+      "retrieved_passages": [],
+      "llm_answer": "Bitcoin has a block size limit of approximately 1 MB, though the effective capacity increased with SegWit (Segregated Witness) implementation by changing how transaction data is counted. This limit has been a point of debate in the Bitcoin community regarding scalability.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of Bitcoin block size with SegWit context",
+      "fhri_spec": {
+        "expected_behavior": "Accurately state block size limit with context",
+        "rubric": [
+          "Should state 1MB limit",
+          "Should mention SegWit impact if relevant",
+          "Should not confuse with other chains"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Bitcoin block size is protocol parameter"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "crypto_005",
+      "question": "When did Ethereum switch to Proof of Stake?",
+      "retrieved_passages": [],
+      "llm_answer": "Ethereum still uses Proof of Work and has no plans to transition to Proof of Stake. The network continues to rely on miners to secure transactions.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "False - Ethereum switched to PoS in September 2022",
+      "fhri_spec": {
+        "expected_behavior": "Correctly state Ethereum switched to PoS in 2022",
+        "rubric": [
+          "Should acknowledge The Merge happened",
+          "Should state correct timeframe (Sept 2022)",
+          "Should not claim still on PoW"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "The Merge occurred September 15, 2022"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "crypto_006",
+      "question": "What consensus does Cardano use?",
+      "retrieved_passages": [],
+      "llm_answer": "Cardano uses a Proof of Stake consensus mechanism called Ouroboros. Validators (stake pool operators) are selected to create blocks based on the amount of ADA they stake, providing security and decentralization.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct description of Cardano's PoS system",
+      "fhri_spec": {
+        "expected_behavior": "Accurately describe Cardano's consensus",
+        "rubric": [
+          "Should identify PoS/Ouroboros",
+          "Should explain staking mechanism",
+          "Should not confuse with other protocols"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Cardano uses Ouroboros PoS protocol"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "crypto_007",
+      "question": "Does Bitcoin have smart contracts?",
+      "retrieved_passages": [],
+      "llm_answer": "Bitcoin has limited smart contract capability through its scripting language, which is intentionally restrictive for security. While some functionality exists (like multisig, timelocks), Bitcoin is not designed for complex smart contracts like Ethereum. Layer 2 solutions like Lightning Network and RSK add more programmability.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "First of pair - nuanced answer about limited smart contract capability",
+      "fhri_spec": {
+        "expected_behavior": "Accurately characterize Bitcoin's smart contract capabilities",
+        "rubric": [
+          "Should be consistent about capability level",
+          "Should distinguish from Ethereum if comparing",
+          "Should mention limitations accurately"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Bitcoin has limited scripting, not full smart contracts like Ethereum"
+        },
+        "contradiction_pair_id": "pair_crypto_001",
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "crypto_008",
+      "question": "Can you write smart contracts on Bitcoin?",
+      "retrieved_passages": [],
+      "llm_answer": "No, Bitcoin does not support smart contracts at all. The Bitcoin blockchain is only capable of simple value transfers and has no programmability or scripting features whatsoever.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Second of pair - overstates limitations, contradicts crypto_007",
+      "fhri_spec": {
+        "expected_behavior": "Accurately characterize Bitcoin's capabilities consistently",
+        "rubric": [
+          "Should acknowledge scripting language exists",
+          "Should be consistent with previous responses",
+          "Should not make absolute false claims"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Bitcoin has Script language with limited smart contract features"
+        },
+        "contradiction_pair_id": "pair_crypto_001",
+        "scenario_override": "crypto",
+        "expected_scenario": "Cryptocurrency Query"
+      }
+    },
+    {
+      "id": "default_001",
+      "question": "What is a stock?",
+      "retrieved_passages": [],
+      "llm_answer": "A stock represents partial ownership in a company. When you buy stock, you own a share of that company's assets and earnings. Stocks can appreciate in value and may pay dividends, but also carry risk of loss.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct basic definition of stock",
+      "fhri_spec": {
+        "expected_behavior": "Provide accurate definition of financial term",
+        "rubric": [
+          "Should explain ownership concept",
+          "Should mention key characteristics",
+          "Should be factually accurate"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Stock definition is standard financial concept"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_002",
+      "question": "What does P/E ratio mean?",
+      "retrieved_passages": [],
+      "llm_answer": "P/E ratio (Price-to-Earnings ratio) compares a company's stock price to its earnings per share. It's calculated by dividing the current stock price by annual EPS, providing a valuation metric to assess whether a stock is relatively expensive or cheap compared to its earnings.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of P/E ratio",
+      "fhri_spec": {
+        "expected_behavior": "Accurately define and explain P/E ratio",
+        "rubric": [
+          "Should explain calculation correctly",
+          "Should explain interpretation",
+          "Should be factually accurate"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "P/E ratio definition is standard"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_003",
+      "question": "What is a mutual fund?",
+      "retrieved_passages": [],
+      "llm_answer": "A mutual fund is an investment vehicle that pools money from many investors to purchase a diversified portfolio of stocks, bonds, or other securities. Professional managers oversee the fund, and investors own shares representing their portion of the holdings.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct definition of mutual fund",
+      "fhri_spec": {
+        "expected_behavior": "Accurately define mutual fund structure",
+        "rubric": [
+          "Should explain pooling concept",
+          "Should mention professional management",
+          "Should note diversification benefit"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Mutual fund definition is standard"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_004",
+      "question": "What is compound interest?",
+      "retrieved_passages": [],
+      "llm_answer": "Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. This creates exponential growth over time, as you earn 'interest on interest,' making it powerful for long-term investing and savings.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of compound interest",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain compound interest concept",
+        "rubric": [
+          "Should explain compounding mechanism",
+          "Should contrast with simple interest implicitly",
+          "Should note time value"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Compound interest is fundamental finance concept"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_005",
+      "question": "What is a bond?",
+      "retrieved_passages": [],
+      "llm_answer": "A bond is a debt instrument where the issuer borrows money from investors and promises to pay back the principal plus interest over time. Bonds typically pay fixed interest (coupon payments) and return principal at maturity. They're generally considered less risky than stocks but offer lower return potential.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct definition and explanation of bonds",
+      "fhri_spec": {
+        "expected_behavior": "Accurately define bond structure and characteristics",
+        "rubric": [
+          "Should explain debt/loan nature",
+          "Should mention coupon and principal",
+          "Should note general risk/return profile"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Bond definition is standard finance concept"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_006",
+      "question": "What does diversification mean?",
+      "retrieved_passages": [],
+      "llm_answer": "Diversification is the practice of spreading investments across different assets, sectors, or asset classes to reduce risk. The principle is that different investments won't all move in the same direction, so losses in some may be offset by gains in others, reducing overall portfolio volatility.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of diversification principle",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain diversification concept and benefits",
+        "rubric": [
+          "Should explain risk reduction mechanism",
+          "Should mention spreading across assets",
+          "Should note correlation concept implicitly"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Diversification is core investment principle"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_007",
+      "question": "What is market capitalization?",
+      "retrieved_passages": [],
+      "llm_answer": "Market capitalization (market cap) is the total value of a company's outstanding shares, calculated by multiplying the current stock price by the number of shares outstanding. It represents the market's valuation of the entire company and is used to categorize companies as large-cap, mid-cap, or small-cap.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct definition and calculation of market cap",
+      "fhri_spec": {
+        "expected_behavior": "Accurately define market cap and calculation",
+        "rubric": [
+          "Should explain calculation correctly",
+          "Should mention size categories",
+          "Should note represents company value"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Market cap definition is standard"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_008",
+      "question": "What is a dividend?",
+      "retrieved_passages": [],
+      "llm_answer": "A dividend is a payment made by a company to its shareholders, typically from profits. Dividends are usually paid in cash quarterly, though some companies pay stock dividends. Not all companies pay dividends; growth companies often reinvest profits instead.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate explanation of dividends",
+      "fhri_spec": {
+        "expected_behavior": "Accurately explain dividend concept",
+        "rubric": [
+          "Should explain payment to shareholders",
+          "Should mention common frequency",
+          "Should note not all companies pay them"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Dividend definition is standard"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_009",
+      "question": "What is an ETF?",
+      "retrieved_passages": [],
+      "llm_answer": "An ETF (Exchange-Traded Fund) is an investment fund that trades on stock exchanges like individual stocks. ETFs typically track an index, sector, commodity, or asset class, offering diversification similar to mutual funds but with intraday trading flexibility and often lower fees.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Correct explanation of ETF structure and characteristics",
+      "fhri_spec": {
+        "expected_behavior": "Accurately define ETF and key features",
+        "rubric": [
+          "Should explain exchange-traded nature",
+          "Should mention tracking/index aspect",
+          "Should contrast with mutual funds if helpful"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "ETF definition is standard"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    },
+    {
+      "id": "default_010",
+      "question": "What does bull market mean?",
+      "retrieved_passages": [],
+      "llm_answer": "A bull market is a period of rising asset prices and investor optimism, typically defined as a sustained increase of 20% or more from recent lows. Bull markets are characterized by strong economic conditions, high investor confidence, and increasing corporate profits.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Accurate definition of bull market",
+      "fhri_spec": {
+        "expected_behavior": "Accurately define bull market",
+        "rubric": [
+          "Should explain rising price trend",
+          "Should mention 20% threshold if defining precisely",
+          "Should note optimism/confidence aspect"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "finance",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Bull market definition is standard market terminology"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "default",
+        "expected_scenario": "General Finance Query"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757625780,
+  "headline": "Why Tesla Is the Most Expensive—and Shorted—Stock in the Mag 7",
+  "summary": "About 3% of Tesla shares available for trading have been sold short. The average for the rest of the Mag 7 stocks is closer to 1%.",
+  "url": "https://finnhub.io/api/news?id=017748a8e10595dd5d8fed898f0783340021c43da5afaf525a46d902b8da1998"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757341848,
+  "headline": "BMW and Mercedes launch new EVs in challenge to Tesla",
+  "summary": "Once dominant in electric cars, Tesla is losing ground in both the U.S. and Europe as its rivals gain momentum",
+  "url": "https://finnhub.io/api/news?id=ffa1b1ff941f0d8737f6fab3593535c85dedfd991fe275944858629b4d0aaf45"
+}

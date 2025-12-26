@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761150531,
+  "headline": "US Equity Indexes Pause Ahead of Tesla's Quarterly Results",
+  "summary": "US equity indexes took a breather ahead of Tesla's (TSLA) quarterly results after the bell and as Ne",
+  "url": "https://finnhub.io/api/news?id=a14677fab39f47d59801421e5955c41af5b757551e7e03ab8bf71ef4cf50e6df"
+}

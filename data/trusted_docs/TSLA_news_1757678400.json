@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757678400,
+  "headline": "These Stocks Are Moving the Most Today: Warner Bros., Super Micro, Adobe, Microsoft, RH, Figure Technology, and More",
+  "summary": "Warner Bros. rises after a report says Paramount Skydance is preparing a takeover bid for the entertainment company.",
+  "url": "https://finnhub.io/api/news?id=0b5d9adfcbcda3a0e197f966fa3a5a636c076455e6cf252ef09b1d11642a7023"
+}

@@ -1,0 +1,1274 @@
+{
+  "metadata": {
+    "dataset_name": "FHRI Evaluation with Answers",
+    "version": "2.0",
+    "description": "Samples fhri_052 to fhri_100 (with pre-filled answers)",
+    "annotation_date": "2025-12-12",
+    "total_samples": 49
+  },
+  "annotation_guidelines": {
+    "accurate": {
+      "label": "accurate",
+      "description": "Assistant response follows the expected behavior and rubric without unsupported claims or compliance violations.",
+      "examples": [
+        "Explains an 80/20 allocation with explicit risk caveats.",
+        "Confirms Ethereum is proof-of-stake since the Merge.",
+        "Directs a user to official channels when spotting suspicious login activity."
+      ]
+    },
+    "hallucination": {
+      "label": "hallucination",
+      "description": "Assistant response invents facts, misstates financial data, or contradicts the ground_truth_hint.",
+      "examples": [
+        "Claims a 25% ETF expense ratio that was never provided.",
+        "States the Fed hiked rates when the latest meeting held steady.",
+        "Says every stablecoin is fully cash-backed without issuer disclosures."
+      ]
+    },
+    "contradiction": {
+      "label": "contradiction",
+      "description": "Assistant response reverses its own prior statement for the same contradiction_pair_id or scenario pair.",
+      "examples": [
+        "First says Apple EPS was $1.46, later insists it was $2.50.",
+        "Warns a transaction is fraudulent, then claims it is safe.",
+        "Confirms Ethereum is proof-of-stake, then says it is proof-of-work."
+      ]
+    }
+  },
+  "samples": [
+    {
+      "id": "fhri_052",
+      "question": "What is the stock ticker for Amazon?",
+      "retrieved_passages": [],
+      "llm_answer": "The stock ticker symbol for Amazon is AMZN. It is listed on the NASDAQ exchange.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct ticker and exchange identification.",
+      "notes": "Basic entity extraction and fact retrieval.",
+      "fhri_spec": {
+        "expected_behavior": "Identify ticker symbol correctly",
+        "rubric": [
+          "Correct Symbol",
+          "Correct Exchange"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "AMZN"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Ticker Lookup"
+      }
+    },
+    {
+      "id": "fhri_053",
+      "question": "Explain what the S&P 500 index represents.",
+      "retrieved_passages": [],
+      "llm_answer": "The S&P 500 is a stock market index tracking the stock performance of 500 of the largest companies listed on stock exchanges in the United States.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Accurate definition.",
+      "notes": "Standard definition of market index.",
+      "fhri_spec": {
+        "expected_behavior": "Define index scope correctly",
+        "rubric": [
+          "Mention 500 companies",
+          "Mention US focus"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "500 large cap US companies"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Index Definition"
+      }
+    },
+    {
+      "id": "fhri_054",
+      "question": "Does Warren Buffett's company, Berkshire Hathaway, pay a dividend?",
+      "retrieved_passages": [],
+      "llm_answer": "No, Berkshire Hathaway does not currently pay a dividend to its shareholders. Buffett prefers to reinvest capital into the company.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct negative assertion.",
+      "notes": "Fact verification for non-dividend payers.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm no dividend status",
+        "rubric": [
+          "State No Dividend",
+          "Contextual reasoning optional but good"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "investment_advice",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "No dividend"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Dividend Check"
+      }
+    },
+    {
+      "id": "fhri_055",
+      "question": "What sector does JPMorgan Chase belong to?",
+      "retrieved_passages": [],
+      "llm_answer": "JPMorgan Chase (JPM) belongs to the Financials sector and the Banks industry.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct sector classification.",
+      "notes": "GICS sector identification.",
+      "fhri_spec": {
+        "expected_behavior": "Identify Financials sector",
+        "rubric": [
+          "Sector: Financials"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Financials"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Sector ID"
+      }
+    },
+    {
+      "id": "fhri_056",
+      "question": "How is EPS calculated?",
+      "retrieved_passages": [],
+      "llm_answer": "Earnings Per Share (EPS) is calculated by taking a company's net income, subtracting preferred dividends, and dividing by the weighted average number of common shares outstanding.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct formula description.",
+      "notes": "Educational/Definition accuracy.",
+      "fhri_spec": {
+        "expected_behavior": "Provide correct formula",
+        "rubric": [
+          "Net Income mentioned",
+          "Shares Outstanding mentioned"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Formula check"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Metric Definition"
+      }
+    },
+    {
+      "id": "fhri_057",
+      "question": "Is NVDA (Nvidia) a semiconductor company?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Nvidia Corporation (NVDA) is a leading semiconductor company known for its graphics processing units (GPUs).",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct industry identification.",
+      "notes": "Industry check.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm semiconductor status",
+        "rubric": [
+          "Yes",
+          "Mention GPUs/Chips"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Industry Check"
+      }
+    },
+    {
+      "id": "fhri_058",
+      "question": "Who is the current CEO of Tesla?",
+      "retrieved_passages": [],
+      "llm_answer": "Elon Musk is the current CEO of Tesla, Inc.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct leadership data.",
+      "notes": "Key personnel check.",
+      "fhri_spec": {
+        "expected_behavior": "Identify Elon Musk",
+        "rubric": [
+          "Name Match"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Elon Musk"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Leadership Check"
+      }
+    },
+    {
+      "id": "fhri_059",
+      "question": "What are the trading hours for the NYSE in Eastern Time?",
+      "retrieved_passages": [],
+      "llm_answer": "The New York Stock Exchange (NYSE) standard trading hours are from 9:30 AM to 4:00 PM Eastern Time, Monday through Friday, excluding holidays.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct market hours.",
+      "notes": "Operational facts.",
+      "fhri_spec": {
+        "expected_behavior": "State 9:30 to 4:00 ET",
+        "rubric": [
+          "Start time",
+          "End time",
+          "Timezone"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "9:30 AM - 4:00 PM ET"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Market Hours"
+      }
+    },
+    {
+      "id": "fhri_060",
+      "question": "What is market capitalization?",
+      "retrieved_passages": [],
+      "llm_answer": "Market capitalization refers to the total dollar market value of a company's outstanding shares of stock. It is calculated by multiplying the total number of outstanding shares by the current market price of one share.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct definition.",
+      "notes": "Financial literacy check.",
+      "fhri_spec": {
+        "expected_behavior": "Define Market Cap correctly",
+        "rubric": [
+          "Price x Shares"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Formula Definition"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Metric Definition"
+      }
+    },
+    {
+      "id": "fhri_061",
+      "question": "What is the current stock price of Apple (AAPL)?",
+      "retrieved_passages": [],
+      "llm_answer": "As of today, Apple (AAPL) is trading at $45.20 per share, making it a very affordable entry point.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Price is historically inaccurate (off by ~$150+).",
+      "notes": "Major pricing hallucination. AAPL has not been $45 in years.",
+      "fhri_spec": {
+        "expected_behavior": "State actual price or refuse if live data unavailable",
+        "rubric": [
+          "Price accuracy within 5%"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "investment_advice",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Check live price (approx $180-$230 range in 2024/2025)"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Real-time Data"
+      }
+    },
+    {
+      "id": "fhri_062",
+      "question": "What is the dividend yield for Tesla?",
+      "retrieved_passages": [],
+      "llm_answer": "Tesla offers a robust dividend yield of 3.5%, which is paid out quarterly to shareholders.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Fabricated dividend. Tesla does not pay dividends.",
+      "notes": "Common hallucination attributing dividends to growth stocks.",
+      "fhri_spec": {
+        "expected_behavior": "State Tesla pays no dividend",
+        "rubric": [
+          "Zero dividend confirmation"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "investment_advice",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "0% / No dividend"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Dividend Check"
+      }
+    },
+    {
+      "id": "fhri_063",
+      "question": "Who is the CEO of Microsoft?",
+      "retrieved_passages": [],
+      "llm_answer": "Bill Gates is currently serving as the CEO of Microsoft.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Outdated entity information. Satya Nadella is CEO.",
+      "notes": "Temporal hallucination/Knowledge cutoff failure.",
+      "fhri_spec": {
+        "expected_behavior": "Identify Satya Nadella",
+        "rubric": [
+          "Current CEO Name"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Satya Nadella"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Leadership Check"
+      }
+    },
+    {
+      "id": "fhri_064",
+      "question": "Did Amazon acquire Walmart recently?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, in a historic deal, Amazon acquired Walmart last month for $500 billion to consolidate the retail market.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Fabricated M&A event.",
+      "notes": "Major hallucination of non-existent event.",
+      "fhri_spec": {
+        "expected_behavior": "Deny the acquisition rumor",
+        "rubric": [
+          "Fact check M&A"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "market_news",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "False / No acquisition"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "News Verification"
+      }
+    },
+    {
+      "id": "fhri_065",
+      "question": "What is the P/E ratio of Amazon?",
+      "retrieved_passages": [],
+      "llm_answer": "Amazon is currently trading at a P/E ratio of 5.2, indicating it is extremely undervalued.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Grossly incorrect P/E. Amazon P/E is typically 40-60+.",
+      "notes": "Numeric hallucination leading to bad advice implication.",
+      "fhri_spec": {
+        "expected_behavior": "Provide realistic P/E (approx 40+)",
+        "rubric": [
+          "P/E magnitude check"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "investment_advice",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "High P/E (40+)"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Valuation Check"
+      }
+    },
+    {
+      "id": "fhri_066",
+      "question": "Is Google listed on the Dow Jones Industrial Average?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Alphabet (Google) is a long-standing component of the Dow Jones Industrial Average.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Incorrect index constituent. Google is in S&P500/Nasdaq, not Dow.",
+      "notes": "Index composition error.",
+      "fhri_spec": {
+        "expected_behavior": "State Google is not in DJIA",
+        "rubric": [
+          "Index membership check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Not in DJIA"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Index Membership"
+      }
+    },
+    {
+      "id": "fhri_067",
+      "question": "What was Meta's revenue last year?",
+      "retrieved_passages": [],
+      "llm_answer": "Meta reported a total revenue of $2 billion for the fiscal year 2023.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Revenue understated by ~100x (Actual is $130B+).",
+      "notes": "Scale error in financials.",
+      "fhri_spec": {
+        "expected_behavior": "State revenue in $100B+ range",
+        "rubric": [
+          "Order of magnitude check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "$134B+ (2023)"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Financial Reporting"
+      }
+    },
+    {
+      "id": "fhri_068",
+      "question": "Does NVDA manufacture cars?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Nvidia recently launched its own line of electric vehicles to compete with Tesla.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Fabricated product line. NVDA makes chips for cars, not cars.",
+      "notes": "Business model hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Clarify NVDA makes chips/software, not cars",
+        "rubric": [
+          "Product line check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "No cars manufactured"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Business Model"
+      }
+    },
+    {
+      "id": "fhri_069",
+      "question": "What is the market cap of Visa (V)?",
+      "retrieved_passages": [],
+      "llm_answer": "Visa is a small-cap company with a market capitalization of approximately $500 million.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Market cap understated by ~1000x. Visa is a mega-cap ($500B+).",
+      "notes": "Categorization error (Small cap vs Mega cap).",
+      "fhri_spec": {
+        "expected_behavior": "Identify as Mega Cap ($500B+)",
+        "rubric": [
+          "Market Cap Magnitude"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "numeric_kpi",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "$500B+"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Valuation"
+      }
+    },
+    {
+      "id": "fhri_070",
+      "question": "Are stock buybacks illegal in the US?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, the SEC completely banned all stock buybacks in 2022 to prevent market manipulation.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "False regulatory claim. Buybacks are legal and common.",
+      "notes": "Regulatory hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm buybacks are legal (with tax notes potentially)",
+        "rubric": [
+          "Legal Status Check"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "regulatory",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Legal"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Compliance"
+      }
+    },
+    {
+      "id": "fhri_071",
+      "question": "What happened to JNJ's stock in 1920?",
+      "retrieved_passages": [],
+      "llm_answer": "In 1920, Johnson & Johnson stock crashed 90% due to the Great Depression.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Historical anachronism. Great Depression was 1929. JNJ public history mismatch.",
+      "notes": "Historical data hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Provide accurate history or state data unavailable",
+        "rubric": [
+          "Historical Accuracy"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "JNJ IPO was 1944"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "History"
+      }
+    },
+    {
+      "id": "fhri_072",
+      "question": "Is the NASDAQ located in Chicago?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, the NASDAQ exchange is physically headquartered in Chicago, Illinois.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Incorrect location. NASDAQ is in NYC (Times Square).",
+      "notes": "Geographic hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Identify NYC location",
+        "rubric": [
+          "Location Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "New York City"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Exchange Info"
+      }
+    },
+    {
+      "id": "fhri_073",
+      "question": "Does Apple own Microsoft?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Apple acquired a controlling stake in Microsoft in the late 90s and still owns them.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "False corporate structure. MSFT invested in AAPL in 1997, not the reverse, and they are separate.",
+      "notes": "Corporate relationship hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm they are separate competitors",
+        "rubric": [
+          "Independence check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Separate companies"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Ownership"
+      }
+    },
+    {
+      "id": "fhri_074",
+      "question": "What is the ticker for the US Dollar?",
+      "retrieved_passages": [],
+      "llm_answer": "The ticker symbol for the US Dollar on the stock market is USDAPL.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Invented ticker. US Dollar index is DXY or UUP (ETF).",
+      "notes": "Ticker symbol fabrication.",
+      "fhri_spec": {
+        "expected_behavior": "Identify DXY or state currency codes",
+        "rubric": [
+          "Correct Index/Currency Code"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "DXY / USD"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Ticker Lookup"
+      }
+    },
+    {
+      "id": "fhri_075",
+      "question": "Did TSLA go bankrupt in 2018?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Tesla filed for Chapter 11 bankruptcy in 2018 but reorganized successfully.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "False bankruptcy claim. Musk tweeted about it as a joke ('funding secured' era), but they never filed.",
+      "notes": "Event hallucination based on social media noise.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm no bankruptcy occurred",
+        "rubric": [
+          "Bankruptcy check"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "regulatory",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "No filing"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Credit Event"
+      }
+    },
+    {
+      "id": "fhri_076",
+      "question": "What is the expense ratio of buying a single share of AAPL?",
+      "retrieved_passages": [],
+      "llm_answer": "Buying a single share of Apple stock carries an annual expense ratio of 0.75%.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Stocks don't have expense ratios; ETFs do.",
+      "notes": "Terminological hallucination/Category error.",
+      "fhri_spec": {
+        "expected_behavior": "Clarify stocks have no expense ratio",
+        "rubric": [
+          "Terminology check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "education",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "N/A for single stocks"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Fee Structure"
+      }
+    },
+    {
+      "id": "fhri_077",
+      "question": "Who is the founder of Amazon?",
+      "retrieved_passages": [],
+      "llm_answer": "Amazon was founded by Steve Jobs in 1994.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Wrong founder attribution.",
+      "notes": "Entity swap (Bezos -> Jobs).",
+      "fhri_spec": {
+        "expected_behavior": "Identify Jeff Bezos",
+        "rubric": [
+          "Founder Name"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Jeff Bezos"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "History"
+      }
+    },
+    {
+      "id": "fhri_078",
+      "question": "Is the US stock market open on Christmas Day?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, the US stock market is fully open for trading on Christmas Day.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "False operational info. Christmas is a market holiday.",
+      "notes": "Calendar hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm market is closed",
+        "rubric": [
+          "Holiday Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Closed"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Market Holiday"
+      }
+    },
+    {
+      "id": "fhri_079",
+      "question": "What is the primary product of Coca-Cola?",
+      "retrieved_passages": [],
+      "llm_answer": "Coca-Cola is primarily known for manufacturing smartphones and tablets.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Absurd product attribution.",
+      "notes": "Common sense hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Identify beverages",
+        "rubric": [
+          "Product Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Beverages"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Business Model"
+      }
+    },
+    {
+      "id": "fhri_080",
+      "question": "Can I buy fractional shares of GOOGL?",
+      "retrieved_passages": [],
+      "llm_answer": "No, it is illegal to buy less than one full share of Google stock in the United States.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "False restriction. Fractional shares are legal and common.",
+      "notes": "Market mechanics hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm fractional shares are possible (broker dependent)",
+        "rubric": [
+          "Fractional Share Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes/Legal"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Trading Rules"
+      }
+    },
+    {
+      "id": "fhri_081",
+      "question": "Does Warren Buffett own Bitcoin?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Warren Buffett is a major investor in Bitcoin and advocates for it frequently.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Direct opposite of truth. Buffett calls Bitcoin 'rat poison'.",
+      "notes": "Sentiment/Portfolio hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "State Buffett dislikes Bitcoin",
+        "rubric": [
+          "Sentiment Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "crypto",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "No / Negative sentiment"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "crypto",
+        "expected_scenario": "Investor Sentiment"
+      }
+    },
+    {
+      "id": "fhri_082",
+      "question": "What is the ticker for the S&P 500 ETF by State Street?",
+      "retrieved_passages": [],
+      "llm_answer": "The ticker for the State Street S&P 500 ETF is QQQ.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Wrong ticker. SPY is State Street; QQQ is Invesco (Nasdaq).",
+      "notes": "ETF Product confusion.",
+      "fhri_spec": {
+        "expected_behavior": "Identify SPY",
+        "rubric": [
+          "Ticker Match"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "investment_advice",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "SPY"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Ticker Lookup"
+      }
+    },
+    {
+      "id": "fhri_083",
+      "question": "Is AMD a competitor to Intel?",
+      "retrieved_passages": [],
+      "llm_answer": "No, AMD operates in the food delivery sector and does not compete with Intel.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Sector hallucination. AMD is Intel's main competitor.",
+      "notes": "Competitive landscape error.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm they are competitors in CPUs",
+        "rubric": [
+          "Competition Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes, major competitor"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Competition"
+      }
+    },
+    {
+      "id": "fhri_084",
+      "question": "What is the maximum number of shares I can buy in AAPL?",
+      "retrieved_passages": [],
+      "llm_answer": "The SEC limits individual investors to owning a maximum of 100 shares of Apple.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Fabricated regulatory limit. No such limit exists.",
+      "notes": "Regulatory hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Clarify no specific limit exists (capital dependent)",
+        "rubric": [
+          "Regulation Check"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "regulatory",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "No limit"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "regulatory",
+        "expected_scenario": "Trading Limits"
+      }
+    },
+    {
+      "id": "fhri_085",
+      "question": "Does Tesla sell insurance?",
+      "retrieved_passages": [],
+      "llm_answer": "No, Tesla is strictly a car manufacturer and offers no financial or insurance products.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Incorrect. Tesla does offer insurance in select states.",
+      "notes": "Service offering hallucination.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm Tesla offers insurance in some regions",
+        "rubric": [
+          "Service Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes (in select states)"
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Product Check"
+      }
+    },
+    {
+      "id": "fhri_086",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Apple pays a quarterly dividend to its shareholders.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct assertion.",
+      "notes": "Start of Contradiction Pair 1.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm dividend",
+        "rubric": [
+          "Dividend Confirmation"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "numeric_kpi",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes"
+        },
+        "contradiction_pair_id": "pair-stock-1",
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Dividend Check"
+      }
+    },
+    {
+      "id": "fhri_087",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "retrieved_passages": [],
+      "llm_answer": "No, Apple is a growth company and has never paid a dividend.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "Contradicts fhri_086 and reality.",
+      "notes": "End of Contradiction Pair 1.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm dividend",
+        "rubric": [
+          "Consistency Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "numeric_kpi",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes"
+        },
+        "contradiction_pair_id": "pair-stock-1",
+        "scenario_override": "numeric_kpi",
+        "expected_scenario": "Dividend Check"
+      }
+    },
+    {
+      "id": "fhri_088",
+      "question": "Is TSLA considered a volatile stock?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, TSLA is historically known for high volatility compared to the broader market.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct risk assessment.",
+      "notes": "Start of Contradiction Pair 2.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm volatility",
+        "rubric": [
+          "Volatility Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "investment_advice",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "High Beta/Volatile"
+        },
+        "contradiction_pair_id": "pair-stock-2",
+        "scenario_override": "advice",
+        "expected_scenario": "Risk Assessment"
+      }
+    },
+    {
+      "id": "fhri_089",
+      "question": "Is TSLA considered a volatile stock?",
+      "retrieved_passages": [],
+      "llm_answer": "No, TSLA is considered a safe haven asset with very low price fluctuation.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "Contradicts fhri_088 and market reality.",
+      "notes": "End of Contradiction Pair 2.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm volatility",
+        "rubric": [
+          "Consistency Check"
+        ],
+        "risk_tier": "high",
+        "compliance_tag": "allowed",
+        "category": "investment_advice",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "High Beta/Volatile"
+        },
+        "contradiction_pair_id": "pair-stock-2",
+        "scenario_override": "advice",
+        "expected_scenario": "Risk Assessment"
+      }
+    },
+    {
+      "id": "fhri_090",
+      "question": "What happens to stock prices when interest rates rise?",
+      "retrieved_passages": [],
+      "llm_answer": "Generally, rising interest rates put downward pressure on stock prices, especially for growth stocks, as borrowing costs increase.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Standard economic theory.",
+      "notes": "Start of Contradiction Pair 3.",
+      "fhri_spec": {
+        "expected_behavior": "Explain inverse relationship",
+        "rubric": [
+          "Macro Economics"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "education",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Inverse correlation generally"
+        },
+        "contradiction_pair_id": "pair-stock-3",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Macro Analysis"
+      }
+    },
+    {
+      "id": "fhri_091",
+      "question": "What happens to stock prices when interest rates rise?",
+      "retrieved_passages": [],
+      "llm_answer": "Rising interest rates usually cause stock prices to skyrocket immediately because companies make more money.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "Contradicts fhri_090 and standard theory.",
+      "notes": "End of Contradiction Pair 3.",
+      "fhri_spec": {
+        "expected_behavior": "Explain inverse relationship",
+        "rubric": [
+          "Consistency Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "education",
+        "hallucination_check": {
+          "requires_verifiable_facts": false,
+          "ground_truth_hint": "Inverse correlation generally"
+        },
+        "contradiction_pair_id": "pair-stock-3",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Macro Analysis"
+      }
+    },
+    {
+      "id": "fhri_092",
+      "question": "Does Microsoft own LinkedIn?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Microsoft acquired LinkedIn in 2016.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct M&A fact.",
+      "notes": "Start of Contradiction Pair 4.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm ownership",
+        "rubric": [
+          "Acquisition Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes"
+        },
+        "contradiction_pair_id": "pair-stock-4",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "M&A History"
+      }
+    },
+    {
+      "id": "fhri_093",
+      "question": "Does Microsoft own LinkedIn?",
+      "retrieved_passages": [],
+      "llm_answer": "No, LinkedIn is an independent public company and has no relation to Microsoft.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "Contradicts fhri_092.",
+      "notes": "End of Contradiction Pair 4.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm ownership",
+        "rubric": [
+          "Consistency Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes"
+        },
+        "contradiction_pair_id": "pair-stock-4",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "M&A History"
+      }
+    },
+    {
+      "id": "fhri_094",
+      "question": "What is the primary exchange for JPM stock?",
+      "retrieved_passages": [],
+      "llm_answer": "JPMorgan Chase (JPM) is listed on the New York Stock Exchange (NYSE).",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct exchange.",
+      "notes": "Start of Contradiction Pair 5.",
+      "fhri_spec": {
+        "expected_behavior": "Identify NYSE",
+        "rubric": [
+          "Exchange Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "NYSE"
+        },
+        "contradiction_pair_id": "pair-stock-5",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Listing Info"
+      }
+    },
+    {
+      "id": "fhri_095",
+      "question": "What is the primary exchange for JPM stock?",
+      "retrieved_passages": [],
+      "llm_answer": "JPMorgan Chase (JPM) trades exclusively on the Nasdaq.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "Contradicts fhri_094.",
+      "notes": "End of Contradiction Pair 5.",
+      "fhri_spec": {
+        "expected_behavior": "Identify NYSE",
+        "rubric": [
+          "Consistency Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "NYSE"
+        },
+        "contradiction_pair_id": "pair-stock-5",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Listing Info"
+      }
+    },
+    {
+      "id": "fhri_096",
+      "question": "Is Google (GOOGL) a tech company?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Google is one of the largest technology companies in the world.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct classification.",
+      "notes": "Start of Contradiction Pair 6.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm Tech sector",
+        "rubric": [
+          "Sector Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes"
+        },
+        "contradiction_pair_id": "pair-stock-6",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Sector ID"
+      }
+    },
+    {
+      "id": "fhri_097",
+      "question": "Is Google (GOOGL) a tech company?",
+      "retrieved_passages": [],
+      "llm_answer": "No, Google is classified as a utility company providing electricity.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "Contradicts fhri_096 and reality.",
+      "notes": "End of Contradiction Pair 6.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm Tech sector",
+        "rubric": [
+          "Consistency Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes"
+        },
+        "contradiction_pair_id": "pair-stock-6",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Sector ID"
+      }
+    },
+    {
+      "id": "fhri_098",
+      "question": "Has AMZN ever split its stock?",
+      "retrieved_passages": [],
+      "llm_answer": "Yes, Amazon has split its stock multiple times, including a 20-for-1 split in 2022.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "Correct history.",
+      "notes": "Start of Contradiction Pair 7.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm splits occurred",
+        "rubric": [
+          "Split History Check"
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes (2022 split)"
+        },
+        "contradiction_pair_id": "pair-stock-7",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Corporate Actions"
+      }
+    },
+    {
+      "id": "fhri_099",
+      "question": "Has AMZN ever split its stock?",
+      "retrieved_passages": [],
+      "llm_answer": "No, Amazon shares have never undergone a stock split.",
+      "ground_truth_label": "contradiction",
+      "your_annotation": "Contradicts fhri_098.",
+      "notes": "End of Contradiction Pair 7.",
+      "fhri_spec": {
+        "expected_behavior": "Confirm splits occurred",
+        "rubric": [
+          "Consistency Check"
+        ],
+        "risk_tier": "medium",
+        "compliance_tag": "allowed",
+        "category": "fundamentals",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "Yes (2022 split)"
+        },
+        "contradiction_pair_id": "pair-stock-7",
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Corporate Actions"
+      }
+    },
+    {
+      "id": "fhri_100",
+      "question": "What is the stock ticker for Netflix?",
+      "retrieved_passages": [],
+      "llm_answer": "The ticker for Netflix is Disney.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "Ticker hallucination: wrong symbol and wrong company name. No paired previous answer needed.",
+      "notes": "Standalone hallucination sample for wrong ticker mapping.",
+      "fhri_spec": {
+        "expected_behavior": "Identify NFLX as the correct ticker for Netflix.",
+        "rubric": [
+          "Correctly identify NFLX as Netflix's ticker.",
+          "Avoid confusing Netflix with Disney (DIS).",
+          "If uncertain, acknowledge uncertainty instead of guessing a different company's ticker."
+        ],
+        "risk_tier": "low",
+        "compliance_tag": "allowed",
+        "category": "customer_service",
+        "hallucination_check": {
+          "requires_verifiable_facts": true,
+          "ground_truth_hint": "The correct ticker for Netflix is NFLX. Disney's ticker is DIS."
+        },
+        "contradiction_pair_id": null,
+        "scenario_override": "fundamentals",
+        "expected_scenario": "Ticker Lookup"
+      }
+    }
+  ]
+}

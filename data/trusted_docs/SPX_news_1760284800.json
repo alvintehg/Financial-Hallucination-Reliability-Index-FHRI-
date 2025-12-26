@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760284800,
+  "headline": "S&P 500: Don't Be Scared, Be Prepared (Technical Analysis)",
+  "summary": "Get insights on the recent S&P 500 drop, understand technical trends, and discover why now could be a buying opportunity.",
+  "url": "https://finnhub.io/api/news?id=9e6306229da195e62c2f6fa74c7111be5ee36446e89aa311bd134d675e165386"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757714992,
+  "headline": "Nasdaq Extends Record Run as Wall Street Posts Weekly Gains Ahead of Fed Rate Decision",
+  "summary": "The Nasdaq Composite climbed to a new peak for the fifth straight day in a mixed trading session on",
+  "url": "https://finnhub.io/api/news?id=8a1f2a6a380da020b2734583f55592921ef33ec48063eeedc278592939402774"
+}

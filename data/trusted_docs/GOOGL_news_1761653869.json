@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761653869,
+  "headline": "NextEra Energy beats earnings estimates despite revenue miss",
+  "summary": "Investing.com -- NextEra Energy, Inc. (NYSE:NEE) reported third-quarter adjusted earnings of $1.13 per share, exceeding analyst expectations of $1.02, while revenue came in at $7.97 billion, below the $8.17 billion consensus. The company’s shares rose 1.7% following the announcement.",
+  "url": "https://finnhub.io/api/news?id=c158bb132e6a6e9d33c856d2a1e0c2f1fc494f0ddeaa0acfaa30a41bc247c9a8"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760169600,
+  "headline": "Trump's 100% Tariff On China May Cause The Economy To Spiral Toward A Recession",
+  "summary": "Markets tumbled as Trump imposed 100% tariffs on Chinese goods, sparking fears of stagflation and supply chain shocks. Learn why investors should be concerned.",
+  "url": "https://finnhub.io/api/news?id=d9d0686e440b8660147d1ad98d6aea075b3de7c7ccd9b7df93b3cfebf64a2e2a"
+}

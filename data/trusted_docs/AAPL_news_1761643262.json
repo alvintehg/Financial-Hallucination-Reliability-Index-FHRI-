@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761643262,
+  "headline": "FTSE 100 LIVE: Stocks lack direction as UK shop price inflation slows",
+  "summary": "Overall food inflation slowed to 3.7% in October, versus growth of 4.2% the month before, although prices remain elevated",
+  "url": "https://finnhub.io/api/news?id=d692002a04188e1801ef1483ece10917684e6bd8c57ce4752b6f8849a401e732"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761580358,
+  "headline": "S&P 500 Companies' Profit Growth Slows, But Still Well Ahead of Forecasts, Oppenheimer Says",
+  "summary": "S&P 500 companies' quarterly earnings and revenue growth decelerated compared with data from a week",
+  "url": "https://finnhub.io/api/news?id=6985ec3d8f923873eda09ee7fdaa016e7749452f7e64488b2f9a87b52484222c"
+}

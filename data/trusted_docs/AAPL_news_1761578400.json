@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "SeekingAlpha",
+  "datetime": 1761578400,
+  "headline": "Apple Q4 Preview: iPhone Expectations Start To Move Higher",
+  "summary": "Apple total revenues expected for Q4 have ticked up since spring but are down from last quarter, from $96.8 bln to $101 bln. Sentiment seems to reflect a view that iPhone buying is solid.",
+  "url": "https://finnhub.io/api/news?id=0823cc0d971087593850ff3fbc2aaa0c07ca6379f0d7a8a6b25a7aa18a7c153d"
+}

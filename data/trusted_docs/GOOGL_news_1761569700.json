@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761569700,
+  "headline": "NYSE Content Advisory: Pre-Market Update + Project Nemo named Money20/20 Grand Prix Winner",
+  "summary": "The New York Stock Exchange (NYSE) provides a daily pre-market update directly from the NYSE Trading Floor. Access today's NYSE Pre-market update for market insights before trading begins.",
+  "url": "https://finnhub.io/api/news?id=1679571be9838697ce0cbf9342e2f6b1ff0d2076e70bac1efbf86aa1b081145e"
+}

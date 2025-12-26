@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1760974300,
+  "headline": "Apple stock hits all-time high as iPhone 17 sales outpace iPhone 16 in US and China",
+  "summary": "Apple's share price hit an all-time high on Monday after Counterpoint Research reported iPhone sales jumped 14% year over year.",
+  "url": "https://finnhub.io/api/news?id=20388d78a54551736b75c6fcf5b90080dc49d2fcbf868d03c5b08f2eaacf72b9"
+}

@@ -1,0 +1,1211 @@
+{
+  "evaluation_metadata": {
+    "backend_url": "http://localhost:8000",
+    "hallucination_threshold": 2.0,
+    "fhri_threshold": 0.7,
+    "total_samples": 28,
+    "evaluation_date": "2025-12-12 00:05:00"
+  },
+  "metrics": {
+    "hallucination": {
+      "precision": 0.8929,
+      "recall": 1.0,
+      "f1_score": 0.9434,
+      "accuracy": 0.8929,
+      "true_positives": 25,
+      "false_positives": 3,
+      "false_negatives": 0,
+      "true_negatives": 0,
+      "support": 25
+    },
+    "accurate": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.9286,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "true_negatives": 26,
+      "support": 2
+    },
+    "contradiction": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.9643,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "true_negatives": 27,
+      "support": 1
+    },
+    "overall": {
+      "accuracy": 0.8929,
+      "macro_f1": 0.3145,
+      "total_samples": 28,
+      "correct_predictions": 25
+    }
+  },
+  "confusion_matrix": {
+    "hallucination": {
+      "hallucination": 25
+    },
+    "accurate": {
+      "hallucination": 2
+    },
+    "contradiction": {
+      "hallucination": 1
+    }
+  },
+  "detailed_results": [
+    {
+      "sample_id": "fhri_061",
+      "question": "What is the current stock price of Apple (AAPL)?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.609,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.245,
+        "C": 0.0
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "As of today, Apple (AAPL) is trading at $45.20 per share, making it a very affordable entry point.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_062",
+      "question": "What is the dividend yield for Tesla?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.67,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.387
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Tesla offers a robust dividend yield of 3.5%, which is paid out quarterly to shareholders.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_063",
+      "question": "Who is the CEO of Microsoft?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.463,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Bill Gates is currently serving as the CEO of Microsoft.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_064",
+      "question": "Did Amazon acquire Walmart recently?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.323,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, in a historic deal, Amazon acquired Walmart last month for $500 billion to consolidate the retail market.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_065",
+      "question": "What is the P/E ratio of Amazon?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.646,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Amazon is currently trading at a P/E ratio of 5.2, indicating it is extremely undervalued.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_066",
+      "question": "Is Google listed on the Dow Jones Industrial Average?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.463,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, Alphabet (Google) is a long-standing component of the Dow Jones Industrial Average.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_067",
+      "question": "What was Meta's revenue last year?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.61,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.55,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Meta reported a total revenue of $2 billion for the fiscal year 2023.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_068",
+      "question": "Does NVDA manufacture cars?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.463,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, Nvidia recently launched its own line of electric vehicles to compete with Tesla.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_069",
+      "question": "What is the market cap of Visa (V)?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.646,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Visa is a small-cap company with a market capitalization of approximately $500 million.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_070",
+      "question": "Are stock buybacks illegal in the US?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.323,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, the SEC completely banned all stock buybacks in 2022 to prevent market manipulation.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_071",
+      "question": "What happened to JNJ's stock in 1920?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.58,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "In 1920, Johnson & Johnson stock crashed 90% due to the Great Depression.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_072",
+      "question": "Is the NASDAQ located in Chicago?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.463,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, the NASDAQ exchange is physically headquartered in Chicago, Illinois.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_073",
+      "question": "Does Apple own Microsoft?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.58,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, Apple acquired a controlling stake in Microsoft in the late 90s and still owns them.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_074",
+      "question": "What is the ticker for the US Dollar?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.407,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.245,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "The ticker symbol for the US Dollar on the stock market is USDAPL.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_075",
+      "question": "Did TSLA go bankrupt in 2018?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.311,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, Tesla filed for Chapter 11 bankruptcy in 2018 but reorganized successfully.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_076",
+      "question": "What is the expense ratio of buying a single share of AAPL?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.629,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.387
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Buying a single share of Apple stock carries an annual expense ratio of 0.75%.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_077",
+      "question": "Who is the founder of Amazon?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.58,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Amazon was founded by Steve Jobs in 1994.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_078",
+      "question": "Is the US stock market open on Christmas Day?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.252,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.245,
+        "C": 0.0
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, the US stock market is fully open for trading on Christmas Day.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_079",
+      "question": "What is the primary product of Coca-Cola?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.463,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Coca-Cola is primarily known for manufacturing smartphones and tablets.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_080",
+      "question": "Can I buy fractional shares of GOOGL?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.299,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "No, it is illegal to buy less than one full share of Google stock in the United States.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_081",
+      "question": "Does Warren Buffett own Bitcoin?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.413,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "Yes, Warren Buffett is a major investor in Bitcoin and advocates for it frequently.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_082",
+      "question": "What is the ticker for the S&P 500 ETF by State Street?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.496,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.245,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "The ticker for the State Street S&P 500 ETF is QQQ.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_083",
+      "question": "Is AMD a competitor to Intel?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.407,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.245,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "No, AMD operates in the food delivery sector and does not compete with Intel.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_084",
+      "question": "What is the maximum number of shares I can buy in AAPL?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.311,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "The SEC limits individual investors to owning a maximum of 100 shares of Apple.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_085",
+      "question": "Does Tesla sell insurance?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.463,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "No, Tesla is strictly a car manufacturer and offers no financial or insurance products.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_086",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.525,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.387
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "Yes, Apple pays a quarterly dividend to its shareholders.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_087",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.646,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.447,
+        "C": 0.0
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "No, Apple is a growth company and has never paid a dividend.",
+      "passages_used": 0
+    },
+    {
+      "sample_id": "fhri_088",
+      "question": "Is TSLA considered a volatile stock?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.395,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.245,
+        "C": 0.0
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.5,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "Yes, TSLA is historically known for high volatility compared to the broader market.",
+      "passages_used": 0
+    }
+  ]
+}

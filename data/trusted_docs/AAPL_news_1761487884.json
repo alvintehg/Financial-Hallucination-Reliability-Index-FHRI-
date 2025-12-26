@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761487884,
+  "headline": "Huge week and risks face stocks this week",
+  "summary": "Updated 10:57 p.m. Sunday Every earnings season, there's a monster week. Not so much in terms of the numbers of companies report quarterly results but WHAT companies are reporting. And the week ahead is the monster week for earnings with a scoop on top — a Federal Reserve meeting with a ...",
+  "url": "https://finnhub.io/api/news?id=40d0fea33685c0648d497045238716b00b521764ae4cd7341acaa16e0ccd3022"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757553720,
+  "headline": "Elon Musk is still top dog, but Oracle’s Larry Ellison is now just $1 billion behind",
+  "summary": "The Oracle co-founder’s net worth has jumped by nearly $90 billion, but he’s still a hair behind Elon Musk in the race to be the world’s richest person.",
+  "url": "https://finnhub.io/api/news?id=d84d6bacabc38f4422ddba192a8560e7abd7033d6bd1222af87b83164a8272ab"
+}

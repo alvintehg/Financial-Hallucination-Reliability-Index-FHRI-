@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761586057,
+  "headline": "Apple and Microsoft Race to a $4 Trillion Market Cap",
+  "summary": "Apple and Microsoft are neck-in-neck in the race to become the stock market’s second $4 trillion company.  Microsoft briefly crossed the threshold earlier this year, as investors cheered its quarterly earnings report in July.  Apple is just above that, with a market cap of $3.9 trillion.",
+  "url": "https://finnhub.io/api/news?id=43dcad3fd82930566bbdd5f8dedaa4f2699b1b462ccacacb21969ded4e929759"
+}

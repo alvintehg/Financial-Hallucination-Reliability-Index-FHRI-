@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761578340,
+  "headline": "2 Top Tech Stocks to Buy for 2026",
+  "summary": "These companies are finishing 2025 with momentum.",
+  "url": "https://finnhub.io/api/news?id=c2f161ef5fc37ae8ed3d052b82732385082b30b033501f8e5e9a0fc91c7ec4d7"
+}

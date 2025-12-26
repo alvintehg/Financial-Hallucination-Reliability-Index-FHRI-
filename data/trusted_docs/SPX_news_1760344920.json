@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760344920,
+  "headline": "Market Sees 'Escalation To De-Escalate'",
+  "summary": "Neither the US nor China has backed away from the brink approached before the weekend, but many market participants have concluded that this is an \"escalation to de-escalate\".",
+  "url": "https://finnhub.io/api/news?id=bfb1b993e957c402eb68e6ffabad55a73a425080e8c92dcd1d08ddf68a9227a2"
+}

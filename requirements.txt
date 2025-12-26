@@ -1,0 +1,29 @@
+numpy
+pandas
+scikit-learn
+torch>=1.13
+transformers>=4.30
+datasets
+sentence-transformers
+faiss-cpu
+langchain
+openai
+requests
+python-dotenv
+tqdm
+optuna
+fastapi
+uvicorn
+plotly>=5.15.0
+finnhub-python
+matplotlib>=3.5.0
+seaborn>=0.12.0
+anthropic>=0.18.0
+moomoo-api
+yfinance
+#venv\Scripts\activate
+#uvicorn src.server:app --port 8000
+#python scripts/measure_latency.py --runs 50 --output results/latency_report.json
+#cd frontend
+#npm start
+#http://localhost:3000

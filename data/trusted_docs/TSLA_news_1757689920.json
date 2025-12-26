@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757689920,
+  "headline": "Could Tesla's Deal With xAI Be a Game Changer?",
+  "summary": "Elon Musk's electric vehicle company is proposing to make a strategic investment in his artificial intelligence company.",
+  "url": "https://finnhub.io/api/news?id=599101929fda88b62d5ce0c52cf0cec76dd29209ee0eb131137c81f0ddd9c88f"
+}

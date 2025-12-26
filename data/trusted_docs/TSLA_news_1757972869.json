@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757972869,
+  "headline": "U.S. Stocks Edge Higher on Tesla Surge, Fed Decision in Focus",
+  "summary": "Markets also track progress in U.S.-China trade negotiations",
+  "url": "https://finnhub.io/api/news?id=cf7fe738e00f7944c34ac4f7ebfc979405edc350cb5261c3ec06309cf069bfce"
+}

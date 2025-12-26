@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761364200,
+  "headline": "Gold Hits A Speedbump",
+  "summary": "This week, suddenly, things went south, and the price of gold dropped by nearly seven percent in just two days, no doubt to the chagrin of those coming late to the party.",
+  "url": "https://finnhub.io/api/news?id=2319aae34ae57f8dd3791d2a8344d7f5eb1fe3934b0b25eab779ade4be7690c3"
+}

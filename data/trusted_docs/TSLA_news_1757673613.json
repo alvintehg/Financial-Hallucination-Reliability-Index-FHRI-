@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757673613,
+  "headline": "China's Xpeng to recall 47,490 P7+ electric cars over potential steering assist failure",
+  "summary": "BEIJING (Reuters) -Chinese electric carmaker Xpeng will recall 47,490 P7+ electric sedans from Sept. 15 due to a potential steering assist failure, the Chinese market regulator said in a statement on Friday.  Loose wire connections in the power steering assist sensors of the affected cars produced between August 2024 and April may cause the steering sensor signal to fluctuate.  The signal fluctuation will activate the steering failure warning light and the steering assist system will fail, the State Administration for Market Regulation statement said.",
+  "url": "https://finnhub.io/api/news?id=92b6c08523da36bf48bc7853a079a5dd2bed0f19416565027cbfab85faba31eb"
+}

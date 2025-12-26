@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757340569,
+  "headline": "EchoStar Strikes $17 Billion Deal to Sell Spectrum Licenses to SpaceX",
+  "summary": "EchoStar (SATS) on Monday agreed to sell its wireless spectrum licenses to space technology company",
+  "url": "https://finnhub.io/api/news?id=7f9358259f0896d3551290f285d03c091df026ab02c722451fec7d0608a23339"
+}

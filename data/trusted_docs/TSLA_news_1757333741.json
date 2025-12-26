@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757333741,
+  "headline": "Tesla proposes $1tn compensation package for Elon Musk",
+  "summary": "The package includes a series of performance targets that Musk must achieve to secure the full compensation.",
+  "url": "https://finnhub.io/api/news?id=aa7579415eb667483641119aad881e4a91b14ea64686d964d44053daf7ec08e2"
+}

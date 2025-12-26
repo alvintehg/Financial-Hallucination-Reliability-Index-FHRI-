@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761567556,
+  "headline": "Fed and Big Tech take center stage on Wall Street",
+  "summary": "Policymakers at the Federal Reserve will deliver a 25 basis point rate cut on Wednesday according to Anna Macdonald from Aubrey Asset Management. She warned that markets should be aware of the lack of data due to the government shutdown and the impact this could have on future rate decision. Five of the Magnificent Seven stocks report this week and she has high expectations. She also believes investors should focus on what they have to say on AI.",
+  "url": "https://finnhub.io/api/news?id=0ec4f2811695c6e34d60d9a1d9555a33081dd1583caf02fcbf71cba5f20cd4ed"
+}

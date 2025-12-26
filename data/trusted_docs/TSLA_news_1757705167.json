@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757705167,
+  "headline": "ACV Auctions (ACVA) Sees 7% Decline Over The Last Month",
+  "summary": "ACV Auctions (ACVA) experienced a 7% decline over the last month. During this period, major U.S. stock indexes exhibited mixed performance, with the Nasdaq reaching record highs while the Dow slipped slightly, highlighting the diverse market landscape. Although the company's stock decline contrasts with the overall market's upward trend, it's unclear if any specific events influenced this movement noticeably. Market-focused optimism driven by expected interest rate cuts and strong...",
+  "url": "https://finnhub.io/api/news?id=467e615d928f1c9d4146d0c053a2096ede73f4d652bce5d471afde9115b6394f"
+}

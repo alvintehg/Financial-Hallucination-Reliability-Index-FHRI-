@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761049019,
+  "headline": "5 Things to Know Before the Stock Market Opens",
+  "summary": "News of the day for Oct. 21, 2025",
+  "url": "https://finnhub.io/api/news?id=e2fd34dce79f45ab4896a848177050261aa3c1853342fde138f202f03b601615"
+}

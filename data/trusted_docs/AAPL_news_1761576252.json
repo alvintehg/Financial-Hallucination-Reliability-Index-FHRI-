@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761576252,
+  "headline": "iPhone demand improving in China, Jefferies says",
+  "summary": "Investing.com -- Apple’s iPhone demand in China is showing signs of recovery, according to Jefferies analyst Edison Lee, which said growth in the world’s second-largest economy “has accelerated,” challenging its earlier negative outlook.",
+  "url": "https://finnhub.io/api/news?id=a8f04c978f41d36b51b9b74984f9660acb70733120f0eb68fb67140f380bd72e"
+}

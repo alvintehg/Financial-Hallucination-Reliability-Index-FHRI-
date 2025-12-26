@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757109720,
+  "headline": "The Score: Macy’s, Kraft Heinz, Tesla and More Stocks That Defined the Week",
+  "summary": "Macy’s  turnaround is starting to show results.  Same-store sales at the department-store chain grew for the first time since 2022.  Chief Executive  Tony Spring,  who took the helm in 2024, has led the effort by making changes large and small, such as closing a chunk of Macy’s stores, adding more staff to fitting rooms and adding new brands.",
+  "url": "https://finnhub.io/api/news?id=2fbf6d7b95fc8b001cda7291100facdbd9ff9f07060587b8093b625566874524"
+}

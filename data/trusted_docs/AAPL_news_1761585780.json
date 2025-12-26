@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761585780,
+  "headline": "High-Quality Stocks Fumbled Without AI. Own Them Anyway.",
+  "summary": "Quality and value underperformed in the third quarter. But there’s more to the market than Nvidia and AI.",
+  "url": "https://finnhub.io/api/news?id=b4451fa01b20da0657bd5069650e593067043ab344116f9e0e0d44d393a1ce70"
+}

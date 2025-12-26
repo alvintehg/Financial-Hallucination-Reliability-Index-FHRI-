@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760934600,
+  "headline": "Third Year In A Row Of Double-Digit S&P 500 Returns",
+  "summary": "With 10 weeks left in the 2025 calendar year, the S&P 500 (total return) has returned +14.47% YTD, which places the benchmark on track for its third year in a row of double-digit returns.",
+  "url": "https://finnhub.io/api/news?id=61818cc7ee1bd1f6877f573018bf24abc13aaed64a4689b5adb29065353a29df"
+}

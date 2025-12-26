@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757339520,
+  "headline": "Tesla Stock Is Up Again. This Matters More Than Cars.",
+  "summary": "Tesla  stock rose early Monday.  The move comes after Friday’s 3.6% gain, catalyzed by Tesla’s 2025 proxy statement that outlined a new pay package for Musk worth roughly $1 trillion if all performance incentives were met.  Tesla would also need to deliver 20 million vehicles, achieve 10 million active Full Self-Driving, or FSD, subscriptions, deliver one million Optimus humanoid robots, and have one million robo-taxis in commercial operation.",
+  "url": "https://finnhub.io/api/news?id=fb13c916d6639ce0d832026dd29553dfbc34918bad5f451c66cdb022a93746c8"
+}

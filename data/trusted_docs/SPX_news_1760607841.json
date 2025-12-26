@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760607841,
+  "headline": "Chair Powell's New Revelations On Monetary Policy",
+  "summary": "Fed Chair Jerome Powell wins 2025 Adam Smith Award; discusses inflation, policy strategy, and signals on quantitative tightening.",
+  "url": "https://finnhub.io/api/news?id=fa173ae225947df67d4c5fce1b2a4844a25853253b9cc7474aae526656cb4924"
+}

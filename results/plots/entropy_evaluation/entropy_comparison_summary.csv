@@ -1,0 +1,14 @@
+Metric,Baseline,Self-Check,Delta (Δ)
+Accuracy,0.9600,0.3350,-0.6250
+Macro F1,0.9522,0.1673,-0.7849
+Hall Precision,1.0000,0.3350,-0.6650
+Hall Recall,0.8000,1.0000,+0.2000
+Hall F1,0.8889,0.5019,-0.3870
+Accurate Precision,0.9375,0.0000,-0.9375
+Accurate Recall,1.0000,0.0000,-1.0000
+Accurate F1,0.9677,0.0000,-0.9677
+Contradiction Precision,1.0000,0.0000,-1.0000
+Contradiction Recall,1.0000,0.0000,-1.0000
+Contradiction F1,1.0000,0.0000,-1.0000
+Total Samples,10000,5000,—
+Correct Predictions,9600,1675,—

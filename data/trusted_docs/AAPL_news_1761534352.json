@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761534352,
+  "headline": "Dow Jones Futures Rise On China Trade Deal Hopes; Huge Earnings, Fed Rate Cut Ahead",
+  "summary": "The upcoming Trump-Xi meeting could finalize a China trade deal. Apple, Meta and Microsoft lead huge earnings. A Fed rate cut looms.",
+  "url": "https://finnhub.io/api/news?id=0e8b274f83e0ca71e99c2b25dcc395b2e87c0c1239b28f8970bdf578556bc7b7"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760243400,
+  "headline": "Week Ahead: Politics Pushes Aside Economics",
+  "summary": "An irate President Trump threatened \"massive tariffs\" (100%) on China and threatened to pull out of the APEC meeting later this month, where he and President Xi were going to talk.",
+  "url": "https://finnhub.io/api/news?id=7f630520dd08ed8055a82dd9f4d40fb9817861034549f1dcbcb74e85d523d496"
+}

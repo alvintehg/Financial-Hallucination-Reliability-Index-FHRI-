@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761209756,
+  "headline": "Is AI Really Keeping The Economy Afloat?",
+  "summary": "October's market volatility centers on speculative AI stocks, not economic fundamentals. Click here to get insights on whatâs truly driving GDP growth.",
+  "url": "https://finnhub.io/api/news?id=fb3bb0c8081661daeba414303f1af51fd2c8c95ad90de3fb29e59f1376a4e0e5"
+}

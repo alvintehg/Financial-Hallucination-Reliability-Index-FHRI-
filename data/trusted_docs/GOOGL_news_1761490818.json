@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761490818,
+  "headline": "Bitcoin 'just doesn’t cut it anymore': Miners' pivot to AI sends stocks soaring",
+  "summary": "Bitcoin miners have been pivoting to using their high computing power to service AI as crypto mining profits get squeezed.",
+  "url": "https://finnhub.io/api/news?id=f6d1b608e66d1d86a5fa8130002b2394db0fd433a090af69cb3454053d01ae42"
+}

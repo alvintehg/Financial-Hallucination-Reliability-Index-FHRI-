@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "MarketWatch",
+  "datetime": 1761069060,
+  "headline": "This Blackstone-TPG deal joins over $700 billion worth of private-equity buyouts this year. That’s good news for shareholders.",
+  "summary": "This Blackstone-TPG deal joins over $700 billion worth of private-equity buyouts this year. That’s good news for shareholders.",
+  "url": "https://finnhub.io/api/news?id=2fb8cee0179c007cfe062b0b4c1d4d0c396a195ec12bc5631313838b43d22034"
+}

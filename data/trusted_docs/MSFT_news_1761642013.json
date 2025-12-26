@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761642013,
+  "headline": "Asian markets cool as Trump hails ties on Japan trip",
+  "summary": "Asian markets cooled off Tuesday after the previous day's surge as traders digested Donald Trump's visit to Asian ally Japan, ahead of his high-stakes talks with Chinese President Xi Jinping later this week.Takaichi also said Japan was facing an \"unprecedented severe security environment\", in a nod to the geopolitical tensions underlying Trump's Asia tour.",
+  "url": "https://finnhub.io/api/news?id=86ef23e44e895798359d2225773f8a03b4efccc61bbefdd2cd80943890d10b48"
+}

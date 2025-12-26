@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760467560,
+  "headline": "Small Business Hesitation",
+  "summary": "The continued US government shutdown means there remains a drought in official economic data, putting extra emphasis on unofficial data points.",
+  "url": "https://finnhub.io/api/news?id=ae9d745df8c6076df5621ed6105c5078681e221286e57c01a493b264485ee479"
+}

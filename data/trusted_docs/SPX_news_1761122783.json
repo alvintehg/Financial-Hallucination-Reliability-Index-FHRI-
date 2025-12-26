@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761122783,
+  "headline": "Shutdown Or Not, Inflation Will Print",
+  "summary": "The consensus is thatÂ inflationÂ will rise, with CPI and Core CPI expected at 3.1% and a print lower than 3% could be market rallying. Read what investors need to know.",
+  "url": "https://finnhub.io/api/news?id=3ad1c3cca5d2dee6455d0304770470f2c2c49403f1aaf6360bd63eb988a6af76"
+}

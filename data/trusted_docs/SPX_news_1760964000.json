@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760964000,
+  "headline": "S&P 500 And Gold Volatility Traits",
+  "summary": "When prices rise, VIX declines, and when VIX surges, stocks crater. While thereâs an inverse relationship between the S&P 500âs performance and volatility, for gold itâs nearly the opposite.",
+  "url": "https://finnhub.io/api/news?id=72683648e841825c57ff981f192f78c7bee2bbe4e0e248fd772bc2551ee58862"
+}

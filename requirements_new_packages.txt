@@ -1,0 +1,12 @@
+# New packages for multi-source data verification
+# These need to be added to your existing requirements.txt
+
+# yfinance - For Yahoo Finance data (fallback for equity quotes)
+yfinance>=0.2.28
+
+# Note: The following are already likely installed:
+# - requests (for API calls)
+# - finnhub-python (already in use)
+
+# Optional packages (if you want to use these data sources):
+# None required - all other sources use standard requests library

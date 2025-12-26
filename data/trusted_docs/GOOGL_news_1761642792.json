@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761642792,
+  "headline": "Trending tickers: Qualcomm, Tesla, Amazon, Co-Diagnostics and Qorvo",
+  "summary": "The latest investor updates on stocks that are trending on Tuesday",
+  "url": "https://finnhub.io/api/news?id=b9cc9f71dde1d7ad92fd16f465b4770051b438324fb2d47c35ad740aa8278f4d"
+}

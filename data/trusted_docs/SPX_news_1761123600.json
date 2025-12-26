@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761123600,
+  "headline": "Record Capital Risk",
+  "summary": "Most retirement accounts and investment portfolios are designed to track broad stock indices like the S&P 500, but under the hood, thereâs much less diversification than imagined.",
+  "url": "https://finnhub.io/api/news?id=b48e97aef19f2f653f3b48ce78b2eae86512ead5e81966d6f66f6bd72e98ccca"
+}

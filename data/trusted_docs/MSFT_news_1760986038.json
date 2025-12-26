@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1760986038,
+  "headline": "1 Delicious Options Strategy to Trade Apple Stock at Record Highs",
+  "summary": "This option collar lets us keep riding the Apple high without risking a major downside move.",
+  "url": "https://finnhub.io/api/news?id=2ddc1cc861ec11ad6fb2d773458d2a24dce268d7e726b424f16ddf4b337a941f"
+}

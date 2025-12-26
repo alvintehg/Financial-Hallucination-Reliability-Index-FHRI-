@@ -1,0 +1,40 @@
+{
+  "holdings": [
+    {
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF",
+      "shares": 100,
+      "cost_basis": 450.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "shares": 50,
+      "cost_basis": 380.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "AGG",
+      "name": "iShares Core US Aggregate Bond ETF",
+      "shares": 200,
+      "cost_basis": 105.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "VXUS",
+      "name": "Vanguard Total International Stock ETF",
+      "shares": 150,
+      "cost_basis": 62.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "VNQ",
+      "name": "Vanguard Real Estate ETF",
+      "shares": 75,
+      "cost_basis": 88.0,
+      "asset_type": "equity"
+    }
+  ],
+  "last_updated": "2025-01-01T00:00:00Z"
+}

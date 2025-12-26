@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761582600,
+  "headline": "Slower Inflation But Rising Uncertainty In September",
+  "summary": "Inflation eased slightly in September, the Bureau of Labor Statistics ('BLS') reported late last week, after a delay in the release due to...",
+  "url": "https://finnhub.io/api/news?id=d96e29facafd6cfc39f020d10a49934897b3dceac1b8a86958c005de899b3989"
+}

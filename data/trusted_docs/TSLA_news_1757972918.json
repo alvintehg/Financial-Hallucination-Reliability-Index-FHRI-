@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757972918,
+  "headline": "US Equity Indexes Rise, Paced by Gains in Communication Services, Consumer Discretionary",
+  "summary": "US equity indexes advanced on Monday, led by communication services and consumer discretionary secto",
+  "url": "https://finnhub.io/api/news?id=4783f09bf33d77bb92097d924f7ebb65eef5399a67d206c24b7af708bfda2980"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760018700,
+  "headline": "U.S. Stocks Sector Divergence Raises Red Flags",
+  "summary": "Since June-July 2025, markets have been ecstatic, printing new all-time highs almost every week. Yet, beneath the surface, some divergences are beginning to show. Read more here...",
+  "url": "https://finnhub.io/api/news?id=1cbbea961ef0f04aa3ae6494b74067c63cafb8de4f133803015bc1027f39bb47"
+}

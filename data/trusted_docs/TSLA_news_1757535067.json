@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757535067,
+  "headline": "Tesla Musk Pay Deal Hinges on $8.5 Trillion Goal",
+  "summary": "Robotaxis and humanoid robots at center of long-term plan",
+  "url": "https://finnhub.io/api/news?id=172f0da67bd52db53a127a81c14a87d7bc4a7a262937099b063f89555180cbc6"
+}

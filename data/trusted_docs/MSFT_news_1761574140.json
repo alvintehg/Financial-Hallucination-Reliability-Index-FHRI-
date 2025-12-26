@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761574140,
+  "headline": "The 3 Things That Will Stand Out in Wall Street’s Blockbuster Week",
+  "summary": "Investors will navigate what could be a critical week for U.S. stocks over the next five days, with a host of corporate earnings, a Federal Reserve interest-rate decision, and the expected trade truce between Washington and Beijing potentially coming together to cement the view that stocks are going to keep rising.  Three events likely will stand out as investors weigh the outlook for the main issues driving the market: U.S. monetary policy, the trade war with China, and the artificial-intelligence boom.",
+  "url": "https://finnhub.io/api/news?id=32c6cf0bcd6e8f54b1299392e0f1939b921abf2a1be276d3e7606332560713a2"
+}

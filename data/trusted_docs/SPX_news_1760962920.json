@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760962920,
+  "headline": "Repo Market's Warning Light Is Flickering",
+  "summary": "After several years of calm, stress is again building in the hidden plumbing of the US financial system.",
+  "url": "https://finnhub.io/api/news?id=9be02795623053f63e2c8a11a1c08e394bd74aacbb64aa55c7a2bed1968bd32f"
+}

@@ -1,0 +1,51 @@
+I'm building a financial chatbot with a Finance Hallucination Reliability Index (FHRI) that scores answer reliability (0-1 scale). FHRI is a weighted sum of 5 sub-scores: G (Grounding), N_or_D (Numeric), T (Temporal), C (Citation), E (Entropy).
+
+PROBLEM: My evaluation shows very low recall (14.6%) - only 6 out of 41 accurate answers are detected as "accurate". The rest are incorrectly marked as "hallucination".
+
+KEY FINDINGS:
+- Average FHRI for accurate samples: 0.525 (below my 0.65 threshold)
+- Example accurate answer: G=0.492, N=0.700, T=0.750, C=0.350, E=0.580
+- With weights (G:0.35, N:0.25, T:0.10, C:0.15, E:0.15): FHRI = 0.591 (too low)
+- Precision is good (75%) but recall is terrible (14.6%)
+- 85% of accurate answers are being missed
+
+SCENARIO-SPECIFIC WEIGHTS:
+Different question types use different weights. Some scenarios work well (Numeric KPI: 50% accuracy, avg FHRI 0.734) but others fail badly (Crypto: 0% accuracy, avg FHRI ~0.30).
+
+QUESTIONS:
+1. Why is my weighted sum producing such low FHRI scores (0.525 avg) when individual subscores seem reasonable?
+2. Should I modify the FHRI formula (add baseline, use non-linear combination, normalize subscores)?
+3. Are my scenario weights appropriate, or should I boost certain components?
+4. Should I use scenario-specific thresholds instead of a single 0.65 threshold?
+5. How can I improve the sub-score calculations (especially Grounding and Citation which seem low)?
+6. What's the best strategy to balance precision (currently 75%) vs recall (currently 14.6%)?
+
+What modifications to my FHRI calculation or threshold strategy would you recommend to improve recall while maintaining reasonable precision?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

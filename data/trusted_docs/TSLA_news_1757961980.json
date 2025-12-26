@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757961980,
+  "headline": "Elon Musk puts his money where his mouth is, buys $1 billion of Tesla shares",
+  "summary": "Elon Musk bought nearly $1 billion of Tesla shares on Sept 12, regulatory filings show. It's the largest insider purchase by value Musk has ever made.",
+  "url": "https://finnhub.io/api/news?id=64bd597af628fa3183bb760365ef2ac5a23deed761f7efbfeae352d36fee8389"
+}

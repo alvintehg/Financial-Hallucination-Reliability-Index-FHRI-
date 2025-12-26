@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757698654,
+  "headline": "Tesla Engineer Resigns After 8 Years, Accuses Musk of Derailing Mission",
+  "summary": "Departure raises fresh questions about company culture and direction",
+  "url": "https://finnhub.io/api/news?id=f14c93fda758151c1c38903ea8dda13f4dc98bb1d5d08d69a245716818170d0b"
+}

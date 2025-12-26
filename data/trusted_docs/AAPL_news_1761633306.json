@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761633306,
+  "headline": "Apple supplier Skyworks held talks to buy rival Qorvo, The Information reports",
+  "summary": "Qorvo's shares, which have gained about 32% this year, surged more than 10% in trading before the bell, while Skyworks' stock was down about 2%.  As of Monday's close, Qorvo had a market value of $8.54 billion, compared with $11.26 billion for Skyworks, according to LSEG data.  Skyworks Solutions and Qorvo did not immediately respond to requests for comment.",
+  "url": "https://finnhub.io/api/news?id=d56bb84f06f1e3ae081ecb5bacd3f14fb76e7ce58a3ed623da5f65300db13954"
+}

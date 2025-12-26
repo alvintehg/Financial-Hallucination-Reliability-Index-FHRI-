@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757680238,
+  "headline": "Fed Meeting In Focus With FedEx, Lennar, Meta Due; Tesla Leads New Buys",
+  "summary": "The Federal Reserve meeting and rate-cut outlook are in focus next week, along with FedEx, Lennar and Meta. Tesla leads stocks to watch.",
+  "url": "https://finnhub.io/api/news?id=f4f78c0c1e82ddf703aa389e9ace0fc1218740999c4b917d9ea2ccf16e42ba83"
+}

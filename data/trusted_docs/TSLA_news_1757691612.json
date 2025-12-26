@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757691612,
+  "headline": "Stock Market Today: Dow Falls After Inflation Survey; Gemini IPO Set To Launch (Live Coverage)",
+  "summary": "The Dow Jones index fell Friday after a key inflation survey. The Gemini IPO is set to start trading on the stock market today.",
+  "url": "https://finnhub.io/api/news?id=112a4e625235c07cf62139e1e79b7057b137e609ffecabb5661a536fe9d1f28a"
+}

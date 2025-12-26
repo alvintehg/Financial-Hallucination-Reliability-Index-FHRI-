@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761574173,
+  "headline": "Apple Q4 Earnings Preview: What To Expect From Upcoming Report",
+  "summary": "Apple Nears Historic $4 Trillion Valuation Ahead Of Key Q4 Earnings",
+  "url": "https://finnhub.io/api/news?id=bf220bc6315392e20172b5fb0edaf7d9407b07b2f53c80f3a58b4c9ef4faf71d"
+}

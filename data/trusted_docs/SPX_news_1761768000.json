@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761768000,
+  "headline": "U.S. Companies Surprise With Strong Sales Results",
+  "summary": "Nearly 70% of S&P 500 companies beat sales forecasts in Q3 2025 - the highest share in four years.",
+  "url": "https://finnhub.io/api/news?id=ab65cc0edf878d36c4b7195c7dbb8fc1b2685ff7ad2020021322e97a9ec05d08"
+}
