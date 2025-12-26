@@ -1,7 +1,8 @@
 // API service for backend communication
 import axios from 'axios';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+// Use env override when available so deployments can point to any backend URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8000';
 
 export const askQuestion = async (payload) => {
   try {

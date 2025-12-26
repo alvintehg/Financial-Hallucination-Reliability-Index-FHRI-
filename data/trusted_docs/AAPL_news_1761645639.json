@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761645639,
-  "headline": "Big Tech has become the market’s superpower — and its Achilles' heel",
-  "summary": "Big Tech’s dominance has powered the market to record highs — but it’s also become its biggest vulnerability.",
-  "url": "https://finnhub.io/api/news?id=8c85033d30d2225890d3b324efea1ea7e30865ebd5e94d90044b382d5a46363a"
-}

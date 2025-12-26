@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757329480,
-  "headline": "Exclusive-Tesla market share in US drops to lowest since 2017 as competition heats up",
-  "summary": "SAN FRANCISCO (Reuters) -Tesla's U.S. market share dropped to a near eight-year low in August as buyers chose electric vehicles from a growing stable of rivals over the aging lineup offered by CEO Elon Musk's company, according to data from research firm Cox Automotive shared exclusively with Reuters.  Analysts expect an EV sales bump to continue through September in the United States, then drop when federal tax credits expire at the end of the month, raising financial pressure on Tesla and other automakers.  Tesla, which once held more than 80% of the U.S. EV market, accounted for 38% of the total EV sales in the United States in August, the first time it has fallen below the 40% mark since October 2017, when it was ramping up production of the Model 3, its first mass market car, according to early data from Cox.",
-  "url": "https://finnhub.io/api/news?id=a008a7da05bd0c37f9fb299684e21316a5ca966b911e2123993c283078e614fa"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757948281,
-  "headline": "Tesla cancels most affordable Cybertruck just months after launch",
-  "summary": "The automaker removed the rear-wheel drive option from its website without warning as Cybertruck sales continue to slide",
-  "url": "https://finnhub.io/api/news?id=a720b74f6b71320bb98ceb6c005e7bc41a55cd331e14409673cc46c829d1fabd"
-}

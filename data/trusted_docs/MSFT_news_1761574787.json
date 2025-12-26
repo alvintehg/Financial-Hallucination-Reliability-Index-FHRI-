@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761574787,
-  "headline": "Microsoft Q1 Earnings Preview: What To Expect From Upcoming Report",
-  "summary": "Microsoft (MSFT) EPS Expected To Climb 10% As AI Pushes Growth",
-  "url": "https://finnhub.io/api/news?id=ca891ccf85407f9c3a4f7938209bf7d2fbcda2def40e2d2e0499e1de61df1e26"
-}

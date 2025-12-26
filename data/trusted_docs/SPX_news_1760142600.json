@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760142600,
-  "headline": "S&P 500 Snapshot: Largest Loss In 6 Months",
-  "summary": "The S&P 500 notched two new record highs this week before experiencing its largest daily loss in six months. Read more here.",
-  "url": "https://finnhub.io/api/news?id=68d7cf6407b3c7fb2884e18dbaece26f984e6dd48f9c05322ae1eec95ef5887b"
-}

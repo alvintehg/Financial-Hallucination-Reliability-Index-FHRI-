@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757978870,
-  "headline": "Wall Street indexes end higher ahead of Fed meeting; Tesla rallies",
-  "summary": "STORY: The three major U.S. stock indexes closed higher on Monday with the Dow up marginally while the S&P 500 added about half of one percent and the Nasdaq rose nearly one percent. The S&P 500 and the Nasdaq hit intraday record highs.Steven Schoenfeld, CEO of MarketVector Indexes attributes the moves to the expected interest rate cut by the Federal Reserve this week.“So it seems that the markets are really factoring in a Fed cut on Wednesday and maybe even leaning toward hopes of a further cut very quickly or maybe even a bigger than expected cut on Wednesday. I think the market would be very positively surprised if the Fed cut 50 basis points, but the baseline is 25 basis points.”Traders on Monday are pricing in a 96% chance of a 25-basis-point cut at this week's meeting.Tesla also gave markets a lift, gaining 3.5% after regulatory filings revealed CEO Elon Musk had acquired nearly $1 billion worth of the electric vehicle maker's stock on Friday. Shares of Google parent Alphabet increased 4.5%, hitting a record high during the session, and racing past a $3 trillion market cap.And shares of CorveWeave added more than 7 and a half percent after the data center operator signed a deal with Nvidia that guarantees that the chipmaker will purchase any residual cloud capacity not sold to customers. The deal's initial value is $6.3 billion.",
-  "url": "https://finnhub.io/api/news?id=cdc0eeef95fbba53acd263edd48b7a8344062189a58ccbeca0e1c1e2e6eadd60"
-}

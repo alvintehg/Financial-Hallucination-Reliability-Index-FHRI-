@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757365897,
-  "headline": "Sector Update: Consumer Stocks Mixed in Late Afternoon Trading",
-  "summary": "Consumer stocks were mixed late Monday afternoon, with the Consumer Staples Select Sector SPDR Fund",
-  "url": "https://finnhub.io/api/news?id=bffd6170654b6c689487f2092466093552697b10550b1fafc611650ce882c0fd"
-}

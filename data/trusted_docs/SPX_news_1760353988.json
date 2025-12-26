@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760353988,
-  "headline": "Are We Looking At A Market Meltdown?",
-  "summary": "Current market volatility is driven by optimism from the recovery in April, FOMO, and F without the OMO. Click here for more information on Market Outlook.",
-  "url": "https://finnhub.io/api/news?id=8a1fd7031f9d014c168aa0e959ff0969d1cd7f89b178a8aabbf683768ecddb98"
-}

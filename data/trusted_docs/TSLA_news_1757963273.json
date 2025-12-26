@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757963273,
-  "headline": "Tesla to boost production at German site – report",
-  "summary": "The firm signalled optimism, noting encouraging trends across all markets served by the Gruenheide plant, not just in Germany.",
-  "url": "https://finnhub.io/api/news?id=00377686de06a8cba42267def41a6798c86630536a4d28fe0020e102faa28181"
-}

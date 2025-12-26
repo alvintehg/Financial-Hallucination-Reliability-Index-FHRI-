@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761638100,
-  "headline": "Warren Buffett Sells Apple Stock and Buys a Brand New Stock Up 5,600% in 30 Years",
-  "summary": "Warren Buffett has sold a significant amount of Apple stock in recent years, but he recently started a position in healthcare giant UnitedHealth Group.",
-  "url": "https://finnhub.io/api/news?id=e6f72532c6efa7015133dacf4b46f95aab746d20cea4cde32ffc73ec2424b5c3"
-}

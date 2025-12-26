@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757851079,
-  "headline": "Tesla's German plant plans to lift production, factory boss tells DPA news agency",
-  "summary": "BERLIN (Reuters) -U.S. electric carmaker Tesla plans to raise production at its German plant for the rest of the year due to strong sales, the head of the Gruenheide factory told Germany's DPA news agency on Sunday.  “We currently have very good sales figures and have therefore revised our production plans for the third and fourth quarters upwards,” André Thierig, manager of the Gruenheide plant outside Berlin, told DPA.  Germany is a tough market for Tesla due in part to stiff competition from Chinese rivals.",
-  "url": "https://finnhub.io/api/news?id=fa45a058f91ecdf8585845e9bcf3b5adc17c8171e29bdc0d44983325241e610e"
-}

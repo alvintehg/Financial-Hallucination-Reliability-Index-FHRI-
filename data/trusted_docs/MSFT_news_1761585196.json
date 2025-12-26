@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761585196,
-  "headline": "Microsoft Stock Spikes as Top Analyst Upgrade On Strong AI Outlook",
-  "summary": "AI Tailwinds Lift Microsoft Shares Following Guggenheim Upgrade To Buy",
-  "url": "https://finnhub.io/api/news?id=654374aaed4e2ad761ceb22bb616ddacf023c0eacd2f2f1b77813284dbec9800"
-}

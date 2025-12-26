@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760948160,
-  "headline": "S&P 500 Rebounds On Favorable U.S.-China Tariff War News",
-  "summary": "The S&P 500 continued bouncing around on headlines related to the U.S. and China's trade actions against each other.",
-  "url": "https://finnhub.io/api/news?id=fb23593ab2004bfc2b8b99955d9de5c1c4afd4e27f5f11385d8fcfcfb53e0e94"
-}

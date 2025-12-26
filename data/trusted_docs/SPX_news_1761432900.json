@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761432900,
-  "headline": "The 1-Minute Market Report October 26, 2025",
-  "summary": "S&P 500 hits record highs; tech leads rally amid optimism for lower rates.",
-  "url": "https://finnhub.io/api/news?id=ab6b678b4a73dfca88132417af6f8ec70a4a24a788ff9af4f841a477128a5373"
-}

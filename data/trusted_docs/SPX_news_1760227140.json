@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760227140,
-  "headline": "The 1-Minute Market Report - October 12, 2025",
-  "summary": "The S&P 500 hit two new highs last week but ended with a sharp Friday selloff, reflecting rising volatility and shifting investor sentiment. Read more here.",
-  "url": "https://finnhub.io/api/news?id=e56d50a5760bbce4ba5b64bcdf5bb63133f5fa89182f50ceb6efa92c7f38fa6d"
-}

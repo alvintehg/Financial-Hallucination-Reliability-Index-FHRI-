@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757342040,
-  "headline": "Tesla EV Sales Are Struggling But Elon Musk Looks To The Future For Value",
-  "summary": "Tesla is losing market share in the U.S. while China deliveries fell 10% in August, but CEO Elon Musk appears focused on the Optimus humanoid robot for value creation as the EV giant may not be a giant much longer.  Cox Automotive data for August shared exclusively to Reuters early Monday showed that Tesla's U.S. market share dropped to a near eight-year low as buyers chose electric vehicles from rivals over Tesla's aging lineup.  Tesla, which once held more than 80% of the U.S. EV market, accounted for 38% of the total U.S. EV sales in August, the first time it has fallen below the 40% mark since October 2017, according to early data from Cox Automotive.",
-  "url": "https://finnhub.io/api/news?id=d2f179cbe3ab2ae51a122ae552220603f23b70f2f98b668eeab9edb16543bad6"
-}

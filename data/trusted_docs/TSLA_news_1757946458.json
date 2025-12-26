@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757946458,
-  "headline": "Elon Musk Buys $1 Billion Worth of Tesla Stock",
-  "summary": "Elon Musk bought $1 billion in Tesla stock though a revocable trust on Friday. That's when Bloomberg spoke to Tesla's Chair Robyn Denholm who said Musk is the right leader for the company. Bloomberg's Ed Ludlow reports.",
-  "url": "https://finnhub.io/api/news?id=df93a38b63bac7914ce9c91b565e4065d290cf3a0932912e0a192e4005e3d814"
-}

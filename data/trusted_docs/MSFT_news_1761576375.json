@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761576375,
-  "headline": "Update: Microsoft Sued by Australian Watchdog for Misleading Customers Over Subscription Plans",
-  "summary": "(Updates with Microsoft's response and recent share movement in the fifth and sixth paragraphs.)",
-  "url": "https://finnhub.io/api/news?id=f3699c5da9f30e40bb346d0df50bc22b18da821d01418646e0ffaac31ee41ede"
-}

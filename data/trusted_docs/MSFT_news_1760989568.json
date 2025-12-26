@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1760989568,
-  "headline": "Oracle Downgraded by JPMorgan on AI Expansion Costs",
-  "summary": "Analysts cite high capital spending and financing uncertainty",
-  "url": "https://finnhub.io/api/news?id=e8af6a8edf91ddc6e4a187cf18276c3bf0a9a81f712d509407191b2b6c95ce66"
-}

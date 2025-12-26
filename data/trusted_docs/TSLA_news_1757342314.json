@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757342314,
-  "headline": "Stocks to Watch Monday: Robinhood, EchoStar, Tesla, AppLovin",
-  "summary": "↗️ Robinhood (HOOD): The online retail brokerage, plus AppLovin (APP), are set to join the S&P 500 on Sept. 22, the index's compiler said late Friday. Both stocks rallied Monday morning. ↗️ Nutanix (NTNX): The cloud-computing company will enter the S&P MidCap 400 at the same time.",
-  "url": "https://finnhub.io/api/news?id=16ea12c296c6f2fd2e763780d787422f1399dee6c69e2ff24dcf03dab37225c0"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760102160,
-  "headline": "U.S. Job Worries Sour Sentiment",
-  "summary": "Consumers remain anxious about the potential for big tariff-induced price hikes, but the increasingly dominant worry is the state of the jobs market.",
-  "url": "https://finnhub.io/api/news?id=86f6bcd5f2f54d7a1a8bd77a884c77ea9174fcecd4750a9ad67938dd91a822b3"
-}

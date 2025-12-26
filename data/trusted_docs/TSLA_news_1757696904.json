@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757696904,
-  "headline": "Tesla stock gains, Rivian recall, Circle reacts to Gemini IPO",
-  "summary": "Yahoo Finance host Julie Hyman tracks today's top moving stocks and biggest market stories in this Market Minute, including Tesla's (TSLA) latest stock gains, EV developer Rivian (RIVN) recalling 24,000 vehicles, and Circle Internet Group's (CRCL) stock reaction to the IPO of Gemini Space Station (GEMI). Stay up to date on the latest market action, minute-by-minute, with Yahoo Finance's Market Minute.",
-  "url": "https://finnhub.io/api/news?id=c51daf94a9b221e65efabfdc7543c1dd1f40438c90db3eeb8667b71681c73965"
-}

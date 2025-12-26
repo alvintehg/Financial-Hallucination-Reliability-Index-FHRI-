@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757970218,
-  "headline": "Tesla stock surges, turning positive year to date as Elon Musk buys $1 billion in shares",
-  "summary": "Tesla stocks jumped on Monday after the company revealed Elon Musk bought $1 billion worth of shares.",
-  "url": "https://finnhub.io/api/news?id=b33bbaf96da4d6ac6a759288d1ab3d06d3a495316801f32eac145ca114e47dd6"
-}

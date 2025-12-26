@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761581120,
-  "headline": "AMD partners with US to build supercomputers, Strive stock surges",
-  "summary": "Yahoo Finance host Julie Hyman tracks today's top moving stocks and biggest market stories in this Market Minute, including the US entering a partnership with Advanced Micro Devices (AMD) to build out two supercomputers, Strive Asset Management (ASST) shares see major gains as the crypto space makes a comeback, and Microsoft (MSFT) receiving an upgrade ahead of its earnings release this week. Stay up to date on the latest market action, minute-by-minute, with Yahoo Finance's Market Minute.",
-  "url": "https://finnhub.io/api/news?id=021b539e1e7de9c1c3867d3ee1e47b472dc72eb54f216bbf81b865258425a91e"
-}

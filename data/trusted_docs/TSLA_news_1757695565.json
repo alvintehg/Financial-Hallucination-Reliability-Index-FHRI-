@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757695565,
-  "headline": "Top Stock Movers Now: Warner Bros. Discovery, Tesla, RH, and More",
-  "summary": "U.S. equities were mixed at midday a day after the Dow Jones Industrial Average, S&P 500, and Nasdaq hit record highs on optimism about Federal Reserve interest-rate cuts.",
-  "url": "https://finnhub.io/api/news?id=ab969bee555b7cde74c05b0e2dcd538e26d0d53eacee2e0efeab54f46a8b3ea8"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761235230,
-  "headline": "Microsoft’s Copilot gets a name, face, and more in latest update. No, it’s not Clippy.",
-  "summary": "Microsoft is updating its Copilot software, giving it a name and face.",
-  "url": "https://finnhub.io/api/news?id=d9cc0c6bc6be0e324aeacaf7d5e5b02bc6c37d15ab30edf356206ae8034f05e2"
-}

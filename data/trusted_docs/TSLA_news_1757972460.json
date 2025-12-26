@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757972460,
-  "headline": "Tech Buying Pushes S&P 500, Nasdaq to Fresh Records",
-  "summary": "Investors have been emboldened by thawing trade relations between the U.S. and China and rate-cut expectations.",
-  "url": "https://finnhub.io/api/news?id=861c943be092d5c7749337e49d9a7fd81f2e006830deeb59021c98c1f0d26986"
-}

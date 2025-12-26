@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760094000,
-  "headline": "This Isn't 1999: The AI Supercycle",
-  "summary": "Tech leaders now make up 36% of the S&P 500, pushing the index to all-time highs driven by AI strength.",
-  "url": "https://finnhub.io/api/news?id=d5098a04cd79a3e1918b2518357d5ae63c30740b173a52789044ae151d93168a"
-}

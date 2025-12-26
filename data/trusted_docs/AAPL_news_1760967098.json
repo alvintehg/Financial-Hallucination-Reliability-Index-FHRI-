@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1760967098,
-  "headline": "Stock market today: Dow, S&P 500, Nasdaq jump amid trade-war lull, with flurry of earnings on deck",
-  "summary": "Wall Street is gearing up for a heavy-hitting earnings season, with the federal government still in shutdown.",
-  "url": "https://finnhub.io/api/news?id=6561601f7d9e182dd25aa70e58b70435470fbed71f6a56cc4a0e6e656fa80e6d"
-}

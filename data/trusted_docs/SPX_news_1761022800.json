@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761022800,
-  "headline": "Gold Volatility Spikes To 5-Year High On Haven Demand",
-  "summary": "GLD option volumes hit a record high last week, with over 2.1M contracts trading both Thurs and Fri (almost 5x the YTD ADV). Read more here.",
-  "url": "https://finnhub.io/api/news?id=72567a368ae17693ae45663c1bba723c654fb07e7d29331a53b85078379e4352"
-}

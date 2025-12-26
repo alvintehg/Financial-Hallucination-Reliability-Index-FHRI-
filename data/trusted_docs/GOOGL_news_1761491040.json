@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761491040,
-  "headline": "AI crypto payments using Coinbase protocol explode with 4,300% weekly growth",
-  "summary": "Agents using a payment protocol developed by Coinbase have grown exponentially over the past week. The number of transactions grew more than 4,300% to 957,000. The protocolhas received support from Cloudflare and Google.",
-  "url": "https://finnhub.io/api/news?id=403fa155f976e4c94db935246842417b4e2719bea9c33a3bd9d59b8c4f9249fe"
-}

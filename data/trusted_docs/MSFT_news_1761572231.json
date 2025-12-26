@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761572231,
-  "headline": "Microsoft Upgrade Leaves 99% of Analysts Bullish on the Stock",
-  "summary": "The upgrade means nearly 99% of analysts tracked by Bloomberg currently recommend buying the stock.  Of the 73 who follow Microsoft, the only holdout is Hedgeye Risk Management, which has a neutral rating on the company.  Guggenheim’s upgrade reflects the optimism about Microsoft’s strong position to capitalize on artificial intelligence breakthroughs.",
-  "url": "https://finnhub.io/api/news?id=e121f0ac1011d062a788a2352b4253daa52422930d5859345ec4016a1f044ecd"
-}

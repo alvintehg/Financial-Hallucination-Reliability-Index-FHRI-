@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760629934,
-  "headline": "AAII Sentiment Survey: Optimism Sinks",
-  "summary": "Discover the latest shifts in investor sentiment with new bullish, neutral, and bearish outlooks. Click here to read about the latest sentiment survey results.",
-  "url": "https://finnhub.io/api/news?id=6dd992d0af22e37c840d6fae028ddf2ddd701a0d6ff7633576b24a8f61baf939"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761516960,
-  "headline": "Stock Futures Rise Ahead of Mag 7 Earnings, Fed Decision",
-  "summary": "The markets are entering the final week of October, which will feature more earnings, a Fed meeting, and President Trump’s meeting with China’s Xi.",
-  "url": "https://finnhub.io/api/news?id=9ef46f089900a5cdb6cb086ba89f8a547ee588ee32f916dec50c68c43a5da9a0"
-}

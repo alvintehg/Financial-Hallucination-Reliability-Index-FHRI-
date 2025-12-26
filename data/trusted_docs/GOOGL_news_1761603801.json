@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761603801,
-  "headline": "Google reaches agreement to buy power from Iowa's only nuclear plant after it restarts",
-  "summary": "Google reached a 25-year agreement with NextEra Energy to buy power from Duane Arnold, Iowa's only nuclear plant.",
-  "url": "https://finnhub.io/api/news?id=86adfc120508eb98d5d7f01be596ec7644ead3f1e3ecdaca0a349abe89265a42"
-}

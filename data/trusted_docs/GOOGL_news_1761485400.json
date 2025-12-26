@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761485400,
-  "headline": "I’m a CEO who’s run 18 Ironman races and the AI ROI race isn’t any different",
-  "summary": "Here's how my team got to a 10x ROI and how we're training for the next race.",
-  "url": "https://finnhub.io/api/news?id=7776075b21ca9d367054758d4c5c0cda20743ed03d74a41fea1f782870f148c2"
-}

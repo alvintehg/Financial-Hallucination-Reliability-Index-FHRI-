@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757670798,
-  "headline": "Vietnam vehicle market up slightly in August",
-  "summary": "Sharp rise in CV sales offset by weak passenger vehicle demand.",
-  "url": "https://finnhub.io/api/news?id=feed7b3d1c531bfeb486f0756679e35914275bdd81cbf25e5eee37292c928283"
-}

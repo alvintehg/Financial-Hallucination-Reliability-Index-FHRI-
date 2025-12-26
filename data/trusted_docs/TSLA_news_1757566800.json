@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757566800,
-  "headline": "Jack Ma-Backed Ant Showcases Its First Humanoid Robot",
-  "summary": "The company’s unit Shanghai Ant Lingbo Technology Co., also known as Robbyant, demonstrated its R1 humanoid model at the 2025 Inclusion Conference on the Bund in Shanghai.  The robot can serve as a tour guide, sort medicine at pharmacies, provide medical consultation or perform basic kitchen tasks.  Ant is the latest big name to delve into humanoid robots, a nascent field fought over by the likes of Tesla Inc. and dotted by up-and-comers like Hangzhou neighbor Unitree Robotics.",
-  "url": "https://finnhub.io/api/news?id=2292c45f876dfcd1aa07c6a253c01566b7eba62b3c88472ac3b018c361227fdf"
-}

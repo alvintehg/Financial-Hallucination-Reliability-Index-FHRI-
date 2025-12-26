@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761574530,
-  "headline": "iPhone 17 Is a Big Win for Apple",
-  "summary": "The iPhone 17 has been a big success in both China and the United States. Apple investors have been heartened by the news.",
-  "url": "https://finnhub.io/api/news?id=bcd46b5b5618483e0dc90cfa1b156be8b3cc541b988240c873e96aef0a0e1b8a"
-}

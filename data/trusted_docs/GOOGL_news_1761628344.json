@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761628344,
-  "headline": "Chegg cuts 45% of staff as AI reshapes online learning business",
-  "summary": "Chegg cuts 45% of workforce as AI disrupts online learning platform. Santa Clara company eliminates 388 jobs amid declining traffic and revenue challenges.",
-  "url": "https://finnhub.io/api/news?id=5b8af656e373621304946b0a16cedbc343594bef0fef0a12a2db1c3ea0887213"
-}

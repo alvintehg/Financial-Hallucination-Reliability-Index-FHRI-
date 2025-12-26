@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761590700,
-  "headline": "Starling Bank launches AI tool for customers to spot purchase scams",
-  "summary": "The digital bank said it was the first feature of its kind to be rolled out by a UK bank.",
-  "url": "https://finnhub.io/api/news?id=114726cf3ad4ab8cb83bb0b684da76e6183a70d9e31e0d61041021f4121bf149"
-}

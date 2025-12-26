@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757945434,
-  "headline": "Fed meeting, Tesla stock, US-China trade talks: 3 Things",
-  "summary": "US stock futures (ES=F, NQ=F, YM=F) are moving in positive territory ahead of the Federal Reserve's September FOMC meeting this Wednesday, at which Wall Street expects officials to cut interest rates. Tesla (TSLA) CEO Elon Musk reported that he bought $1 billion worth of stock in the EV developer last week. US and Chinese officials have reentered trade negotiations, with TikTok and Nvidia (NVDA) being at the forefront of talks between regulators. To watch more expert insights and analysis on the latest market action, check out more Morning Brief.",
-  "url": "https://finnhub.io/api/news?id=412b4c8082bab4861b38d7a2ffc18266ac9a86e04c5e3dcf1c218d7e77a986ca"
-}

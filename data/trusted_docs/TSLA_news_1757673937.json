@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757673937,
-  "headline": "Tesla Pivots to Robots as Investors Question Sales and Soaring Valuation",
-  "summary": "Eager to transform the carmaker into an artificial intelligence powerhouse, Musk earlier this month declared on his social-media platform X that about “80% of Tesla’s value will be Optimus,” referring to the company’s robot initiative.  In the here and now, Tesla’s 2025 earnings are expected to sink nearly 30%, while its robotaxi business is still years from turning a profit and faces stiff competition from Alphabet Inc.’s Waymo, among others.",
-  "url": "https://finnhub.io/api/news?id=1cca645c468ea3667f95e12824cb9dc58533edd428bb07d9ea40614e56d46bee"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761162785,
-  "headline": "US Equity Indexes Drop Ahead of Tesla's Quarterly Results Post Bell",
-  "summary": "US equity indexes fell ahead of the close on Wednesday as investors paused ahead of Tesla's (TSLA) q",
-  "url": "https://finnhub.io/api/news?id=5261f73212747302157c89d6f4b4a2359763047ef4d388bba044f5b0928522a9"
-}

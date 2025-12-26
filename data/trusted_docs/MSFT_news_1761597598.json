@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761597598,
-  "headline": "Wall Street stocks hit fresh records on easing US-China worries",
-  "summary": "Wall Street stocks ended at fresh records again on Monday over optimism that the US-China trade war was about to ease, with a possible deal in view when presidents Donald Trump and Xi Jinping meet later this week.Trump arrived in Japan on Monday as part of a tour of Asia that could see the US president and Xi end their bruising trade war.",
-  "url": "https://finnhub.io/api/news?id=23f9089465215bbd12f2424df94e34e237177931c9d7c397de4508d4b65e62d5"
-}

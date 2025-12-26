@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761314400,
-  "headline": "Cooler U.S. Inflation Gives The Green Light To Rate Cuts",
-  "summary": "US inflation was softer than predicted in September, with the tariff effects remaining limited.",
-  "url": "https://finnhub.io/api/news?id=7f34840d8161eade75e6bd5adc0bc44b0337c1e01a770f71151407c984e730a4"
-}

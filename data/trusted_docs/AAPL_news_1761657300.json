@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761657300,
-  "headline": "Jamf's RapidIdentity Selected for Major Ohio Higher Education Consortium Contract",
-  "summary": "HOUSTON, October 28, 2025--Jamf (NASDAQ: JAMF), the standard in managing and securing Apple at work, today announced that RapidIdentity from Jamf has been awarded a transformative contract with The Inter-University Council Purchasing Group (IUC-PG) of Ohio. RapidIdentity has been selected as one of two vetted identity and access management platforms contractually available for all 86 member institutions of this prestigious consortium. This significant five-year agreement establishes pre-negotiat",
-  "url": "https://finnhub.io/api/news?id=818ae6a2b94a01015750eadbf10b207d8cfe387759bab8e00089b70f0ccc925c"
-}

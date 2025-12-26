@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760541474,
-  "headline": "Powell Confirms Liquidity Strains Are Real",
-  "summary": "Fed reserve balances drop to $3T, causing overnight funding stress. Click here to learn why QT's end may not ease liquidity strains.",
-  "url": "https://finnhub.io/api/news?id=48c8d282a1b9ce956945f7753072db19ae8cbf40d1ffc2ebaf0e7fcababa7e11"
-}

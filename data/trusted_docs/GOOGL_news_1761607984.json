@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761607984,
-  "headline": "Google Has Deal With NextEra to Restart Duane Arnold Nuclear Plant",
-  "summary": "NextEra Energy said technology giant Google has signed a 25-year deal to buy power from the utility's Duane Arnold nuclear power plant, which the Florida-based energy provider wants to restart.",
-  "url": "https://finnhub.io/api/news?id=a0f2a3dfa07bf8d7e93298ca9e38360400add7b1d0fa8feba0a693655e93495a"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761659010,
-  "headline": "Apple hits $4trn amid market rally and hot iPhone 17 sales",
-  "summary": "The tech giant rode a fresh market surge to hit the milestone, amid strong early sales for its new iPhone model in the U.S. and China",
-  "url": "https://finnhub.io/api/news?id=72a4d5cad3edc04acc48431190927ff8665c1e03e7723329905b9f51a28f9752"
-}

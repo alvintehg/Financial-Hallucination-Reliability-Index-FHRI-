@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760356200,
-  "headline": "S&P 500 Drops As U.S.-China Tariff War Reignites",
-  "summary": "The trading week ending on Friday, 10 October 2025, saw the S&P 500 (SPX)Â drop over 2.4% from its previous week's close.",
-  "url": "https://finnhub.io/api/news?id=ec19383ad17b29401c23aef2e0a82214522f78b825be43d178bf3990de8047fe"
-}

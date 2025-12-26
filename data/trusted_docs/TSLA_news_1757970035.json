@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757970035,
-  "headline": "Stock market today: S&P 500 tops 6,600, Nasdaq extends record streak as Fed decision nears",
-  "summary": "The clock is ticking down to a widely expected interest-rate cut at the Fed's meeting this week.",
-  "url": "https://finnhub.io/api/news?id=19d5303b8a65a0c68a8b47faf71dbdc1b2ac0e867447f72e377fe6b65edf4289"
-}

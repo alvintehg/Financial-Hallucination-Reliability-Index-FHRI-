@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761570213,
-  "headline": "Should Rachel Reeves make changes to the cash ISA allowance? Have your say",
-  "summary": "Ahead of next month's budget, there has been renewed speculation that Reeves is considering making changes to cash ISAs as part of her plans.",
-  "url": "https://finnhub.io/api/news?id=8136df4dc1e78a76994c39d8005b8347178b4fa11870e468de259420b6913728"
-}

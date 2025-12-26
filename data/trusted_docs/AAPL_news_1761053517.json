@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761053517,
-  "headline": "Stock market today: Dow, S&P 500, Nasdaq flutter as investors eye earnings flood from GM, Netflix",
-  "summary": "US stock futures were little changed Monday night as Wall Street geared up for a packed week of corporate earnings.",
-  "url": "https://finnhub.io/api/news?id=6edc8d80d59be3fd4eb9c3cbb687499e3a8cc43f640c1369d2be28174eccee90"
-}

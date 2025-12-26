@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761645855,
-  "headline": "US Signs $80 Billion Pact for Nuclear Reactors in AI Push",
-  "summary": "The strategic partnership — which also involves Brookfield Asset Management and Canadian uranium producer Cameco Corp. — aims to deliver on President Donald Trump’s AI ambitions and scale up an industry he sees as vital to competing with China.  In the US, power consumption from data centers is set to double by 2035, to almost 9% of all demand, according to BloombergNEF.",
-  "url": "https://finnhub.io/api/news?id=8d88ac7eb52574577580853f585f6719dd89ffc5d617f9dee9d0e8d44d6ea824"
-}

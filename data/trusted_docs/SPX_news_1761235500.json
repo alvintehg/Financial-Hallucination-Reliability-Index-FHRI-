@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761235500,
-  "headline": "S&P 500 Slips As Weak Earnings And Trade Jitters Test Market Momentum",
-  "summary": "The S&P 500 fell 0.53% on Wednesday to close at 6,699, as disappointing corporate results and renewed geopolitical uncertainty weighed...",
-  "url": "https://finnhub.io/api/news?id=a73bca2376cc9b114cff99bb081d3178287f56577535695ba46d68093c9cee81"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761164824,
-  "headline": "Quantum Threat to Bitcoin Grows as Google Reveals Latest Breakthrough",
-  "summary": "Google’s Willow processor achieved a verified quantum speed-up, vastly outpacing classical supercomputers—and raising concerns for Bitcoin.",
-  "url": "https://finnhub.io/api/news?id=eed6a591d0f26579647c47eebeeeec670d20994434699d44b8602d0c3fff5cff"
-}

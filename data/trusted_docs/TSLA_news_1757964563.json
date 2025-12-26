@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757964563,
-  "headline": "Tesla jumps after Musk buys shares worth $1 billion",
-  "summary": "STORY: Tesla shares rose as much as 7.5% Monday morning after a regulatory filing showed that CEO Elon Musk bought nearly $1 billion worth of the electric-vehicle maker's stock.The purchase reinforces Musk's push for greater control over the company, which is racing to meet its ambitious targets on robotaxis, artificial intelligence and robotics as it looks to pivot from an EV maker to a tech leader. As of December, Musk held a roughly 13% stake in Tesla, according to LSEG data.Musk has consistently demanded a bigger stake and increased voting power at Tesla.He has also threatened to build AI and robotics products outside of Tesla if he cannot get 25% voting power.Earlier this month, Tesla's board proposed a $1 trillion compensation plan for Musk, in a huge vote of confidence for Musk's leadership from the board, even as the company stumbles amid heated competition and cooling EV demand.On Friday, board chair Robyn Denholm dismissed concerns that Musk's political activity had hurt sales and said the billionaire was back \"front and center\" at the company after several months at the White House.Musk's political activity and public clashes with President Donald Trump had stirred worries among investors about distractions and potential lost sales, which had weighed on the company's stock this year.",
-  "url": "https://finnhub.io/api/news?id=b23f559766cb791435d45bff9df845d26f08a6c88d155497078a694dcf7d98a3"
-}

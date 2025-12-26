@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761527000,
-  "headline": "CSHI: Alternative Strategy For Exposure To The Short End Of Yield Curve",
-  "summary": "The CSHI ETF offers stable T-Bill exposure and enhanced yield via S&P 500 put options. Learn more about the fund and its risks.",
-  "url": "https://finnhub.io/api/news?id=54d5c73740381f2cb95c56b636d95308a5f7bdd7ace0c850e5ad07e936ef5c85"
-}

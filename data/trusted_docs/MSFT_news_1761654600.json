@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761654600,
-  "headline": "BARC Ranks Qlik Cloud Analytics Ahead of Power BI on User Throughput and Stability",
-  "summary": "PHILADELPHIA, October 28, 2025--Results from the inaugural BARC Benchmark found that Qlik Cloud Analytics led Microsoft Power BI on user throughput and stability.",
-  "url": "https://finnhub.io/api/news?id=4e36ca6a007f27b1c090784ae6fff33a8e7f02e5b35fa56c39c19afd03732973"
-}

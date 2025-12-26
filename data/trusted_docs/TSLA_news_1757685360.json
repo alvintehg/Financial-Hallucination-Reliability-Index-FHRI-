@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757685360,
-  "headline": "Rivian Has a Recall, Tesla Style. The Stock Is Up.",
-  "summary": "The EV maker is recalling 24,214 vehicles to correct an issue with its driver-assistance features. An over-the-air update to its software is expected to fix the problem.",
-  "url": "https://finnhub.io/api/news?id=ca3e7658a6859aa717ba46871499a57781560ef634154c2c899267668e9ab370"
-}

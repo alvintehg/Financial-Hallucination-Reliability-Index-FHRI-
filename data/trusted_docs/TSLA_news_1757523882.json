@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757523882,
-  "headline": "Top Midday Stories: Ellison Becomes World's Richest Person as Oracle Shares Soar; Vimeo to be Acquired by Bending Spoons for $1.38 Billion",
-  "summary": "The S&P 500 and the Nasdaq Composite were up around midday trading Wednesday, while the Dow Jones In",
-  "url": "https://finnhub.io/api/news?id=1bb7ea2a5093e0350dd8d3efd8053ae137ba682b315afe387724508f7dbe9db8"
-}

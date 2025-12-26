@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757936160,
-  "headline": "Auto & Transport Roundup: Market Talk",
-  "summary": "Find insight on Stellantis, Rheinmetall, Thai Airways and more in the latest Market Talks covering Auto and Transport.",
-  "url": "https://finnhub.io/api/news?id=09f78687a16200e90225b16ebb5f6c929547dd6d1e0dd33f6a1f0f5128b66438"
-}

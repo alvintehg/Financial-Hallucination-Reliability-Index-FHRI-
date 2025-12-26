@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757353987,
-  "headline": "Tesla Could Be Worth $8.5 Trillion if Musk Hits Pay Target",
-  "summary": "Analyst Gene Munster says growth may hinge on AI, robotics, and self-driving cars",
-  "url": "https://finnhub.io/api/news?id=014a609c0ef815ae10b2f9e4ad0a144c4993bd60a832f10292c2972708006f8a"
-}

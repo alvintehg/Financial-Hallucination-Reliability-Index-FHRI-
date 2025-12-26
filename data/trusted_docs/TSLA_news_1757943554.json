@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757943554,
-  "headline": "Elon Musk buys $1 billion worth of Tesla shares, a sign that he’s sticking around",
-  "summary": "Elon Musk bought $1 billion worth of Tesla shares on Friday, according to a regulatory filing he made early Monday.",
-  "url": "https://finnhub.io/api/news?id=8b040d360b059b02d69af872d837947eabc555cfc69bf28542937d26c78f7b57"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761335700,
-  "headline": "Consumer Price Index: Inflation Rises To 3.0% In September, Lower Than Expected",
-  "summary": "Inflation heated up for a fifth straight month in September as the headline figure for the Consumer Price Index rose to 3.0% year-over-year.",
-  "url": "https://finnhub.io/api/news?id=5745ef854cfe6e459261d2483a683b62f0bfec1f6843883dbdf27be18cf83650"
-}

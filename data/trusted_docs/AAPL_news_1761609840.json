@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761609840,
-  "headline": "KEYNOTE MAESTRO FREDDIE RAVEL TO AWE AUDIENCE WITH LIFE IN TUNE® EXPERIENCE IN VENTURA COUNTY",
-  "summary": "Marketing Maven's new client, GRAMMY honored pianist, #1 recording artist, and thought leader Freddie Ravel, is pulling back the curtain on the transformative power of music. Having performed with legends like Earth, Wind & Fire, Madonna, Santana, and Prince, Ravel works with organizations like Google, Apple, Blue Cross, and NASA to bring teams \"back in tune,\" sparking unity, collaboration, and individual performance.",
-  "url": "https://finnhub.io/api/news?id=c05db453a2899a99d2f8690d900c6100062cd57c3bf5f3b346261ca15824aa2a"
-}

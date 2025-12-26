@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757119468,
-  "headline": "Dow Jones Futures: Market Wavers At Highs, Apple iPhone Event Due; Nvidia, Tesla, AppLovin, Robinhood In Focus",
-  "summary": "Dow Jones futures: The stock market had a mixed week but is right at highs. The Apple iPhone event looms. Nvidia, Tesla, AppLovin are in focus.",
-  "url": "https://finnhub.io/api/news?id=77b8ff09d98e6ef83f8d04fa8ae4078c74ca9e7b79c00643f0c21e4047acec81"
-}

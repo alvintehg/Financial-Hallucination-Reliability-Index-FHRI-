@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761039000,
-  "headline": "Jittery Investors Flinch As October's Scary Shadows Darken",
-  "summary": "While US stocks didnât make new lows for the week, the VIX made a new high for the week on Thursday and Friday. Investors were jittery! Read more here...",
-  "url": "https://finnhub.io/api/news?id=9bdfc980efc0561074e0037e0caeb734a5dc041c15888f4a992fe47a562deaf8"
-}

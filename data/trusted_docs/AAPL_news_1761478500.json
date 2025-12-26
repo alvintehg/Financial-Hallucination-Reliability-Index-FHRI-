@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761478500,
-  "headline": "Prediction: This Will Be Wall Street's First $5 Trillion Stock",
-  "summary": "Nvidia is only a short rise away from crossing this important threshold.",
-  "url": "https://finnhub.io/api/news?id=f0eae7770e63e3a1f2383a1fd8f38147a6cef171edb1727474cb1bb30e71f929"
-}

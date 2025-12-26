@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761577620,
-  "headline": "Google takes another piece of Nvidia, Amazon AI cake",
-  "summary": "Google is having a pretty intense year, but the most important battle has been won for the company, as it emerged unscathed from the monopoly case against it. A federal judge's ruling that Alphabet would not have to sell Chrome or Android was a significant win, even though the company said it will ...",
-  "url": "https://finnhub.io/api/news?id=a6548e387bdd5485706548d289c3b64ad47a451cfa815f721d14b90c44a06e1c"
-}

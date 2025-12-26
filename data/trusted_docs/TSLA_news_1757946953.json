@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757946953,
-  "headline": "Musk’s $1 billion Tesla stock buy sends shares up for the year",
-  "summary": "The purchase coincided with Tesla Chair Robyn Denholm speaking with reporters about the merits of awarding Musk around $1 trillion worth of stock if the company achieves a series of ambitious market value and performance milestones.  Tesla shares jumped 6.2% at 9:30 a.m. in New York.  Musk, 54, last bought Tesla stock in the open market in February 2020, according to data compiled by Bloomberg.",
-  "url": "https://finnhub.io/api/news?id=1581d4ce5ea972db244bfe40f36f9759e2274d880ecd83ded8f3da024ab2f776"
-}

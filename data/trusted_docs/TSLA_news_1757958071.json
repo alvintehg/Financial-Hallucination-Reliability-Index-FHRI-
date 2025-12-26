@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757958071,
-  "headline": "US Equity Indexes Rise in Midday Trading",
-  "summary": "US equity indexes rose while government bond yields declined in midday trading on Monday. The Nas",
-  "url": "https://finnhub.io/api/news?id=068cba47435a58eb68568cbef2d54ff4d11ff446c90bf53cf7767b13beba71d5"
-}

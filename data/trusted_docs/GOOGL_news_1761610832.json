@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761610832,
-  "headline": "CEO of Alphabet’s X, Astro Teller, on what makes a moonshot",
-  "summary": "Teller says X has a 2% hit rate, which means that most of the things the company tries don't work out, and that's okay.",
-  "url": "https://finnhub.io/api/news?id=37aaa9cbe52eb18531722932a3dad7f9e6e284a29aeb4d77c8c73f1df9bce417"
-}

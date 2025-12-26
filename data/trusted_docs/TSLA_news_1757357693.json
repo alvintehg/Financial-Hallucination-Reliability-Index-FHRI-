@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757357693,
-  "headline": "Sector Update: Consumer Stocks Mixed in Afternoon Trading",
-  "summary": "Consumer stocks were mixed Monday afternoon, with the Consumer Staples Select Sector SPDR Fund (XLP)",
-  "url": "https://finnhub.io/api/news?id=1027d96693bc08df1bcbe4f4b7b6aa65ccfbe50a717bd09cd80d5bee37257259"
-}

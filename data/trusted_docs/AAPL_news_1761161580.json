@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "MarketWatch",
-  "datetime": 1761161580,
-  "headline": "Review & Preview: Caution Flag",
-  "summary": "Review & Preview: Caution Flag",
-  "url": "https://finnhub.io/api/news?id=6f5607f0fd15e8d26ba9f715630f00cfbae6dbc3cf756db093e14bb027aef464"
-}

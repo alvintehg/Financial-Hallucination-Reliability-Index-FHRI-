@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757415806,
-  "headline": "How does Tesla get to $8.5 trillion value? Robots, robotaxis and hope",
-  "summary": "SAN FRANCISCO (Reuters) -How can Tesla become an $8.5 trillion company?  Selling 100 million humanoid robots in a year could do it; creating a robotaxi network with more than 10 times the revenue of Uber might as well.  Musk on Friday was given a decade to expand Tesla's $1 trillion valuation into a company worth more than the combined current value of Nvidia and Microsoft, the two most valuable publicly traded companies in the world.",
-  "url": "https://finnhub.io/api/news?id=3e5dbceb2ca2cdaf5871e300620846c41316a08b5ac756b8cd889219084b12d3"
-}

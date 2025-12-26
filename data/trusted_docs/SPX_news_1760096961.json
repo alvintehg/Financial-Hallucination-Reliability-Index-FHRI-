@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760096961,
-  "headline": "Credit Spreads May Be Flashing Warning Signs For The Stock Market",
-  "summary": "Credit spreads are widening globally, signaling a potential shift in market risk sentiment. Click here for more information on Market Outlook.",
-  "url": "https://finnhub.io/api/news?id=5deb76ce5b856b392b714d5d8ff877e92bbe0267bc209fc879720018a2dbe1f9"
-}

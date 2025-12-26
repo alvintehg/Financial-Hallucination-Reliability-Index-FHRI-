@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757381462,
-  "headline": "Elon Musk Says Tesla's AI5 Chip Will Crush Competition On Performance-Per-Watt, Says AI6 Will Take That 'Much Further'",
-  "summary": "On Sunday, Elon Musk doubled down on Tesla Inc.'s (NASDAQ:TSLA) in-house chip strategy, touting the upcoming AI5 as the most powerful and efficient inference chip for certain model sizes while promising that its successor, AI6, will push performance ...",
-  "url": "https://finnhub.io/api/news?id=8cf6509116c2e3248e594c2e7bbc5d13a7d8937c56958c37334d453550fe87a0"
-}

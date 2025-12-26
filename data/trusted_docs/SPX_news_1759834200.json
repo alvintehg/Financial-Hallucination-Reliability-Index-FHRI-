@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1759834200,
-  "headline": "SPX Options Jump To Record 74% Market Share",
-  "summary": "Implied volatilities were mixed across asset classes last week as the US government shut down for the first time since 2018. Read more here.",
-  "url": "https://finnhub.io/api/news?id=c39b0ba87fa096b65b549fcad2f62c901f97edf22bf712b1a178c89464c67835"
-}

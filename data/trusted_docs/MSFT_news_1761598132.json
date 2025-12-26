@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761598132,
-  "headline": "US Equity Indexes Touch Record Highs as Potential China Trade Deal Boosts Big-Tech Ahead of Earnings",
-  "summary": "US equity indexes broke records on Monday as a potential trade deal with China prompted investors to",
-  "url": "https://finnhub.io/api/news?id=80694e22b282a5159c3cef279a7ca96dbffc1363751580c31d2375ecb708140a"
-}

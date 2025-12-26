@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757947719,
-  "headline": "Tesla stock surges as Elon Musk buys $1 billion in shares",
-  "summary": "The purchase comes after Tesla directors proposed a 10-year pay package that could deliver Musk as much as $1 trillion in stock",
-  "url": "https://finnhub.io/api/news?id=c9efb071fe1cb2f997d664452287e66037fc29dee26992ffd928dfc0fa3cfbff"
-}

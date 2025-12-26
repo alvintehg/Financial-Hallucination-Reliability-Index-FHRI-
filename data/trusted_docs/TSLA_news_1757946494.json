@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757946494,
-  "headline": "TSLA: Tesla Stock Jumps After Musk's Billion-Dollar Insider Purchase",
-  "summary": "Elon Musk Pours Nearly $1 Billion Into Tesla, Stock Rockets Higher",
-  "url": "https://finnhub.io/api/news?id=f295dd1e807e5115246e236785ecafcfe7999fca7118fa1de88a2dcecdc888d5"
-}

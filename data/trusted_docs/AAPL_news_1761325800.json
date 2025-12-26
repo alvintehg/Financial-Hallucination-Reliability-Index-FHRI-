@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "MarketWatch",
-  "datetime": 1761325800,
-  "headline": "Review & Preview: Inflation Relief Rally",
-  "summary": "Review & Preview: Inflation Relief Rally",
-  "url": "https://finnhub.io/api/news?id=6a98dc80ca411c8b9ef122e856ae0423f00c7dda8878f19d06e6f060e4f15b48"
-}

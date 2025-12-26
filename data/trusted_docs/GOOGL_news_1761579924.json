@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761579924,
-  "headline": "Alphabet Gets Price Target Boost Ahead of Q3 Earnings",
-  "summary": "JPMorgan and KeyBanc expect solid results driven by AI momentum",
-  "url": "https://finnhub.io/api/news?id=bf817befd4f9a831c0fd770256e50b09900e64739cb4828c9aab31a3fca1a815"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761236760,
-  "headline": "Tech, Media & Telecom Roundup: Market Talk",
-  "summary": "Find insight on IMB, T-Mobile and more in the latest Market Talks covering technology, media and telecom.",
-  "url": "https://finnhub.io/api/news?id=285bc0affd4ec8f69e1d0068fc5202ce78010ab6b7d588b57169dc6131513949"
-}

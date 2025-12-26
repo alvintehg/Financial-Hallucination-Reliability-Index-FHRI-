@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761229229,
-  "headline": "Apple Can’t Fold a Foldable Phone",
-  "summary": "Rumors hint that Apple will launch a foldable phone with the iPhone 18 late next year. It is trying to catch up to archrival Samsung.",
-  "url": "https://finnhub.io/api/news?id=2764356704db3ce7109f0a2f6e96d012a22e30e58d8860b324d0442d9c819b60"
-}

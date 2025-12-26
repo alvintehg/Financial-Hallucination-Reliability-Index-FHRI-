@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757973263,
-  "headline": "Tesla Surge, Alphabet's $3T Milestone Push Nasdaq to Record Highs Ahead of Fed",
-  "summary": "Indexes boosted by Musk's $1B stock buy; Alphabet hits $3T",
-  "url": "https://finnhub.io/api/news?id=225aac983eb058042245fcf440c6d5b6e4159ddeb97554159829685f746f5303"
-}

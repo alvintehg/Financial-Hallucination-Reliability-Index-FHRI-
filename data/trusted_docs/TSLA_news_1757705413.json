@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757705413,
-  "headline": "Jamf Holding (JAMF) Sees 28% Price Rise Over Last Month",
-  "summary": "Jamf Holding (JAMF) experienced a notable price move of 28% over the last month. This surge in shareholder returns coincides with a time when the tech-heavy Nasdaq Composite hit a record high, propelled by gains in larger tech stocks like Tesla, Microsoft, and Nvidia. This broader market rally, together with a general anticipation of potential interest rate cuts by the Federal Reserve, might have buoyed investor confidence not just in mega-cap tech giants but also in firms like Jamf. While...",
-  "url": "https://finnhub.io/api/news?id=32b90d1430ec12ad6d729cc8d3c3789a29ec9b828483c98452fa6d797eeab686"
-}

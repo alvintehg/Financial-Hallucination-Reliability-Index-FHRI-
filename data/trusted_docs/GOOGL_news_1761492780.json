@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761492780,
-  "headline": "AMD quietly cracks open quantum opportunity",
-  "summary": "Quantum computing has run red-hot this year, as it marches toward utility. In 2025, “someday” even started to sound like “soon” for the quantum computing space. Analysts forecast the global quantum market to surge to more than a whopping $7 billion by 2030, growing at 34.6% annually. Businesses are ...",
-  "url": "https://finnhub.io/api/news?id=f0c92e75ac5c228a144dbd9628b8ddd6166d2c25e4379463297c19bbf5d2dd9a"
-}

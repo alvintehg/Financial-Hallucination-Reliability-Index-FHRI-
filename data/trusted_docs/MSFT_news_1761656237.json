@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761656237,
-  "headline": "Big Tech's earnings will focus on AI and iPhones",
-  "summary": "Big Tech's earnings are coming, and AI will be top of mind.",
-  "url": "https://finnhub.io/api/news?id=6ebd5030dc24dc4c1b5f61a924a6eedc2ca32ae1b88cdcc6a2b2632e5f78f6fb"
-}

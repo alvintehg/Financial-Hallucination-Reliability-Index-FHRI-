@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761595651,
-  "headline": "Tech Stocks Drive S&P 500 Higher to Mark 35th Record Close For 2025",
-  "summary": "Wall Street decided to bid up U.S. stocks--small and large-- as investors rejoiced over a fragile trade truce between U.S., China and expectations of even lower interest rates.  The S&P 500, which closed up 1.2%, has marked its 35th record for 2025, the most out of the three.  Dow settled 0.7% higher, Nasdaq was up 1.9%.",
-  "url": "https://finnhub.io/api/news?id=8c621773b10affed0b2b6b970b2379fabc2d12f8b9c6c8b737e7385ee38dfc5f"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761161114,
-  "headline": "AI hype is real, but a Nobel-winning economist warns profits aren't guaranteed",
-  "summary": "Investors are betting big on AI — but Richard Thaler says don't count on easy profits.",
-  "url": "https://finnhub.io/api/news?id=af6cd212fc6c176392f4d0170b3122715092b568f50b6b6896926fb6d77f8632"
-}

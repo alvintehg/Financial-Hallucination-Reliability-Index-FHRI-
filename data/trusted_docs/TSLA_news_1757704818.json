@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757704818,
-  "headline": "Duolingo (DUOL) Surges 13% Over Last Week Amid Tech Sector Confidence",
-  "summary": "Duolingo (DUOL) experienced a notable 13% price move over the last week, coinciding with key market trends. During this period, the Nasdaq Composite, which was buoyed by tech stocks like those of Tesla, achieved a new record high, reinforcing a positive sentiment in tech-oriented sectors. However, the broader market was mixed, with the Dow slipping slightly and the S&P 500 making modest gains. The collective investor confidence towards tech stocks likely contributed to the upward momentum in...",
-  "url": "https://finnhub.io/api/news?id=e5189977c384bba1b909cd7ef98a787186d3b85429d1bdbea81d716de14489e8"
-}

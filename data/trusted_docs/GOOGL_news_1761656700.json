@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761656700,
-  "headline": "Keepit Platform Recognized for Data Protection and Cyber Resilience at 2025 Top InfoSec Innovator Awards",
-  "summary": "COPENHAGEN, Denmark, October 28, 2025--Keepit, a global provider of a comprehensive cloud backup and recovery platform, today announced it has won in four categories at the Top Infosec Innovator 2025 awards. Keepit was named the winner in the following categories: \"Hot Company Data Protection\", \"Hot Company Data Security\", \"Hot Company Cyber Resilience\" and \"Hot Company Data Recovery\".",
-  "url": "https://finnhub.io/api/news?id=3092c4275564de99019abbccbdf0261b4936552a19362cf93197b34cc8c731c4"
-}

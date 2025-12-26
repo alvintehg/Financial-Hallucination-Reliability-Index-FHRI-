@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757943540,
-  "headline": "Tesla Shares Rise on Elon Musk’s $1 Billion Stock Purchase",
-  "summary": "The move signals Musk’s commitment to the electric-vehicle maker as its board prepares what could be a $1 trillion pay package.",
-  "url": "https://finnhub.io/api/news?id=fdd2261cf6f95a33936e466914ef4b55359ea547640b32315c3a75b9ed919d50"
-}

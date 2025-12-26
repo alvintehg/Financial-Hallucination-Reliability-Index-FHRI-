@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757116857,
-  "headline": "Musk's Texas-sized $1 trillion payday enabled by state's new law",
-  "summary": "WILMINGTON, Delaware (Reuters) -Elon Musk's blow-out $1 trillion pay package from Tesla proves everything is bigger in Texas, especially under its new management-friendly law.  Last year, Tesla reincorporated in the Lone Star State after a judge in its former corporate home, Delaware, ruled a $56 billion compensation for the CEO was \"unfathomable\" and unfair to shareholders.  Musk urged companies to ditch Delaware and his board worked on a new pay package.",
-  "url": "https://finnhub.io/api/news?id=27fe89e4e775b48e919231f46c0ec0569fe5c8c6b9e7a65ca20297a4b322c1f6"
-}

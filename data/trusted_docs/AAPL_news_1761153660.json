@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761153660,
-  "headline": "MSFT vs. AAPL: Which Mega-Cap Tech Stock is the Better Buy Now?",
-  "summary": "Microsoft outpaces Apple with 39% Azure growth, $13B AI business, and clear enterprise AI monetization, while Apple faces tariff headwinds and uncertain AI revenues.",
-  "url": "https://finnhub.io/api/news?id=f44d4cc4568eea89d0befa9c3531fb66434da002afcb60fd9350f851745b3228"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761654233,
-  "headline": "Apple, Qorvo, Celestica: Trending Stocks",
-  "summary": "As Apple (AAPL) closes in on a $4 trillion valuation, stocks of suppliers see big moves, with Skyworks (SWKS) and Qorvo (QRVO) joining forces, and Foxconn (2354.TW, 0FJ.F, 0FJ.SG, 0FJ.DU, FXCOF) investing in AI. Talk of a merger between Paramount Skydance (PSKY) and Warner Bros Discovery (WBD) continues. Investors looking for new AI plays increasingly turn to Celestica (CLS, CLS.TO, CTW0.F, CLS.NE, CTW0.MU), following strong Q3 earnings. And the chair of Tesla (TSLA) warns shareholders that Elon Musk may leave if they don't approve his $1 trillion package. For more live coverage of markets watch the full episode of Market Sunrise and head to Yahoo Finance.",
-  "url": "https://finnhub.io/api/news?id=3c3322415ddad379d1ba41c001d6539af28f2d77ba4c4e078f3d61d003d20238"
-}

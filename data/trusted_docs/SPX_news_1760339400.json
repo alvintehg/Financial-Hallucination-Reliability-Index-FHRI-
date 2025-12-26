@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760339400,
-  "headline": "Weekly Market Pulse: The Return Of Tariff Man",
-  "summary": "Since the beginning of September, there have been 28 trading days, and 17 of them were up (61%) with one run of 7 out of 10 days higher. Read more here.",
-  "url": "https://finnhub.io/api/news?id=74904f80191e88bb21c22f0f118925b681c386a0eee7fe7ffeebce169faf115a"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760022396,
-  "headline": "AAII Sentiment Survey: Optimism Persists",
-  "summary": "Investor sentiment shifts: Bullish rises to 45.9%, and bearish dips to 35.6%. Click here to read about the most recent sentiment survey results.",
-  "url": "https://finnhub.io/api/news?id=0e9db624489336079aa23224c5c7137ccb4de1a6adb22e411a10ae1e88bbf7a0"
-}

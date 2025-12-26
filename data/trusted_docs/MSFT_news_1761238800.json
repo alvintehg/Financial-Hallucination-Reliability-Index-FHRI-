@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761238800,
-  "headline": "24-Hour Trading Is Coming—and Wall Street Isn’t Ready",
-  "summary": "Extended trading could change everything from staffing models to market volatility. What happens when a bank collapses at 1 a.m.?",
-  "url": "https://finnhub.io/api/news?id=adfd97a6f1de2706932262c30699c7962c473807ee4dc185f5a5b5e6ba50e290"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761498002,
-  "headline": "Earnings, Trade War and Other Can't Miss Items this Week",
-  "summary": "This week brings an extraordinary convergence of market-moving events: Wednesday's virtually certain Fed rate cut and a blockbuster earnings lineup featuring all five mega-cap tech giants",
-  "url": "https://finnhub.io/api/news?id=5216020c390e5671275ec272489fe83150eb1f396644ba5d1478cd04c9c881b0"
-}

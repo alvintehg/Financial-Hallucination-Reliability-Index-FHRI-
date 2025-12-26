@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757973085,
-  "headline": "Heard on the Street Recap: Google’s Finally Clicking",
-  "summary": "Google joins $3 trillion club.  Parent company Alphabet became the fourth company to cross that milestone on Monday.  Google remains the cheapest of megacap tech stocks though, based on its price relative to projected earnings.",
-  "url": "https://finnhub.io/api/news?id=f9bda0d7c70502fbdd0aca85c76003dd80b124c47f0d10a09b99c66eaa5cf519"
-}

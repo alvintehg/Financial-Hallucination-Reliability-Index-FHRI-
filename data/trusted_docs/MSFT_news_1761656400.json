@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761656400,
-  "headline": "Litmus Launches Free Developer Edition of Litmus Edge to Accelerate Industrial AI Adoption",
-  "summary": "Litmus today launched Litmus Edge Developer Edition, a free version of its Industrial Edge Data Platform that lets users quickly build, test, and scale industrial data pipelines. SAN JOSE, CA / ACCESS Newswire / October 28, 2025 / Litmus, the Industrial ...",
-  "url": "https://finnhub.io/api/news?id=b5e5b88177876e306bd8cd4d1a21ebdb04d64d8d072111427ccec802a0b084ad"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761640560,
-  "headline": "U.S. Recession Probability Falls After Fed Resumes Rate Cuts, Set To Fall Further",
-  "summary": "We project that in the next six weeks, the probability of a U.S. recession getting started in the next twelve months will be around 21%.",
-  "url": "https://finnhub.io/api/news?id=83d575d2fc3c3fe139ce2363b5bc1d715a94f71e1c7af5647bc8d955da951b89"
-}

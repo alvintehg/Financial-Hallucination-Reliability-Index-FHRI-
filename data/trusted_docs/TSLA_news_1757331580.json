@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757331580,
-  "headline": "Latest News In Electric Vehicles - XPENG Unveils AI-Powered Mobility Advancements at IAA Mobility 2025",
-  "summary": "XPENG, a prominent player in the electric vehicle sector, recently showcased significant advancements at IAA Mobility 2025, highlighting its commitment to AI-driven mobility solutions. The company introduced the Next P7, an AI-enhanced vehicle, and announced plans to open its Munich R&D Center, marking its first in Europe to enhance local innovation ties. XPENG's initiatives include launching L4 autonomous driving vehicles and expanding its product offerings to include flying vehicles and...",
-  "url": "https://finnhub.io/api/news?id=25fe445597865a0019d7925b198dd7b1aa2cabff05c5d6a2eb2f2fa66f512b71"
-}

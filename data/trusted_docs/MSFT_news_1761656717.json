@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761656717,
-  "headline": "Fed lookahead, Amazon layoffs, earnings latest: 3 Things",
-  "summary": "US stock futures (ES=F, NQ=F, YM=F) are moving in positive territory on Tuesday morning as Wall Street looks ahead to the Federal Reserve's interest rate decision and the first round of Big Tech earnings results tomorrow. Magnificent Seven companies Meta Platforms (META), Microsoft (MSFT), and Alphabet (GOOGL, GOOG) will be reporting quarterly results on Wednesday, and Amazon (AMZN) and Apple (AAPL) will publish their releases on Thursday. Amazon laid off 14,000 corporate workers on Tuesday after Reuters originally reported on Monday that firings could reach up to 30,000 roles. UnitedHealth Group (UNH), United Parcel Service (UPS), and PayPal (PYPL) all reported third quarter earnings results and their shares are all seeing a boost in pre-market trading. To watch more expert insights and analysis on the latest market action, check out more Morning Brief.",
-  "url": "https://finnhub.io/api/news?id=bcaba2dd166cf9b67155c293670f710098a19f152cf2ff51b0c51421d643c146"
-}

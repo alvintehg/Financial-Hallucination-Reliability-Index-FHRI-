@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757342351,
-  "headline": "Tesla Stock Rises Despite U.S. Market Share Slumping to 8-Year Low",
-  "summary": "Tesla's U.S. EV Market Share Crashes to 8-Year Low as Rivals Surge",
-  "url": "https://finnhub.io/api/news?id=69efd6a012251880acc9e68834972dc5b8b3f8ec6ce7e7e67d8d0826c8c155d3"
-}

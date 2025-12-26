@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761013527,
-  "headline": "Google Cloud Expands Nvidia Partnership With New G4 Virtual Machines",
-  "summary": "Launch targets enterprise and industrial AI workloads with Nvidia's latest Blackwell GPUs",
-  "url": "https://finnhub.io/api/news?id=92f590bbf6fd61c77d0af0b176ae4b3b6622d18ee20c556e857e933fb0745448"
-}

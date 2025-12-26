@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757537100,
-  "headline": "Amazon’s Autonomous Car Has Arrived. Why Zoox Could Have a Rough Road Ahead.",
-  "summary": "The start-up is offering free rides in Las Vegas starting today while it awaits regulatory approval to operate its paid ride-hailing service.  It cleared a big hurdle in August, when federal regulators allowed the Foster City, Calif., company to deploy its four seaters even though they lack steering wheels and other features typically found on cars.  To navigate rides, Zoox uses a combination of cameras, laser-based radar, and long-wave infrared sensors to give it a 360-degree view of the road.",
-  "url": "https://finnhub.io/api/news?id=0bb2aad1076a58d3e57590e350eeb937e2083fba3878142e3fef99954417c5e2"
-}

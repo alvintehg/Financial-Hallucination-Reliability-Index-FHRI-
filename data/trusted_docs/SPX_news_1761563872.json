@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761563872,
-  "headline": "The Stock Market: Three New Historic Highs",
-  "summary": "The stock markets reached three new historical highs on Friday, signaling strong performance. Learn more about the S&P 500 stock here.",
-  "url": "https://finnhub.io/api/news?id=c007b97bcbcaee5c939f52bfa46117cce416b09a8fbcb70d87685b984a117c35"
-}

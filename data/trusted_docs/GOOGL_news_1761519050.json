@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761519050,
-  "headline": "Stock market today: Dow, S&P 500, Nasdaq futures climb with Fed, Big Tech earnings, Trump-Xi meeting ahead",
-  "summary": "Futures on the major gauges rose overnight Sunday ahead of a packed week of economic events.",
-  "url": "https://finnhub.io/api/news?id=cc8a2b692cfe7f6819075ff32429318e67879296e52c63a5cae68e8034ba1a1c"
-}

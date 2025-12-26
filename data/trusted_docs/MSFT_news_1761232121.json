@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761232121,
-  "headline": "A Cautionary Tale for Meta, Microsoft and Other AI ‘Hyperscalers’",
-  "summary": "? This is an online version of Spencer's Markets A.M. newsletter.  Data centers costing billions of dollars apiece are vital to the AI boom, and you’re probably helping to finance them indirectly through bond funds or by owning the shares of “hyperscalers” Microsoft, Meta, Alphabet and Amazon.  It’s also possible to make a direct investment in data centers via real-estate investment trusts, but shares of the two big ones are down this year.",
-  "url": "https://finnhub.io/api/news?id=c60551d859643ceb95d66321e6860cc9ad9b12010ecf86485272bbbf1fc21208"
-}

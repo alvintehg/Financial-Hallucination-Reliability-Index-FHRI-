@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "SeekingAlpha",
-  "datetime": 1761462095,
-  "headline": "Wall Street Week Ahead",
-  "summary": "Get the latest stock market updates, Q3 earnings highlights, and expert gold investment insights.",
-  "url": "https://finnhub.io/api/news?id=c68aad4ae2924996a3a5d51f7fb2a98117fe57727304ada2cbac36ac95e0a414"
-}

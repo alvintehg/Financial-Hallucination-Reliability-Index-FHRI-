@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761575400,
-  "headline": "Big Tech earnings: The 3 things Wall Street will be listening for",
-  "summary": "Big Tech is on deck for earnings season this week with Magnificent Seven companies Meta Platforms (META), Microsoft (MSFT), and Alphabet (GOOGL, GOOG) reporting quarterly results on Wednesday, and Amazon (AMZN) and Apple (AAPL) publishing their releases on Thursday. Yahoo Finance senior reporters Ines Ferré and Allie Canal and Washington Crossing Advisors Senior Portfolio Manager Chad Morganlander explain what they will be watching from these Big Tech names, including Amazon's reaction to its massive AWS outage last week, AI capex spending, and Apple's (AAPL) integration of artificial intelligence into devices. To watch more expert insights and analysis on the latest market action, check out more Opening Bid.",
-  "url": "https://finnhub.io/api/news?id=39ac566278c6f6a65f1a90f9736f8c928a13f6a2947849a6c47ada4b324a3f4f"
-}

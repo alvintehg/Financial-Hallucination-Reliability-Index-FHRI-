@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760917500,
-  "headline": "S&P 500 Earnings: Financial Sector Earnings Push Forward Estimates Higher",
-  "summary": "Despite the worries over the regional bank credit situation this week, it didnât seem to impact the forward estimates for the financial sector or the S&P 500 in general. Read more here...",
-  "url": "https://finnhub.io/api/news?id=878aea6bd3884754da8060e23790c40b39f0ee2fc3ff84fd3374bcf473c90b3f"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757962085,
-  "headline": "Communication Services, Consumer Discretionary Help Push US Equity Indexes Higher",
-  "summary": "US equity indexes advanced after midday on Monday, led by communication services and consumer discre",
-  "url": "https://finnhub.io/api/news?id=40ee5ab17b9c5944d0b93c6df362131f080585b5f850449a8dff2a8cf514e3a2"
-}

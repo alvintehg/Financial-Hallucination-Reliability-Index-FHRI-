@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757509231,
-  "headline": "Amazon’s Zoox launches robotaxi service in Las Vegas as self-driving race heats up",
-  "summary": "Zoox is launching its robotaxi service for all customers for free in Las Vegas.",
-  "url": "https://finnhub.io/api/news?id=cbbf76fda966cb03f28a046e5fadfb9fb612707b480f983c136d4f53b03b439a"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "GOOGL",
-  "source": "Yahoo",
-  "datetime": 1761063026,
-  "headline": "Google Cloud Rolls Out Nvidia-Powered G4 AI Machines",
-  "summary": "Nvidia Blackwell and AMD Turin chips drive next-gen enterprise workloads.",
-  "url": "https://finnhub.io/api/news?id=b0bfa7e083750c63659d64678c5c7885dfe81c00962bf6a6e5326e760042481b"
-}

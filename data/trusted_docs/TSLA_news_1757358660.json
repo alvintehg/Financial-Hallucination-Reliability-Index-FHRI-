@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757358660,
-  "headline": "When will MicroStrategy join the S&P 500? (Hint: not anytime soon)",
-  "summary": "MicroStrategy failed to join the S&P 500 this time and the next rebalancing occurs in December.",
-  "url": "https://finnhub.io/api/news?id=dcf6245b4a3c94524d5d37f3aaf96ee8472366f3f4c5d986b1eb251ea1eac4e7"
-}

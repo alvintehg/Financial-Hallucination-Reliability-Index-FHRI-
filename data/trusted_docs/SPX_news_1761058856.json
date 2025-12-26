@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1761058856,
-  "headline": "Trouble Brewing In The Fed's Repo Market",
-  "summary": "Fed's repo facility use signals liquidity stress for regional banks like KRE.",
-  "url": "https://finnhub.io/api/news?id=2f67be864d404fbe613e1c953ccd73fce14b42c7194223f3424b1a3ea3296e7c"
-}

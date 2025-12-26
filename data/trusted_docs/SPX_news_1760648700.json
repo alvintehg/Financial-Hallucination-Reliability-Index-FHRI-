@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760648700,
-  "headline": "Fed Chair Powell: Balance Sheet Reduction May End Soon",
-  "summary": "In another sign that we are entering an era of even looser monetary policy, Federal Reserve Chairman Jerome Powell hinted that balance sheet reduction is about to come to an end.",
-  "url": "https://finnhub.io/api/news?id=c0ea65491e8955a9711ce10f0ab51d105e95f78bd0b8f6207ef518009cbad93f"
-}

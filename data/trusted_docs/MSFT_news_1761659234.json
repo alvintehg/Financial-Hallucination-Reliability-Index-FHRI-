@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761659234,
-  "headline": "Microsoft to Get 27% Stake of OpenAI, AI Model Access Until 2032",
-  "summary": "Microsoft Corp. and OpenAI finalized a new agreement that will see Microsoft get a 27% ownership stake in OpenAI worth about $135 billion and access to the artificial intelligence startup's technology until 2032, including models that achieved the benchmark of AI general intelligence. Caroline Hyde reports on Bloomberg Television.",
-  "url": "https://finnhub.io/api/news?id=9e7de8d1535a8018431f5002c3e843d30e05775cc109e07a84113ea997968e8d"
-}

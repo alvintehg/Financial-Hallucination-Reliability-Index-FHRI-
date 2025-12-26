@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757960453,
-  "headline": "Why the Dow Is Lagging Behind the S&P 500 and Nasdaq",
-  "summary": "The Dow was moving in and out of positive territory on Monday because of struggles among its heavier hitters.  The blue-chip index rose more than 100 points shortly after the open but was essentially flat in the early afternoon.  The S&P 500 was up 0.3%, while the Nasdaq Composite was up 0.8%.",
-  "url": "https://finnhub.io/api/news?id=fd506a0b27d837c7c8f27a637d86f95b8452a48b4321381fa0de403dbe75d004"
-}

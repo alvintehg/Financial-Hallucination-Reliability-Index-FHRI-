@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1759907700,
-  "headline": "Dollar Jumps By Default",
-  "summary": "The US dollar's (DXY) recovery accelerated today. Unexpectedly poor German data and the French political morass have sent the euro lower for the third consecutive session. Read more here.",
-  "url": "https://finnhub.io/api/news?id=12f55099c01c514ab594b752dcaa7ce5889b4977372458321dccd048933d0f36"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757943858,
-  "headline": "Tesla Stock Soars as Elon Musk Buys About $1B Worth of Shares",
-  "summary": "Elon Musk purchased some 2.57 million Tesla shares last week, sending the stock higher Monday morning and into positive territory for the year.",
-  "url": "https://finnhub.io/api/news?id=f8d4052b639a6955882530a51ca63efec50de998cdd5215299bf9a1c630699c3"
-}

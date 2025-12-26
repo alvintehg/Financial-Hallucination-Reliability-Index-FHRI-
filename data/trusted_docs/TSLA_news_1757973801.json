@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757973801,
-  "headline": "Nasdaq, S&P 500 Hit New Highs Amid Optimism Around China Trade Talks",
-  "summary": "The Nasdaq Composite and the S&P 500 reached new peaks on Monday amid optimism around trade talks wi",
-  "url": "https://finnhub.io/api/news?id=41f35bfa5ab23a356175d6b46761fc4ef7c1d7d5017c4300efa7ad5494bf0791"
-}

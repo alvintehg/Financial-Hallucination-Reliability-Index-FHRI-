@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761658501,
-  "headline": "UnitedHealth tops Q3 estimates, Skyworks set to acquire Qorvo",
-  "summary": "Morning Brief host Julie Hyman tracks several of the day's top trending stock tickers, including UnitedHealth Group (UNH) shares rising after posting third quarter earnings results and hiking its full-year guidance, Skyworks Solutions (SWKS) acquiring Qorvo (QRVO), and JetBlue Airways (JBLU) publishing a smaller-than-expected loss in its latest quarter. To watch more expert insights and analysis on the latest market action, check out more Morning Brief.",
-  "url": "https://finnhub.io/api/news?id=c453c937c4057fd9a59ecd6ea14391c1955dd40834cfa54b1c4c25cdd6bb8721"
-}

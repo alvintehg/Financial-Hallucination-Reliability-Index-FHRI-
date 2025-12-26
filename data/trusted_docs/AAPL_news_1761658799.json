@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761658799,
-  "headline": "Apple's market cap touches $4 trillion on positive iPhone 17 sales momentum",
-  "summary": "Apple's market cap has topped $4 trillion.",
-  "url": "https://finnhub.io/api/news?id=f4b339ee1ea69b4e85ef73db5f49052bf4623e1edfdc2498bdff7bdb33558e67"
-}

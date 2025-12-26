@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757697307,
-  "headline": "Why Tesla Stock Jumped Again Friday",
-  "summary": "Tesla stock is trading at its highest level since February.",
-  "url": "https://finnhub.io/api/news?id=a5ea1100b8c1a329e98d7f7280216277e257f2d6adeffa6004a5b0e5f130bc42"
-}

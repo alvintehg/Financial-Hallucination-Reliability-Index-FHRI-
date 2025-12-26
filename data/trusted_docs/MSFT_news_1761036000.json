@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761036000,
-  "headline": "My 2 Favorite Stocks to Buy Right Now",
-  "summary": "Investors appear to be sleeping on Amazon and Dutch Bros.",
-  "url": "https://finnhub.io/api/news?id=a789973cdd20995fe6da21468a9dbad3b02af70a8a34935b75ac10b2d45d63f8"
-}

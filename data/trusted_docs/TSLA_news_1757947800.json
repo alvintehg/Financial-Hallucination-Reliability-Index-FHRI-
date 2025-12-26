@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757947800,
-  "headline": "These Stocks Are Moving the Most Today: Nvidia, Tesla, Texas Instruments, Oracle, Gemini Space Station, Corteva, and More",
-  "summary": "Nvidia shares fall after China’s market regulator says it found the chip maker breached antimonopoly laws, while Tesla rises as CEO Elon Musk buys stock in the electric-vehicle maker.",
-  "url": "https://finnhub.io/api/news?id=5d0cfebc8a1313b3cfafcd54af8546c7826507dc075500c4a5e8ff003b06d6cd"
-}

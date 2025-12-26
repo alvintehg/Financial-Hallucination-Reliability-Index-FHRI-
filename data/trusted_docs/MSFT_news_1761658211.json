@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761658211,
-  "headline": "Microsoft stake in OpenAI valued at $135B after reaching new deal",
-  "summary": "Microsoft's (MSFT) stake in OpenAI's non-profit entity (OPAI.PVT) is now valued at $135 billion following the latter's recapitalization. This new agreement also has OpenAI paying for $250 billion in Microsoft Azure services. Morning Brief host Julie Hyman reports more on this breaking news. To watch more expert insights and analysis on the latest market action, check out more Morning Brief.",
-  "url": "https://finnhub.io/api/news?id=09b15c5ab2d370aceca25611362bc717897ffbbf554d9578f1ef2feff32093a4"
-}

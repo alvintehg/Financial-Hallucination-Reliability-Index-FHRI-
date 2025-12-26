@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "AAPL",
-  "source": "Yahoo",
-  "datetime": 1761598283,
-  "headline": "Earnings live: Keurig Dr. Pepper stock pops, Waste Management and Whirlpool slip with Big Tech results on deck",
-  "summary": "Third quarter earnings season is ramping up, and analysts expect S&P 500 companies grew their profits by 8% during the quarter.",
-  "url": "https://finnhub.io/api/news?id=77ec2bb4cd8375cdc88c8e8c31c6faa741da4e3fc27cbf3b7ec5128ffc89b1fd"
-}

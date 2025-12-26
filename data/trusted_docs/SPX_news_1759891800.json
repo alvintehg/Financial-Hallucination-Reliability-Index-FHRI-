@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1759891800,
-  "headline": "Macro Monthly: Status Quo",
-  "summary": "The 10-year Treasury yield started the year at 4.57% and made its high for the year on January 13th at 4.81%. Read more here.",
-  "url": "https://finnhub.io/api/news?id=15a1ccfa8c65c01bf594c708ec2d305922c597bd135e861775040f16f75f44e7"
-}

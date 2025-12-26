@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760833800,
-  "headline": "S&P 500 Snapshot: Volatile See-Saw Week",
-  "summary": "The S&P 500 started the week strong, posting its largest daily gain in over four months on Monday. Read more here.",
-  "url": "https://finnhub.io/api/news?id=de76c7386a2f4703c93c734e4e2963ccc3b43b7e0bb0faadd432e34dece19e41"
-}

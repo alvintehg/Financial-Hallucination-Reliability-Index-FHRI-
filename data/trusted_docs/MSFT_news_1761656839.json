@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "MSFT",
-  "source": "Yahoo",
-  "datetime": 1761656839,
-  "headline": "Microsoft, OpenAI reach new deal valuing OpenAI at $500 billion",
-  "summary": "(Reuters) -Microsoft and OpenAI on Tuesday said they had reached a deal to allow the ChatGPT maker to restructure itself into a public benefit corporation, valuing OpenAI at $500 billion and clearing the way for it to become a publicly traded company.  Microsoft would hold a stake of about $135 billion - or 27% - in OpenAI Group PBC, which will be controlled by the OpenAI Foundation, a nonprofit.  The deal removes a major constraint on raising capital for OpenAI, which was founded as a nonprofit AI safety group and which signed a deal in 2019 with Microsoft that gave the Redmond, Washington-based firm rights over much of OpenAI's work in exchange for providing the costly cloud computing services neede2d to carry it out.",
-  "url": "https://finnhub.io/api/news?id=0de91e3d5c62e4582409656a95c83a04b11d386aae209346582b1579756fc9d0"
-}

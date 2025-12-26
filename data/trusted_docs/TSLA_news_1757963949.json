@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757963949,
-  "headline": "Equities Rise Intraday as Trump Upbeat on US-China Trade Discussions; Tesla Jumps",
-  "summary": "US benchmark equity indexes were higher after midday Monday as President Donald Trump sounded upbeat",
-  "url": "https://finnhub.io/api/news?id=1558ce218b2a5ef9ee0e47158b50597f56d542f6f1c40bd8fbed672e2847c05f"
-}

@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757366160,
-  "headline": "These Stocks Moved the Most Today: AppLovin, Robinhood, Broadcom, Tesla, EchoStar, Planet Labs, QuantumScape, and More",
-  "summary": "AppLovin and Robinhood trade sharply higher after it was announced the stocks would be joining the S&P 500 later this month.",
-  "url": "https://finnhub.io/api/news?id=e1716a179fe00aa41b5b6804c4040fe4f1c1081140bbc939bcdd42199e9cd322"
-}

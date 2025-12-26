@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "TSLA",
-  "source": "Yahoo",
-  "datetime": 1757343344,
-  "headline": "Stock Market Today: Dow Falls Ahead Of Key Inflation Data; Tesla Touches Buy Point (Live Coverage)",
-  "summary": "The Dow Jones index fell Monday ahead of this week's key inflation data. Tesla stock touched a new buy point.",
-  "url": "https://finnhub.io/api/news?id=dc4984144e810fbc348f0f0189fc17b6fd06f90b1d1141e6f81264fd91d6077f"
-}

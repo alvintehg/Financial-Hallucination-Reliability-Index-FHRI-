@@ -1,9 +1,0 @@
-{
-  "type": "news",
-  "ticker": "SPX",
-  "source": "SeekingAlpha",
-  "datetime": 1760103180,
-  "headline": "Shutdown Threatens Next Week's Inflation Report, Making Fed's Job Harder",
-  "summary": "The government shutdown could delay next weekâs inflation report. Uncertainty is rising for the next Fed policy decision as economic data is postponed or canceled.",
-  "url": "https://finnhub.io/api/news?id=d841a3090d13b89b35c6f4242756641ea1440277ed736740aa59ead57282fae1"
-}
