@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757352991,
+  "headline": "Tesla Robotaxi App Hits Snags in First Public Rollout",
+  "summary": "Users briefly gained access before being pushed back to waitlist",
+  "url": "https://finnhub.io/api/news?id=b47446c6682397544b1b848ac983e8928aa9ec5fefd6c33d156fb414c98e49f9"
+}

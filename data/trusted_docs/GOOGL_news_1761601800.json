@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761601800,
+  "headline": "Why the Stock Market Keeps Gaining. No, It’s Not Just AI.",
+  "summary": "A higher-than-normal share of the companies that have reported their results so far have beaten consensus expectations.",
+  "url": "https://finnhub.io/api/news?id=685e9895d1b60025a57bcc9a9dc7c9c835454dc1767a5572eda0797b4401dd02"
+}

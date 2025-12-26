@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761581544,
+  "headline": "Microsoft and Apple Race to $4 Trillion Market Value",
+  "summary": "Two of the biggest U.S. companies are getting even bigger. Microsoft and Apple are within striking distance of becoming $4 trillion companies. Microsoft stock is trading at $532.74 and a move to $538.",
+  "url": "https://finnhub.io/api/news?id=bdc68b9c04a2fc97a1b449d7da9081fc34b99b393d20bd2918232fa8dbbb4629"
+}

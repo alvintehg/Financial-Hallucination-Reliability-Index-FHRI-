@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761653760,
+  "headline": "Skyworks and Qorvo Stocks Soar as the Apple Suppliers Create $22 Billion Chip Business",
+  "summary": "Skyworks Solutions  and  Qorvo  agreed to merge in a cash-and-stock deal that values the combined radio frequency, analog, and mixed-signal semiconductor maker at around $22 billion.  Qorvo  shareholders will receive $32.50 in cash and 0.96  Skyworks  common shares for each Qorvo share.  When the deal closes, Skyworks stockholders will own 63% of the business and Qorvo shareholders will own the remaining 37%.",
+  "url": "https://finnhub.io/api/news?id=a405a15998c5a1beb6c1465a12ef906cfeb95c5480fc80ce4a2ce51c32adac69"
+}

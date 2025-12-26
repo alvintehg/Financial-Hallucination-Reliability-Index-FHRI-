@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757118240,
+  "headline": "Tesla Proposes Musk Pay Package Worth as Much as $1 Trillion Over Decade",
+  "summary": "The CEO, already the world’s wealthiest individual, stands to receive shares in installments dependent on Tesla hitting a series of milestones.",
+  "url": "https://finnhub.io/api/news?id=2a45c08879104faf1caa5172be58ed2f4334e2cee611c02fa6fa29f4679fc13c"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761659641,
+  "headline": "Wall Street reacts to Microsoft and OpenAI's new deal",
+  "summary": "The Windows maker would hold a stake of about $135 billion - or 27% - in OpenAI Group PBC, which will be controlled by the OpenAI Foundation, a nonprofit.  It resolves the longstanding issue of OpenAI being organized as a not-for-profit (organization) and settles the ownership rights of the technology vis-a-vis Microsoft.",
+  "url": "https://finnhub.io/api/news?id=74a8d519ca2489d9e6d87e9b2cff91dbaa884e2590c3029a5463db0c11464dd3"
+}

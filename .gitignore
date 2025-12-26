@@ -1,0 +1,49 @@
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.env
+.env.*
+.python-version
+.venv/
+venv/
+env/
+
+# Node/JS
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.turbo/
+.next/
+frontend/.next/
+frontend/node_modules/
+.claude/
+
+# Editors/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Build/output
+dist/
+build/
+coverage/
+
+# Project-specific
+logs/
+tmp/
+*.sqlite3
+*.db
+models/
+nul
+
+

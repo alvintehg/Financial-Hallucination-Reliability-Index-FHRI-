@@ -1,0 +1,102 @@
+================================================================================
+FHRI EVALUATION DATASET - CONTRADICTION PAIRING AUDIT REPORT
+================================================================================
+Dataset: data/fhri_evaluation_dataset_full.json
+Date: 2025-12-13
+
+================================================================================
+1. CONTRADICTION SAMPLE COUNTS
+================================================================================
+Total contradiction samples: 2,000
+
+Count of null/None/missing contradiction_pair_id: 0
+  ✓ All contradiction samples have a valid contradiction_pair_id
+
+================================================================================
+2. PAIR VALIDATION
+================================================================================
+Total unique pair_ids: 2,000
+
+Pairing Structure:
+  Each pair_id links exactly 2 samples:
+    - 1 sample with ground_truth_label = "contradiction"
+    - 1 sample with ground_truth_label = "accurate"
+
+Pairs with exactly 2 samples: 2,000 / 2,000 (100%)
+  ✓ All pairs are properly formed
+
+Pairs with only 1 sample: 0
+Pairs with more than 2 samples: 0
+
+Note: Initial analysis suggested 2,000 problematic pairs because the audit
+only looked at contradiction samples in isolation. When examining all samples
+across all ground_truth_labels, all 2,000 pairs are correctly formed with
+exactly 2 samples each.
+
+================================================================================
+3. PAIR COMPOSITION
+================================================================================
+All 2,000 pairs follow this pattern:
+  - Pair member 1: ground_truth_label = "accurate"
+  - Pair member 2: ground_truth_label = "contradiction"
+
+This indicates that contradiction pairs represent:
+  - An accurate baseline answer (correct/factual response)
+  - A contradictory answer (response that contradicts the accurate baseline)
+
+Example pairs:
+  • pair_numeric_kpi_129:
+    - numeric_kpi_0259 (label: accurate)
+    - numeric_kpi_0260 (label: contradiction)
+
+  • pair_numeric_kpi_015:
+    - numeric_kpi_0031 (label: accurate)
+    - numeric_kpi_0032 (label: contradiction)
+
+  • pair_directional_125:
+    - directional_0251 (label: accurate)
+    - directional_0252 (label: contradiction)
+
+================================================================================
+4. PREVIOUS ANSWER CONTENT FIELDS
+================================================================================
+Search for explicit previous/prior/baseline answer fields:
+  - Top-level keys checked: ✓
+  - fhri_spec keys checked: ✓
+
+Result: No explicit "previous_answer", "prior_answer", or "baseline_answer"
+        fields found in the dataset.
+
+Conclusion: The dataset provides ONLY pair_id linkage between accurate and
+           contradictory responses. The actual content of the "previous
+           (accurate) answer" is NOT stored directly in contradiction samples.
+
+To retrieve the baseline answer for a contradiction sample:
+  1. Extract contradiction_pair_id from fhri_spec
+  2. Search the dataset for the other sample with the same pair_id
+  3. That sample (with ground_truth_label = "accurate") contains the baseline
+
+================================================================================
+5. DATA STRUCTURE
+================================================================================
+Sample contradiction structure:
+  Top-level keys: ['id', 'question', 'retrieved_passages', 'llm_answer',
+                   'ground_truth_label', 'your_annotation', 'notes',
+                   'fhri_spec']
+
+  fhri_spec keys: ['expected_behavior', 'rubric', 'risk_tier',
+                   'compliance_tag', 'category', 'hallucination_check',
+                   'contradiction_pair_id', 'scenario_override',
+                   'expected_scenario']
+
+================================================================================
+6. SUMMARY
+================================================================================
+✓ All 2,000 contradiction samples have valid contradiction_pair_id values
+✓ All 2,000 pairs are correctly formed with exactly 2 samples each
+✓ All pairs link one "accurate" sample with one "contradiction" sample
+✓ No unpaired or improperly paired samples found
+✓ No explicit previous answer fields - only pair_id linkage provided
+
+AUDIT STATUS: PASSED
+All contradiction samples are properly paired.

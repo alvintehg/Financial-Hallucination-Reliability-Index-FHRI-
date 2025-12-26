@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761577320,
+  "headline": "Microsoft Stock Rises. Every Analyst Now Says Buy After Latest Upgrade.",
+  "summary": "Wall Street’s final holdout on  Microsoft  stock finally joined its peers by upgrading shares to Buy, calling the technology company a clear artificial-intelligence beneficiary.  Guggenheim Securities upgraded Microsoft shares to Buy from Neutral and issued a price target of $586 in a research note Monday.  It is the only name in the  with a unanimous Buy rating, according to Dow Jones Market Data.",
+  "url": "https://finnhub.io/api/news?id=faa464425c382241d24609ba36f0c5fa82bb105f2b45163ad322fb26551bda3d"
+}

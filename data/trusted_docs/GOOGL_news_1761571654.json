@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761571654,
+  "headline": "India approves $626 million in projects to boost electronics components manufacturing",
+  "summary": "The Indian government has approved the first batch of seven projects worth over 55 billion rupees ($625.75 million) to boost domestic manufacturing of electronics components. The approval includes four projects by Kaynes Circuits India, covering multi-layer and high-density printed circuit boards (PCBs), camera modules and laminates, along with projects by SRF, Syrma Strategic Electronics, and Ascent Circuits, the electronics and IT ministry said on Monday. India has been stepping up efforts to boost electronics manufacturing, launching a series of incentive programs, including production-linked incentive (PLI) schemes and the Semiconductor Mission, to attract global and domestic investors a...",
+  "url": "https://finnhub.io/api/news?id=448b957ad01c6983564eb046293c0a4390e9a822cdd1884285f4a51b97c494bf"
+}

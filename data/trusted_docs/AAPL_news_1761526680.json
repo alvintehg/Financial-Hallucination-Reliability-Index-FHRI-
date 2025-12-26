@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761526680,
+  "headline": "View From the Circle: A Big Tech Test",
+  "summary": "BARRONS INVESTOR CIRCLE NEWSLETTER  The busiest week of the fall has arrived. Stocks rallied on Friday as a cooler-than-expected inflation reading fueled rate cut hopes. The and closed at all-time highs.",
+  "url": "https://finnhub.io/api/news?id=5db3fc5558abbeeea8675f8c173eb49a30e91fef83c7a9b6d6e071d6eb23b5ad"
+}

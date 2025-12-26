@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761653755,
+  "headline": "5 Things to Know Before the Stock Market Opens",
+  "summary": "News of the day for Oct. 28, 2025",
+  "url": "https://finnhub.io/api/news?id=520e6702b985a01b04e976277af6d1a891acb180c39b27f2e846015e4a0e592e"
+}

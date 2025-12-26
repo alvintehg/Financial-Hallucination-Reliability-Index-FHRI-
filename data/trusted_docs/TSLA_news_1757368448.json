@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757368448,
+  "headline": "Dow Jones Futures: Astera, Nvidia, Palantir, Robinhood, Tesla Are Big Movers; Apple iPhone Event Next",
+  "summary": "Dow Jones Futures: Astera, Nvidia stock, Palantir, Robinhood and Tesla were big movers Monday. The new Apple iPhone event is next.",
+  "url": "https://finnhub.io/api/news?id=9c2930a4b4d76b905978e1da55d4902eb4592c0478f78d4a869890f921c7a81c"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757974985,
+  "headline": "Podcast: U.S. Stocks Close Higher Following TikTok Deal",
+  "summary": "Treasury Secretary Scott Bessent announced a “framework” for a deal over the Chinese social-media company’s ownership. The S&P 500 and the Nasdaq hit records. Plus: Tesla shares rise after a filing reveals Elon Musk’s big stock buy.",
+  "url": "https://finnhub.io/api/news?id=8528716ca5d4dac709cc584fa6e7ef0ed0bd939a4d5b693d67c13c4bf35eb00c"
+}

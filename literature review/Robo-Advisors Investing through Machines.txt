@@ -1,0 +1,317 @@
+=== Page 1 ===
+Research & Policy Briefs
+From the W orld Bank Chile Center and Malaysia Hub
+Robo-Advisors: Investing through MachinesNo. 21, February 2019
+Investing through online automated platforms, known as robo-advisors, is increasingly popular. Robo-advisors expand access to wealth 
+management services by making it easier and less costly to open investments accounts and receive ﬁnancial advice, as well as plan and automate investment decisions. However, the rise of robo-advisors requires consumers to understand the limitations of these services and to get proper ﬁnancial education. Policy makers need to grapple with the impact of robo-advisors on the overall ﬁnancial system, as well as reassess their regulatory and supervisory practices.
+ Robo-advisors are starting to grow in other parts of the 
+world, too. In Europe, there are currently over 70 
+robo-advisors, with 5 of them managing more than €100 
+million (Burnmark 2017). Emerging economies have also witnessed the emergence of their own robo-advisors. For 
+example, the number of robo-advisors is growing fast in 
+Asia, driven by an emerging middle class and high 
+technological connectivity (Forbes 2017). Robo-advisors are 
+already present in China (mainland); Hong Kong SAR, China; India; Japan; Singapore; Thailand; and Vietnam, among 
+other economies. Other emerging regions also have 
+robo-advisors, but their presence is limited so far. For 
+instance, there are only 6 robo-advisors in Africa and Latin 
+America altogether (Burnmark 2017). Robo-advisors are expected to continue expanding around the world in years 
+to come. Some projections even forecast that robo-advisors 
+will manage around 10 percent of global investment assets 
+by 2020 (Business Insider 2017). 
+ Even though they are labelled “advisors,” robo-advisors 
+typically provide services that go beyond simple advisory 
+services to encompass comprehensive portfolio management services that allow individuals to plan and 
+delegate their investment decisions. For example, in 12 out 
+of 15 surveyed economies, robo-advisors oﬀered both 
+advisory and management services (IOSCO 2016). In 
+addition to portfolio allocations, the services provided can 
+include portfolio rebalancing and tax management.
+How Do Robo-Advisors Work? 
+To help with investment decisions, robo-advisors start by 
+deﬁning the investment strategy of each individual based on 
+his/her investment goals and risk proﬁle. Robo-advisors ask 
+potential clients about the purpose of the investment and 
+the time horizon. Robo-advisors oﬀer investment strategies for a variety of goals, including retirement, saving for large 
+expenditures, establishing a rainy day fund, or generating a 
+stream of income to cover expenses. These questions are complemented with objective and subjective questions that 
+evaluate a client’s willingness and capacity to tolerate risk. 
+Objective risk metrics can include a client’s income and years to retirement. Subjective questions ask, for example, 
+how the client would react to a market decline and how 
+comfortable he/she is with ﬂuctuations in the market (Lam 
+2016). To keep costs low and the process simple, clients’ The Rise of Robo-Advisors 
+The ﬁnancial industry is continuously adopting new 
+technologies to deliver ﬁnancial services in cheaper and 
+more eﬃcient ways. The adoption of these technologies 
+particularly deepened after the 2007−08 global ﬁnancial crisis, when tighter regulations on traditional banks and 
+developments in computer science increased incentives to 
+develop non-bank, technology-based ﬁnancial companies 
+(IFC 2017). Some examples of technological innovations in 
+ﬁnance include ATMs (automated teller machines), mobile payments, and trade ﬁnance using blockchain. Now, 
+technological disruption has reached the realm of wealth 
+management services, where automated ﬁnancial advisors, 
+known as robo-advisors, are starting to compete with 
+human advisors.  
+ Conceived as a low-cost alternative to traditional human 
+advisors, robo-advisors are online platforms that use 
+algorithms to automatically build and manage clients’ 
+portfolios. Though robo-advisors started as ﬁntech start-ups 
+in the aftermath of the global ﬁnancial crisis, they have 
+grown in popularity in recent years, particularly as more 
+traditional ﬁnancial institutions have started to oﬀer their 
+own robo-advisory services. For example, Charles Schwab, 
+one of the largest brokerage ﬁrms in the United States, 
+launched a robo-advisory service, Intelligent Portfolios, in 2015. Also in 2015, BlackRock, the world’s largest asset 
+manager, acquired the robo-advisory company Future 
+Advisor. Robo-advisory has also caught the attention of bank 
+giants, such as Bank of America and Wells Fargo, which have 
+recently started to oﬀer their own automated advisory 
+services. 
+ The United States is, by far, the leading market for 
+robo-advisors. As of 2017, it had more robo-advisors than any other economy in the world (about 200) and captured 
+57 percent of all investments in robo-advisors (Burnmark 
+2017; CBInsights 2017). The estimated value of assets 
+managed by robo-advisors in the United States exceeded 
+US$400 billion in 2018 and is anticipated to grow at an average annual rate of 31 percent, reaching almost US$1.5 
+trillion by 2023 (Figure 1). Currently, the largest 
+robo-advisors in terms of assets under management are 
+Vanguard (US$112 billion), followed by Intelligent Portfolios 
+(US$33 billion) and Betterment (US$14 billion) (Figure 2).
+Aﬃliation: Abraham and Schmukler: Development Research Group, the World Bank. Tessada: Pontiﬁcia Universidad Catolica de Chile (PUC & FinanceUC). E-mail 
+addresses: fabraham@worldbank.org, sschmukler@worldbank.org, jtessada@uc.clAcknowledgement: We received very useful comments from Ana Maria Aviles, Norman Loayza, and Luis Servén,  as well as helpful edits from Nancy Morrison. 
+The World Bank Chile Research and Development Center, the FCI group at the Malaysia Global Knowledge and Research Hub, and the KCP and SRP programs 
+provided ﬁnancial support for this brief.
+Objective and disclaimer: Research & Policy Briefs synthesize existing research and data to shed light on a useful and interesting question for policy debate.Research & Policy Briefs carry the names of the authors and should be cited accordingly. The ﬁndings, interpretations, and conclusions are entirely those of the authors. They do not necessarily represent the views of the World Bank Group, its Executive Directors, or the governments they represent.-Facundo Abraham                                  Sergio L. Schmukler                                  José Tessada
+Global Knowledge & Research Hub
+in Malaysia
+Public Disclosure Authorized Public Disclosure Authorized Public Disclosure Authorized Public Disclosure Authorized
+
+=== Page 2 ===
+2assessments are conducted using standard online short 
+questionnaires.  
+ Based on these two dimensions, robo-advisors use 
+automated algorithms to make recommendations on how 
+to allocate funds across diﬀerent types of assets. In most 
+cases, these algorithms are based on modern portfolio 
+theory (Bjernes and Vukovic 2017). This portfolio selection 
+framework, introduced by Harry Markowitz (1952), is the 
+most popular model of asset allocation and states that the 
+optimal portfolio is one that maximizes the expected return 
+given a level of risk tolerance or, alternatively, minimizes risk given a level of expected return. Robo-advisors construct 
+portfolios with higher risk by increasing the ratio of equity to 
+bonds and, within each type of instrument, investing in 
+riskier assets (for example, moving away from government 
+to municipal bonds or from U.S. to emerging market stocks). Portfolio optimization is adjusted by taking into account 
+investment goals and the desired risk level. For example, for 
+a given level of risk, asset allocation will be diﬀerent if the 
+goal is to generate income for expenses or saving for the 
+long term. 
+ In addition to recommending an initial allocation of 
+funds, algorithms can be designed to continuously monitor 
+portfolios and detect deviations from the targeted risk. 
+Whenever deviations are identiﬁed, the portfolio is 
+automatically rebalanced. For example, the value of equity might increase faster than the value of bonds over time, 
+increasing the share of the portfolio invested in equity. 
+Because a higher share of equity increases risks, the portfolio might be rebalanced by selling equity. Moreover, 
+the portfolio can be automatically rebalanced to reduce 
+risks as time goes by and as the time when the funds are needed approaches. Rebalancing can also occur when the 
+investor changes his/her risk tolerance or investment goals. 
+ A corollary of modern portfolio theory is that by 
+diversifying assets, investors can reduce risk without 
+sacriﬁcing expected returns. To achieve diversiﬁcation at a low cost, robo-advisors mainly oﬀer to invest in exchange traded funds (ETFs) and index funds. These investment instruments tend to follow a basket of securities or an index 
+(investing in all the securities included in the index and in 
+the same proportion as the index). As a result, by acquiring only a few funds, investors can achieve a “market portfolio” 
+while minimizing trading costs. Moreover, by passively 
+holding funds, investors do not need to engage in active 
+monitoring and trading, reducing trading costs even further. 
+In practice, robo-advisors seem to follow a conservative approach, oﬀering funds that have wide coverage, long 
+operating history, market liquidity, and good performance 
+over time (Deutsche Bank 2017; Phoon and Koh 2018). 
+ The entire process of using a robo-advisor (from opening 
+an account to monitoring and readjusting the portfolio) can 
+be performed online with no human interaction. Several 
+robo-advisors are fully automated. These types of robo-advisors are usually less costly, and thus are oriented 
+toward the mass market. Nevertheless, other robo-advisors 
+oﬀer a hybrid system where clients have human interaction, 
+albeit limited. For example, only a certain number of 
+contacts are allowed or they can occur only via the Internet, not in person. These robo-advisors charge higher fees, but 
+are still cheaper than traditional human advisors. 
+Beneﬁts and Limitations of Robo-Advisors 
+The use of robo-advisors for management wealth services can provide several advantages over traditional services 
+that rely on human advisors. One appeal of using 
+robo-advisors is that they are easily accessible. Instead of having to set an appointment with an advisor and attend a 
+meeting at a physical location, robo-advisors oﬀer clients 
+the possibility of obtaining ﬁnancial advice and managing investments at any time, from anywhere with an Internet 
+connection. 
+ Robo-advisors can also reduce the costs of ﬁnancial 
+advice. In contrast to human advisory ﬁrms, robo-advisors 
+can save on ﬁxed costs, such as the salaries of expensive ﬁnancial advisors or the maintenance of physical oﬃces. As Robo-Advisors:
+Investing through Machines
+Figure 1. Projected Assets Managed by Robo-Advisors in the United States, 2018−23
+Source:  Statista 2019.The value of assets under management by robo-advisors is expected to more than triple between 2018 and 2023.US$billion
+0 200 400 600 800 1,000 1,200 1,400 1,600 
+ 426   750   1,049   1,266   1,405   1,486  
+2018 2019 2020 2021 2022 2023 
+
+=== Page 3 ===
+Research & Policy Brief No.21
+3a result, they can reduce minimum investment 
+requirements. For instance, Bank of America requires 
+US$25,000 to open an account with a private ﬁnancial 
+advisor, but only US$5,000 to open an account with their 
+robo-advisor. Some robo-advisors, such as Betterment, do 
+not require a minimum investment at all. In addition, robo-advisors can charge lower fees than human advisors. 
+For example, a fully automated robo-advisor can charge a 
+fee as low as 0.25 percent of assets managed, whereas the 
+fees for traditional human advisors are no less than 0.75 
+percent and can even reach 1.5 percent (EY 2015). On top of 
+administrative fees, ﬁnancial advisors usually charge fees for 
+trades performed, which robo-advisors typically minimize by following passive investing. 
+ Using robo-advisors can yield additional savings in the form of “tax harvesting.” This is the practice of selling assets 
+that experience a loss and using the proceeds to buy an 
+asset with similar risk (keeping the same risk proﬁle of the 
+portfolio). Recording a loss decreases capital gains, reducing 
+taxable income. Performing tax harvesting can be complex: 
+it involves identifying harvesting opportunities in a portfolio 
+with several assets, ﬁnding suitable substitutes, and 
+performing multiple trading, among other tasks. 
+Robo-advisors can perform tax harvesting more eﬃciently 
+and frequently than human advisors. 
+ Robo-advisors can also help reduce some of the 
+behavioral biases that are common in ﬁnancial advisory. 
+Human advisors can be subjective, favor products for which 
+they receive commission, have a limited capacity to monitor 
+several assets simultaneously, and focus on domestic 
+securities, among other biases. Thus, by transferring the 
+decision-making process from humans to automated 
+algorithms, robo-advisors can mitigate some of these biases. Nevertheless, even when robo-advisors are used, 
+some biases might still be present. For example, similar to 
+human advisors, robo-advisors might use certain brokers and other ﬁnancial ﬁrms not because they are the cheapest 
+but because they receive higher commissions from them 
+(Fein 2015). Moreover, algorithms are inevitably 
+programmed by humans, so biases could be introduced during their design, consciously or unconsciously. For 
+example, robo-advisors could recommend that clients hold 
+a relatively large share of their investment in cash to then 
+re-invest for proﬁt (Vox 2016). 
+ Whereas robo-advisors can increase accessibility and aﬀordability of wealth management services, they can also 
+entail costs. Although straightforward and time-saving, 
+robo-advisors might not be able to know clients as well as 
+human advisors do through multiple interactions, tailored 
+questions, and closer relationships. “One-size-ﬁt-all” 
+questionnaires might be too simple and narrow to provide a 
+complete overview of a client’s ﬁnancial situation and 
+his/her needs. Furthermore, these questionnaires assume 
+that individuals with a similar risk proﬁle would provide the 
+same answers to the same subjective questions, which 
+might not necessarily be true (Deutsche Bank 2017). 
+Robo-advisors also lack other important aspects of a client-advisor relation, such as helping clients deﬁne their 
+ﬁnancial goals, counseling during market downturns, or 
+dealing with possible changes in their lives (Accenture 
+2015). 
+ Furthermore, limited risk-assessment might not provide 
+a complete overview of a client’s overall ﬁnancial condition. 
+Robo-advisors might not ask about a client’s other 
+investments (such as pension funds and real estate), future expenses, potential liabilities, spouse’s ﬁnancial condition, 
+or insurances purchased, among other information (FINRA 
+2016). If robo-advisors act on partial information, they 
+might not provide optimal recommendations. 
+ Robo-advisors can also lead to consumer disengagement. In other words, because the entire process 
+is automatic, consumers might not make eﬀorts to Figure 2. Largest Robo-Advisors in the United States, 2018
+Source:  Ortner 2018.Vanguard dominates the robo-advisor industry in the United States.US$billion112 
+33 
+14 10 8 
+0 20 40 60 80 100 120 
+Vanguard Intellig ent P ortfolios
+(Charles Sc hwab) Better ment Wealthfront Personal Capital Assets under Manag ement 
+
+=== Page 4 ===
+http://documents.worldbank.org/curated/en/795161508437504068/Corporate-debt-maturity-in-developing-countries-sources-of-long-and-short-termismRobo-Advisors:
+Investing through Machines
+(Baker and Dellaert 2018). Regulatory agencies around the 
+world have already started to think about how to 
+adequately adopt robo-advisors and have issued guidelines, 
+reports, and opinions on this issue. Regulators have stated that they would have to develop new skills to supervise 
+robo-advisors eﬀectively. For example, they would need to 
+have the technical capacity to assess robo-advisors’ 
+algorithms. Similarly, regulators would need to understand 
+how automated proﬁling of clients works. Regulators have also emphasized the importance of consumer education. 
+Prospective clients need to have enough information to 
+understand how robo-advisors operate and whether or not 
+they are suitable to their needs. Regulatory organizations 
+have also raised concerns related to cybersecurity and data 
+privacy, among other issues (ESAs 2015; FINRA 2016; IOSCO 
+2016).
+ 
+ The robo-advisory industry is still at an early stage and, 
+as such, few studies have analyzed its diﬀerent impacts on 
+the ﬁnancial system, including on asset markets. As 
+robo-advisors expand and more information on them 
+becomes available, more analyses could try to shed light on these issues. For example, future work could analyze who 
+uses robo-advisors, and thus to what extent they are 
+contributing to better ﬁnancial decisions by a wider array of 
+investors. Further analyses could also focus on whether 
+human and robo-advisors are substitutes or complements (either catering to diﬀerent population segments or 
+individuals using both at the same time), as well as on how 
+the proﬁt margins and cost structures compare between 
+the two. To the extent that robo-advisors can be accessed 
+by any individual from any location, it would also be 
+interesting to study whether robo-advising activity tends to 
+be concentrated in a few economies and accessed by 
+investors from all over the world, or economies have their 
+own robo-advisors catered to their own domestic investors. 
+It would be useful to analyze if the same robo-advisor gives 
+consumers in diﬀerent economies tailored recommendations based on local products and 
+environments (such as tax codes), or instead provides 
+standard international products. Further insights on these 
+topics would help to better understand the true potential 
+and pitfalls of robo-advisors.understand how the service works, or even continuously 
+monitor their investments. This issue is particularly relevant when robo-advisors are oﬀered to individuals with relatively lower wealth who might have no experience with investment products (OECD 2017). 
+ Because robo-advisors are relatively new, their business 
+models have not been tested in the long term and under ﬁnancial stress. Thus, it remains unclear to what extent consumers will be protected in case a robo-advisor company fails. Some jurisdictions have taken steps to protect consumers. For example, robo-advisors in the United States are required to be members of the Securities Investor Protection Corporation (SIPC), which provides insurance for up to US$ 500,000 per customer in case of bankruptcy of a member ﬁrm.
+ 
+The Future of Robo-Advisors  Because of their low cost and easy accessibility, robo-advisors have the potential to promote more sophisticated investment practices within a population not used to having access to ﬁnancial advisors. Robo-advisors could be particularly attractive to certain groups such as 
+households with relatively lower income or younger 
+individuals, who might not invest because their investable funds are too small, are located far from urban centers, or simply feel intimidated by human advisors. Increased participation in capital markets, would oﬀer these individuals new ways to save for retirement, rainy days, or any other purpose. At the same time, robo-advisors might beneﬁt individuals that already have investments. Not only can their costs be reduced, but thanks to the enhanced computational power and (at least in theory) objectivity, robo-advisors can design more eﬃcient portfolios compared to humans. In fact, there is empirical evidence 
+that the use of robo-advisors can be associated with higher 
+diversiﬁcation and less behavioral biases (D’ Acunto, Prabhala, and Rossi 2018).  
+ Proper regulation and supervision will be a key determinant of the success of robo-advisors. Policy makers would beneﬁt from establishing good practices that guarantee that robo-advisors are objective and transparent, and provide advice appropriate to each client’s needs 
+References
+FINRA. 2016. Report on Digital Investment Advice. 
+Forbes. 2017. “Why Are Robo-Advisors on the Rise in Asia?” November 15. 
+IFC (International Finance Corporation). 2017. “Digital Financial Services: Challenges  
+ and Opportunities for Emerging Market Banks.” EMCompass, Note 42. 
+IOSCO (International Organization of Securities Commissions). 2016. Update to 
+ the Report on the IOSCO Automated Advice Tools Survey. 
+Lam, J. 2016. “Robo-Advisors: A Portfolio Management Perspective.” Paper 
+ presented to the Distinction in the Major thesis, Yale College. 
+Markowitz, H. 1952. “Portfolio Selection.” The Journal of Finance 7 (1): 77−91. 
+OECD (Organisation for Economic Co-operation and Development). 2017. 
+ Robo-Advice for Pensions. 
+Ortner, J. 2018. “Questions Still Remain if Robo Advising Is Right for You.” Seeking 
+ Alpha, Nov 12. 
+Phoon, K., and F. Koh. 2018. “Robo-Advisors and Wealth Management.” The 
+ Journal of Alternative Investments 20 (3): 79−94. 
+Statista. 2019. “Robo-Advisors.” https://www.statista.com/outlook/337/109/robo-
+ advisors/united-states. 
+Vox. 2016. “Charles Schwab Oﬀers Free Investment Advice − But There's a Big Catch.”  
+ May 24.Accenture. 2015. The Rise of Robo-Advice: Changing the Concept of Wealth 
+ Management . Baker, T., and B. Dellaert. 2018. “Regulating Robo Advice Across the Financial 
+ Services Industry.” Faculty Scholarship, University of Pennsylvania Law School. 
+Bjernes, L., and A. Vukovic. 2017. “Automated Advice: A Portfolio Management 
+ Perspective on Robo-Advisors.” Master’s thesis, Norwegian University of 
+ Science and Technology. 
+Burnmark, 2017. Digital Wealth. 
+Business Insider. 2017. “Robo Advisors: Online Financial Advisors that Fit in Your 
+ Pocket.” January 4. 
+CBInsights. 2017 “A Wealth Tech World: Mapping Robo-Advisors Around the 
+ Globe.” April 21. 
+D’ Acunto, F., N. Prabhala, and A. Rossi. 2018. “The Promises and Pitfalls of  Robo-Advising.” CESifo Working Paper 6907, CESifo Group Munich. 
+Deutsche Bank. 2017. “Robo-Advice − A True Innovation in Asset Management.” 
+ EU Monitor Global Financial Markets. 
+ESAs (European Supervisory Authorities). 2015. Joint Committee Discussion 
+ Paper: On Automation in Financial Advice. 
+EY . 2015. Advice Goes Virtual: How New Digital Investment Services Are Changing 
+ the Wealth Management Landscape. 
+Fein, M. 2015 “Robo-Advisors: A Closer Look.” Banking & Insurance Journal 7 (174).
+Global Knowledge & Research Hub
+in Malaysia

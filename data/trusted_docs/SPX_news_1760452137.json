@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760452137,
+  "headline": "The Markets Are Living On Borrowed Time",
+  "summary": "Recent U.S.-China trade tensions rocked markets. Learn more about what's driving the rebound, and what risks investors face next.",
+  "url": "https://finnhub.io/api/news?id=a5c9b169178924f9790a0bf020fd554bc2f97f5e52ac5b3f4887752dbc79390d"
+}

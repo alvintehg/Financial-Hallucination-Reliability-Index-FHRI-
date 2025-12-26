@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757334038,
+  "headline": "Tesla’s U.S. market share drops to a near eight-year low in August- report",
+  "summary": "Investing.com -- Tesla’s share of the U.S. electric vehicle market fell to its lowest level since 2017 in August as buyers opted for models from rival automakers, according to a report from Reuters.",
+  "url": "https://finnhub.io/api/news?id=b5f26eb175a6e7068f6845b8006e8d28e693d1370f10e48563f0013582bd7e13"
+}

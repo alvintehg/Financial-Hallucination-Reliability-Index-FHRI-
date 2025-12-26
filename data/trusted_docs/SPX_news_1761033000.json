@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761033000,
+  "headline": "Yen Sold As Takaichi Becomes Japan's Prime Minister",
+  "summary": "US dollar is mostly firmer today as its pullback from last week's highs is retraced. The yen is the weakest of the G10 currencies, off about 0.70%, as Takaichi became Japan's first woman PM.",
+  "url": "https://finnhub.io/api/news?id=532712e9cfeb3ae61dfb7d24ae8edceede5d415bbe82d5056622a204dfabe469"
+}

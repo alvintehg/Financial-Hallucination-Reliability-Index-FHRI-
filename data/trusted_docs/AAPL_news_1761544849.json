@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761544849,
+  "headline": "How to recover from a bad career decision",
+  "summary": "A 2025 survey by Resume Now found that 66% of workers report career regrets. So what do you do if you've made a decision you regret?",
+  "url": "https://finnhub.io/api/news?id=c3b6d98598262a75aeeec7b6914ab3922bf45ad54d78b2900853e34d110eade7"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757845320,
+  "headline": "Broadcom and Oracle's Blowout Earnings Just Proved Why It's Time to Forget the \"Magnificent Seven\"",
+  "summary": "Without Broadcom and Oracle, the \"Magnificent Seven\" is no longer a good representation of the market's leading growth stocks.",
+  "url": "https://finnhub.io/api/news?id=a07dec5d012ee0ad63fcf5247aa58487c57f1aaef742edb2926ef688975e052c"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761225905,
+  "headline": "AAII Sentiment Survey: Pessimism Dips",
+  "summary": "Discover the latest stock market sentiment trends with updated bullish, bearish, and neutral outlooks.",
+  "url": "https://finnhub.io/api/news?id=b982ba42be13698fc560fdf258c6e583e55f5d88085ac965def118dd56d6de65"
+}

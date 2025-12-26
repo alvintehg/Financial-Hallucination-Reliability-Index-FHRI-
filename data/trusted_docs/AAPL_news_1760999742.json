@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1760999742,
+  "headline": "Stratasys, Shoals, nLIGHT, Powell, and Sterling Shares Are Soaring, What You Need To Know",
+  "summary": "A number of stocks jumped in the afternoon session after positive news on corporate earnings, easing political and trade tensions, and optimism about future interest rate cuts all converged to lift investor sentiment.",
+  "url": "https://finnhub.io/api/news?id=c5766b6eab0d2df469858ea95fd49910f1c43968ee292e267d88f2254ef748ec"
+}

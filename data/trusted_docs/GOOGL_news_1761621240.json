@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761621240,
+  "headline": "Google and NextEra to Restart Iowa’s Duane Arnold Nuclear Plant to Power AI Era",
+  "summary": "NextEra Energy and Google partner to restart Iowa’s Duane Arnold nuclear facility by 2029 to supply 24/7 carbon-free power for Google’s expanding AI operations.",
+  "url": "https://finnhub.io/api/news?id=b72d2aceb2ff840ea7fed346ed1a368622b979592f040183bafcac1dfd0995f5"
+}

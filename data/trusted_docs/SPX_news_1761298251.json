@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761298251,
+  "headline": "CPI At Long Last: Inflation Eases In September, Clearing The Way For A Fed Rate Cut",
+  "summary": "September CPI came in softer than expected, with both headline and core inflation easing from August levels. Click here to read what investors need to know.",
+  "url": "https://finnhub.io/api/news?id=5779a063f4cf4426bc5319d25abb8d776749c6869240c4e9f61f8fc776d01f35"
+}

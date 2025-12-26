@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757704023,
+  "headline": "Equities Mixed Intraday Amid Drop in Consumer Sentiment",
+  "summary": "US benchmark equity indexes were mixed after midday Friday as a survey showed a decline in consumer",
+  "url": "https://finnhub.io/api/news?id=9b3c34b899863e1c5fbadaf4de6df326ab9e1653159ae2e866ab5c7ffcd6fc5c"
+}

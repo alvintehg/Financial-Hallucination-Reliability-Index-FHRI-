@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757940805,
+  "headline": "Tesla Shares Leap After Musk Makes $1 Billion Stock Purchase",
+  "summary": "Shares in Tesla (TSLA) jumped in premarket trading after Elon Musk disclosed his first purchase of the stock in the open market since February 2020. Tesla’s CEO purchased more than 2.5 million shares in the company on Friday, totaling around $1 billion, according to a regulatory filing on Monday.",
+  "url": "https://finnhub.io/api/news?id=21900e28efc0d30db96e26c4785d608a8defa0158082fc67c9eba7f0acf40b72"
+}

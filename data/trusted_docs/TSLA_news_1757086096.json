@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757086096,
+  "headline": "Stock Market Today: Dow Slips After Surprise Jobs Data; AI Chip Leader Rallies As Two Software Names Soar On Earnings (Live Coverage)",
+  "summary": "The Dow Jones index slipped Friday after a weak August jobs report. Nvidia stock sold off, while Tesla rallied.",
+  "url": "https://finnhub.io/api/news?id=92d6f67b9119b2109c1512c2c859da2c5978a1b64ae6f83bbd78294769bd87c2"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760099266,
+  "headline": "Federal Reserve Watch: Bank Liquidity",
+  "summary": "The U.S. commercial banking system remains highly liquid, supported by substantial reserve balances held at the Federal Reserve. Read what investors need to know.",
+  "url": "https://finnhub.io/api/news?id=9c059f557ac15bc7e26b09095f725a8bde4277492975cee6c750eca6ecc5db32"
+}

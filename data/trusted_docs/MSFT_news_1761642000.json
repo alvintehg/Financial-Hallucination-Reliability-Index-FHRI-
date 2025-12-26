@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761642000,
+  "headline": "The Reason Caterpillar's Stock Is 'Priced for Perfection'—And Beating Nvidia in 2025",
+  "summary": "The company famous for its construction equipment has been bid up amid accelerating AI data center demand.",
+  "url": "https://finnhub.io/api/news?id=644bcf2173c185039f4ea619b522389b0d0ed6e87d7c434f33ffcf67b720b122"
+}

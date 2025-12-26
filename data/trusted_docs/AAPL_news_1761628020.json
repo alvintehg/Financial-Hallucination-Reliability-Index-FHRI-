@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761628020,
+  "headline": "Daily market wrap: top stocks - Qualcomm, Keurig Dr Pepper, and Albemarle",
+  "summary": "Monday, October 27, 2025 The Market was bullish today, with a new wave of fresh records in the three major indices. The S&P 500 was up 1.2% at closing, thanks to easing US-China trade tensions.The Nasdaq Composite, up 1.9% gained more than 400 points on Monday.The Dow Jones Industrial Average ...",
+  "url": "https://finnhub.io/api/news?id=98915a6e32652e0ecdeaf7bf105c0f1db07b327604a96327df91b91bb7c54f36"
+}

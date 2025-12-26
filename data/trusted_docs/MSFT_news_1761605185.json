@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761605185,
+  "headline": "Stock market today: Dow, S&P 500, Nasdaq futures steady near records with Trump trade moves, earnings in focus",
+  "summary": "Eyes are on Trump's visit to Japan in the wait for his meeting with China's Xi, as the flood of earnings continues to roll in.",
+  "url": "https://finnhub.io/api/news?id=f912a2e9215b537e4bdbf43742b7daa898fd45bf3d0ac578834db0f1fec8c323"
+}

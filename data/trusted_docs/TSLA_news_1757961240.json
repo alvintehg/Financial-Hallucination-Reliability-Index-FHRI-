@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757961240,
+  "headline": "Alphabet Hits $3 Trillion Valuation. What to Do With the Stock Now.",
+  "summary": "Alphabet’s market value passed $3 trillion for the first time on Monday, according to Dow Jones Market Data.",
+  "url": "https://finnhub.io/api/news?id=1fe88d374059f98c50a22ddfbfe0be996de2dfd61d550d3da7d70b5e40bdab08"
+}

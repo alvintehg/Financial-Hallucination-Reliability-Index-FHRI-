@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761658723,
+  "headline": "Microsoft stock rises 4% after OpenAI deal with stake valued at $135 billion",
+  "summary": "Investing.com -- Microsoft (NASDAQ:MSFT) stock rose 4% Tuesday morning after the technology giant announced a new agreement with OpenAI that values Microsoft’s stake in the AI company at approximately $135 billion.",
+  "url": "https://finnhub.io/api/news?id=233bb0573eb4b76b07628267683b47821b4476fc0fb8dbfee5d400881756c2ea"
+}

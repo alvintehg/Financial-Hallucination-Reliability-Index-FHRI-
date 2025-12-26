@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761477896,
+  "headline": "Jim Cramer Says IonQ is a “Trading Vehicle”",
+  "summary": "IonQ, Inc. (NYSE:IONQ) is one of the stocks that was recently put under the microscope by Jim Cramer. A caller asked Cramer about the stock, mentioning that the company initially seemed speculative to them but noting that Alphabet has since developed a quantum chip. Cramer replied: “Sure… yes, they have. Now, look, this stock was […]",
+  "url": "https://finnhub.io/api/news?id=4877466901330871848015d84beba5a04031ff14be60b1a00d816d4c13c95cc9"
+}

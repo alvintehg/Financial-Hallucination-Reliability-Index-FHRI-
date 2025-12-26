@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761544833,
+  "headline": "Average London rent soars to £2,736 per month",
+  "summary": "Rents outside London hit a record of £1,385 per month, says Rightmove.",
+  "url": "https://finnhub.io/api/news?id=c69c6e0435c0e19a5f2c6be23bafd4e5a5163096d591543671bdbc1875f9d972"
+}

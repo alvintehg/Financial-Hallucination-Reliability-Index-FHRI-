@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757508043,
+  "headline": "The most popular stocks and funds investors bought in August",
+  "summary": "Economic events and data, as well as more company earnings, were the focus for investors in August.",
+  "url": "https://finnhub.io/api/news?id=b363ffc1f13297c997c87e0af3da50ac337fbcbbcd469297c7ecf56b062bc057"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757330100,
+  "headline": "Prediction: This Unstoppable Stock Could Be the Next $3 Trillion Titan (Hint: It's Not Tesla)",
+  "summary": "Taiwan Semiconductor Manufacturing is the foundry that churns out nearly all of the world's AI chips.",
+  "url": "https://finnhub.io/api/news?id=e2c9904666a510f78319ed7ab63d3852fea165333090b7504c2bc773ae8685d7"
+}

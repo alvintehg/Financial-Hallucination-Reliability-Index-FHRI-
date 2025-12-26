@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761573624,
+  "headline": "Qualcomm stock spikes more than 20% as company enters AI chip race, taking on Nvidia, AMD",
+  "summary": "Qualcomm is entering into the AI data center business with its new AI200 and AI250 chips and server racks.",
+  "url": "https://finnhub.io/api/news?id=172dce34dcc0e7f76f0be15b5f90bdda63504551c90c37a9234ad3086d7e0672"
+}

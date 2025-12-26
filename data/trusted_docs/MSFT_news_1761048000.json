@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761048000,
+  "headline": "Versa Secure SD-WAN Integration with Microsoft Entra Internet Access Delivers Comprehensive SASE Solution",
+  "summary": "SANTA CLARA, Calif., October 21, 2025--Versa, a global leader in unified networking and security, today announced the availability of an automated integration of Versa Secure SD-WAN with Microsoft Entra Internet Access, a component of Microsoft’s Security Service Edge (SSE) solution, to create a complete, easy-to-manage SASE solution that delivers comprehensive security with optimized performance for today’s branch offices.",
+  "url": "https://finnhub.io/api/news?id=753391f4a9a3d6eeed4c335e48071dabd03da15d30c2128e6e52a28c2a3b858b"
+}

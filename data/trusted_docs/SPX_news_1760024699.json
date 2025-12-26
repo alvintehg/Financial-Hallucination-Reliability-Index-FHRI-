@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760024699,
+  "headline": "S&P 500: A Bear Thesis Always Sounds More Exciting",
+  "summary": "Discover why patient investment strategies often outperform reactive bearish moves. Learn to spot real bubbles using Ray Dalio's framework.",
+  "url": "https://finnhub.io/api/news?id=63bf11b07176061dce10f351f71f02c655f8faa8cf125e2dd4a35b36356d044a"
+}

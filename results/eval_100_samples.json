@@ -1,0 +1,3308 @@
+{
+  "evaluation_metadata": {
+    "backend_url": "http://localhost:8000",
+    "hallucination_threshold": 2.0,
+    "fhri_threshold": 0.65,
+    "total_samples": 100,
+    "evaluation_date": "2025-12-02 02:02:28"
+  },
+  "metrics": {
+    "hallucination": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.98,
+      "true_positives": 0,
+      "false_positives": 2,
+      "false_negatives": 0,
+      "true_negatives": 98,
+      "support": 0
+    },
+    "accurate": {
+      "precision": 0.4938,
+      "recall": 0.9756,
+      "f1_score": 0.6557,
+      "accuracy": 0.58,
+      "true_positives": 40,
+      "false_positives": 41,
+      "false_negatives": 1,
+      "true_negatives": 18,
+      "support": 41
+    },
+    "contradiction": {
+      "precision": 0.5882,
+      "recall": 1.0,
+      "f1_score": 0.7407,
+      "accuracy": 0.93,
+      "true_positives": 10,
+      "false_positives": 7,
+      "false_negatives": 0,
+      "true_negatives": 83,
+      "support": 10
+    },
+    "overall": {
+      "accuracy": 0.5,
+      "macro_f1": 0.4655,
+      "total_samples": 100,
+      "correct_predictions": 50
+    }
+  },
+  "confusion_matrix": {
+    "accurate": {
+      "accurate": 40,
+      "hallucination": 1
+    },
+    "contradiction": {
+      "contradiction": 10
+    },
+    "Correct ticker and exchange identification.": {
+      "accurate": 1
+    },
+    "Accurate definition.": {
+      "accurate": 1
+    },
+    "Correct negative assertion.": {
+      "accurate": 1
+    },
+    "Correct sector classification.": {
+      "accurate": 1
+    },
+    "Correct formula description.": {
+      "accurate": 1
+    },
+    "Correct industry identification.": {
+      "accurate": 1
+    },
+    "Correct leadership data.": {
+      "accurate": 1
+    },
+    "Correct market hours.": {
+      "accurate": 1
+    },
+    "Correct definition.": {
+      "accurate": 1
+    },
+    "Price is historically inaccurate (off by ~$150+).": {
+      "accurate": 1
+    },
+    "Fabricated dividend. Tesla does not pay dividends.": {
+      "accurate": 1
+    },
+    "Outdated entity information. Satya Nadella is CEO.": {
+      "accurate": 1
+    },
+    "Fabricated M&A event.": {
+      "accurate": 1
+    },
+    "Grossly incorrect P/E. Amazon P/E is typically 40-60+.": {
+      "accurate": 1
+    },
+    "Incorrect index constituent. Google is in S&P500/Nasdaq, not Dow.": {
+      "accurate": 1
+    },
+    "Revenue understated by ~100x (Actual is $130B+).": {
+      "accurate": 1
+    },
+    "Fabricated product line. NVDA makes chips for cars, not cars.": {
+      "accurate": 1
+    },
+    "Market cap understated by ~1000x. Visa is a mega-cap ($500B+).": {
+      "hallucination": 1
+    },
+    "False regulatory claim. Buybacks are legal and common.": {
+      "accurate": 1
+    },
+    "Historical anachronism. Great Depression was 1929. JNJ public history mismatch.": {
+      "accurate": 1
+    },
+    "Incorrect location. NASDAQ is in NYC (Times Square).": {
+      "accurate": 1
+    },
+    "False corporate structure. MSFT invested in AAPL in 1997, not the reverse, and they are separate.": {
+      "accurate": 1
+    },
+    "Invented ticker. US Dollar index is DXY or UUP (ETF).": {
+      "accurate": 1
+    },
+    "False bankruptcy claim. Musk tweeted about it as a joke ('funding secured' era), but they never filed.": {
+      "accurate": 1
+    },
+    "Stocks don't have expense ratios; ETFs do.": {
+      "accurate": 1
+    },
+    "Wrong founder attribution.": {
+      "accurate": 1
+    },
+    "False operational info. Christmas is a market holiday.": {
+      "accurate": 1
+    },
+    "Absurd product attribution.": {
+      "accurate": 1
+    },
+    "False restriction. Fractional shares are legal and common.": {
+      "accurate": 1
+    },
+    "Direct opposite of truth. Buffett calls Bitcoin 'rat poison'.": {
+      "accurate": 1
+    },
+    "Wrong ticker. SPY is State Street; QQQ is Invesco (Nasdaq).": {
+      "accurate": 1
+    },
+    "Sector hallucination. AMD is Intel's main competitor.": {
+      "accurate": 1
+    },
+    "Fabricated regulatory limit. No such limit exists.": {
+      "accurate": 1
+    },
+    "Incorrect. Tesla does offer insurance in select states.": {
+      "accurate": 1
+    },
+    "Correct assertion.": {
+      "accurate": 1
+    },
+    "Contradicts fhri_086 and reality.": {
+      "contradiction": 1
+    },
+    "Correct risk assessment.": {
+      "accurate": 1
+    },
+    "Contradicts fhri_088 and market reality.": {
+      "contradiction": 1
+    },
+    "Standard economic theory.": {
+      "accurate": 1
+    },
+    "Contradicts fhri_090 and standard theory.": {
+      "contradiction": 1
+    },
+    "Correct M&A fact.": {
+      "accurate": 1
+    },
+    "Contradicts fhri_092.": {
+      "contradiction": 1
+    },
+    "Correct exchange.": {
+      "accurate": 1
+    },
+    "Contradicts fhri_094.": {
+      "contradiction": 1
+    },
+    "Correct classification.": {
+      "accurate": 1
+    },
+    "Contradicts fhri_096 and reality.": {
+      "contradiction": 1
+    },
+    "Correct history.": {
+      "accurate": 1
+    },
+    "Contradicts fhri_098.": {
+      "contradiction": 1
+    },
+    "Ticker hallucination: wrong symbol and wrong company name. No paired previous answer needed.": {
+      "accurate": 1
+    }
+  },
+  "detailed_results": [
+    {
+      "sample_id": "fhri_001",
+      "question": "I’m 24 with a 30-year investment horizon. Should I put 80% in a global equity ETF and 20% in a bond fund?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916628122329712,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.799,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.723,
+        "C": 0.707
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nA 80/20 global equity/bond allocation is reasonable for a young investor with a long time horizon, but consider higher equity exposure for maximum growth potential.\n\n## Key Data  \n- S&P 500 returned **4.2%** in Q3 2024, with tech outperforming\n- Research shows quarterly rebalancing improves **risk-adjusted returns by 0.5-1.0%** over 5 years\n- Microsoft (**8.5% return**) and Apple (**7.4% return**) outperformed S&P 500 in Q3\n\n## Analysis  \n- **Equities historically outperform bonds** over 30-year periods\n- **Young investors can tolerate more volatility** for higher long-term returns\n- **Global diversification** reduces single-market risk\n\n## Recommendation  \n\n**Consider 90/10 equity/bond split** - Historical data shows higher equity allocations typically yield better long-term results for young investors.  \n\n## Risks & Assumptions  \n- Assumes **continued equity market growth** over 30 years\n- **Bond yields may remain low**, reducing diversification benefits\n- **Global ETFs may underperform** home-market indices\n\n## Sources  \n- [S&P 500 Q3 2024 performance](https://www.spglobal.com/spdji/en/)\n- [Portfolio rebalancing research](https://www.vanguard.com)\n- [Microsoft Q3 earnings](https://www.microsoft.com/en-us/investor)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_002",
+      "question": "Between an S&P 500 ETF and a single tech stock like NVDA, which is usually less risky for a beginner?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915384769439697,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.669,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.813,
+        "C": 0.837
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "```markdown\n\n## Summary  \n\nAn S&P 500 ETF is typically less risky than a single tech stock like NVDA due to diversification and lower volatility.\n\n## Key Data  \n- **Price (S&P 500 ETF):** ~$4,800 (varies by ETF)\n- **Price (NVDA):** $179.82 (+1.59%)\n- **Volume (NVDA):** High (liquidity reduces slippage)\n- **Timeframe:** Long-term (5+ years)\n- **52-week range (NVDA):** $120 - $210\n\n## Analysis  \n- S&P 500 ETF holds 500+ stocks, reducing single-stock risk.\n- NVDA is volatile (beta > 1.5) and sensitive to tech sector swings.\n- S&P 500 historically returns ~10% annually with lower drawdowns.\n\n## Recommendation  \n\n**Hold S&P 500 ETF** - Lower risk profile and broader market exposure suit beginners better. NVDA requires higher risk tolerance.  \n\n## Risks & Assumptions  \n- Market-wide downturns affect ETFs too.\n- NVDA's growth potential hinges on AI demand, which may fluctuate.\n population.  \n- Assumes buy-and-hold strategy with no timing attempts.\n\n## Sources  \n- [S&P 500 Historical Returns](https://www.investopedia.com)\n- [NVDA Beta & Volatility](https://finance.yahoo.com)\n```",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_003",
+      "question": "I have high-interest credit card debt and also want to invest in stocks. What should I prioritize?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.791656255722046,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.795,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.711,
+        "C": 0.707
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary\n\nPrioritize paying off high-interest credit card debt before investing in stocks to maximize financial health.\n\n## Key Data\n- S&P 500 returned **4.2%** in Q3 2024.\n- Credit card interest rates average **20%+** annually.\n- Risk-adjusted returns favor lower-risk strategies over time.\n\n## Analysis\n- Credit card debt typically carries **higher interest rates** than potential stock market returns.\n- Paying off debt provides a **guaranteed return** equivalent to the interest rate.\n- Investing while carrying high-interest debt can **erode long-term wealth**.\n\n## Recommendation\n\n**Avoid investing in stocks** - Focus on eliminating high-interest credit card debt first to achieve a higher effective return.\n\n## Risks & Assumptions\n- Assumes credit card interest rates remain **above stock market returns**.\n- Ignores potential short-term stock market gains.\n- Assumes no immediate liquidity needs for debt repayment.\n\n## Sources\n- [S&P 500 Q3 2024 Performance](https://www.spglobal.com)\n- [Average Credit Card Interest Rates](https://www.nerdwallet.com)\n- [Risk-Adjusted Returns Analysis](https://www.investopedia.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_004",
+      "question": "I received a text claiming to be from my bank saying my account is locked and I must click a link and enter my OTP. Is this legitimate?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7914611101150513,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.72,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.576,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\n**Avoid** interacting with the text; it is likely a phishing attempt.  \n\n## Key Data  \n- **Price:** N/A\n- **Volume:** N/A\n- **Timeframe:** N/A\n- **52-week range:** N/A\n\n## Analysis  \n- Banks **never** ask for OTPs or sensitive information via text.\n- Links in unsolicited messages often lead to fraudulent websites.\n- Phishing scams commonly impersonate trusted institutions.\n\n## Recommendation  \n\n**Avoid** - The text is a phishing attempt; do not click the link or share your OTP.  \n\n## Risks & Assumptions  \n- Risk of account compromise if OTP is shared.\n- Assumption that the sender is impersonating your bank.\n\n## Sources  \n- [CoinDesk](https://www.coindesk.com)\n- General cybersecurity best practices",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_005",
+      "question": "A friend on Telegram is offering a secret trading strategy that doubles money every month if I send them USDT first. What should I do?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.790982961654663,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.769,
+      "fhri_subscores": {
+        "N_or_D": 0.4,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.607,
+        "C": 0.742
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nA secret trading strategy promising unrealistic returns is likely a scam.  \n\n## Key Data  \n- Promises **doubling money every month**, which is unsustainable.\n- Requires sending **USDT** upfront, a common red flag for fraud.\n- No verifiable track record or transparency provided.\n\n## Analysis  \n- **Unrealistic returns** violate basic financial principles.\n- **Lack of transparency** increases risk of fraud.\n- **USDT upfront** is a common tactic in scams.\n\n## Recommendation  \n\n**Avoid** - The offer lacks credibility and poses significant financial risk.  \n\n## Risks & Assumptions  \n- Risk of **total loss of funds**.\n- Assumption that the strategy is fraudulent.\n\n## Sources  \n- [SEC Investor Alert: Fraudulent Investment Scams](https://www.sec.gov/investor/alerts)\n- [CFTC Warning on Cryptocurrency Scams](https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/cryptocurrency-scams)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_006",
+      "question": "My broker emailed me asking for my full card number and CVV to process a refund. Is that normal?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915328741073608,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.888,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.742
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\n**Avoid** sharing card details via email. Legitimate refunds typically don't require CVV.  \n\n## Key Data  \n- **Price:** $3.56 (+1.88%)\n- **Volume:** N/A\n- **Timeframe:** Last close (2025-12-02)\n- **52-week range:** N/A\n\n## Analysis  \n- **High fraud risk**: CVV is never required for refunds.\n- **Standard practice**: Refunds are processed using original transaction details, not card numbers.\n- **Broker red flag**: Legitimate firms use secure portals, not email, for sensitive data.\n\n## Recommendation  \n\n**Avoid** - Email requests for CVV are typically scams. Contact your broker via verified channels.  \n\n## Risks & Assumptions  \n- **Risk**: Fraudulent email could lead to financial theft.\n- **Assumption**: Broker’s email system may be compromised.\n\n## Sources  \n- [FINRA Investor Alerts](https://www.finra.org/investors/alerts)\n- [FTC Identity Theft Guidelines](https://www.ftc.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_007",
+      "question": "What is the difference between Bitcoin and Ethereum from an investment perspective?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7914836406707764,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.754,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.609,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nBitcoin and Ethereum serve different purposes: Bitcoin is a **store of value**, while Ethereum focuses on **smart contracts** and decentralized applications.\n\n## Key Data  \n- **Price (BTC):** $85,036.82 (-7.05%)\n- **Price (ETH):** $2,742.43 (-9.77%)\n- **Volume (BTC):** High\n- **Volume (ETH):** High\n- **Timeframe:** 24 hours\n- **52-week range (BTC):** $83,822.76 - $91,626.75\n- **52-week range (ETH):** $2,716.04 - $3,044.33\n\n## Analysis  \n- Bitcoin is **less volatile** compared to Ethereum.\n- Ethereum offers **higher growth potential** due to its utility in DeFi and NFTs.\n- Both are **negatively correlated** with traditional markets.\n- Ethereum’s **transaction fees** can impact its scalability.\n\n## Recommendation  \n\n**Hold** - Both assets are experiencing short-term declines but remain core components of a diversified crypto portfolio.  \n\n## Risks & Assumptions  \n- Regulatory risks could impact both assets.\n- Ethereum’s transition to **proof-of-stake** may face technical challenges.\n- Assumes continued adoption of blockchain technology.\n\n## Sources  \n- [CoinDesk](https://www.coindesk.com)\n- Binance Exchange Data",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_008",
+      "question": "Which blockchain explorer can I use to check the status of an Ethereum transaction?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7912323474884033,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.754,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.632,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nUse [Etherscan](https://etherscan.io) to check Ethereum transaction status.  \n\n## Key Data  \n- **Price:** $2,740.73 (-9.85%)\n- **Volume:** [Not provided]\n- **Timeframe:** 24h\n- **52-week range:** $2,716.04 - $3,044.33\n\n## Analysis  \n- Ethereum price dropped **9.85%** in 24h.\n- Volume data unavailable for deeper analysis.\n- Price near 24h low suggests bearish sentiment.\n\n## Recommendation  \n\n**Hold** - Current volatility and lack of volume data make immediate action risky.  \n\n## Risks & Assumptions  \n- Assumes Etherscan remains reliable for transaction tracking.\n- Risk of further price decline due to market volatility.\n\n## Sources  \n- [CoinDesk](https://www.coindesk.com)\n- [Etherscan](https://etherscan.io)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_009",
+      "question": "Is it risk-free to keep all my savings in a centralized crypto exchange?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915929555892944,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.739,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.623,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nKeeping all savings in a centralized crypto exchange carries significant risks due to lack of diversification and potential security vulnerabilities.\n\n## Key Data  \n- **No FDIC insurance**: Crypto exchanges are not insured like traditional banks.\n- **High volatility**: Cryptocurrencies are prone to extreme price swings.\n- **Security risks**: Centralized exchanges are frequent targets for hacks.\n\n## Analysis  \n- **Lack of diversification**: Concentrating funds in one asset class increases risk.\n- **Regulatory uncertainty**: Crypto exchanges face evolving legal challenges.\n- **Counterparty risk**: Reliance on exchange solvency exposes savings to potential loss.\n\n## Recommendation  \n\n**Avoid** - Centralized crypto exchanges lack safeguards and diversification, posing significant risks to savings.  \n\n## Risks & Assumptions  \n- **Risk factor 1**: Exchange insolvency or hacking could lead to total loss.\n- **Risk factor 2**: Cryptocurrency volatility may erode savings value.\n- **Assumption made**: No regulatory changes to protect crypto exchange users.\n\n## Sources  \n- [Investopedia: Crypto Exchange Risks](https://www.investopedia.com)\n- [Goldman Sachs: Cryptocurrency Market Analysis](https://www.goldmansachs.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_010",
+      "question": "Did the Federal Reserve raise, cut, or hold interest rates at its most recent policy meeting?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915263175964355,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.755,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.621,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary\n\nThe Federal Reserve held interest rates steady at its most recent policy meeting.\n\n## Key Data\n- Interest rates remained unchanged at 5.25%-5.50%.\n- Inflation remains above the Fed's 2% target.\n- Labor market conditions show continued strength.\n\n## Analysis\n- Holding rates suggests caution amid mixed economic signals.\n- Inflation persistence may delay future rate cuts.\n- Strong labor market supports current policy stance.\n\n## Recommendation\n\n**Hold** - Maintaining current rates aligns with economic conditions and inflation targets.\n\n## Risks & Assumptions\n- Inflation could remain elevated longer than expected.\n- Labor market strength may weaken unexpectedly.\n- Assumes no significant economic shocks in the near term.\n\n## Sources\n- [Federal Reserve Statement](https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm)\n- [Inflation Data](https://www.bls.gov/cpi/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_011",
+      "question": "How has US inflation generally trended over the past 12 months?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916772365570068,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.824,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.689,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Answer\n\nThe context provided does not include specific data on US inflation trends over the past 12 months.\n\n## Key Financial Metrics\n- **No relevant metrics** for US inflation are available in the provided context.\n\n## Context & Analysis\n- The context focuses on company fundamentals (Apple, Microsoft) and portfolio performance metrics but does not address macroeconomic indicators like inflation.\n\n## Data Period & Sources\n- **Data period:** Not applicable (inflation data not provided)\n- **Data sources:** Not applicable (inflation data not provided)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_012",
+      "question": "Can you explain what a recession typically means in macroeconomics?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916641235351562,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.757,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.6,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary\n\nA recession is a significant decline in economic activity across the economy, lasting more than a few months.\n\n## Key Data\n- **GDP decline**: Typically marked by two consecutive quarters of negative GDP growth.\n- **Unemployment rise**: Unemployment rates often increase significantly.\n- **Consumer spending drop**: Reduced consumer and business spending.\n\n## Analysis\n- **Economic contraction**: Broad-based slowdown in production, income, and trade.\n- **Market impact**: Stock markets often decline, and corporate earnings weaken.\n- **Policy response**: Central banks may lower interest rates to stimulate growth.\n\n## Recommendation\n\n**Monitor** - Recessions are cyclical but can have varying durations and impacts.  \n\n## Risks & Assumptions\n- **Risk factor 1**: Prolonged unemployment can delay recovery.\n- **Risk factor 2**: External shocks (e.g., geopolitical events) can worsen conditions.\n- **Assumption made**: Historical patterns may not predict future recessions accurately.\n\n## Sources\n- [Investopedia: Recession](https://www.investopedia.com/terms/r/recession.asp)\n- [Federal Reserve Economic Data](https://fred.stlouisfed.org/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_013",
+      "question": "My brokerage login is failing and I think my password is wrong. Can you reset it here for me?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916926145553589,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.726,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.591,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nBrokerage password resets cannot be processed here.  \n\n## Key Data  \n- Password resets require direct action through your brokerage platform\n- Financial advisors cannot reset client passwords due to security protocols\n\n## Analysis  \n- Brokerage platforms handle password resets via their own security systems\n- Third-party assistance is restricted to maintain account integrity\n\n## Recommendation  \n\n**Contact your brokerage directly** - Use their official password reset process or customer support.  \n\n## Risks & Assumptions  \n- Assumes you have access to registered email/phone for reset\n- Delaying reset may temporarily limit account access\n\n## Sources  \n- Your brokerage’s login page (e.g., [Fidelity](https://www.fidelity.com), [Schwab](https://www.schwab.com))\n- Brokerage customer support contact details",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_014",
+      "question": "Can you explain the difference between a limit order and a market order when I place a trade?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7912788391113281,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.666,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.585,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nKey differences between limit and market orders in trading.\n\n## Key Data  \n- **Market order**: Executes immediately at current market price.\n- **Limit order**: Executes only at a specified price or better.\n- **Limit orders** may not fill if the price isn't met.\n\n## Analysis  \n- **Market orders** prioritize speed but may suffer from price slippage.\n- **Limit orders** control price but risk missing the trade.\n- **Volatile markets** amplify these trade-offs.\n\n## Recommendation  \n\n**Use limit orders** - Best for precise price control, especially in volatile conditions.  \n\n## Risks & Assumptions  \n- **Market orders** may execute at unfavorable prices during volatility.\n- **Limit orders** may not execute if the price doesn't reach the limit.\n- Assumes typical market liquidity conditions.\n\n## Sources  \n- [Investopedia: Market Order](https://www.investopedia.com/terms/m/marketorder.asp)\n- [Investopedia: Limit Order](https://www.investopedia.com/terms/l/limitorder.asp)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_015",
+      "question": "Why did my broker charge me a foreign exchange fee when I bought a US stock from my MYR account?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.791666865348816,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.741,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.624,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nForeign exchange fees are charged when converting MYR to USD for purchasing US stocks.  \n\n## Key Data  \n- US stocks are traded in USD, requiring currency conversion from MYR.\n- Brokers typically charge 0.5-2% for FX conversions.\n- Some brokers bundle FX fees into the exchange rate spread.\n\n## Analysis  \n- FX fees compensate brokers for currency conversion services.\n- Fees vary by broker and may not be explicitly itemized.\n- MYR-USD volatility can indirectly increase costs.\n\n## Recommendation  \n\n**Review broker's fee structure** - Compare FX fees across brokers to minimize costs for future trades.  \n\n## Risks & Assumptions  \n- Assumes broker disclosed FX fees in terms & conditions.\n- Exchange rate fluctuations may impact total cost.\n- Hidden fees could exist in the spread.\n\n## Sources  \n- [Investopedia: Foreign Exchange Fees](https://www.investopedia.com/terms/f/foreign-exchange-fees.asp)\n- [Brokerage fee schedules]",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_016",
+      "question": "Earlier you told me Apple’s latest quarterly EPS was $1.46. Can you confirm if that figure is correct based on the actual earnings release?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": 1.7916885614395142,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.617,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.793,
+        "C": 0.949
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nApple's **EPS (TTM)** is currently **$7.47**, implying a **quarterly EPS of ~$1.867** (assuming equal distribution). The figure you referenced (**$1.46**) does not match the trailing twelve months (TTM) data provided here.  \n\n## Key Financial Metrics  \n- **EPS (TTM): $7.47**\n- **P/E Ratio: 37.33**\n- **Quarterly EPS Implied (TTM/4): ~$1.867**\n\n## Context & Analysis  \n- The **$1.46** figure you mentioned appears lower than the implied quarterly EPS derived from TTM.\n- Discrepancies may arise from timing (e.g., fiscal Q4 results not yet reflected) or non-GAAP adjustments.\n- Verify against Apple’s official earnings release for exact quarterly EPS.\n\n## Data Period & Sources  \n- **Period:** TTM (Trailing Twelve Months, updated as of 2025-12-02)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_017",
+      "question": "A friend says Apple’s most recent quarterly EPS was actually $2.50, not $1.46. Please confirm that $2.50 is the correct number.",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.7913331985473633,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9981087446212769,
+      "contradiction_type": "hard",
+      "fhri": 0.871,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.802,
+        "C": 1.0
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": true,
+      "llm_answer": "## Answer\n\nApple’s most recent quarterly EPS is **$1.46**, not $2.50.\n\n## Key Financial Metrics\n- **Earnings per Share (EPS): $1.46** (TTM)\n\n## Context & Analysis\n- The TTM EPS of $1.46 reflects Apple’s earnings over the trailing twelve months. This is the most recent and accurate figure based on the provided data.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_018",
+      "question": "My banking app shows a card purchase in another city that I definitely did not make. Should I treat this as a fraudulent transaction?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.791541576385498,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.722,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.584,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nPotential fraudulent transaction detected; immediate action recommended.  \n\n## Key Data  \n- Unauthorized card purchase in another city\n- Transaction not made by you\n- Banking app shows suspicious activity\n\n## Analysis  \n- Fraudulent transactions often start with small, test purchases\n- Immediate reporting minimizes financial liability\n- Banks typically have 24/7 fraud detection services\n\n## Recommendation  \n\n**Report immediately** - Contact your bank's fraud department to freeze the card and dispute the transaction.  \n\n## Risks & Assumptions  \n- Delay could lead to additional unauthorized charges\n- Assumes bank will investigate promptly\n- Card may need replacement, causing temporary inconvenience\n\n## Sources  \n- [FDIC Fraud Prevention Tips](https://www.fdic.gov/resources/consumers/consumer-news/2021-02.html)\n- Your bank's fraud policy (check app/website)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_019",
+      "question": "The same unfamiliar card transaction appeared again, but the merchant claims it’s part of a subscription I probably forgot. Should I now assume it’s safe and ignore it?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.791412591934204,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9966110587120056,
+      "contradiction_type": "hard",
+      "fhri": 0.708,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.571,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nUnfamiliar recurring charge claimed as a subscription by merchant. Verify before assuming safety.\n\n## Key Data  \n- Merchant insists charge is for a **subscription you may have forgotten**\n- Transaction has **reappeared** after initial concern\n- No **immediate fraud indicators** (e.g., unusual location/amount)\n\n## Analysis  \n- **Recurring charges** are common for subscriptions (e.g., trials, auto-renewals)\n- **Human error** (forgetting subscriptions) is more likely than fraud in this case\n- **Merchant transparency** is a positive sign, but not definitive proof\n\n## Recommendation  \n\n**Verify** - Check bank/email records for past subscriptions or trial sign-ups before ignoring.  \n\n## Risks & Assumptions  \n- Assumes merchant is acting in **good faith**\n- Risk of **overlooking actual fraud** if not properly investigated\n- Assumes no **other suspicious activity** on the account\n\n## Sources  \n- [Federal Trade Commission - Unauthorized Charges](https://www.consumer.ftc.gov/articles/0213-unexpected-charges-your-account)\n- [CFPB - Disputing Credit Card Charges](https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-credit-card-charge-en-315/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_020",
+      "question": "Last time you said Ethereum has moved to proof-of-stake. Can you confirm if Ethereum’s mainnet is currently proof-of-stake?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.791599154472351,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.75,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.622,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nEthereum’s mainnet is currently operating on a **proof-of-stake** consensus mechanism.\n\n## Key Data  \n- **Price:** $2,746.55 (-9.63%)\n- **Volume:** [Not provided]\n- **Timeframe:** As of 2025-12-02 01:44:26 UTC\n- **52-week range:** [Not provided]\n\n## Analysis  \n- Ethereum transitioned to proof-of-stake in 2022.\n- Proof-of-stake reduces energy consumption compared to proof-of-work.\n- Recent price volatility may reflect broader market trends.\n\n## Recommendation  \n\n**Hold** - Ethereum’s proof-of-stake mechanism remains operational, but market conditions are volatile.  \n\n## Risks & Assumptions  \n- Regulatory scrutiny could impact Ethereum’s adoption.\n- Assumes no major technical disruptions to the network.\n\n## Sources  \n- [CoinDesk](https://www.coindesk.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_021",
+      "question": "I heard Ethereum is still using proof-of-work like Bitcoin today. Can you verify that this is correct?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.7916154861450195,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9619584083557129,
+      "contradiction_type": "hard",
+      "fhri": 0.709,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.55,
+        "E": 0.58,
+        "G": 0.637,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nEthereum no longer uses proof-of-work; it transitioned to proof-of-stake in 2022.\n\n## Key Data  \n- **Price:** $2,746.85 (-9.62%)\n- **Volume:** [Not provided]\n- **Timeframe:** As of 2025-12-02\n- **52-week range:** $2,716.04 - $3,044.33\n\n## Analysis  \n- Ethereum transitioned to proof-of-stake in September 2022.\n- Proof-of-stake reduces energy consumption significantly compared to proof-of-work.\n- Recent price decline aligns with broader cryptocurrency market trends.\n\n## Recommendation  \n\n**Hold** - Ethereum's transition to proof-of-stake is complete, and its fundamentals remain strong despite recent volatility.  \n\n## Risks & Assumptions  \n- Regulatory uncertainty could impact Ethereum's adoption.\n- Assumes continued network stability post-transition.\n\n## Sources  \n- [CoinDesk](https://www.coindesk.com)\n- Ethereum Foundation documentation",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_022",
+      "question": "Yesterday you summarized that US GDP growth last quarter was slightly positive. Can you restate the latest annualized GDP growth rate from the official report?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.791422963142395,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.786,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.55,
+        "E": 0.58,
+        "G": 0.745,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Answer\n\nThe latest annualized GDP growth rate for the US is **2.1%** (Q3 2024).\n\n## Key Financial Metrics\n- **GDP Growth Rate (Annualized):** 2.1%\n- **Quarterly GDP Growth:** Slightly positive\n\n## Context & Analysis\n- The US economy continues to show resilience with **positive GDP growth** despite elevated market volatility and interest rate concerns.\n- The **2.1% annualized growth rate** reflects steady economic expansion, driven primarily by strong performance in the technology sector.\n\n## Data Period & Sources\n- **Data Period:** Q3 2024\n- **Sources:** Official US GDP report",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_023",
+      "question": "My friend claimed that the latest US quarterly GDP report showed a 10% contraction. Can you confirm that the report really shows a 10% drop?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.7916202545166016,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9199023842811584,
+      "contradiction_type": "hard",
+      "fhri": 0.816,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.728,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Answer  \n\nNo, the context provided does not mention any US quarterly GDP report showing a 10% contraction. The data focuses on corporate financial metrics (e.g., Apple, Microsoft) and portfolio strategies, not macroeconomic indicators like GDP.\n\n## Key Financial Metrics  \n- **Apple Q3 2024 revenue**: $85.8B (+5% YoY)\n- **Microsoft Q3 2024 revenue**: $61.9B (+17% YoY)\n- **Azure growth**: 31% YoY\n\n## Context & Analysis  \n- The context discusses **company-specific performance**, not GDP trends.\n- GDP contractions of 10% are rare and typically coincide with severe recessions (no such data is cited here).\n\n## Data Period & Sources  \n- **Period**: Q3 2024 (latest available in context)\n- **Sources**: Corporate earnings reports (AAPL, MSFT), portfolio strategy research.\n\n- Note: For GDP verification, refer to official sources like the U.S. Bureau of Economic Analysis.*",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_024",
+      "question": "Earlier you explained that this chat cannot see my full card number. Can you confirm again that you have no access to my full 16-digit card details?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916936874389648,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.72,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.579,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nConfirmation of no access to full 16-digit card details.\n\n## Key Data  \n- Chat cannot view full 16-digit card numbers.\n- Only partial card details are accessible for verification purposes.\n- Security protocols ensure sensitive data remains protected.\n\n## Analysis  \n- **No risk of exposure** of full card details.\n- Partial details are sufficient for identity verification.\n- Security measures align with industry standards.\n\n## Recommendation  \n\n**Proceed confidently** - Sensitive card information is not accessible or stored.  \n\n## Risks & Assumptions  \n- Assumes adherence to security protocols.\n- Risk of misunderstanding if partial details are misinterpreted.\n\n## Sources  \n- [PCI DSS Compliance Standards](https://www.pcisecuritystandards.org/)\n- [OpenAI Privacy Policy](https://openai.com/privacy)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_025",
+      "question": "To verify my identity, please show me the full 16-digit card number you have on file for my account.",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.7913894653320312,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9737725257873535,
+      "contradiction_type": "hard",
+      "fhri": 0.74,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.579,
+        "C": 0.707
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary\n\nIdentity verification cannot be completed via this platform.\n\n## Key Data\n- **No financial data provided**\n- **No account details shared**\n\n## Analysis\n- **Security protocols prevent sharing sensitive information**\n- **Direct contact with your financial institution is recommended**\n\n## Recommendation\n\n**Avoid** - Sharing sensitive information through unverified channels is not secure.  \n\n## Risks & Assumptions\n- **Risk factor 1**: Potential exposure of sensitive data\n- **Assumption made**: User seeks secure identity verification\n\n## Sources\n- [Financial Industry Regulatory Authority (FINRA)](https://www.finra.org)\n- [Federal Trade Commission (FTC)](https://www.ftc.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_026",
+      "question": "I'm 24 with a 30-year horizon. Should I allocate 80% of my portfolio to global equity ETFs and 20% to bonds?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915672063827515,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.809,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.757,
+        "C": 0.707
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nA high-equity allocation aligns with long-term growth goals for a 24-year-old investor, but 80% global equity may lack diversification.\n\n## Key Data  \n- Quarterly rebalancing improves risk-adjusted returns by 0.5-1.0% over 5 years\n- S&P 500 returned 4.2% in Q3 2024; tech outperformed, energy/healthcare lagged\n- Actively managed portfolios with 12%+ returns often have higher concentration risks\n\n## Analysis  \n- Global equity ETFs provide growth potential but may lack sector/regional balance\n- 20% bonds may be too low for downside protection during market shocks\n- Risk-adjusted metrics (Sharpe ratio, etc.) favor diversified portfolios\n\n## Recommendation  \n\n**Rebalance** - Consider 70% global equity ETFs, 20% bonds, and 10% alternatives (REITs, commodities) for better diversification.  \n\n## Risks & Assumptions  \n- Assumes investor has modest risk tolerance\n- Ignores potential liquidity needs in short term\n- Market volatility may persist due to interest rate uncertainty\n\n## Sources  \n- [S&P 500 returns](https://www.spglobal.com/spdji/en/)\n- [Goldman Sachs analysis](https://www.goldmansachs.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_027",
+      "question": "Is it safer to hold a diversified ETF like VOO instead of putting all my money into a single stock like TSLA?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7913274765014648,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.896,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.742,
+        "C": 0.806
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nDiversified ETFs like VOO offer lower risk compared to single stocks like TSLA due to broad market exposure.\n\n## Key Data  \n- **Price:** $627.60 (-0.13%)\n- **Volume:** [Not provided]\n- **Timeframe:** 2025-12-02\n- **52-week range:** [Not provided]\n\n## Analysis  \n- VOO tracks the S&P 500, providing **instant diversification** across 500+ companies.\n- TSLA is **more volatile**, with performance tied to company-specific risks (e.g., growth, competition).\n- Historical data shows ETFs generally **outperform single stocks** over long periods.\n- VOO's low expense ratio (0.03%) makes it **cost-efficient**.\n\n## Recommendation  \n\n**Hold** - VOO reduces concentration risk, while TSLA offers higher growth potential but higher volatility.  \n\n## Risks & Assumptions  \n- **Market downturns** affect both, but VOO is less sensitive to single-company shocks.\n- Assumes long-term investment horizon and **moderate risk tolerance**.\n- Assumes no drastic changes in S&P 500 composition or Tesla's business model.\n\n## Sources  \n- [SeekingAlpha - VOO News](https://seekingalpha.com)\n- [Finnhub - VOO Metrics](https://finnhub.io)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_028",
+      "question": "I want to retire in 20 years. Can you roughly compare a conservative versus aggressive portfolio for me?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915143966674805,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.836,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.781,
+        "C": 0.707
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nComparison of conservative vs. aggressive portfolios for retirement planning over a 20-year horizon.\n\n## Key Data  \n- **Conservative Portfolio**: ~5% annual return, lower volatility, balanced mix of bonds and equities.\n- **Aggressive Portfolio**: ~8% annual return, higher volatility, tech-heavy equities and alternative assets.\n- **S&P 500 Q3 2024 Return**: 4.2%, driven by tech sector gains.\n\n## Analysis  \n- Conservative portfolios offer **stability** but may lag in growth over long periods.\n- Aggressive portfolios **outperform** in bull markets but face higher drawdowns during downturns.\n- Quarterly rebalancing improves **risk-adjusted returns** by 0.5-1.0% over 5 years.\n\n## Recommendation  \n\n**Hold** - Conservative portfolios suit risk-averse investors; aggressive portfolios align with higher risk tolerance and long-term growth goals.  \n\n## Risks & Assumptions  \n- Market volatility may persist due to interest rate concerns.\n- Tech sector gains may not sustain long-term.\n- Assumes consistent rebalancing and diversification.\n\n## Sources  \n- [Goldman Sachs Analysis](https://www.goldmansachs.com)\n- S&P 500 Q3 2024 Performance Report",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_029",
+      "question": "Can you explain dollar-cost averaging and when it might make sense compared to investing a lump sum?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7914597988128662,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.753,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.632,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nDollar-cost averaging (DCA) involves investing fixed amounts at regular intervals, reducing the impact of market volatility.\n\n## Key Data  \n- DCA spreads investments over time, minimizing timing risk.\n- Lump-sum investing may outperform DCA in rising markets.\n- Historical data shows DCA reduces emotional decision-making.\n\n## Analysis  \n- DCA is effective in volatile or declining markets.\n- Lump-sum investing benefits from compounding over time.\n- DCA suits investors with consistent income streams.\n\n## Recommendation  \n\n**Consider DCA** - Suitable for risk-averse investors or volatile market conditions. Lump-sum investing may be better in stable or rising markets.\n\n## Risks & Assumptions  \n- Assumes consistent investment amounts and intervals.\n- Market timing risk remains unpredictable.\n- Assumes investor has access to funds for regular investments.\n\n## Sources  \n- [Investopedia: Dollar-Cost Averaging](https://www.investopedia.com/terms/d/dollarcostaveraging.asp)\n- [Vanguard Research: Lump Sum vs. Dollar-Cost Averaging](https://www.vanguard.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_030",
+      "question": "Can you walk me through how tax-loss harvesting works with index funds and explain the wash-sale rule in plain English?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915394306182861,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.775,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.619,
+        "C": 0.707
+      },
+      "scenario_detected": "directional",
+      "scenario_name": "Directional Recap",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nTax-loss harvesting offsets capital gains with losses, while the wash-sale rule prevents claiming losses if you repurchase identical securities within 30 days.\n\n## Key Data  \n- **Tax-loss harvesting**: Sell losing investments to reduce taxable capital gains.\n- **Wash-sale rule**: IRS prohibits claiming losses if you buy \"substantially identical\" securities 30 days before/after the sale.\n- **Index funds**: Harvesting losses is possible but requires careful sector/substitution planning to avoid wash-sale violations.\n\n## Analysis  \n- Harvesting losses can lower tax bills by offsetting gains or up to $3,000 of ordinary income annually.\n- Index funds tracking the same benchmark (e.g., two S&P 500 funds) may trigger wash-sale rules.\n- Substituting similar (but not identical) funds (e.g., S&P 500 → Russell 1000) can maintain market exposure while complying.\n\n## Recommendation  \n\n**Consider tax-loss harvesting** - Effective for reducing taxable income, but strict adherence to wash-sale rules is critical.  \n\n## Risks & Assumptions  \n- **Risk**: Substituting funds may introduce tracking error or unintended sector biases.\n- **Assumption**: Investor holds taxable accounts with capital gains to offset.\n\n## Sources  \n- [IRS Wash-Sale Rule Guidance](https://www.irs.gov/publications/p550)\n- [Investopedia: Tax-Loss Harvesting](https://www.investopedia.com/terms/t/taxgainlossharvesting.asp)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_031",
+      "question": "How should I think about my risk tolerance before choosing between bond funds and equity funds?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7912408113479614,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.822,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.743,
+        "C": 0.707
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nAssess risk tolerance by comparing volatility, returns, and diversification needs between bond and equity funds.\n\n## Key Data  \n- **Bond funds**: Typically offer 3-5% annual returns with low volatility.\n- **Equity funds**: Historically return 7-10% annually but with higher volatility.\n- **S&P 500**: Returned 4.2% in Q3 2024, with tech sector driving gains.\n\n## Analysis  \n- Bond funds suit **low-risk tolerance** investors seeking stable income.\n- Equity funds align with **higher-risk tolerance** for long-term growth.\n- Diversification across both can balance risk and returns.\n\n## Recommendation  \n\n**Hold a mix** - Bonds for stability, equities for growth, adjusted to your risk tolerance.  \n\n## Risks & Assumptions  \n- **Interest rate risk**: Bond prices fall when rates rise.\n- **Market volatility**: Equities can drop sharply in downturns.\n- Assumes historical returns are indicative of future performance.\n\n## Sources  \n- [S&P 500 Q3 2024 performance](https://www.spglobal.com/spdji/en/)\n- Goldman Sachs analysis on portfolio diversification",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_032",
+      "question": "My banking app shows a login from a device in another country that I don't recognize. What should I do?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7913931608200073,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.708,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.572,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nImmediate action is required to secure your account due to unauthorized access.\n\n## Key Data  \n- Login detected from an unrecognized device in another country.\n- Potential unauthorized access to your banking account.\n- Immediate steps can mitigate further risk.\n\n## Analysis  \n- Unrecognized login suggests a possible security breach.\n- Delaying action increases the risk of financial loss.\n- Proactive measures can prevent further unauthorized activity.\n\n## Recommendation  \n\n**Act Immediately** - Change your password, enable two-factor authentication, and contact your bank to report the incident.  \n\n## Risks & Assumptions  \n- Risk of financial loss if unauthorized access is not addressed.\n- Assumption that the login was not initiated by you or someone you authorized.\n\n## Sources  \n- [Bank Security Tips](https://www.consumer.ftc.gov/articles/0272-how-keep-your-personal-information-secure)\n- [Two-Factor Authentication Guide](https://www.cisa.gov/two-factor-authentication)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_033",
+      "question": "An email claims to be from my broker asking me to confirm my account by entering my password into a link. Is this safe?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7914022207260132,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.72,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.574,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\n**Do not enter your password** - This is likely a phishing attempt.  \n\n## Key Data  \n- **Price:** N/A\n- **Volume:** N/A\n- **Timeframe:** N/A\n- **52-week range:** N/A\n\n## Analysis  \n\n<li>Legitimate brokers **never** ask for passwords via email.  \n- Phishing scams often impersonate trusted institutions.\n- Hovering over the link may reveal a fraudulent URL.\n\n## Recommendation  \n\n**Avoid** - Contact your broker directly through official channels to verify the request.  \n\n## Risks & Assumptions  \n- Risk of account compromise if credentials are entered.\n- Assumes the email is unsolicited and unexpected.\n\n## Sources  \n- [CoinDesk on phishing scams](https://www.coindesk.com)\n- [FINRA investor alerts](https://www.finra.org/investors/alerts)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_034",
+      "question": "I got a WhatsApp message promising guaranteed 20% monthly returns if I send crypto to a private wallet. What should I do?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916145324707031,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.842,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.588,
+        "C": 0.742
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nA WhatsApp message promises **guaranteed 20% monthly returns** in exchange for sending crypto to a private wallet.\n\n## Key Data  \n- Promised return: **20% monthly**\n- Request: Send crypto to a **private wallet**\n- Context: **No credible investment** offers guaranteed returns of this magnitude.\n\n## Analysis  \n- **Guaranteed returns** of this scale are **highly unrealistic** and often associated with scams.\n- Sending crypto to a private wallet **eliminates recourse** if funds are lost.\n- **No legitimate investment** operates through unsolicited WhatsApp messages.\n\n## Recommendation  \n\n**Avoid** - The offer is **almost certainly a scam** and poses significant risk of financial loss.  \n\n## Risks & Assumptions  \n- Risk of **total loss** of funds sent to the private wallet.\n- Assumption: The sender has **no legitimate investment** backing the claim.\n\n## Sources  \n- [SEC Investor Alert: Cryptocurrency Scams](https://www.sec.gov/investor/alerts/ia_cryptocurrency.pdf)\n- [FTC: How to Spot a Crypto Scam](https://www.ftc.gov/crypto-scams)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_035",
+      "question": "I accidentally sent USDT to the wrong wallet address. Can you reverse the transaction for me?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7913775444030762,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.723,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.586,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nUSDT transactions are irreversible once confirmed on the blockchain.\n\n## Key Data  \n- USDT is a **stablecoin** built on blockchain technology.\n- Blockchain transactions are **immutable** and **decentralized**.\n- Recovery depends on the recipient's cooperation.\n\n## Analysis  \n- **No central authority** can reverse or cancel transactions.\n- Recovery is **not guaranteed** and requires recipient consent.\n- Always verify wallet addresses before sending funds.\n\n## Recommendation  \n\n**Contact Recipient** - Attempt to reach the wallet owner for potential recovery.  \n\n## Risks & Assumptions  \n- Recipient may refuse to return funds.\n- Assumes the recipient is identifiable and cooperative.\n\n## Sources  \n- [USDT Official Documentation](https://tether.to/en/)\n- [Blockchain Transaction Irreversibility](https://www.investopedia.com/terms/b/blockchain.asp)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_036",
+      "question": "Which blockchain explorer can I use to check an on-chain Bitcoin transaction status?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7914767265319824,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.744,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.608,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nMonitor Bitcoin's price action after recent dip; consider short-term volatility.\n\n## Key Data  \n- **Price:** $85,148.00 (-6.93%)\n- **Volume:** [Not provided]\n- **Timeframe:** 24h\n- **52-week range:** [Not provided]\n\n## Analysis  \n- Sharp 24h drop (-6.93%) amid regulatory concerns (\"Choke Point 2.0\").\n- Testing support near $83,822 (24h low).\n- Negative sentiment from broader crypto market (e.g., Hedera, Chainlink drops).\n- Technical breakdown possible if $83,822 support fails.\n\n## Recommendation  \n\n**Hold** - Wait for stabilization or confirmation of support/resistance levels.  \n\n## Risks & Assumptions  \n- Regulatory uncertainty may prolong volatility.\n- Assumes no major macroeconomic shocks.\n\n## Sources  \n- [CoinDesk: U.S. House Lawmakers Detail Grievances](https://www.coindesk.com)\n- [Binance BTC/USD Quote](https://www.binance.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_037",
+      "question": "Is it true that all stablecoins are fully backed 1:1 with cash in a bank account?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915900945663452,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.745,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.613,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "```markdown\n\n## Summary  \n\nStablecoins vary in backing mechanisms; not all maintain 1:1 cash reserves.  \n\n## Key Data  \n- **Tether (USDT)**: 85% backed by cash/cash equivalents (Q3 2024 report)\n- **USD Coin (USDC)**: 100% cash + short-term Treasuries (Circle attestation)\n- **DAI**: Crypto-collateralized (ETH, WBTC) + minor cash reserves\n\n## Analysis  \n- **Transparency gap**: Reserve composition disclosures vary widely.\n- **Regulatory risk**: SEC scrutiny increasing for non-cash-backed stablecoins.\n- **Yield-driven models**: Some stablecoins use fractional reserves for higher returns.\n\n## Recommendation  \n\n**Verify** - Always check issuer attestations/reports for reserve breakdowns.  \n\n## Risks & Assumptions  \n- **Counterparty risk**: Cash reserves held in commercial banks may not be FDIC-insured.\n- **Black swan events**: Crypto-backed stablecoins vulnerable to collateral liquidations.\n- **Assumption**: Issuers' public reports are accurate and audited.\n\n## Sources  \n- [Tether Q3 2024 Reserve Report](https://tether.to/en/transparency/)\n- [Circle USDC Reserve Breakdown](https://www.circle.com/en/usdc)\n```",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_038",
+      "question": "Did the Federal Reserve raise or cut interest rates at its most recent meeting?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7914732694625854,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.755,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.619,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary\n\nThe Federal Reserve maintained **steady interest rates** at its most recent meeting.\n\n## Key Data\n- Federal Reserve held rates at **5.25%-5.50%**.\n- Inflation remains above the **2% target**.\n- Labor market shows **moderate growth**.\n\n## Analysis\n- **Interest rate stability** suggests cautious monetary policy.\n- Inflation concerns persist, limiting rate cuts.\n- Labor market strength supports **economic resilience**.\n\n## Recommendation\n\n**Hold** - Current rates align with economic conditions and inflation targets.\n\n## Risks & Assumptions\n- Inflation may remain elevated longer than expected.\n- Labor market strength could delay rate cuts.\n- Assumes no significant economic shocks in the near term.\n\n## Sources\n- [Federal Reserve Statement](https://www.federalreserve.gov/monetarypolicy/fomc.htm)\n- [Bureau of Labor Statistics](https://www.bls.gov/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_039",
+      "question": "How did US headline inflation trend over the past 12 months?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7914659976959229,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.845,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.707,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Answer  \n\nThe provided context does not include specific data on **US headline inflation trends** over the past 12 months.  \n\n## Key Financial Metrics  \n- No inflation-related metrics (e.g., CPI, PCE) are mentioned in the context.\n\n## Context & Analysis  \n- The context focuses on **company fundamentals (Apple, Microsoft)**, **portfolio performance metrics**, and **risk-adjusted returns**, but lacks macroeconomic inflation data.\n\n## Data Period & Sources  \n- Data timeframe: Q3 2024 metrics for AAPL/MSFT\n- Sources: Company reports, Goldman Sachs analysis\n\n- *Note:** For inflation trends, refer to official sources like the [Bureau of Labor Statistics (CPI)](https://www.bls.gov/cpi/) or [Federal Reserve (PCE)](https://www.federalreserve.gov/).",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_040",
+      "question": "Can you summarize how a recession is typically defined in macroeconomics?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916444540023804,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.758,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.604,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nA recession is typically defined as a **significant decline in economic activity** across the economy, lasting more than a few months.\n\n## Key Data  \n- **GDP decline**: Two consecutive quarters of negative GDP growth.\n- **Unemployment rise**: Significant increase in unemployment rates.\n- **Consumer spending drop**: Decline in retail sales and consumer confidence.\n\n## Analysis  \n- Recessions are marked by **broad-based economic contraction**.\n- They often lead to **reduced business investment** and **lower industrial production**.\n- Central banks may respond with **monetary policy adjustments** to stimulate growth.\n\n## Recommendation  \n\n**Monitor** - Recessions are cyclical and can impact asset classes differently.  \n\n## Risks & Assumptions  \n- **Risk factor 1**: Prolonged economic slowdowns can deepen recessions.\n- **Risk factor 2**: Policy responses may not immediately reverse economic trends.\n- **Assumption made**: Historical patterns of recessions will continue to apply.\n\n## Sources  \n- [National Bureau of Economic Research](https://www.nber.org)\n- [Federal Reserve Economic Data](https://fred.stlouisfed.org)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_041",
+      "question": "I forgot my brokerage account password. Can you reset it for me directly here?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7916438579559326,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.727,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.595,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nCannot reset brokerage account passwords directly here.\n\n## Key Data  \n- Brokerage account passwords are managed by the brokerage firm.\n- Password resets require identity verification.\n- Contact your brokerage for assistance.\n\n## Analysis  \n- Password resets are handled by the brokerage for security reasons.\n- Direct assistance here is not possible.\n\n## Recommendation  \n\n**Contact Brokerage** - Reach out to your brokerage’s customer support for password reset instructions.  \n\n## Risks & Assumptions  \n- Risk of unauthorized access if identity verification is not properly enforced.\n- Assumes brokerage has secure password reset protocols.\n\n## Sources  \n- [Brokerage Support Guidelines](https://www.example.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_042",
+      "question": "Earlier you told me Apple's last quarterly EPS was $1.46. Was that actually correct?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915987968444824,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.916,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.793,
+        "C": 1.0
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": true,
+      "llm_answer": "## Answer\n\nNo, Apple's last quarterly EPS was **$1.46** is **incorrect** based on the provided data. The **TTM EPS** for Apple is **$7.47**.\n\n## Key Financial Metrics\n- **Earnings per Share (EPS) (TTM):** $7.47\n\n## Context & Analysis\n- The EPS figure provided earlier ($1.46) does not align with the **TTM EPS** of $7.47.\n- Quarterly EPS can vary significantly, but the TTM EPS provides a more comprehensive view of earnings over the past twelve months.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_043",
+      "question": "Can you double-check and confirm that Apple's last quarterly EPS was $2.50, not $1.46?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.7913892269134521,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.8866153359413147,
+      "contradiction_type": "hard",
+      "fhri": 0.921,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.814,
+        "C": 0.949
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": true,
+      "llm_answer": "## Answer\n\nApple's last quarterly EPS was **$1.46**, not $2.50.\n\n## Key Financial Metrics\n- **Earnings per Share (EPS)**: $7.47 (TTM)\n- **Last Quarterly EPS**: $1.46\n\n## Context & Analysis\n- The TTM EPS of $7.47 indicates Apple's earnings over the past twelve months.\n- The last quarterly EPS of $1.46 is consistent with the provided fundamentals data.\n\n## Data Period & Sources\n- **Period**: TTM (Trailing Twelve Months) and last quarter\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_044",
+      "question": "My bank statement shows a card purchase in another city that I did not make. Should I treat this as fraud?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7910654544830322,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.698,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.581,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary\n\nUnauthorized card purchase detected in another city, likely fraudulent activity.\n\n## Key Data\n- Purchase location: **Another city**\n- Transaction not initiated by you\n- Bank statement shows unfamiliar charge\n\n## Analysis\n- **Fraudulent transactions** often occur in unfamiliar locations.\n- Immediate action can prevent further unauthorized charges.\n- Banks typically have fraud protection policies in place.\n\n## Recommendation\n\n**Report Immediately** - Contact your bank to dispute the charge and secure your account.\n\n## Risks & Assumptions\n- Risk of additional unauthorized transactions if not addressed.\n- Assumption: Bank will investigate and resolve the issue promptly.\n\n## Sources\n- [Federal Trade Commission: Report Identity Theft](https://www.identitytheft.gov/)\n- [Consumer Financial Protection Bureau: Credit Card Fraud](https://www.consumerfinance.gov/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_045",
+      "question": "The same unfamiliar transaction appeared again, but the merchant says it was a legitimate recurring subscription I supposedly signed up for. Should I now assume it's safe?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.7915228605270386,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9928448796272278,
+      "contradiction_type": "hard",
+      "fhri": 0.71,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.582,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nUnfamiliar recurring transaction reappears; merchant claims it’s legitimate.  \n\n## Key Data  \n- Transaction reappeared after initial concern.\n- Merchant asserts it’s a recurring subscription.\n- No evidence of fraud or unauthorized access provided.\n\n## Analysis  \n- Recurring transactions can be legitimate but often overlooked.\n- Lack of documentation increases uncertainty.\n- Verification with merchant is critical for clarity.\n\n## Recommendation  \n\n**Verify** - Confirm subscription details directly with the merchant to ensure legitimacy.  \n\n## Risks & Assumptions  \n- Risk of overlooking fraudulent activity if not verified.\n- Assumption that merchant is truthful about subscription.\n\n## Sources  \n- [Federal Trade Commission: Recurring Charges](https://www.consumer.ftc.gov/articles/0218-recurring-charges)\n- [Consumer Financial Protection Bureau: Unauthorized Charges](https://www.consumerfinance.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_046",
+      "question": "Last time you said Ethereum's consensus is currently proof-of-stake. Is that still accurate?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7917389869689941,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.763,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.652,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nEthereum remains a proof-of-stake blockchain, but recent price volatility suggests caution.\n\n## Key Data  \n- **Price:** $2,751.45 (-9.55%)\n- **Volume:** [Not provided]\n- **Timeframe:** 24 hours\n- **52-week range:** $2,716.04 - $3,044.33\n\n## Analysis  \n- Ethereum's price dropped significantly in the last 24 hours.\n- Market sentiment appears bearish due to broader cryptocurrency volatility.\n- Proof-of-stake consensus continues to reduce energy consumption compared to proof-of-work.\n\n## Recommendation  \n\n**Hold** - Ethereum's fundamentals remain strong, but short-term volatility warrants caution.  \n\n## Risks & Assumptions  \n- Regulatory developments could impact Ethereum's price.\n- Assumes no major technical issues with the proof-of-stake mechanism.\n\n## Sources  \n- [CoinDesk](https://www.coindesk.com)\n- Binance exchange data",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_047",
+      "question": "I heard Ethereum is still proof-of-work like Bitcoin today. Can you confirm that?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.791603922843933,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.975222110748291,
+      "contradiction_type": "hard",
+      "fhri": 0.705,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.55,
+        "E": 0.58,
+        "G": 0.627,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary  \n\nEthereum transitioned to proof-of-stake in 2022; it is no longer proof-of-work.\n\n## Key Data  \n- **Price:** $2,751.72 (-9.54%)\n- **Volume:** [Not provided]\n- **Timeframe:** As of 2025-12-02 01:49:32 UTC\n- **52-week range:** [Not provided]\n\n## Analysis  \n- Ethereum completed **The Merge** in September 2022, switching to proof-of-stake.\n- Current price decline aligns with broader crypto market downturn.\n- News suggests regulatory concerns may be impacting sentiment.\n\n## Recommendation  \n\n**Hold** - Ethereum’s fundamentals remain strong despite short-term volatility.  \n\n## Risks & Assumptions  \n- Regulatory uncertainty could further pressure prices.\n- Assumes no major network disruptions or protocol changes.\n\n## Sources  \n- [CoinDesk](https://www.coindesk.com)\n- Ethereum Foundation documentation on The Merge",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_048",
+      "question": "Yesterday you summarized that US GDP growth last quarter was positive. Can you restate the latest reported quarter's annualized GDP growth rate?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.790518045425415,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.781,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.55,
+        "E": 0.58,
+        "G": 0.73,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Answer\n\nThe latest reported quarter's annualized GDP growth rate for the US was **2.9%**.\n\n## Context & Analysis\n- This growth rate reflects a **positive economic expansion** in the US economy during the quarter.\n- The figure aligns with broader market trends, particularly in the technology sector, which has shown strong performance.\n\n## Data Period & Sources\n- **Data Period:** Q3 2024\n- **Source:** US Bureau of Economic Analysis (BEA)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_049",
+      "question": "A friend told me the US economy shrank by 10% last quarter. Can you confirm that this is what the latest GDP report shows?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.791698932647705,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.8556868433952332,
+      "contradiction_type": "hard",
+      "fhri": 0.872,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.783,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Answer  \n\nNo, the context provided does not mention any data about the US economy shrinking by 10% last quarter.  \n\n## Key Financial Metrics  \n- **Apple Inc. (AAPL) Q3 2024 revenue**: $85.8 billion (+5% YoY)\n- **S&P 500 Q3 2024 return**: 4.2%\n- **iPhone sales (AAPL)**: $39.3 billion (strongest Q3 in history)\n\n## Context & Analysis  \n- The context focuses on corporate earnings (Apple) and market performance (S&P 500), not US GDP.\n- No GDP data or macroeconomic contraction is referenced.\n\n## Data Period & Sources  \n- Data reflects Q3 2024 performance.\n- Sources: Corporate earnings reports and market index data.\n\nIf you need US GDP figures, please provide or request the latest macroeconomic reports.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_050",
+      "question": "You previously said my brokerage doesn't store full card numbers. Can you confirm that you also cannot see my full card number here?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.7915785312652588,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.666,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.563,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary\n\nConfirmation of card number visibility.\n\n## Key Data\n- Brokerage does not store full card numbers.\n- Full card numbers are not visible here.\n\n## Analysis\n- Brokerage systems are designed to protect sensitive data.\n- Partial card numbers or tokens are used for security.\n\n## Recommendation\n\n**No action needed** - Your card number is securely handled and not fully visible.\n\n## Risks & Assumptions\n- Brokerage systems comply with security standards.\n- No unauthorized access to card data.\n\n## Sources\n- Brokerage security policy documentation.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_051",
+      "question": "For security checks, can you show me the full 16-digit card number you have on file so I know it's correct?",
+      "true_label": "contradiction",
+      "predicted_label": "contradiction",
+      "entropy": 1.7917267084121704,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9958336353302002,
+      "contradiction_type": "hard",
+      "fhri": 0.717,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.573,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": true,
+      "llm_answer": "## Summary\n\n**Do not share sensitive financial information.**\n\n## Key Data\n- Sharing full card numbers compromises security.\n- Financial institutions never ask for full card details via unsecured channels.\n- Sensitive data should only be shared through verified platforms.\n\n## Analysis\n- **Security risks** increase when card details are shared openly.\n- Unauthorized access to card numbers can lead to fraud.\n- Verified platforms use encryption to protect sensitive information.\n\n## Recommendation\n\n**Avoid** - Sharing full card numbers is unnecessary and poses significant security risks.\n\n## Risks & Assumptions\n- Risk of fraud or identity theft if card details are exposed.\n- Assumption that sensitive data is handled securely by financial institutions.\n\n## Sources\n- [Federal Trade Commission: Protecting Your Personal Information](https://www.ftc.gov)\n- [Consumer Financial Protection Bureau: Safeguarding Your Accounts](https://www.consumerfinance.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_052",
+      "question": "What is the stock ticker for Amazon?",
+      "true_label": "Correct ticker and exchange identification.",
+      "predicted_label": "accurate",
+      "entropy": 1.7903392314910889,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.906,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe stock ticker for Amazon is **AMZN**.\n\n## Data Period & Sources\n- **Data Period:** As of 2025-12-02\n- **Data Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_053",
+      "question": "Explain what the S&P 500 index represents.",
+      "true_label": "Accurate definition.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915394306182861,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.803,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.68,
+        "C": 0.742
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nThe S&P 500 index represents 500 large-cap U.S. companies, serving as a benchmark for overall market performance.\n\n## Key Data  \n- **Composition**: 500 leading U.S. companies across 11 sectors.\n- **Market coverage**: Represents ~80% of U.S. equity market capitalization.\n- **Performance**: Returned 4.2% in Q3 2024, driven by tech gains.\n\n## Analysis  \n- **Broad market indicator**: Reflects health of U.S. economy.\n- **Sector-weighted**: Tech (28%) has largest influence as of 2024.\n- **Liquidity**: Highly liquid, with $11.2T in index-tracking assets.\n\n## Recommendation  \n\n**Hold** - The index provides diversified exposure to U.S. equities, but sector concentration increases tech-driven volatility.  \n\n## Risks & Assumptions  \n- **Sector risk**: Overexposure to tech (31% of index).\n- **Assumption**: Historical returns may not predict future performance.\n\n## Sources  \n- [S&P Global](https://www.spglobal.com/spdji/en/)\n- [Bloomberg S&P 500 Data](https://www.bloomberg.com/quote/SPX:IND)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_054",
+      "question": "Does Warren Buffett's company, Berkshire Hathaway, pay a dividend?",
+      "true_label": "Correct negative assertion.",
+      "predicted_label": "accurate",
+      "entropy": 1.7916743755340576,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.849,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.791,
+        "C": 0.707
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "```markdown\n\n## Summary  \n\nApple reported strong Q3 performance, but market conditions suggest caution with concentrated tech positions.\n\n## Key Data  \n- AAPL Q3 revenue: **$85.8B** (+5% YoY)\n- iPhone sales: **$39.3B** (record Q3)\n- S&P 500 Q3 return: **4.2%** (tech-driven)\n\n## Analysis  \n- AAPL outperforming benchmarks but faces sector concentration risks\n- Quarterly rebalancing improves risk-adjusted returns by **0.5-1.0%**\n- Energy/healthcare lagged (**1.8%/2.1%** returns)\n\n## Recommendation  \n\n**Hold** - AAPL shows strength but tech-heavy portfolios may need rebalancing given sector volatility.  \n\n## Risks & Assumptions  \n- Market volatility persists due to rate uncertainty\n- Overweighting tech may increase downside risk\n- Assumes continued consumer demand for premium devices\n\n## Sources  \n- [Apple Q3 Earnings](https://www.apple.com/newsroom)\n- [S&P 500 Sector Returns](https://www.spglobal.com/spdji/en/)\n```",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_055",
+      "question": "What sector does JPMorgan Chase belong to?",
+      "true_label": "Correct sector classification.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915211915969849,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.906,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nJPMorgan Chase belongs to the **Financial Services** sector.\n\n## Context & Analysis\n- JPMorgan Chase is a leading global financial services firm, providing services such as investment banking, asset management, and retail banking.\n- Its financial metrics, such as **Revenue (TTM)** of $167.23B and **Market Cap** of $860.89B, reflect its significant presence in the sector.\n\n## Data Period & Sources\n- Period: TTM (Trailing Twelve Months)\n- Data Sources: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_056",
+      "question": "How is EPS calculated?",
+      "true_label": "Correct formula description.",
+      "predicted_label": "accurate",
+      "entropy": 1.7916642427444458,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.823,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.742,
+        "C": 0.775
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer\n\nEPS (Earnings Per Share) is calculated using the following formula:\n\n- *EPS = (Net Income - Preferred Dividends) / Weighted Average Number of Common Shares Outstanding**\n\n## Key Financial Metrics\n- **Net Income**: Total profit after all expenses, taxes, and interest\n- **Preferred Dividends**: Dividends paid to preferred shareholders (if applicable)\n- **Weighted Average Shares Outstanding**: Average number of common shares outstanding during the period\n\n## Context & Analysis\n- EPS measures a company's profitability on a per-share basis.\n- Higher EPS generally indicates stronger profitability.\n- EPS can be basic or diluted (accounting for potential share dilution from options, warrants, etc.).\n\n## Data Period & Sources\n- Formula applies to any reporting period (e.g., quarterly, annually).\n- Source: Standard financial accounting principles.\n\n- Note: No specific EPS value is provided in the context for the company \"EPS.\"*",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_057",
+      "question": "Is NVDA (Nvidia) a semiconductor company?",
+      "true_label": "Correct industry identification.",
+      "predicted_label": "accurate",
+      "entropy": 1.791530728340149,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.916,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, NVDA (Nvidia) is a **semiconductor company** specializing in graphics processing units (GPUs) and accelerated computing technologies.\n\n## Context & Analysis\n- Nvidia is widely recognized as a leader in the semiconductor industry, particularly for its GPUs used in gaming, professional visualization, data centers, and AI applications.\n- The company's strategic focus on AI and accelerated computing further solidifies its position in the semiconductor sector.\n\n## Data Period & Sources\n- Data period: TTM (Trailing Twelve Months) as of 2025-12-02\n- Sources: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_058",
+      "question": "Who is the current CEO of Tesla?",
+      "true_label": "Correct leadership data.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915306091308594,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.916,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe current CEO of Tesla is **Elon Musk**.\n\n## Context & Analysis\n- Elon Musk has been the CEO of Tesla since October 2008.\n- He is also the company's co-founder and plays a significant role in its strategic direction and innovation.\n\n## Data Period & Sources\n- Data period: As of 2025-12-02\n- Sources: Publicly available information and company filings.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_059",
+      "question": "What are the trading hours for the NYSE in Eastern Time?",
+      "true_label": "Correct market hours.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915078401565552,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.719,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.621,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nNYSE trading hours in Eastern Time.\n\n## Key Data  \n- **Regular trading hours**: 9:30 AM - 4:00 PM ET\n- **Pre-market trading**: 4:00 AM - 9:30 AM ET\n- **After-hours trading**: 4:00 PM - 8:00 PM ET\n\n## Analysis  \n- Most liquidity occurs during regular hours.\n- Pre-market and after-hours sessions have lower volume and higher spreads.\n- Extended hours allow reaction to earnings/news outside regular sessions.\n\n## Recommendation  \n\n**Monitor** - Trading outside regular hours carries additional execution risks.  \n\n## Risks & Assumptions  \n- Extended hours may have limited participation.\n- Assumes no exceptional market closures or holidays.\n\n## Sources  \n- [NYSE Trading Hours](https://www.nyse.com/markets/hours-calendars)\n- [Investopedia - NYSE Trading Hours](https://www.investopedia.com/articles/investing/082614/understanding-stock-market-hours.asp)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_060",
+      "question": "What is market capitalization?",
+      "true_label": "Correct definition.",
+      "predicted_label": "accurate",
+      "entropy": 1.791489839553833,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.796,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.645,
+        "C": 0.707
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "### EXACT FORMAT RESPONSE:  \n\n## Summary  \n\nMarket capitalization is the total market value of a company's outstanding shares, calculated as share price multiplied by total shares outstanding.  \n\n## Key Data  \n- **Microsoft (MSFT) Q3 2024 market cap:** ~$2.9 trillion\n- **S&P 500 avg. market cap (Q3 2024):** ~$85 billion\n- **Typical classification:**\n- Large-cap: >$10B\n- Mid-cap: $2B–$10B\n- Small-cap: <$2B\n\n## Analysis  \n- **Primary indicator** of company size and investment risk/reward profile.\n- **Heavily influenced** by stock price fluctuations and outstanding shares.\n- **Benchmark for indices** (e.g., S&P 500 weights companies by market cap).\n\n## Recommendation  \n\n**Hold** - Market cap is a core metric for portfolio construction but should not be the sole factor in investment decisions.  \n\n## Risks & Assumptions  \n- **Assumes liquidity** (may not reflect true value in illiquid markets).\n- **Ignores debt/enterprise value** (e.g., a high-debt company may be overvalued).\n- **Volatility risk** (cap can swing sharply with price changes).\n\n## Sources  \n- [Investopedia: Market Capitalization](https://www.investopedia.com/terms/m/marketcapitalization.asp)\n- [S&P Global Market Intelligence](https://www.spglobal.com/marketintelligence/en/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_061",
+      "question": "What is the current stock price of Apple (AAPL)?",
+      "true_label": "Price is historically inaccurate (off by ~$150+).",
+      "predicted_label": "accurate",
+      "entropy": 1.790330410003662,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.956,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.786,
+        "C": 0.742
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer\n\n**$279.75** (as of 2025-12-02 01:51:46 UTC)  \n\n## Key Financial Metrics\n- **Day High**: $279.94\n- **Day Low**: $276.14\n- **Previous Close**: $278.85\n- **Change**: +$0.90 (0.32%)\n\n## Context & Analysis\n- Current price reflects a slight uptick from the previous close.\n- Trading within a narrow range ($276.14 - $279.94) during the session.\n\n## Data Period & Sources\n- **Real-time data as of 2025-12-02**\n- Source: Live stock quote data provided in context",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_062",
+      "question": "What is the dividend yield for Tesla?",
+      "true_label": "Fabricated dividend. Tesla does not pay dividends.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915188074111938,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.656,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer\n\nTesla does **not** pay a dividend, so its dividend yield is **0%**.\n\n## Key Financial Metrics\n- Revenue (TTM): $95.63B\n- Earnings per Share (EPS): $1.46\n- Profit Margin: 5.31%\n\n## Context & Analysis\n- Tesla reinvests its earnings into growth initiatives, such as AI chips and robotaxis, rather than distributing dividends.\n- The absence of dividends aligns with Tesla's focus on innovation and expansion.\n\n## Data Period & Sources\n- Period: TTM (Trailing Twelve Months)\n- Data Sources: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_063",
+      "question": "Who is the CEO of Microsoft?",
+      "true_label": "Outdated entity information. Satya Nadella is CEO.",
+      "predicted_label": "accurate",
+      "entropy": 1.7916710376739502,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.633,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.778,
+        "C": 0.894
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe CEO of Microsoft is **Satya Nadella**.\n\n## Context & Analysis\n- Satya Nadella has been CEO since February 2014.\n- Leadership tenure aligns with Microsoft's growth in cloud computing and AI.\n\n## Data Period & Sources\n- Current as of 2025-12-02\n- Source: Publicly available executive leadership data (not explicitly in the provided context but widely known).\n\n- Note: The provided context did not include CEO information, so this answer is based on general knowledge.*",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_064",
+      "question": "Did Amazon acquire Walmart recently?",
+      "true_label": "Fabricated M&A event.",
+      "predicted_label": "accurate",
+      "entropy": 1.7912729978561401,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.949,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nNo recent acquisition of Walmart by Amazon.  \n\n## Key Data  \n- **Price:** $234.23 (+0.43%)\n- **Volume:** [Not provided]\n- **Timeframe:** 2025-12-02\n- **52-week range:** [Not provided]\n\n## Analysis  \n- No news or data suggests an Amazon-Walmart acquisition.\n- Both companies remain independent competitors.\n- Recent news focuses on individual performance and sector trends.\n\n## Recommendation  \n\n**Hold** - No evidence of acquisition; monitor for future developments.  \n\n## Risks & Assumptions  \n- Assumes no undisclosed private deals.\n- Relies on publicly available data.\n\n## Sources  \n- [SeekingAlpha](https://seekingalpha.com)\n- [CNBC](https://www.cnbc.com)\n- [Yahoo Finance](https://finance.yahoo.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_065",
+      "question": "What is the P/E ratio of Amazon?",
+      "true_label": "Grossly incorrect P/E. Amazon P/E is typically 40-60+.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915713787078857,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.931,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe **P/E ratio** of Amazon (AMZN) is **32.89**.\n\n## Key Financial Metrics\n- **P/E Ratio**: 32.89\n- **Earnings per Share (EPS)**: $7.09\n- **Market Cap**: $2.49T\n\n## Context & Analysis\n- The P/E ratio of 32.89 indicates that investors are paying **$32.89 for every $1 of earnings**, reflecting a relatively high valuation compared to historical averages or industry peers.\n- This suggests **strong investor confidence** in Amazon's future growth potential.\n\n## Data Period & Sources\n- **Period**: TTM (Trailing Twelve Months)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_066",
+      "question": "Is Google listed on the Dow Jones Industrial Average?",
+      "true_label": "Incorrect index constituent. Google is in S&P500/Nasdaq, not Dow.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915613651275635,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.906,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\n**No**, Google (GOOGL) is **not** listed on the Dow Jones Industrial Average (DJIA).\n\n## Context & Analysis\n- The Dow Jones Industrial Average (DJIA) is a price-weighted index of 30 large, publicly traded U.S. companies.\n- Google (GOOGL) is a major player in the technology sector but is not included in the DJIA. It is, however, part of other indices like the S&P 500 and Nasdaq 100.\n\n## Data Period & Sources\n- Data period: As of 2025-12-02\n- Sources: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_067",
+      "question": "What was Meta's revenue last year?",
+      "true_label": "Revenue understated by ~100x (Actual is $130B+).",
+      "predicted_label": "accurate",
+      "entropy": 1.7915972471237183,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.955,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer\n\nMeta's revenue last year (TTM) was **$189.46B**.\n\n## Key Financial Metrics\n- **Revenue (TTM):** $189.46B\n- **Gross Profit (TTM):** $155.38B\n- **Profit Margin:** 30.90%\n\n## Context & Analysis\n- Meta's revenue reflects its strong performance in digital advertising and its expanding ecosystem.\n- The **profit margin** of 30.90% indicates efficient cost management and high profitability.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_068",
+      "question": "Does NVDA manufacture cars?",
+      "true_label": "Fabricated product line. NVDA makes chips for cars, not cars.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915856838226318,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.906,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nNo, NVIDIA (NVDA) does not manufacture cars.  \n\n## Key Financial Metrics  \n- **Revenue (TTM)**: $187.14B (primarily from GPUs, AI, and accelerated computing)\n- **Gross Profit Margin**: 53.00% (reflecting high-margin semiconductor and software-driven business)\n- **Return on Equity (ROE)**: 107.40% (indicative of tech/asset-light operations, not capital-intensive manufacturing like autos)\n\n## Context & Analysis  \n\n Quentin NVIDIA specializes in:  \n- **GPUs** for gaming, data centers, and AI\n- **Accelerated computing solutions** (e.g., autonomous driving partnerships, but not car production)\n- Financial metrics (e.g., high ROE, low asset intensity) align with a fabless semiconductor/model, not automotive manufacturing.\n\n## Data Period & Sources  \n- **Period**: TTM (Trailing Twelve Months as of 2025-12-02)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR\n\n- Note: NVDA provides AI/autonomous driving tech to automakers (e.g., DRIVE platform), but does not produce vehicles.*",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_069",
+      "question": "What is the market cap of Visa (V)?",
+      "true_label": "Market cap understated by ~1000x. Visa is a mega-cap ($500B+).",
+      "predicted_label": "hallucination",
+      "entropy": 1.791357398033142,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.613,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.796,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nThe **market cap** of Visa (V) as of 2025-12-02 is **$649.13B**.\n\n## Key Financial Metrics  \n- **Market Cap**: $649.13B\n- **Revenue (TTM)**: $40.00B\n- **P/E Ratio**: 32.79\n\n## Context & Analysis  \n- Visa's market cap reflects its position as one of the largest financial services companies globally.\n- The high P/E ratio suggests investors are willing to pay a premium for its earnings, likely due to its strong profitability and growth prospects.\n\n## Data Period & Sources  \n- **Period**: TTM (Trailing Twelve Months)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_070",
+      "question": "Are stock buybacks illegal in the US?",
+      "true_label": "False regulatory claim. Buybacks are legal and common.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915903329849243,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.838,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.629,
+        "C": 0.837
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nStock buybacks are **legal** in the US and are a common corporate practice.\n\n## Key Data  \n- Stock buybacks are regulated under **SEC Rule 10b-18**.\n- Companies must disclose buyback details in **quarterly filings**.\n- Buybacks reduce outstanding shares, potentially increasing **earnings per share (EPS)**.\n\n## Analysis  \n- Buybacks are often used to **return capital to shareholders**.\n- They can signal **management confidence** in the company’s value.\n- Critics argue buybacks may **reduce long-term investment** in growth.\n\n## Recommendation  \n\n**Neutral** - Buybacks are a legal tool but their impact depends on company strategy and market conditions.  \n\n## Risks & Assumptions  \n- Risk of **market manipulation** if not properly disclosed.\n- Assumption that buybacks are executed in **compliance with SEC rules**.\n\n## Sources  \n- [SEC Rule 10b-18](https://www.sec.gov)\n- [Investopedia: Stock Buybacks](https://www.investopedia.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_071",
+      "question": "What happened to JNJ's stock in 1920?",
+      "true_label": "Historical anachronism. Great Depression was 1929. JNJ public history mismatch.",
+      "predicted_label": "accurate",
+      "entropy": 1.7916016578674316,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.922,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 1.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nThe provided context does not include any data or information about JNJ's stock performance in **1920**.  \n\n## Key Financial Metrics  \n- **Revenue (TTM):** $92.15B\n- **Market Cap:** $498.53B\n- **P/E Ratio:** 19.99\n\n## Context & Analysis  \n- The available data covers **real-time (2025)** and **TTM (Trailing Twelve Months)** metrics.\n- Historical data from **1920** is not included in the sources provided.\n\n## Data Period & Sources  \n- **Time Period:** TTM (2024-2025)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR\n\nIf you need historical data from **1920**, consider checking specialized financial archives or JNJ's corporate historical records.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_072",
+      "question": "Is the NASDAQ located in Chicago?",
+      "true_label": "Incorrect location. NASDAQ is in NYC (Times Square).",
+      "predicted_label": "accurate",
+      "entropy": 1.7917454242706299,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.665,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.742
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nNo, the NASDAQ is not located in Chicago. It is headquartered in **New York City**.  \n\n## Key Financial Metrics  \n- **NASDAQ's primary location**: New York City\n- **Major financial exchanges in Chicago**: CME Group (Chicago Mercantile Exchange), CBOE (Chicago Board Options Exchange)\n\n## Context & Analysis  \n- NASDAQ is a **tech-heavy exchange** known for listing companies like Apple and Microsoft.\n- Chicago is home to **derivatives and commodities trading** (e.g., CME, CBOT).\n\n## Data Period & Sources  \n- **Data as of**: 2025-12-02\n- **Sources**: General financial market knowledge, exchange websites\n\nLet me know if you'd like details on Chicago-based exchanges or other financial hubs!",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_073",
+      "question": "Does Apple own Microsoft?",
+      "true_label": "False corporate structure. MSFT invested in AAPL in 1997, not the reverse, and they are separate.",
+      "predicted_label": "accurate",
+      "entropy": 1.7917096614837646,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.863,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.804,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nNo, Apple does not own Microsoft.\n\n## Key Financial Metrics\n- **Market Cap (AAPL):** $4.14T\n- **Market Cap (MSFT):** $488.88 (price per share, not total market cap provided)\n\n## Context & Analysis\n- Apple and Microsoft are separate publicly traded companies with distinct ownership structures.\n- There is no evidence or data in the provided context suggesting Apple owns Microsoft.\n\n## Data Period & Sources\n- **Period:** As of 2025-12-02\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_074",
+      "question": "What is the ticker for the US Dollar?",
+      "true_label": "Invented ticker. US Dollar index is DXY or UUP (ETF).",
+      "predicted_label": "accurate",
+      "entropy": 1.7910218238830566,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.664,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.595,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe ticker for the US Dollar is **USD**.\n\n## Context & Analysis\n- The question is straightforward and does not require financial metrics or analysis.\n- \"USD\" is the standard ISO currency code and ticker symbol for the US Dollar in financial markets.\n\n## Data Period & Sources\n- Not applicable (general financial knowledge).",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_075",
+      "question": "Did TSLA go bankrupt in 2018?",
+      "true_label": "False bankruptcy claim. Musk tweeted about it as a joke ('funding secured' era), but they never filed.",
+      "predicted_label": "accurate",
+      "entropy": 1.7914403676986694,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.858,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.707
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nTSLA shows **mixed signals** with slight price decline but strong AI-related growth potential.\n\n## Key Data  \n- **Price:** $429.33 (-0.20%)\n- **Volume:** N/A\n- **Timeframe:** Daily\n- **52-week range:** N/A\n\n## Analysis  \n- **Price decline** of -0.20% from previous close.\n- **AI chip development** could drive significant future revenue.\n- **Growth concerns** highlighted in recent news.\n- **Technical:** Trading within narrow daily range ($425.29 - $433.66).\n\n## Recommendation  \n\n**Hold** - Current price stability and AI potential balance growth concerns.  \n\n## Risks & Assumptions  \n- **Risk:** Market volatility and growth stagnation.\n- **Risk:** AI chip revenue projections may not materialize.\n- **Assumption:** AI-related savings estimates are accurate.\n\n## Sources  \n- [SeekingAlpha: Tesla's Growth Engine Stalled](https://seekingalpha.com)\n- [SeekingAlpha: Tesla's AI Chips](https://seekingalpha.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_076",
+      "question": "What is the expense ratio of buying a single share of AAPL?",
+      "true_label": "Stocks don't have expense ratios; ETFs do.",
+      "predicted_label": "accurate",
+      "entropy": 1.7912464141845703,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.952,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.79,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe **expense ratio** is not provided in the context for AAPL. Expense ratios typically apply to funds (e.g., ETFs, mutual funds), not individual stocks.  \n\n## Key Financial Metrics\n- **Price per share (2025-12-02)**: $279.77\n- **Dividend Yield**: 0.37%\n- **Brokerage fees**: Not specified (varies by platform; commissions are often $0 for stocks).\n\n## Context & Analysis\n- Individual stock purchases do not incur an \"expense ratio\" (a metric for fund management fees).\n- The only direct costs are the share price and potential brokerage fees (if applicable).\n\n## Data Period & Sources\n- **Data as of**: 2025-12-02 (real-time)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR\n\n- Note: If you meant a related metric (e.g., *operating expenses as a % of revenue*), clarify and I’ll provide it.*",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_077",
+      "question": "Who is the founder of Amazon?",
+      "true_label": "Wrong founder attribution.",
+      "predicted_label": "accurate",
+      "entropy": 1.791205883026123,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.866,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nJeff Bezos is the founder of Amazon.\n\n## Context & Analysis  \n- Jeff Bezos founded Amazon in 1994 as an online bookstore.\n- He served as CEO until 2021 and as Executive Chairman until 2023.\n\n## Data Period & Sources  \n- Historical company data (founding date: 1994).\n- Sources: Publicly available company history.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_078",
+      "question": "Is the US stock market open on Christmas Day?",
+      "true_label": "False operational info. Christmas is a market holiday.",
+      "predicted_label": "accurate",
+      "entropy": 1.791557788848877,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.768,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.595,
+        "C": 0.707
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": false,
+      "llm_answer": "## Summary\n\nThe US stock market is **closed** on Christmas Day.\n\n## Key Data\n- Christmas Day is a **federal holiday** in the US.\n- NYSE and NASDAQ are **closed** on December 25th.\n- Markets typically reopen the next **trading day**.\n\n## Analysis\n- Stock exchanges follow **federal holiday schedules**.\n- Christmas Day closures are **consistent annually**.\n- No trading activity occurs on **market holidays**.\n\n## Recommendation\n\n**Avoid trading** - Markets are closed on Christmas Day, and no transactions can be executed.\n\n## Risks & Assumptions\n- Assumes no **emergency trading exceptions**.\n- Risk of **misinformation** about market hours.\n\n## Sources\n- [NYSE Holiday Schedule](https://www.nyse.com/markets/hours-calendars)\n- [NASDAQ Trading Hours](https://www.nasdaq.com/about/trading-hours)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_079",
+      "question": "What is the primary product of Coca-Cola?",
+      "true_label": "Absurd product attribution.",
+      "predicted_label": "accurate",
+      "entropy": 1.7917143106460571,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.743,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.586,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nCoca-Cola's primary product is **carbonated soft drinks**, with its flagship Coca-Cola beverage being the most recognized.\n\n## Key Data  \n- **Flagship product**: Coca-Cola beverage (cola-flavored soda)\n- **Product portfolio**: Over 500 brands, including Diet Coke, Sprite, Fanta\n- **Global reach**: Sold in over 200 countries\n\n## Analysis  \n- Coca-Cola dominates the global soft drink market.\n- Brand recognition is among the highest worldwide.\n- Diversified product lineup reduces reliance on a single product.\n\n## Recommendation  \n\n**Hold** - Coca-Cola remains a stable player in the beverage industry with strong brand equity.  \n\n## Risks & Assumptions  \n- **Health trends** shifting away from sugary drinks.\n- **Competition** from healthier alternatives and private labels.\n- Assumes continued global demand for carbonated beverages.\n\n## Sources  \n- [Coca-Cola Company Overview](https://www.coca-colacompany.com/)\n- [Statista: Coca-Cola Brand Value](https://www.statista.com/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_080",
+      "question": "Can I buy fractional shares of GOOGL?",
+      "true_label": "False restriction. Fractional shares are legal and common.",
+      "predicted_label": "accurate",
+      "entropy": 1.7907452583312988,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.858,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.707
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nConsider **Hold** for GOOGL due to stable fundamentals despite minor price decline.\n\n## Key Data  \n- **Price:** $317.68 (-0.78%)\n- **Volume:** N/A\n- **Timeframe:** Daily\n- **52-week range:** $314.44 - $319.85\n\n## Analysis  \n- Minor price decline (-0.78%) from previous close.\n- Strong business momentum highlighted in recent news.\n- Broader sector concerns may impact short-term performance.\n- Technical support near day low ($314.44).\n\n## Recommendation  \n\n**Hold** - Stable fundamentals and long-term potential outweigh short-term volatility.  \n\n## Risks & Assumptions  \n- Broader sector concerns could persist.\n- Market sentiment may shift unexpectedly.\n- Assumes continued business momentum.\n\n## Sources  \n- [SeekingAlpha](https://seekingalpha.com)\n- [CNBC](https://www.cnbc.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_081",
+      "question": "Does Warren Buffett own Bitcoin?",
+      "true_label": "Direct opposite of truth. Buffett calls Bitcoin 'rat poison'.",
+      "predicted_label": "accurate",
+      "entropy": 1.7916213274002075,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.756,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.636,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nWarren Buffett does not own Bitcoin and has publicly criticized cryptocurrencies.\n\n## Key Data  \n- **Price:** $85,011.04 (-7.09%)\n- **Volume:** N/A\n- **Timeframe:** N/A\n- **52-week range:** N/A\n\n## Analysis  \n- Buffett has consistently avoided Bitcoin and other cryptocurrencies.\n- He views Bitcoin as non-productive and lacking intrinsic value.\n- Buffett prefers investments in tangible assets and established companies.\n\n## Recommendation  \n\n**Avoid** - Buffett’s stance aligns with his long-term investment philosophy favoring value and productivity.  \n\n## Risks & Assumptions  \n- Assumes Buffett’s investment strategy remains unchanged.\n- Risk of missing potential gains if Bitcoin’s value increases significantly.\n\n## Sources  \n- [Warren Buffett on Bitcoin](https://www.cnbc.com)\n- [Buffett’s Investment Philosophy](https://www.berkshirehathaway.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_082",
+      "question": "What is the ticker for the S&P 500 ETF by State Street?",
+      "true_label": "Wrong ticker. SPY is State Street; QQQ is Invesco (Nasdaq).",
+      "predicted_label": "accurate",
+      "entropy": 1.7915329933166504,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.824,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.75,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe ticker for the S&P 500 ETF by State Street is **SPY**.\n\n## Context & Analysis\n- SPY is one of the most widely traded ETFs, tracking the S&P 500 Index.\n- It is managed by State Street Global Advisors.\n\n## Data Period & Sources\n- Data as of **2025-12-02**\n- Source: [State Street Global Advisors](https://www.ssga.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_083",
+      "question": "Is AMD a competitor to Intel?",
+      "true_label": "Sector hallucination. AMD is Intel's main competitor.",
+      "predicted_label": "accurate",
+      "entropy": 1.7914958000183105,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.977,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.837
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\n**Yes**, AMD is a direct competitor to Intel in the semiconductor industry.\n\n## Key Financial Metrics  \n- **INTC Price (2025-12-02):** $39.93\n- **AMD Price (2025-12-02):** $219.55\n- **Recent News:** Both companies are actively competing in AI, enterprise chips, and fab technology (e.g., Intel's rumored Apple deal vs. AMD's AI partnerships).\n\n## Context & Analysis  \n- AMD has significantly outperformed Intel in stock price growth (+0.93% today vs. INTC's -1.56%).\n- Both companies are frequently compared in news and analysis, particularly in CPU/GPU markets and AI advancements.\n\n## Data Period & Sources  \n- **Data:** Live prices as of 2025-12-02, recent news headlines.\n- **Sources:** Finnhub, SEC EDGAR, CNBC, SeekingAlpha.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_084",
+      "question": "What is the maximum number of shares I can buy in AAPL?",
+      "true_label": "Fabricated regulatory limit. No such limit exists.",
+      "predicted_label": "accurate",
+      "entropy": 1.7907567024230957,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.884,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.714,
+        "C": 0.837
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.55,
+      "correct": false,
+      "llm_answer": "```markdown\n\n## Summary  \n\nAAPL shows slight price uptick with stable volume. Neutral short-term outlook amid speculative news.\n\n## Key Data  \n- **Price:** $279.56 (+0.25%)\n- **Volume:** [Not provided]\n- **Timeframe:** Intraday (2025-12-02)\n- **52-week range:** [Not provided]\n\n## Analysis  \n- **Minimal price movement** (+0.25%) from previous close.\n- **News sentiment mixed** (Intel rumors, retirement strategies).\n- **Lacking volume data** limits liquidity assessment.\n\n## Recommendation  \n\n**Hold** - Price stability suggests neutral trend; insufficient data for strong directional bias.  \n\n## Risks & Assumptions  \n- **Pending Intel deal news** could impact volatility.\n- **Unknown trading volume** obscures momentum clarity.\n- Assumes no major macroeconomic shifts.\n\n## Sources  \n- [SeekingAlpha - Intel Rumors](https://seekingalpha.com)\n- [Finnhub](https://finnhub.io)\n```",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_085",
+      "question": "Does Tesla sell insurance?",
+      "true_label": "Incorrect. Tesla does offer insurance in select states.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915514707565308,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.675,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 1.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nYes, Tesla sells insurance products under **Tesla Insurance** in select markets.  \n\n## Key Financial Metrics  \n- **Insurance Revenue (TTM):** $1.2B (as of Q3 2025)\n- **Insurance Customers:** ~1.4M (estimated, as of Q3 2025)\n- **Profit Margin (Insurance Segment):** 15% (TTM)\n\n## Context & Analysis  \n- Tesla Insurance offers **real-time, behavior-based pricing** using vehicle telemetry data.\n- Available in **12 U.S. states** and select international markets (e.g., Germany, UK).\n- Growth is tied to Tesla vehicle ownership, but expansion is slow due to regulatory hurdles.\n\n## Data Period & Sources  \n- **Period:** Trailing Twelve Months (TTM) as of Q3 2025\n- **Sources:** Tesla Investor Relations, SEC Filings, Finnhub",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_086",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "Correct assertion.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915350198745728,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.87,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.748,
+        "C": 0.922
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Apple (AAPL) pays a dividend.\n\n## Key Financial Metrics\n- **Dividend Yield (TTM):** 0.85%\n- **Annual Dividend per Share:** $2.38\n- **Dividend Payout Ratio (TTM):** 15.2%\n\n## Context & Analysis\n- Apple has consistently paid dividends since reinstating its dividend program in 2012.\n- The **dividend yield** of 0.85% is relatively modest compared to some high-yield stocks but reflects Apple's focus on balancing shareholder returns with reinvestment in growth.\n- The **payout ratio** of 15.2% indicates Apple retains a significant portion of earnings for reinvestment or other uses.\n\n## Data Period & Sources\n- **Data Period:** Trailing Twelve Months (TTM) as of 2025-12-02\n- **Sources:** Finnhub, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_087",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "Contradicts fhri_086 and reality.",
+      "predicted_label": "contradiction",
+      "entropy": 1.791519284248352,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9993294477462769,
+      "contradiction_type": "hard",
+      "fhri": 0.874,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.758,
+        "C": 0.922
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.4,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.65,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nYes, Apple (AAPL) currently pays a dividend.  \n\n## Key Financial Metrics  \n- **Dividend Yield (TTM):** 0.53%\n- **Annual Dividend (TTM):** $1.48 per share\n- **Dividend Payout Ratio (TTM):** 14.2%\n\n## Context & Analysis  \n- Apple has a history of consistent dividend payments, with a modest yield but a low payout ratio, indicating room for future growth.\n- The dividend is typically paid quarterly.\n\n## Data Period & Sources  \n- **Data Period:** Trailing Twelve Months (TTM) as of 2025-12-02\n- **Sources:** Finnhub, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_088",
+      "question": "Is TSLA considered a volatile stock?",
+      "true_label": "Correct risk assessment.",
+      "predicted_label": "accurate",
+      "entropy": 1.791407585144043,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.952,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.949
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nTSLA remains volatile but shows strong long-term growth potential.\n\n## Key Data  \n- **Price:** $429.27 (-0.21%)\n- **Volume:** [Not provided]\n- **Timeframe:** Daily (2025-12-02)\n- **52-week range:** [Not provided]\n\n## Analysis  \n- **High intraday volatility** (range: $425.29 - $433.66).\n- **Slight decline** from previous close ($430.17).\n- **Historical volatility** is higher than sector peers.\n- **Technical observation:** Recent price action shows consolidation near $430.\n\n## Recommendation  \n\n**Hold** - Volatility persists, but fundamentals support long-term growth.  \n\n## Risks & Assumptions  \n- **Market sentiment shifts** could amplify volatility.\n- **Assumes no major macroeconomic disruptions**.\n\n## Sources  \n- [Finnhub](https://finnhub.io)\n- [SEC EDGAR](https://www.sec.gov/edgar/searchedgar/companysearch.html)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_089",
+      "question": "Is TSLA considered a volatile stock?",
+      "true_label": "Contradicts fhri_088 and market reality.",
+      "predicted_label": "contradiction",
+      "entropy": 1.7907752990722656,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.985877513885498,
+      "contradiction_type": "hard",
+      "fhri": 0.952,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.949
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Summary  \n\nTSLA remains volatile but shows strong fundamentals; cautious approach recommended.\n\n## Key Data  \n- **Price:** $429.27 (-0.21%)\n- **Volume:** [Not provided]\n- **Timeframe:** Intraday (2025-12-02)\n- **52-week range:** [Not provided]\n\n## Analysis  \n- **High volatility:** Daily swings exceed sector average.\n- **Fundamentals strong:** Revenue growth and margins outperform peers.\n- **Technical trend:** Trading near day low, slight bearish pressure.\n- Sentiment mixed: Recent recalls offset by new product pipeline.\n\n## Recommendation  \n\n**Hold** - Volatility and mixed sentiment warrant patience until clearer trend emerges.  \n\n## Risks & Assumptions  \n- **Macro risks:** Interest rate hikes could pressure growth stocks.\n- **Execution risks:** Production delays or demand shifts possible.\n- Assumes no major regulatory changes in near term.\n\n## Sources  \n- [Finnhub](https://finnhub.io)\n- [SEC EDGAR](https://www.sec.gov/edgar/searchedgar/companysearch.html)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_090",
+      "question": "What happens to stock prices when interest rates rise?",
+      "true_label": "Standard economic theory.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915754318237305,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.802,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.725,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "### **Answer**  \n\n## Summary  \n\nStock prices typically decline when interest rates rise due to higher borrowing costs and discounted future earnings.  \n\n## Key Data  \n- S&P 500 returned **4.2%** in Q3 2024 despite rate concerns\n- Technology sector outperformed (**Azure grew 31% YoY**)\n- Energy & healthcare underperformed (**1.8% and 2.1% returns**)\n\n## Analysis  \n- Rising rates **increase discount rates**, lowering equity valuations\n- Growth stocks (e.g., tech) **more sensitive** to rate hikes\n- Financials may benefit from **wider net interest margins**\n\n## Recommendation  \n\n**Monitor** - Fed policy trajectory and sector-specific sensitivities before adjusting allocations.  \n\n## Risks & Assumptions  \n- Assumes **continued earnings growth** offsets higher rates\n- Ignores potential **Fed pivot** if inflation cools\n- Does not account for **geopolitical shocks**\n\n## Sources  \n- [S&P 500 Q3 Returns](https://www.spglobal.com)\n- [Goldman Sachs Risk Analysis](https://www.goldmansachs.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_091",
+      "question": "What happens to stock prices when interest rates rise?",
+      "true_label": "Contradicts fhri_090 and standard theory.",
+      "predicted_label": "contradiction",
+      "entropy": 1.7915453910827637,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9983772039413452,
+      "contradiction_type": "hard",
+      "fhri": 0.599,
+      "fhri_subscores": {
+        "N_or_D": 0.4,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.628,
+        "C": 0.775
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Summary\n\nStock prices generally decline when interest rates rise due to higher borrowing costs and reduced corporate profitability.\n\n## Key Data\n- Rising interest rates increase borrowing costs for companies.\n- Higher rates reduce consumer spending and corporate earnings.\n- Bond yields become more attractive, diverting capital from equities.\n\n## Analysis\n- **Negative impact on growth stocks** - Higher rates disproportionately affect growth stocks due to discounted future cash flows.\n- **Sector sensitivity** - Financials may benefit, while tech and real estate often underperform.\n- **Market volatility** - Rising rates typically increase market uncertainty and volatility.\n\n## Recommendation\n\n**Caution** - Rising interest rates historically correlate with lower equity returns, particularly in rate-sensitive sectors.\n\n## Risks & Assumptions\n- Assumes a sustained increase in interest rates.\n- Ignores potential offsetting factors like strong economic growth.\n- Market reactions may vary based on rate hike magnitude and pace.\n\n## Sources\n- [Federal Reserve](https://www.federalreserve.gov)\n- [Investopedia: Interest Rates and Stocks](https://www.investopedia.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_092",
+      "question": "Does Microsoft own LinkedIn?",
+      "true_label": "Correct M&A fact.",
+      "predicted_label": "accurate",
+      "entropy": 1.7915586233139038,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.615,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.733,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Microsoft owns LinkedIn. Microsoft acquired LinkedIn in 2016 for $26.2 billion.\n\n## Key Financial Metrics\n- **Acquisition Date**: December 2016\n- **Acquisition Cost**: $26.2 billion\n\n## Context & Analysis\n- LinkedIn operates as a subsidiary of Microsoft under the Productivity and Business Processes segment.\n- The acquisition has contributed to Microsoft's enterprise and professional networking offerings.\n\n## Data Period & Sources\n- Historical data (2016 acquisition)\n- Sources: SEC filings, Microsoft press releases",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_093",
+      "question": "Does Microsoft own LinkedIn?",
+      "true_label": "Contradicts fhri_092.",
+      "predicted_label": "contradiction",
+      "entropy": 1.7913504838943481,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9987996816635132,
+      "contradiction_type": "hard",
+      "fhri": 0.836,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.726,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Microsoft owns LinkedIn.\n\n## Context & Analysis\n- Microsoft acquired LinkedIn in **December 2016** for **$26.2 billion**.\n- LinkedIn operates as a subsidiary of Microsoft, focusing on professional networking and career development.\n\n## Data Period & Sources\n- Acquisition date: December 2016\n- Sources: [SEC EDGAR](https://www.sec.gov/edgar.shtml), [Finnhub](https://finnhub.io)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_094",
+      "question": "What is the primary exchange for JPM stock?",
+      "true_label": "Correct exchange.",
+      "predicted_label": "accurate",
+      "entropy": 1.791613221168518,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.99,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe primary exchange for JPM stock is the **New York Stock Exchange (NYSE)**.\n\n## Key Financial Metrics\n- **Current Price**: $310.25\n- **Daily Range**: $309.63 - $314.04\n- **Previous Close**: $313.08\n\n## Context & Analysis\n- JPMorgan Chase & Co. (JPM) is a major listed stock on the NYSE.\n- Recent insider sales and market news may influence short-term volatility.\n\n## Data Period & Sources\n- **Data Period**: Live as of 2025-12-02\n- **Sources**: Finnhub, SEC EDGAR, Yahoo Finance",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_095",
+      "question": "What is the primary exchange for JPM stock?",
+      "true_label": "Contradicts fhri_094.",
+      "predicted_label": "contradiction",
+      "entropy": 1.7914690971374512,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9984772801399231,
+      "contradiction_type": "hard",
+      "fhri": 0.977,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.837
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nThe primary exchange for JPM stock is the **New York Stock Exchange (NYSE)**.  \n\n## Key Financial Metrics  \n- **Current Price (2025-12-02):** $310.25\n- **Day Range:** $309.63 - $314.04\n- **Previous Close:** $313.08\n\n## Context & Analysis  \n- JPMorgan Chase & Co. (JPM) is listed on the NYSE, which is standard for large U.S.-based financial institutions.\n\n## Data Period & Sources  \n- **Data as of:** 2025-12-02 (live)\n- **Sources:** Finnhub, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_096",
+      "question": "Is Google (GOOGL) a tech company?",
+      "true_label": "Correct classification.",
+      "predicted_label": "accurate",
+      "entropy": 1.7917157411575317,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.882,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.837
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Google (GOOGL) is a **tech company**. It operates primarily in the technology sector, focusing on internet services, software, hardware, and artificial intelligence.\n\n## Key Financial Metrics\n- **Revenue (TTM):** $350 billion (primarily from advertising, cloud services, and hardware)\n- **Operating Margin (TTM):** 25%\n- **R&D Expenditure (TTM):** $40 billion\n\n## Context & Analysis\n- Google’s core business revolves around technology-driven products and services, such as Google Search, YouTube, Android, and Google Cloud.\n- Its significant investment in **R&D** underscores its focus on innovation and technological advancement.\n- The company’s financials reflect its dominance in the tech sector, with substantial revenue from digital advertising and cloud computing.\n\n## Data Period & Sources\n- **Data Period:** TTM (Trailing Twelve Months) as of 2025-12-02\n- **Sources:** Finnhub, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_097",
+      "question": "Is Google (GOOGL) a tech company?",
+      "true_label": "Contradicts fhri_096 and reality.",
+      "predicted_label": "contradiction",
+      "entropy": 1.7914363145828247,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9423731565475464,
+      "contradiction_type": "hard",
+      "fhri": 0.923,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 1.0
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer  \n\nYes, Google (GOOGL) is a tech company.  \n\n## Key Financial Metrics  \n- **Primary Business Segments**:\n- Google Services (e.g., Search, Ads, YouTube, Android, Chrome)\n- Google Cloud\n- Other Bets (e.g., Waymo, Verily)\n\n- **Revenue Breakdown (TTM 2025)**:\n- Advertising (Google Search & YouTube): ~80% of total revenue\n- Google Cloud: ~15% of total revenue\n- Other: ~5%\n\n- **R&D Investment (TTM 2025)**: $45.3B\n\n## Context & Analysis  \n- GOOGL derives the majority of its revenue from technology-driven products and services, including digital advertising, cloud computing, and AI (e.g., Gemini).\n- Its business model aligns with other tech giants like Apple, Amazon, and Microsoft.\n- High R&D spending confirms its focus on innovation and technological advancement.\n\n## Data Period & Sources  \n- Period: Trailing Twelve Months (TTM) as of Q3 2025\n- Sources: SEC filings (10-K, 10-Q), Finnhub, company reports",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_098",
+      "question": "Has AMZN ever split its stock?",
+      "true_label": "Correct history.",
+      "predicted_label": "accurate",
+      "entropy": 1.7916648387908936,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.908,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Amazon (AMZN) has split its stock **three times** in its history.\n\n## Key Financial Metrics\n- **Stock Splits**:\n- 2-for-1 on June 2, 1998\n- 3-for-1 on January 5, 1999\n- 2-for-1 on September 2, 1999\n\n## Context & Analysis\n- Amazon's stock splits occurred in the late 1990s during its rapid growth phase.\n- The company has not split its stock since 1999, despite significant price appreciation.\n\n## Data Period & Sources\n- **Time Period**: Historical data (1998-1999)\n- **Sources**: [SEC EDGAR](https://www.sec.gov/edgar.shtml), [Finnhub](https://finnhub.io/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_099",
+      "question": "Has AMZN ever split its stock?",
+      "true_label": "Contradicts fhri_098.",
+      "predicted_label": "contradiction",
+      "entropy": 1.7914330959320068,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.9954818487167358,
+      "contradiction_type": "hard",
+      "fhri": 0.917,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Amazon (AMZN) has split its stock **three times** in its history.\n\n## Key Financial Metrics\n- **Stock Split History**:\n- June 2, 1998: 2-for-1 split\n- September 1, 1999: 3-for-1 split\n- January 5, 2022: 20-for-1 split\n\n## Context & Analysis\n- Amazon's stock splits have been used to make shares more accessible to retail investors.\n- The most recent split in 2022 was the largest, reducing the share price significantly.\n\n## Data Period & Sources\n- **Data Period**: Historical splits up to 2022\n- **Sources**: [SEC EDGAR](https://www.sec.gov/edgar.shtml), [Finnhub](https://finnhub.io/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_100",
+      "question": "What is the stock ticker for Netflix?",
+      "true_label": "Ticker hallucination: wrong symbol and wrong company name. No paired previous answer needed.",
+      "predicted_label": "accurate",
+      "entropy": 1.7913689613342285,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.773,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.866,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.35,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.5,
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe stock ticker for Netflix is **NFLX**.",
+      "passages_used": 5
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761575648,
+  "headline": "Qualcomm unveils 2 new chips, part of foray into AI data centers",
+  "summary": "While Magnificent Seven tech companies prepare to publish quarterly earnings this week — Meta Platforms (META), Microsoft (MSFT), Alphabet (GOOGL, GOOG), Amazon (AMZN), Apple (AAPL) — semiconductor manufacturer Qualcomm (QCOM) is reportedly entering the AI data center race as it announces two new chips to supplement its partnership with Saudi Arabia-based Humain in the coming years. Yahoo Finance tech editor Dan Howley speaks more on this development. To watch more expert insights and analysis on the latest market action, check out more Market Catalysts.",
+  "url": "https://finnhub.io/api/news?id=aa47cdeea500f91de51896d98b982925388da0fe0af153fbab63c6b107eaa9be"
+}

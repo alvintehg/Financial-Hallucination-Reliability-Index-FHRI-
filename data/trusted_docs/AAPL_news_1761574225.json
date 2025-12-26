@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761574225,
+  "headline": "Warren Buffett Badly Beaten by the S&P 500",
+  "summary": "Berkshire Hathaway stock has underperformed the S&P 500 this year. Has Warren Buffett lost his touch?",
+  "url": "https://finnhub.io/api/news?id=dee3ed19db9d69e926ef3f9a14e03e20791f58bf24a562a0fa343e1cee651bfb"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757960195,
+  "headline": "Intuit (INTU) Unveils Clair On-Demand Pay To Empower QuickBooks Payroll Users",
+  "summary": "Intuit (INTU) recently launched Clair On-Demand Pay, a service allowing employees early access to earned wages, as part of its QuickBooks Payroll suite. Despite this development, the company's share price declined 4% last week. In contrast, major indices like the Nasdaq and S&P 500 hit record highs amid optimism around potential Federal Reserve rate cuts and positive moves in tech stocks such as Tesla and Alphabet. Intuit's price movement diverges from broader market trends, suggesting the...",
+  "url": "https://finnhub.io/api/news?id=449ea4fb7fa60ea0f48f6a45aa8f62871689979173139dcde4c7d762c5602073"
+}

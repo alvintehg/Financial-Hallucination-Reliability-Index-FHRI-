@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757352666,
+  "headline": "Canadians Need to Think Strategically on Electric Vehicles, China, Says TD",
+  "summary": "The relative lack of Chinese electric vehicles (EV) on the road in North America and most of Europe",
+  "url": "https://finnhub.io/api/news?id=25c839a0b1b9b9897feb4043db286a6a346f1b53eb8ac8f6f5253c437a4ef2a9"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761655071,
+  "headline": "Latest News In Cloud AI - Advancing AI Governance With Innovative Deployment Solutions",
+  "summary": "Recent advancements in Cloud AI are highlighted by Authentrics.ai's release of its Weight-Level Controls for High-Stakes Neural Network AI/ML Ops software on the Google Cloud Marketplace. This development facilitates quicker access and deployment of AI governance tools, addressing the complexity and opacity often associated with neural networks. By enabling step-by-step AI behavior diagnostics and adjustments, Authentrics.ai's solution aims to enhance transparency, compliance, and control in...",
+  "url": "https://finnhub.io/api/news?id=5f9eda6d82f9a62bb1071617b3a7e65f5b9e8857415de637101f753a5bcb88e3"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761600120,
+  "headline": "A Dormant Nuclear Plant in Iowa Is Poised to Power Google’s Energy Needs",
+  "summary": "The tech giant is reviving the Duane Arnold Energy Center, the latest big tech move to fuel expansive artificial intelligence ambitions.",
+  "url": "https://finnhub.io/api/news?id=fd1327d434fd63e3b9d89f4fb553cbcc9a36bdb2e0132d89835727d89551b02d"
+}

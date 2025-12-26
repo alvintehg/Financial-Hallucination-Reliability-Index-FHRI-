@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761598439,
+  "headline": "Wall Street Reaches Fresh Peaks Amid US-China Trade Optimism",
+  "summary": "Equities advanced to new records on Monday amid optimism over a potential US-China trade agreement,",
+  "url": "https://finnhub.io/api/news?id=87d5576ff5bf704313f62339fe19727383caad267bdb974c5d851d4e744adea6"
+}

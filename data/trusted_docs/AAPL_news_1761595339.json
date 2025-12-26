@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761595339,
+  "headline": "Stock market today: S&P 500 crosses 6,800 mark, joining Dow, Nasdaq in fresh records as US-China trade deal hopes run high",
+  "summary": "Wall Street is in an upbeat mood as it gears up for a pivotal week featuring the Federal Reserve’s expected interest rate cut and a barrage of Big Tech earnings, as well as Trump's visit to Asia.",
+  "url": "https://finnhub.io/api/news?id=1f4449dba19a21e997c660cb370ca17a35efb1a17befef15005b2244b542fa59"
+}

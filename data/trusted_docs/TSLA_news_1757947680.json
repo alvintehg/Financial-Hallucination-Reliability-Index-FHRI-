@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757947680,
+  "headline": "Elon Musk Buys Tesla Stock for First Time Since 2020, Shares Jump",
+  "summary": "Tesla  stock was soaring after Elon Musk bought shares for the first time since 2020.  Shares of Tesla were up 6.3% at $420.69 in early trading, while the  and  were up 0.4% and 0.1%, respectively.  The jump came after Musk disclosed purchases of 2.6 million shares worth about $1 billion made on Friday.",
+  "url": "https://finnhub.io/api/news?id=e2f117b5736cd1ac146a83661a1141693a282597f2737e0a3134b09a1d570ba3"
+}

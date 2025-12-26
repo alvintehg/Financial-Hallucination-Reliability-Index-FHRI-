@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761655550,
+  "headline": "Wireless Chipmakers Skyworks, Qorvo Agree To Merge",
+  "summary": "Wireless chipmakers Skyworks Solutions and Qorvo announced plans to merge, creating one of the largest suppliers of smartphone radio-frequency chips.",
+  "url": "https://finnhub.io/api/news?id=7a0303a3b1dbd204e0063bbff27d9031ad0cd2be5620def5b1c76f76143a0801"
+}

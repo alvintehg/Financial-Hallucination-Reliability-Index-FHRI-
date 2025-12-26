@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761580800,
+  "headline": "LSEG Announces Collaboration with Anthropic",
+  "summary": "LSEG and Anthropic collaborate to make more financial data accessible to Claude for Enterprise customers LONDON, UK / ACCESS Newswire / October 27, 2025 / LSEG today announced a collaboration with Anthropic granting access to data licensed through ...",
+  "url": "https://finnhub.io/api/news?id=fd14afd8911e943e39a76c2a20265222d8cba4162fb5563e867eb08917aeeaab"
+}

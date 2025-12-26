@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761754838,
+  "headline": "Fed Board Breaks Ranks In Both Directions Over Rate Cuts",
+  "summary": "The Fed cuts rates to 3.75%, signaling a shift toward lower long-term rates.",
+  "url": "https://finnhub.io/api/news?id=07d38f17d35ecf8ef0c4371c3234b600dd47371b11b21e7342c59d4fd1283626"
+}

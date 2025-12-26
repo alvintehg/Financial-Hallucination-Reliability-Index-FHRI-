@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761576120,
+  "headline": "These Stocks Are Moving the Most Today: Qualcomm, MP Materials, USA Rare Earth, Avidity, Newmont, Microsoft, GameStop, and More",
+  "summary": "Qualcomm soars after introducing new artificial-intelligence servers meant to compete with Nvidia and AMD, while MP Materials falls as Treasury Secretary Scott Bessent says he expects China to defer its tightened export controls on rare-earth materials..",
+  "url": "https://finnhub.io/api/news?id=03575ac933136706c029ac42a909d0d3f0a338cc90a0619445331544cd9f4aa1"
+}

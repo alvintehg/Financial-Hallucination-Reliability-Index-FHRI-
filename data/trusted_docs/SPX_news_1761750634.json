@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761750634,
+  "headline": "Federal Reserve Cuts 25 Bps, Ends QT, And Stocks Fell",
+  "summary": "The Fed halts Treasury QT and cuts rates to maintain liquidity, safeguard markets, and prevent funding disruptionsâlearn the impact of these defensive...",
+  "url": "https://finnhub.io/api/news?id=ddfa6a6d4badc42e44ab6b93da131ab72a45cf447b7429133a43c8871da2e78d"
+}

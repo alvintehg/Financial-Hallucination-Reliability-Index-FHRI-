@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "MarketWatch",
+  "datetime": 1761312166,
+  "headline": "Big Tech stocks mostly rise, helping to drive S&P 500 higher",
+  "summary": "Big Tech stocks mostly rise, helping to drive S&P 500 higher",
+  "url": "https://finnhub.io/api/news?id=cc66f17c162a2fa3a782c139144c9cc410616268a7086354017f71e5df4b2e53"
+}

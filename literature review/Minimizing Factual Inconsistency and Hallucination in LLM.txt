@@ -1,0 +1,811 @@
+=== Page 1 ===
+Minimizing Factual Inconsistency and Hallucination in Large
+Language Models
+Muneeswaran I
+muneeswaran.i@quantiphi.com
+Applied Research, Quantiphi
+IndiaShreya Saxena∗
+shreya.saxena@quantiphi.com
+Applied Research, Quantiphi
+IndiaSiva Prasad∗
+siva.prasad@quantiphi.com
+Applied Research, Quantiphi
+India
+M V Sai Prakash∗
+mukkamala.prakash@quantiphi.com
+Applied Research, Quantiphi
+IndiaAdvaith Shankar
+advaith.shankar@quantiphi.com
+Applied Research, Quantiphi
+IndiaVarun V
+varun.v@quantiphi.com
+Applied Research, Quantiphi
+India
+Vishal Vaddina†
+vishal.vaddina@quantiphi.com
+Applied Research, Quantiphi
+CanadaSaisubramaniam
+Gopalakrishnan†
+gopalakrishnan.saisubramaniam@quantiphi.com
+Applied Research, Quantiphi
+India
+ABSTRACT
+Large Language Models (LLMs) are widely used in critical fields
+such as healthcare, education, and finance due to their remarkable
+proficiency in various language-related tasks. However, LLMs are
+prone to generating factually incorrect responses or "hallucina-
+tions," which can lead to a loss of credibility and trust among users.
+To address this issue, we propose a multi-stage framework that
+generates the rationale first, verifies and refines incorrect ones, and
+uses them as supporting references towards generating the answer.
+The generated rationale enhances the transparency of the answer
+and our framework provides insights into how the model arrived at
+this answer, by using this rationale and the references to the context.
+In this paper, we demonstrate its effectiveness in improving the
+quality of responses to drug-related inquiries in the life sciences
+industry. Our framework improves traditional Retrieval Augmented
+Generation (RAG) by enabling OpenAI GPT-3.5-turbo to be 14-25%
+more faithful and 16-22% more accurate on two datasets. Further-
+more, fine-tuning samples based on our framework improves the
+accuracy of smaller open-access LLMs by 33-42%, and competes
+with RAG on commercial models.1
+KEYWORDS
+Large Language Models, Hallucination, Information Retrieval
+1 INTRODUCTION
+Large Language Models (LLMs) have revolutionized natural lan-
+guage processing, enabling impressive advancements in various
+tasks such as question-answering [ 9,12], summarization [ 12,14],
+language translation [ 12], sentiment analysis [ 27], and classifica-
+tion [ 12,16]. Consequently, LLMs have become a popular area of
+research in recent years, and their potential applications in various
+domains have garnered significant attention from both academia
+∗Equal contribution
+†Corresponding authors
+1Preprint versionand industry. However, as these models have grown in scale and
+complexity, they have also exhibited an alarming propensity for
+generating inconsistent or fabricated information, a phenomenon
+commonly referred to as hallucination [32]. This issue raises critical
+concerns, particularly in applications where accuracy and reliability
+are paramount. Hence, developing robust techniques to mitigate
+the issue of factual inconsistencies and hallucinations in LLMs is
+of prime importance.
+Retrieval Augmented Generation (RAG) [ 10] has shown impres-
+sive results in generating grounded responses for natural language
+queries, however, industrial applications often require a higher de-
+gree of transparency, where the generated response must be traced
+back to a source, most often available in internal databases. From
+an industry perspective, we consider certain key points that are
+applicable: (i) Enterprise user interactions are mostly in the form of
+question and answers, (ii) Primary business use cases extend the as-
+pect of traditional information retrieval with a need for an informed
+response for their task and domain, (iii) The required responses are
+obtainable from factually curated knowledge repositories, constitut-
+ing internal documents (unstructured) and databases (structured),
+or their derivatives (knowledge graphs), with an occasional need
+for web retrieval, (iv) Reducing hallucination related to misrep-
+resentation of facts in the response is of prime importance, and,
+(v) Ability to trace back to the source of the response as a means
+of interpretability and user trust. Considering the above points,
+relying on the vanilla version of RAG alone will not be sufficient to
+cater to the requirements of these applications.
+In the life sciences industry, Pharmacovigilance [ 17] plays a cru-
+cial role in public health by ensuring the post-market safety of
+pharmaceuticals. This discipline involves collecting, analyzing, and
+reporting data on adverse events, allowing for informed regulatory
+decisions. Pubmed articles serve as a critical source of information
+for drug-related inquiries. However, the vast volume of informa-
+tion available can be challenging to navigate, making it difficult to
+identify relevant information accurately. Using LLMs can be a prac-
+tical solution here to mitigate some of the challenges and ensurearXiv:2311.13878v1  [cs.CL]  23 Nov 2023
+
+=== Page 2 ===
+Muneeswaran, et al.
+efficient data management. This can help enhance the efficiency
+and accuracy of pharmacovigilance activities, leading to improved
+drug safety and better public health outcomes.
+Our multi-stage framework takes all the aforementioned key
+points into consideration. In our work, we:
+•Propose a multi-stage framework that explicitly generates
+rationales, verifies and refines incorrect ones, and uses them
+as supporting references to generate accurate responses.
+The framework enhances transparency and provides users
+with insights into how the model arrived at the final re-
+sponses, including references to the context,
+•Demonstrate the effectiveness of our framework in the
+biomedical industry by evaluating it on two datasets: (i)
+PubmedQA[ 7], a public question-answering dataset, and
+(ii) Adverse-Effect-QA (AEQA), an internal expert-curated
+dataset focusing on adverse drug reactions and medical
+conditions specific to pharmacovigilance. Our framework
+outperforms RAG by 14.1%, 15.82% in faithfulness and ac-
+curacy on PubmedQA, and by 25.04%, 21.66% on our AEQA
+dataset,
+•Show that a fine-tuned Llama2-7B with samples following
+our framework is at least 30%-40% better than non fine-
+tuned versions and competes with RAG on larger commer-
+cial options.
+While our work in this paper focuses on improving the quality
+of responses to drug-related inquiries for a life science-based ap-
+plication, our framework’s effectiveness extends to other industry
+applications, making it a versatile and impactful tool for organiza-
+tions seeking to enhance the accuracy and transparency behind the
+rationale of the generated LLM responses.
+2 BACKGROUND
+2.1 Related Work on LLM Hallucination
+Large Language Models (LLMs) have emerged as a transformative
+technology in Natural Language Processing (NLP) and Natural
+Language Generation (NLG), surpassing traditional methods in
+both scale and performance. Despite increased model and data
+scale, state-of-the-art LLMs still struggle with factual errors [ 6,19].
+This has been largely attributed to LLMs memorizing vast amounts
+of knowledge in their parameters through pre-training and fine-
+tuning, and this phenomenon is referred to as parametric knowledge
+[15,22]. This stored knowledge can lead to hallucinations if the
+underlying information either gets outdated, or the LLM hidden
+activations lead it towards incorrect responses during inference
+[26]. [31] categorizes hallucination into input, context, and fact-
+conflicting. In particular, fact-conflicting hallucination occurs when
+LLMs generate text or information that contradicts established
+knowledge. To mitigate this, various methods can be applied during
+pre-training, fine-tuning (SFT or RLHF), or inferencing (decoding
+strategies, external knowledge, exploiting uncertainty, etc.). In the
+latter, existing approaches either supplement external knowledge
+[18] during generation time [ 1] or use it for post-hoc correction
+[2]. Existing approaches such as Retrieval-Augmented Generation
+(RAG) [ 10] augment LLM input with retrieved relevant passages
+and demonstrations to utilize the inherent capability of In-Context
+Learning (ICL) [ 3]. While RAG and its In-Context variant [ 21]have reduced factual errors in knowledge-intensive tasks, industrial
+applications also require explanations or the rationale behind the
+responses coupled with transparency, where the generated response
+must be traceable to the source, often available in their internal
+data stores.
+2.2 Pharmacovigilance as a case study
+Pharmacovigilance encompasses the amalgamation of scientific
+inquiry and associated activities focused on the identification, com-
+prehension, and mitigation of potential drug-related adverse effects
+or problems. Its objective is to ensure the judicious and secure ad-
+ministration of medications, thereby upholding both public health
+and the well-being of patients. A pivotal facet of pharmacovigilance
+lies in the aggregation and scrutiny of safety-related information
+pertaining to pharmaceuticals [ 17]. The underlying principle is
+straightforward: in order to enhance patient outcomes, the avail-
+ability of high-caliber Adverse Drug Reaction (ADR) reports is
+of paramount importance. The generation of such reports hinges
+upon proficient data collection methodologies and the capability
+to analyze them. The burgeoning volume of accessible data points
+represents an additional challenge for conventional Pharmacovigi-
+lance. Numerous authors have articulated their apprehensions in a
+publication presented by experts affiliated with the International
+Society of Pharmacovigilance (ISoP) [ 4]. The expanding global pop-
+ulation is anticipated to lead to an exponential surge in the inflow
+of ADR-related data. Unfortunately, the methodologies employed
+in traditional Pharmacovigilance are ill-equipped to manage such
+a prodigious volume of data. In essence, conventional Pharma-
+covigilance is projected to entail higher costs without effectively
+handling the forthcoming surge in data. As many seek alternative
+approaches, it appears that Large Language Models (LLM) offer
+potential solutions to the predicaments confronting traditional Phar-
+macovigilance. The integration of LLMs in Pharmacovigilance is
+instrumental for efficient data processing. LLMs excel in analyzing
+large volumes of data, particularly free-form text data prevalent
+in pharmaceuticals and healthcare, ensuring more accurate data
+processing. Moreover, their incorporation introduces a higher level
+of automation in routine tasks, allowing professionals to focus
+on higher-value objectives leading to a more refined risk-benefit
+assessment for both new and existing drugs in the market. Even
+though they exhibit notable advantages, Large Language Models
+(LLMs) still have the limitation of occasionally producing factu-
+ally inconsistent responses. In high-stakes domains such as the
+pharmaceutical industry, it remains crucial to address this concern.
+Our work is designed to address the issue of fact-conflicting
+hallucinations during response generation. As opposed to other
+sophisticated works that train or fine-tune their own LLMs, our
+framework benefits existing LLMs without explicit tweaks. While
+our approach is generalizable, we selected pharmacovigilance in
+life sciences as our application domain, given its critical role in
+ensuring the safety of pharmaceutical products and the importance
+of generating accurate responses with appropriate references in
+this field.
+
+=== Page 3 ===
+Minimizing Factual Inconsistency and Hallucination in Large Language Models
+User 
+Query Input 
+P: Paragraphs 
+T: Triplets 
+W: Web Pages 2. Rationale Generator 
+Prompt 
+Engine Rationale 
+Generation Prompt Large Language 
+Model 
+Prompt 
+Engine Rationale 
+Verification Prompt Large Language 
+Model 3. Rationale Verifier 
+4. Answer Generator References 
+Rationale Verified 
+and Categorized 
+Answer Prompt 
+Engine Answer 
+Generation Prompt Large Language 
+Model Refinement of 
+Incorrect Rationale 
+Revised Rationale Paragraph 
+Search 
+Triplet 
+Search 
+Web 
+Search Paragraphs 
+Triplets 
+Web Pages 1. Hybrid Retriever Generated Rationale Rationale Output Processing 
+Context 
+Rationale 
+Refinement Prompt 
+Figure 1: Our proposed multi-stage approach showcasing various components - Hybrid Retriever, Rationale Generator, Rationale
+Verifier and Refiner
+3 METHODOLOGY
+Our proposed multi-stage framework (termed Factual Evidence
+or FE for short) comprises five components: (i) Hybrid Retriever,
+which retrieves relevant information (context) based on the user
+query from various data sources such as documents, knowledge
+graphs, and the internet, (ii) Prompt Engine, which takes the context
+and user query as input and creates concise prompts with instruc-
+tions for each component, (iii) Rationale Generator, which uses
+the context and the user query to generate rationale (explanation)
+with supporting evidence, (iv) Rationale Verifier, which verifies
+the factual accuracy of the rationale and whether it is explicitly or
+implicitly mentioned in the context, and Rationale Refiner, which
+revises or refines incorrect rationale based on the context, and, (v)
+Answer Generator, which utilizes the verified and refined rationale
+to facilitate the LLM to generate the final descriptive response ensur-
+ing factual accuracy of the answers. We describe each component
+in Figure 1 in detail.
+3.1 Hybrid Retriever
+The Hybrid Retriever component handles both text and graph
+(triplets) to efficiently retrieve relevant information from diverse
+sources and formats, including indexed paragraph chunks from
+documents, knowledge graphs, and the web. The retrieval system
+consists of multiple retrievers, each specialized in different search
+methods and data types, including semantic vectors, lexical, and
+knowledge graphs. Each retriever can be used separately or in com-
+bination to retrieve granular-level information from indexed data
+stores. The retrieval system also includes a re-ranker that retains
+only the top information based on the relevancy score. This formstheContext that is passed as input to the LLM along with the user
+query and the prompt.
+3.1.1 Paragraph Search. Paragraph Search retrieves information in
+the form of paragraph chunks 𝑃={𝑝1,𝑝2,...,𝑝𝑚}that are split and
+indexed from a set of internal documents 𝐷={𝑑1,𝑑2,...,𝑑𝑛}. Given
+a user query 𝑞, we employ both semantic and lexical techniques, to
+retrieve the top 𝑘relevant paragraphs.
+Semantic Search: We employ an encoder-only language model
+as the retriever to obtain embeddings of the query 𝑞and perform
+a semantic vector search over the data store containing embed-
+ding vectors of all the paragraph chunks. Cosine similarity is used
+to retrieve the top- 𝑘relevant paragraphs that are most semanti-
+cally similar to the user’s query, i.e., 𝑃𝑠𝑒𝑚=𝑝𝑠𝑒𝑚 1,𝑝𝑠𝑒𝑚 2,...,𝑝𝑠𝑒𝑚 𝑘,
+where𝑝𝑠𝑒𝑚 𝑖is the𝑖𝑡ℎmost semantically similar paragraph chunk
+to𝑞.
+Lexical Search: Here, we retrieve the top- 𝑘relevant paragraph
+chunks that contain the exact word or phrase in the user’s query,
+i.e.,𝑃𝑙𝑒𝑥=𝑝𝑙𝑒𝑥 1,𝑝𝑙𝑒𝑥 2,...,𝑝𝑙𝑒𝑥 𝑘, where𝑝𝑙𝑒𝑥 𝑖is the𝑖𝑡ℎparagraph
+chunk that has a match to 𝑞.
+Once both search methods retrieve their top- 𝑘relevant para-
+graph chunks, we use a re-ranker to provide a relevancy score for
+each retrieved chunk with respect to 𝑞. The re-ranker retains only
+the top-𝑃𝑘paragraph chunks based on the decreasing relevancy
+scores. The weightage of lexical to semantic contribution to 𝑃𝑘is
+decided based on the nature of the application. By utilizing both
+Semantic Search and Lexical Search in parallel, we retrieve the most
+relevant paragraph chunks that contain both semantically similar
+and exact matches to the user’s query.
+
+=== Page 4 ===
+Muneeswaran, et al.
+3.1.2 Triplet Search. Triplet Search retrieves relevant information
+in the form of triplets from either Knowledge Graphs (KG) if con-
+structed beforehand, or from paragraphs that are transformed into
+triplets during retrieval. In the former, i.e. given a user query 𝑞and a
+Knowledge Graph 𝐾𝐺, we retrieve the top 𝑘triplets𝑇=𝑡1,𝑡2,...,𝑡𝑘
+that are most relevant to the query 𝑞by utilizing a sub-graph re-
+trieval algorithm [ 29] and traversing through 𝐾𝐺, taking into ac-
+count the semantic relationships between the entities in 𝐾𝐺and
+the query𝑞. In the latter case, i.e. given a user query 𝑞and a set of
+paragraph chunks 𝑃, we retrieve the top 𝑘triplets𝑇=𝑡1,𝑡2,...,𝑡𝑘by
+processing the retrieved paragraph chunks on the fly into entities
+and relations. We replace all references of a sentence with their
+respective entity mentions, extract triplets, link entity mentions to
+their original entities, and canonicalize the resulting triplets. This
+reduces the token count for the context while maintaining a similar
+performance to using the original paragraph chunks.
+3.1.3 Web Search. Web Search retrieves relevant information in
+the form of natural language text from the internet using selective
+search engine and social media APIs. Given a user query 𝑞, we
+retrieve the text of the top 𝑘web pages and API responses 𝑊=
+𝑤1,𝑤2,...,𝑤𝑘that are most relevant to the query 𝑞. We also offer
+the choice to users to provide a list of web pages that are whitelisted
+and should be exclusively used during the retrieval process. This
+helps to narrow down the search request. The obtained text is
+processed into paragraph chunks on the fly using the same method
+as described in Section 3.1.1. We ensure to give proper citations to
+the original webpage and API source when we provide the response.
+Additionally, we do not retain any information from Web Search in
+our data stores.
+Overall, the Hybrid Retriever combines the results of the Para-
+graph, the Triplet, and the Web searches to produce a comprehen-
+sive set of relevant information, i.e. the Context𝐶=Í
+𝑝𝑖∈𝑃𝑘𝑤𝑖+Í
+𝑡𝑖∈𝑇𝑘𝑡𝑖+Í
+𝑤𝑖∈𝑊𝑘𝑝𝑖,+denoting concatenation per line, forming
+the primary source of knowledge for grounding the LLM towards
+generating factual responses along with the rationale and refer-
+ences. Each information of the context is associated with at least
+one identifier (PID-, TID-, WID-*) for (paragraph, triplet, and web)
+respectively.
+3.2 Prompt Engine
+The Prompt Engine is a shared component responsible for convert-
+ing the user query 𝑞, the retrieved context in the form of text and
+triplets𝐶, along with any of the available other component out-
+puts, such as the generated rationale 𝑅, and verification statements
+𝑉, into a concise, predefined prompt instruction ptemplate. The
+prompts are then passed to the LLM at each stage to generate the
+corresponding output.
+3.3 Rationale Generator
+The Rationale Generator generates intermediate rationale (expla-
+nations) for a given query using the retrieved context. It plays a
+crucial role in guiding the LLM toward a factually grounded answer.
+It also allows the user to trace back the answer to the key part of
+the context, making it evidence-based and trustworthy.
+Given a query 𝑞and context 𝐶=𝑐1,𝑐2,...,𝑐𝑘as input, the Prompt
+Engine generates a prompt instruction pwhich is then fed to theLLM to identify and generate the rationale 𝑅=𝑟1,𝑟2,...,𝑟𝑘on
+both implicit and explicit reasoning over each retrieved part of the
+context. This is done to ensure a one-to-one mapping between the
+generated set of rationale and each retrieved part of the context in
+𝐶. Each explanation in 𝑅is associated with at least one identifier
+(PID-, TID-, WID-*) depending on the retrieved source.
+Rationale𝑅=PromptEngine(𝑞,𝐶,p(𝑟𝑎𝑡𝑖𝑜𝑛𝑎𝑙𝑒 _𝑔𝑒𝑛𝑒𝑟𝑎𝑡𝑜𝑟 _𝑝𝑟𝑜𝑚𝑝𝑡))
+3.4 Rationale Verifier and Refiner
+3.4.1 Rationale Verifier. The Rationale Verifier evaluates the fac-
+tualness and relevance of the generated rationale with respect to
+the query and the context. Each statement in the rationale is classi-
+fied into one of the below based on its relevance to the respective
+identified part of the context:
+•"CORRECT-EXPLICIT"
+•"CORRECT-IMPLICIT"
+•"CORRECT-ADDITIONAL_INFO"
+•"INCORRECT-FALSE_INFO"
+•"INCORRECT-DEVIATING_INFO"
+•"INCORRECT-ILLOGICAL"
+Given a query 𝑞, context𝐶=𝑐1,𝑐2,...,𝑐𝑘, and the rationale 𝑅=
+𝑟1,𝑟2,...,𝑟𝑘as input, the Prompt Engine generates a prompt in-
+struction pwhich is then fed to the LLM to verify and classify the
+rationale𝑅into verification statements 𝑉=𝑣1,𝑣2,...,𝑣𝑘.
+Verifier𝑉=PromptEngine(𝑞,𝐶,𝑅, p(𝑟𝑎𝑡𝑖𝑜𝑛𝑎𝑙𝑒 _𝑣𝑒𝑟𝑖𝑓𝑖𝑒𝑟 _𝑝𝑟𝑜𝑚𝑝𝑡))
+The Rationale Verifier classifies every statement in the rationale and
+offers a comprehensive justification for its categorization. Addition-
+ally, it determines a verdict using the assessment criteria, labeling
+the statement as either "CORRECT" or "INCORRECT." This aids
+in filtering out the incorrect statements and sending them to the
+Rationale Refiner.
+3.4.2 Rationale Refiner. The Rationale Refiner reviews and im-
+proves erroneous parts of the rationale by utilizing the justification
+received from the Rationale Verifier as feedback. It assesses the
+feedback along with the query and context provided and integrates
+it into the revised rationale. The Rationale Refiner is an optional
+component and may be skipped if there are no INCORRECT labels
+from the Rationale Verifier.
+Given a query 𝑞, context𝐶=𝑐1,𝑐2,...,𝑐𝑘, rationale𝑅=𝑟1,𝑟2,...,𝑟𝑘,
+and verification statements 𝑉=𝑣1,𝑣2,...,𝑣𝑘as input, the Prompt
+Engine generates a prompt instruction pwhich is then fed to the
+LLM to revise the incorrect statements from 𝑅using the feedback
+from𝑉to provide the revised rationale 𝑅′=𝑟′
+1,𝑟′
+2,...,𝑟′
+𝑘.
+Refined Rationale 𝑅′=PromptEngine(𝑞,𝐶,𝑅,𝑉,
+p(𝑟𝑎𝑡𝑖𝑜𝑛𝑎𝑙𝑒 _𝑟𝑒𝑓𝑖𝑛𝑒𝑟 _𝑝𝑟𝑜𝑚𝑝𝑡))
+3.5 Answer Generator
+The Answer Generator utilizes the meticulously verified and refined
+rationale to generate a factually grounded answer for the given
+query. Since we already have the rationale as support, we do not
+require the full context to generate the answer. The Answer Gener-
+ator also incorporates the context identifiers as citations along with
+the rationale (explanation) behind each citation, allowing users to
+easily cross-reference them with parts of the answer and verify the
+
+=== Page 5 ===
+Minimizing Factual Inconsistency and Hallucination in Large Language Models
+Table 1: Comparison of RAG+FE with baselines on PubMedQA and AEQA Datasets
+Method ModelPubMedQA AEQA
+Faithful (%) Grade Score (out of 5) Accuracy (%) Faithful (%) Grade Score (out of 5) Accuracy (%)
+None 56.70 2.77 55.92 44.40 3.54 65.21
+RAG GPT-3.5 Turbo 72.40 3.13 72.67 58.20 3.28 75.19
+RAG+FE 86.50 4.13 88.49 83.24 4.34 96.85
+None 8.82 1.40 10.30 6.82 1.21 3.71
+RAG LLama-2-7B 7.19 1.38 8.92 3.78 1.23 5.64
+RAG+FE 27.19 2.46 30.80 31.29 2.92 35.0
+None LLama-2-7B-FT 14.97 1.73 21.10 24.18 2.53 20.70
+RAG+FE 70.8 3.96 72.23 76.8 3.72 68.18
+sources used to generate the answer. Given a query 𝑞and the refined
+rationale𝑅′=𝑟′
+1,𝑟′
+2,...,𝑟′
+𝑘as input, the Prompt Engine generates a
+prompt instruction pwhich is then fed to the LLM to provide the
+final answer 𝐴along with citations for cross-referencing parts of
+the answer to the context along with the rationale.
+Answer𝐴=PromptEngine(𝑞,𝑅′,p(𝑎𝑛𝑠𝑤𝑒𝑟 _𝑔𝑒𝑛𝑒𝑟𝑎𝑡𝑜𝑟 _𝑝𝑟𝑜𝑚𝑝𝑡))
+4 EXPERIMENTS
+We conducted a set of experiments to substantiate the effectiveness
+of our work. These experiments encompassed a methodical com-
+parison with established baselines to assess the performance and
+efficacy of our approach. Our approach to retrieval is similar to that
+described in [ 23]. However, our focus is on using the retrieved infor-
+mation to generate effective LLM responses with rationale and not
+on the hybrid retrieval component itself. We omit the experimental
+details and results related to the hybrid retrieval component. We
+compare our proposed approach - FE with RAG on both commercial
+(OpenAI GPT 3.5-turbo and open-access (LLama-2 [25]) LLMs.
+4.1 Datasets
+4.1.1 PubmedQA. PubMedQA [ 8] is a biomedical question answer-
+ing (QA) dataset sourced from PubMed abstracts. Its primary ob-
+jective is to furnish responses to research inquiries by utilizing the
+corresponding abstracts. This dataset encompasses 1,000 meticu-
+lously curated, expert-annotated QA instances. Each instance com-
+prises of four essential components: a question, a context denoting
+the corresponding abstract, an extensive answer, and a response
+categorized as either affirmative, negative, or uncertain.
+4.1.2 Adverse Effect Question Answering (AEQA) Dataset. We cu-
+rated an Adverse Effect Database containing 19,432 documents
+related to 300 drugs through the utilization of commercially avail-
+able APIs in the biomedical domain. Subsequently, we created an
+evaluation dataset in collaboration with Subject Matter Experts,
+who meticulously selected intricate queries and their corresponding
+answers from the corpus. This finalized AEQA dataset encompasses
+200 Question-Answer pairs pertaining to 40 distinct drugs, each
+accompanied by a context with an average token length of 1846.4.2 Configuration
+Hybrid Retrieval: The retriever was constant across all experiments,
+utilizing all-base-mpnet-v2 , a fine-tuned version of the model intro-
+duced by [ 24]. This approach retrieves the top 5 paragraph chunks
+associated with the query.
+LLM Generation: The following generation parameters were
+used for all methods and models. The temperature was set to 1,
+top_p as 0.95, top_k as 50 and do_sample was False.
+Finetuning: We fine-tuned LLama-2-7B on samples that were gen-
+erated following the prompts by our proposed multi-stage frame-
+work. The dataset consists of 32k long-form question-answering
+samples and is generated from the HotpotQA [ 28] dataset. We uti-
+lized an effective batch size of 64, a learning rate of 3e-5, set the
+maximum sequence length to 4096 and trained the model for 2
+epochs. The fine-tuning was powered by Deepspeed, employing 4
+A100 GPUs.
+4.3 Baseline
+We conducted a comparative analysis of our approach with two dif-
+ferent methods, including Non-retrieval models (denoted as None),
+which lack contextual information and rely solely on pre-trained
+knowledge for query responses, and Retrieval-Augmented Genera-
+tion (RAG) models that utilize contextual information in conjunc-
+tion with the provided question. Among the benchmark models
+considered were auto-regressive language models OpenAI GPT 3.5
+Turbo and Meta Llama-2-7B, developed by Meta AI, employing a
+transformer architecture.
+4.4 Metrics
+4.4.1 Evaluation. Current evaluation methods such as n-gram [ 11]
+and semantic-similarity based approaches [ 30], have limitations
+while assessing generative question-answering models. These meth-
+ods fail to evaluate complex multi-hop reasoning QA, which is in-
+creasingly common as we move towards generative models from
+extractive ones. Recent works [ 13] have employed GPT-4 as the pri-
+mary evaluator owing to their comparable performance to human
+evaluation. Since existing methods do not consider the rationale
+into account, we introduce Auto-Grader, a new evaluation tech-
+nique that uses GPT-4 to systematically evaluate the relevance of
+rationale explanations and assign scores on a scale from 1 to 5. It
+
+=== Page 6 ===
+Muneeswaran, et al.
+Context                        Chemically, eflornithine hydrochloride is (±) -2-(difluoromethyl) ornithine monohydrochloride monohydrate, with the empirical formula CAnhydrous eflornithine hydrochloride has an empirical formula C Other ingredients include: ceteareth-20;  
+cetearyl alcohol; dimethicone; glyceryl stearate; methylparaben; mineral oil; PEG-100 stearate; phenoxyethanol; propylparaben; stearyl alcohol; and water.There are no studies examining the inhibition of the enzyme ornithine decarboxylase (ODC)  
+in human skin following the application of topical eflornithine. However, there are studies in the literature that report the inhibition of ODC activity in skin following oral eflornithine. It is postulated that topical eflornithine hydrochloride  
+irreversibly inhibits skin ODC activity. This enzyme is necessary in the synthesis of polyamines. Animal data indicate that inhibition of ornithine decarboxylase inhibits cell division and synthetic functions, which affect the rate of hair growth. 
+The efficacy of finasteride was demonstrated in men (88% Caucasian) with mild to moderate androgenetic alopecia (male pattern hair loss) between 18 and 41 years of age. In order to prevent seborrheic dermatitis which might confound the  
+assessment of hair growth in these studies, all men, whether treated with finasteride or placebo, were instructed to use a specified, medicated, tar-based shampoo (Neutrogena T/Gel) …… 
+Question What are the potential effects of eflornithine hydrochloride on hair growth and cell division? 
+RAG Response 
+The potential effects of eflornithine hydrochloride on hair growth and cell division are inhibition of cell division and synthetic functions, affecting the rate of hair growth.                                           AUTO-GRADER:  2
+RAG-FE Rationale Rationale Verifier Score Response Post Refinement 
+a. PID-1 states that eflornithine hydrochloride irreversibly inhibits skin ortnithine decarboxylase (ODC) 
+activity, which is necessary in the synthesis of polyamines. Inhibition of ODC activity inhibits cell division 
+and synthetic functions, which affect the rate of hair growth. 
+…..
+d. PID-4 states that finasteride, which is used for the treatment of androgenetic alopecia, has been shown to 
+increase hair growth and decrease hair loss. Therefore, it can be inferred that eflornithine hydrochloride, 
+which inhibits cell division and synthetic functions, may have the opposite effect and decrease hair growth. 
+a. CORRECT-EXPLICIT - The student accurately identifies that eflornithine hydrochloride inhibits skin 
+ODC activity, which affects the rate of hair growth. This information is explicitly stated in PID-1. 
+ …
+d. INCORRECT-ILLOGICAL - The student incorrectly assumes that because finasteride, a different drug 
+used for the treatment of androgenetic alopecia, increases hair growth, eflornithine hydrochloride, which 
+inhibits cell division, would have the opposite effect. There is no logical basis provided in the facts to 
+support this assumption in PID-4. 
+GRADE: INCORRECT The potential effects of eflornithine 
+hydrochloride on hair growth and cell division in 
+animals include irreversible inhibition of skin 
+ornithine decarboxylase (ODC) activity, which is 
+necessary in the synthesis of polyamines(^a). 
+This inhibition of ODC activity affects the rate of  
+hair growth by inhibiting cell division and  
+synthetic functions (^a). 
+Animal data also suggest that inhibition of 
+ornithine decarboxylase affects the rate of hair 
+growth (^b). Studies in rats have shown that 
+eflornithine hydrochloride cream can result in 
+decreased fetal weights, delayed ossification, and 
+reduced numbers of live fetuses, indicating its 
+potential effects on cell division and growth (^c). 
+    AUTO-GRADER:  4Rationale Post Refinement Rationale Verifie r Score Post Refinement 
+a. PID-1 states that eflornithine hydrochloride irreversibly inhibits skin ortnithine decarboxylase (ODC) 
+activity, which is necessary in the synthesis of polyamines. Inhibition of ODC activity inhibits cell division 
+and synthetic functions, which affect the rate of hair growth. 
+…..
+d. PID-4 states that finasteride, which is used for the treatment of androgenetic alopecia, has been shown to 
+increase hair growth and decrease hair loss but there is no evidence that eflornithine hydrochloride  may have 
+the opposite effect and decrease hair growth in the facts. a. CORRECT-EXPLICIT - The student accurately identifies that eflornithine hydrochloride inhibits skin 
+ODC activity, which affects the rate of hair growth. This information is explicitly stated in PID-1. 
+ …..
+d. CORRCT-IMPLICIT - The student correctly identifies that there is no logical basis provided in the facts 
+to support this assumption. This information is explicitly stated in PID-4. 
+GRADE: CORRECT 
+Figure 2: A qualitative analysis comparing RAG vs RAG+FE illustrates the superior quality of responses from RAG+FE
+also compares the generated answer to the ground truth answer,
+while providing detailed justifications for each assessment. This
+evaluation method is particularly useful for assessing generative
+models when their answers are not explicitly derived from the pro-
+vided context. The Auto-Grader also evaluates the answer as either
+"CORRECT" or "INCORRECT", which can be used for calculating
+accuracy. We provide the scale of grading below. Here the student
+refers to the generated LLM response (and is being graded by the
+teacher GPT-4):
+(1)The student’s answer does not match both ground truth
+and context
+(2)The student’s answer does not fully match the ground truth
+or the context, or it partially matches, and there may be
+irrelevant information
+(3)The student’s answer matches the ground truth, but par-
+tially matches the context, and there may be irrelevant
+information
+(4)The student’s answer matches with the ground truth and
+aligns well with the context, indicating a correct response
+within the given context
+(5)The student’s answer matches the ground truth, and it has
+taken additional relevant factual information about the key
+entities present in the query from the context, showcasing
+a deep understanding of the topic
+4.4.2 Monitoring. Monitoring real-world LLM applications is cru-
+cial to ensure that the model provides accurate answers. In real-time
+monitoring, the Rationale Verifier described in Section 3.4.1 can be
+utilized to check whether the generated rationale adheres to the
+retrieved context. Additionally, for answer generation, the Faithful-
+ness metric from RAGAS [ 5] can be used for monitoring purposes,
+as it only requires the query, context, and generated answer to
+provide a score. The generated answer is regarded as faithful if
+all the claims that are made in the answer can be inferred fromthe given context. This approach enables ongoing monitoring and
+ensures the continued accuracy of the system.
+4.5 Performance Comparison
+Table 1 presents a comparison of the proposed framework (FE)
+with RAG and No Retrieval (None) on the PubMedQA and AEQA
+datasets, evaluated for Faithfulness, AutoGrading, and Accuracy
+metrics. The results show that RAG+FE outperforms RAG in terms
+of both faithfulness and accuracy across both datasets and models.
+Faithfulness: Specifically, the highest faithful score achieved by
+RAG+FE is 86.50% on the PubMedQA dataset, compared to 72.40%
+for RAG. Similarly, on the AEQA dataset, RAG+FE achieves a faith-
+ful score of 83.24%, which is significantly higher than RAG’s score
+of 58.20%.
+Accuracy : RAG+FE achieves higher accuracy than RAG across
+both datasets and models. For instance, RAG+FE achieves an ac-
+curacy of 88.49% on the PubMedQA dataset, compared to RAG’s
+accuracy of 72.67%, resulting in a relative improvement of 15.82%.
+Similarly, on the AEQA dataset, RAG+FE achieves an accuracy of
+96.85%, which is significantly higher than RAG’s accuracy of 75.19%,
+with a relative improvement of 21.66%. It is also observed that the
+accuracy computed by Auto-Grader is closer to the Faithfulness
+score, although the latter does not require the ground-truth answer
+for comparison.
+The results also highlight the importance of the framework on
+smaller open-access models, where RAG + FE improves upon RAG.
+The scores of LLama-2-7B improve after fine-tuning and RAG + FE
+is comparable with the scores of vanilla RAG on GPT 3.5-turbo.
+Grade Score: The main benefit of Auto-Grader is realized in
+its ability to grade based on the relevance and grounding of the
+response with the context. RAG+FE is better than RAG at effec-
+tively utilizing context in generating high-quality explanations. As
+mentioned in Section 4.4.1, a score closer to 4-5 is ideal, while a
+
+=== Page 7 ===
+Minimizing Factual Inconsistency and Hallucination in Large Language Models
+gpt - 3.5- tur bo 
+Figure 3: Illustration showcasing the interface, functionality, and overall presentation of the implemented system
+score closer to 1 indicates an incorrect answer and a lack of effec-
+tive utilization of context. RAG+FE achieves higher grades than
+RAG across both datasets and models, indicating its effectiveness
+in generating explanations that utilize context effectively.
+4.6 Qualitative Results
+We provide a qualitative example of the different stages of our
+framework and a comparison with RAG in Figure 2. We also provide
+a screenshot of our deployed system in Figure 3.
+5 ABLATION STUDY
+Table 2: Ablation Study on the effect of different components
+Method Accuracy (%) Faithful (%)
+RAG (on Paragraphs) 65.21 75.11
+RAG + FE (Paragraphs w/ direct
+Rationale & Answer generation)88.43 72.73
+RAG + FE (Triplets instead of
+Paragraphs to reduce tokens)91.27 76.96
+RAG + FE (Paragraphs w/o Ratio-
+nale Verifier & Refiner)93.78 80.26
+RAG + FE (Paragraphs) 96.85 83.24
+Table 2 presents the results of an ablation study where different
+components of the RAG + FE approach were evaluated to assess
+their impact on accuracy and faithfulness.
+FE outperforms vanilla RAG: The results demonstrate that all
+variants of the RAG + FE approach outperform the baseline RAG
+method in terms of accuracy and faithfulness.Impact of Rationale Verifier and Refiner: Comparing para-
+graph retrieval experiments, the approach that uses the Rationale
+Verifier and Rationale Refiner achieves the highest accuracy of
+96.85% and the highest faithful score of 83.24%. This suggests that
+verification and refinement lead to high-quality rationale and im-
+prove overall performance.
+Step-by-step vs direct generation: Although the direct gen-
+eration of both rationale and answer together is better than RAG
+alone, we observed better performance when done in a step-wise
+fashion, as there is a relative improvement of 8.42%, 10.51% in terms
+of accuracy and faithfulness scores in terms of the latter.
+Paragraphs vs Triplets : We experimented with triplets instead
+of paragraphs to reduce the context length of the input, reducing
+the average token length from 1846 to 285. While the number of
+tokens is reduced by 6.5x and can benefit downstream applications
+with limited computational resources, it has lower faithfulness
+and accuracy scores compared to the variant that uses paragraphs.
+Therefore, the choice of input representation should be made based
+on the specific requirements of the downstream application and
+the trade-offs between accuracy, faithfulness, and input length.
+6 INDUSTRY IMPACT
+Our work contributes to the ongoing efforts to enhance the relia-
+bility and credibility of LLMs in real-world industrial applications
+and extends beyond the previously demonstrated application in
+Pharmacovigilance. Domains where factual evidence for a response
+is essential include Legal, Finance (BFSI) and Education where the
+accuracy and transparency of a response is of utmost importance.
+Moreover, this framework alleviates the burden and time required
+by the user to double-check if a response is factually consistent. As
+this technology matures, its potential to revolutionize industries
+
+=== Page 8 ===
+Muneeswaran, et al.
+is evident, promising a safer and more efficient landscape for all
+stakeholders involved.
+7 CONCLUSION
+We presented an approach to address the problem of hallucina-
+tions in LLMs by getting more accurate and plausible responses
+whilst providing a transparent explanation for the LLM’s decisions.
+Furthermore, we have also demonstrated the applicability of our
+solution in the field of Pharmacovigilance, where ensuring the fac-
+tualness of LLM responses is crucial. Through our quantitative
+and qualitative results, we have showcased how our approach can
+enhance the quality of responses for drug-related queries, such
+as identifying adverse drug reactions and providing precise and
+well-sourced explanations for the model’s decision-making process.
+Our approach can be adopted by researchers and practitioners who
+are interested in combating factual hallucinations in LLMs.
+REFERENCES
+[1] Sebastian Borgeaud, Arthur Mensch, Jordan Hoffmann, Trevor Cai, Eliza Ruther-
+ford, Katie Millican, George Bm Van Den Driessche, Jean-Baptiste Lespiau, Bog-
+dan Damoc, Aidan Clark, et al .2022. Improving language models by retrieving
+from trillions of tokens. In International conference on machine learning . PMLR,
+2206–2240.
+[2]Meng Cao, Yue Dong, Jiapeng Wu, and Jackie Chi Kit Cheung. 2020. Factual
+Error Correction for Abstractive Summarization Models. In Proceedings of the
+2020 Conference on Empirical Methods in Natural Language Processing (EMNLP) .
+6251–6258.
+[3]Qingxiu Dong, Lei Li, Damai Dai, Ce Zheng, Zhiyong Wu, Baobao Chang, Xu
+Sun, Jingjing Xu, and Zhifang Sui. 2022. A survey for in-context learning. arXiv
+preprint arXiv:2301.00234 (2022).
+[4] I. Ralph Edwards and Marie Lindquist (Eds.). 2017. Pharmacovigilance . Springer
+International Publishing. https://doi.org/10.1007/978-3-319-40400-4
+[5] Shahul Es, Jithin James, Luis Espinosa-Anke, and Steven Schockaert. 2023. RA-
+GAS: Automated Evaluation of Retrieval Augmented Generation. arXiv preprint
+arXiv:2309.15217 (2023).
+[6]Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii,
+Ye Jin Bang, Andrea Madotto, and Pascale Fung. 2023. Survey of hallucination in
+natural language generation. Comput. Surveys 55, 12 (2023), 1–38.
+[7]Qiao Jin, Bhuwan Dhingra, Zhengping Liu, William W. Cohen, and Xinghua
+Lu. 2019. PubMedQA: A Dataset for Biomedical Research Question Answering.
+InConference on Empirical Methods in Natural Language Processing . https:
+//api.semanticscholar.org/CorpusID:202572622
+[8] Qiao Jin, Bhuwan Dhingra, Zhengping Liu, William W Cohen, and Xinghua Lu.
+2019. Pubmedqa: A dataset for biomedical research question answering. arXiv
+preprint arXiv:1909.06146 (2019).
+[9] Dong Bok Lee, Seanie Lee, Woo Tae Jeong, Donghwan Kim, and Sung Ju Hwang.
+2020. Generating diverse and consistent QA pairs from contexts with information-
+maximizing hierarchical conditional VAEs. arXiv preprint arXiv:2005.13837
+(2020).
+[10] Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rock-
+täschel, et al .2020. Retrieval-augmented generation for knowledge-intensive nlp
+tasks. Advances in Neural Information Processing Systems 33 (2020), 9459–9474.
+[11] Chin-Yew Lin. 2004. ROUGE: A Package for Automatic Evaluation of Summaries.
+InText Summarization Branches Out . Association for Computational Linguistics,
+Barcelona, Spain, 74–81. https://aclanthology.org/W04-1013
+[12] Yiheng Liu, Tianle Han, Siyuan Ma, Jiayue Zhang, Yuanyuan Yang, Jiaming Tian,
+Hao He, Antong Li, Mengshen He, Zhengliang Liu, et al .2023. Summary of
+chatgpt-related research and perspective towards the future of large language
+models. Meta-Radiology (2023), 100017.
+[13] Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang
+Zhu. 2023. G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment.
+arXiv:2303.16634 [cs.CL]
+[14] Mengsay Loem, Sho Takase, Masahiro Kaneko, and Naoaki Okazaki. 2022. Ex-
+traphrase: Efficient data augmentation for abstractive summarization. arXiv
+preprint arXiv:2201.05313 (2022).
+[15] Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and
+Hannaneh Hajishirzi. 2023. When not to trust language models: Investigating
+effectiveness of parametric and non-parametric memories. In Proceedings of the
+61st Annual Meeting of the Association for Computational Linguistics (Volume 1:
+Long Papers) . 9802–9822.[16] Christian WF Mayer, Sabrina Ludwig, and Steffen Brandt. 2023. Prompt text
+classifications with transformer models! An exemplary introduction to prompt-
+based learning with large language models. Journal of Research on Technology in
+Education 55, 1 (2023), 125–141.
+[17] Ronald HB Meyboom, Antoine CG Egberts, Frank WJ Gribnau, and Yechiel A
+Hekster. 1999. Pharmacovigilance in perspective. Drug safety 21 (1999), 429–447.
+[18] Grégoire Mialon, Roberto Dessì, Maria Lomeli, Christoforos Nalmpantis, Ram
+Pasunuru, Roberta Raileanu, Baptiste Rozière, Timo Schick, Jane Dwivedi-Yu,
+Asli Celikyilmaz, et al .2023. Augmented language models: a survey. arXiv
+preprint arXiv:2302.07842 (2023).
+[19] Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela
+Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al .2022.
+Training language models to follow instructions with human feedback. Advances
+in Neural Information Processing Systems 35 (2022), 27730–27744.
+[20] Quantiphi. 2023. baioniq. https://quantiphi.com/baioniq/.
+[21] Ori Ram, Yoav Levine, Itay Dalmedigos, Dor Muhlgay, Amnon Shashua, Kevin
+Leyton-Brown, and Yoav Shoham. 2023. In-context retrieval-augmented language
+models. arXiv preprint arXiv:2302.00083 (2023).
+[22] Adam Roberts, Colin Raffel, and Noam Shazeer. 2020. How Much Knowledge
+Can You Pack Into the Parameters of a Language Model?. In Proceedings of the
+2020 Conference on Empirical Methods in Natural Language Processing (EMNLP) .
+5418–5426.
+[23] Shreya Saxena, Raj Sangani, Siva Prasad, Shubham Kumar, Mihir Athale, Ro-
+han Awhad, and Vishal Vaddina. 2022. Large-Scale Knowledge Synthesis and
+Complex Information Retrieval from Biomedical Documents. In 2022 IEEE Inter-
+national Conference on Big Data (Big Data) . 2364–2369. https://doi.org/10.1109/
+BigData55660.2022.10020725
+[24] Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, and Tie-Yan Liu. 2020. Mpnet:
+Masked and permuted pre-training for language understanding. Advances in
+Neural Information Processing Systems 33 (2020), 16857–16867.
+[25] Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yas-
+mine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhos-
+ale, et al .2023. Llama 2: Open foundation and fine-tuned chat models. arXiv
+preprint arXiv:2307.09288 (2023).
+[26] Jian Xie, Kai Zhang, Jiangjie Chen, Renze Lou, and Yu Su. 2023. Adaptive
+Chameleon or Stubborn Sloth: Unraveling the Behavior of Large Language
+Models in Knowledge Conflicts. arXiv preprint arXiv:2305.13300 (2023).
+[27] Yi Yang, Mark Christopher Siy Uy, and Allen Huang. 2020. Finbert: A pretrained
+language model for financial communications. arXiv preprint arXiv:2006.08097
+(2020).
+[28] Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W. Cohen, Ruslan
+Salakhutdinov, and Christopher D. Manning. 2018. HotpotQA: A Dataset for
+Diverse, Explainable Multi-hop Question Answering. CoRR abs/1809.09600 (2018).
+arXiv:1809.09600 http://arxiv.org/abs/1809.09600
+[29] Jing Zhang, Xiaokang Zhang, Jifan Yu, Jian Tang, Jie Tang, Cuiping Li, and Hong
+Chen. 2022. Subgraph Retrieval Enhanced Model for Multi-hop Knowledge Base
+Question Answering. In Proceedings of the 60th Annual Meeting of the Association
+for Computational Linguistics (Volume 1: Long Papers) . 5773–5784.
+[30] Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q. Weinberger, and
+Yoav Artzi. 2020. BERTScore: Evaluating Text Generation with BERT.
+arXiv:1904.09675 [cs.CL]
+[31] Yue Zhang, Yafu Li, Leyang Cui, Deng Cai, Lemao Liu, Tingchen Fu, Xinting
+Huang, Enbo Zhao, Yu Zhang, Yulong Chen, et al .2023. Siren’s Song in the AI
+Ocean: A Survey on Hallucination in Large Language Models. arXiv preprint
+arXiv:2309.01219 (2023).
+[32] Yue Zhang, Yafu Li, Leyang Cui, Deng Cai, Lemao Liu, Tingchen Fu, Xinting
+Huang, Enbo Zhao, Yu Zhang, Yulong Chen, Longyue Wang, Anh Tuan Luu, Wei
+Bi, Freda Shi, and Shuming Shi. 2023. Siren’s Song in the AI Ocean: A Survey on
+Hallucination in Large Language Models. arXiv preprint arXiv:2309.01219 (2023).

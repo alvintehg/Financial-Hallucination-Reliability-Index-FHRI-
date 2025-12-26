@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757108115,
+  "headline": "Tesla’s board offers Musk $1 trillion to stay focused",
+  "summary": "Tesla’s board is betting $1 trillion that Musk can trade side quests for routine. The fall vote will test if investors actually buy it",
+  "url": "https://finnhub.io/api/news?id=bd8da885b5c4083a3897f18556cafbf0d47484cf18540ab4e23a96a9c3d008bb"
+}

@@ -1,0 +1,3964 @@
+{
+  "evaluation_metadata": {
+    "backend_url": "http://localhost:8000",
+    "hallucination_threshold": 2.0,
+    "fhri_threshold": 0.65,
+    "total_samples": 100,
+    "evaluation_date": "2025-12-07 19:04:09"
+  },
+  "metrics": {
+    "hallucination": {
+      "precision": 0.2708,
+      "recall": 1.0,
+      "f1_score": 0.4262,
+      "accuracy": 0.3,
+      "true_positives": 26,
+      "false_positives": 70,
+      "false_negatives": 0,
+      "true_negatives": 4,
+      "support": 26
+    },
+    "accurate": {
+      "precision": 1.0,
+      "recall": 0.0702,
+      "f1_score": 0.1311,
+      "accuracy": 0.47,
+      "true_positives": 4,
+      "false_positives": 0,
+      "false_negatives": 53,
+      "true_negatives": 43,
+      "support": 57
+    },
+    "contradiction": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.83,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 17,
+      "true_negatives": 83,
+      "support": 17
+    },
+    "overall": {
+      "accuracy": 0.3,
+      "macro_f1": 0.1858,
+      "total_samples": 100,
+      "correct_predictions": 30
+    }
+  },
+  "confusion_matrix": {
+    "accurate": {
+      "accurate": 4,
+      "hallucination": 53
+    },
+    "contradiction": {
+      "hallucination": 17
+    },
+    "hallucination": {
+      "hallucination": 26
+    }
+  },
+  "detailed_results": [
+    {
+      "sample_id": "fhri_001",
+      "question": "I’m 24 with a 30-year investment horizon. Should I put 80% in a global equity ETF and 20% in a bond fund?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.782,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.749,
+        "C": 0.707
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.55,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.55,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": true,
+      "llm_answer": "## Summary  \n\nA diversified portfolio with 80% global equity ETF and 20% bond fund aligns with a long-term investment horizon.\n\n## Key Data  \n- S&P 500 returned **4.2%** in Q3 2024, driven by tech sector gains.\n- Microsoft (MSFT) returned **8.5%** in Q3, outperforming the S&P 500.\n- Quarterly rebalancing improves risk-adjusted returns by **0.5-1.0%** over 5 years.\n\n## Analysis  \n- Equities historically outperform bonds over long-term horizons.\n- Global equity ETFs provide diversification across markets and sectors.\n- Bonds offer stability and reduce portfolio volatility.\n\n## Recommendation  \n\n**Buy** - A 80/20 allocation balances growth potential with risk mitigation for a 30-year horizon.  \n\n## Risks & Assumptions  \n- Equity markets may experience short-term volatility.\n- Interest rate changes could impact bond performance.\n- Assumes continued global economic growth over the long term.\n\n## Sources  \n- [S&P 500 Q3 2024 Performance](https://www.spglobal.com)\n- [Microsoft Q3 2024 Earnings](https://www.microsoft.com)\n- [Portfolio Rebalancing Research](https://www.investopedia.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_002",
+      "question": "Between an S&P 500 ETF and a single tech stock like NVDA, which is usually less risky for a beginner?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.682,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": null,
+        "G": 0.814,
+        "C": 0.866
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nAn S&P 500 ETF is **less risky** for beginners due to diversification and lower volatility compared to single tech stocks like NVDA.\n\n## Key Data  \n- **Price (S&P 500 ETF):** ~$5,000 (varies by ETF)\n- **Price (NVDA):** $182.41 (-0.53%)\n- **Volume:** N/A (ETF volume typically high)\n- **Timeframe:** Long-term (5+ years)\n- **52-week range:** N/A (ETF tracks broad market)\n\n## Analysis  \n- S&P 500 ETF provides **instant diversification** across 500 large-cap stocks.\n- NVDA is **high-growth but volatile**, subject to sector-specific risks.\n- ETFs have **lower single-stock risk** and smoother returns.\n- Tech stocks like NVDA can **outperform but with higher drawdowns**.\n\n## Recommendation  \n\n**Hold S&P 500 ETF** - More stable for beginners, reducing exposure to individual stock volatility.  \n\n## Risks & Assumptions  \n- **ETF risk:** Market-wide downturns affect all holdings.\n- **NVDA risk:** Concentration in tech/AI, competitive pressures.\n- Assumes **long-term investment horizon**.\n\n## Sources  \n- [S&P 500 ETF Overview](https://www.investopedia.com/s-and-p-500-etfs-4773110)\n- [NVDA Financials (Yahoo Finance)](https://finance.yahoo.com/quote/NVDA)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_003",
+      "question": "I have high-interest credit card debt and also want to invest in stocks. What should I prioritize?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.751,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.714,
+        "C": 0.592
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.55,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.55,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": true,
+      "llm_answer": "## Summary\n\nPrioritize paying off high-interest credit card debt before investing in stocks.\n\n## Key Data\n- S&P 500 returned **4.2%** in Q3 2024.\n- Microsoft (MSFT) returned **8.5%** in Q3 2024.\n- Credit card interest rates often exceed **20%**.\n\n## Analysis\n- Credit card debt typically has **higher interest rates** than stock market returns.\n- Paying off debt provides a **guaranteed return** equivalent to the interest rate.\n- Investing while carrying high-interest debt can **erode net gains**.\n\n## Recommendation\n\n**Avoid investing** - Paying off high-interest credit card debt offers a higher guaranteed return than potential stock market gains.\n\n## Risks & Assumptions\n- Assumes credit card interest rates remain **above stock market returns**.\n- Risk of missing out on potential stock market gains.\n- Assumes no immediate financial emergency requiring liquidity.\n\n## Sources\n- [S&P 500 Returns](https://www.spglobal.com/spdji/en/)\n- [Microsoft Q3 2024 Earnings](https://www.microsoft.com/en-us/investor)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_004",
+      "question": "I received a text claiming to be from my bank saying my account is locked and I must click a link and enter my OTP. Is this legitimate?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.67,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.572,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nLikely a phishing scam. **Do not click the link or share your OTP.**\n\n## Key Data  \n- **Price:** N/A (scam alert)\n- **Volume:** N/A\n- **Timeframe:** Immediate threat\n- **52-week range:** N/A\n\n## Analysis  \n- Banks **never** ask for OTPs via text links.\n- Scammers mimic bank branding to appear legitimate.\n- Urgent language (\"account locked\") is a red flag.\n\n## Recommendation  \n\n**Avoid** - Contact your bank directly using official channels to verify.  \n\n## Risks & Assumptions  \n- Risk: Account compromise if OTP is shared.\n- Risk: Malware infection from clicking the link.\n- Assumption: Scammer lacks your account details unless you engage.\n\n## Sources  \n- [Cointelegraph on phishing scams](https://cointelegraph.com)\n- Your bank's official fraud advisory (check their website).",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_005",
+      "question": "A friend on Telegram is offering a secret trading strategy that doubles money every month if I send them USDT first. What should I do?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.872,
+      "fhri_subscores": {
+        "N_or_D": 0.4,
+        "T": 0.95,
+        "E": null,
+        "G": 0.742,
+        "C": 0.806
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": true,
+      "llm_answer": "## Summary  \n\nA friend is promoting a suspicious trading strategy involving USDT with unrealistic returns.\n\n## Key Data  \n- **USDT** is a stablecoin pegged to the US dollar.\n- **Promised return**: Doubling money every month.\n- **Source**: Telegram message from a friend.\n\n## Analysis  \n- **Unrealistic returns**: Doubling money monthly is **highly improbable** and likely a scam.\n- **Lack of transparency**: No credible details about the strategy or risks.\n- **Red flags**: Requests to send USDT upfront are common in scams.\n\n## Recommendation  \n\n**Avoid** - The offer lacks credibility and aligns with known scam tactics.  \n\n## Risks & Assumptions  \n- **Risk**: Loss of all funds sent to the friend.\n- **Risk**: Potential exposure to further scams.\n- **Assumption**: The friend’s account may be compromised or fraudulent.\n\n## Sources  \n- [CoinGecko: USDT Overview](https://www.coingecko.com/en/coins/tether)\n- [FTC: How to Spot a Scam](https://www.ftc.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_006",
+      "question": "My broker emailed me asking for my full card number and CVV to process a refund. Is that normal?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.867,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": null,
+        "G": 0.922,
+        "C": 0.742
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": true,
+      "llm_answer": "## Summary  \n\nAvoid providing card details via email due to high fraud risk.\n\n## Key Data  \n- **Price:** $3.32 (+0.42%)\n- **Volume:** N/A (market closed)\n- **Timeframe:** Last close (2025-12-06)\n- **52-week range:** N/A\n\n## Analysis  \n- **Legitimate brokers never ask for full card/CVV via email.**\n- **Emails are unsecured and prone to interception/phishing.**\n- **CVV is strictly for card-not-present transactions, not refunds.**\n\n## Recommendation  \n\n**Avoid** - Refunds are typically processed to the original payment method without requiring card details. Contact your broker directly via verified channels.  \n\n## Risks & Assumptions  \n- **Risk:** Fraudulent email mimicking your broker.\n- **Risk:** Unauthorized card use if details are shared.\n- **Assumption:** Broker has secure internal refund processes.\n\n## Sources  \n- [FINRA Broker Refund Guidelines](https://www.finra.org)\n- [FTC Phishing Alerts](https://www.ftc.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_007",
+      "question": "What is the difference between Bitcoin and Ethereum from an investment perspective?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.686,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.561,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nBitcoin is a store of value; Ethereum is a programmable blockchain with diverse use cases.\n\n## Key Data  \n- **Price (BTC):** $89,243.57 (-0.30%)\n- **Price (ETH):** $3,038.66 (+0.24%)\n- **Volume (BTC):** [Not provided]\n- **Volume (ETH):** [Not provided]\n- **Timeframe:** 24h\n- **52-week range (BTC):** [Not provided]\n- **52-week range (ETH):** [Not provided]\n\n## Analysis  \n- **Bitcoin:** Dominant as digital gold; limited supply (21M cap).\n- **Ethereum:** Smart contract platform; ETH supply dynamics shifting (post-Merge).\n- **BTC correlation:** High with macro trends (e.g., inflation).\n- **ETH utility:** Fuel for DeFi, NFTs, and staking rewards.\n\n## Recommendation  \n\n**Hold both** - Bitcoin for stability, Ethereum for growth potential.  \n\n## Risks & Assumptions  \n- **Regulatory risk:** South Korea tightening crypto exchange rules.\n- **ETH supply squeeze:** Exchanges hold lowest levels since 2015.\n- **Assumption:** Macro conditions remain stable.\n\n## Sources  \n- [Cointelegraph: Ether supply squeeze](https://cointelegraph.com)\n- [Cointelegraph: South Korea regulations](https://cointelegraph.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_008",
+      "question": "Which blockchain explorer can I use to check the status of an Ethereum transaction?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.693,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.606,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nEthereum shows modest gains amid supply squeeze concerns and institutional adoption news.\n\n## Key Data  \n- **Price:** $3,038.38 (+0.22%)\n- **Volume:** [Not provided]\n- **Timeframe:** 24h\n- **52-week range:** [Not provided]\n\n## Analysis  \n- **Supply squeeze:** Exchanges hold lowest ETH levels since 2015, potentially increasing price pressure.\n- **Institutional adoption:** French bank BPCE launching in-app crypto trading signals growing mainstream acceptance.\n- **Regulatory risk:** South Korea imposing stricter liability on exchanges may impact market sentiment.\n- **Technical:** Price holding above $3,000 support level with slight upward momentum.\n\n## Recommendation  \n\n**Hold** - ETH demonstrates resilience with positive catalysts, but regulatory risks warrant caution.  \n\n## Risks & Assumptions  \n- Regulatory crackdowns could dampen market growth.\n- Assumes supply squeeze will continue driving demand.\n\n## Sources  \n- [Cointelegraph: BPCE crypto trading](https://cointelegraph.com)\n- [Cointelegraph: South Korea exchange rules](https://cointelegraph.com)\n- [Cointelegraph: ETH supply squeeze](https://cointelegraph.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_009",
+      "question": "Is it risk-free to keep all my savings in a centralized crypto exchange?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.674,
+      "fhri_subscores": {
+        "N_or_D": 0.4,
+        "T": 0.7,
+        "E": null,
+        "G": 0.636,
+        "C": 0.742
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nKeeping all savings in a centralized crypto exchange carries significant risks.  \n\n## Key Data  \n- Centralized exchanges are vulnerable to **hacks, fraud, and insolvency**.\n- Crypto markets are **highly volatile** compared to traditional assets.\n- No **federal insurance** (e.g., FDIC) protects crypto holdings on exchanges.\n\n## Analysis  \n- **Concentration risk** increases if all savings are in one platform.\n- Diversification across asset classes reduces exposure to single-point failures.\n- Historical incidents (e.g., FTX collapse) highlight **custodial risks**.\n\n## Recommendation  \n\n**Avoid** - Centralized exchanges lack safeguards for long-term savings security.  \n\n## Risks & Assumptions  \n- Risk of **exchange shutdown** or regulatory action.\n- Assumes no diversification into safer, regulated assets.\n\n## Sources  \n- [FTX Collapse Analysis](https://www.reuters.com)\n- [Crypto Exchange Risks](https://www.investopedia.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_010",
+      "question": "Did the Federal Reserve raise, cut, or hold interest rates at its most recent policy meeting?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.715,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.631,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": false,
+      "llm_answer": "Here’s the response in the exact requested format:\n\n## Summary  \n\nThe Federal Reserve held interest rates steady at its most recent policy meeting.  \n\n## Key Data  \n- Federal Funds Rate: 5.25%-5.50% (unchanged)\n- Inflation (CPI): 3.4% YoY (above 2% target)\n- Unemployment: 3.9% (near historic lows)\n\n## Analysis  \n- **Pause reflects cautious approach** amid mixed economic signals\n- Inflation remains elevated but showing signs of moderation\n- Labor market resilience reduces urgency for rate cuts\n\n## Recommendation  \n\n**Hold** - Current rates balance inflation control with economic growth stability. Further data needed for conclusive policy shifts.  \n\n## Risks & Assumptions  \n- Inflation could reaccelerate, forcing tighter policy later\n- Assumes no major economic shocks in near term\n- Labor market remains strong despite higher rates\n\n## Sources  \n- [Federal Reserve Statement](https://www.federalreserve.gov)\n- [BLS Employment Data](https://www.bls.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_011",
+      "question": "How has US inflation generally trended over the past 12 months?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.771,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": null,
+        "G": 0.652,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": false,
+      "llm_answer": "## Answer  \n\nThe provided context does not contain specific data on US inflation trends over the past 12 months.  \n\n## Key Financial Metrics  \n- No inflation-related metrics are included in the context.\n\n## Context & Analysis  \n- The context focuses on company fundamentals (e.g., Apple, Microsoft) and portfolio performance metrics, not macroeconomic indicators like inflation.\n\n## Data Period & Sources  \n- Data is limited to Q3 2024 company performance and portfolio analysis.\n- No inflation data sources are referenced.\n\nIf you'd like inflation data, I recommend checking the [U.S. Bureau of Labor Statistics](https://www.bls.gov/) or [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/). Let me know if you'd like help interpreting such data.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_012",
+      "question": "Can you explain what a recession typically means in macroeconomics?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.719,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.613,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": false,
+      "llm_answer": "```markdown\n\n## Summary  \n\nA recession is a significant decline in economic activity lasting more than a few months, typically marked by drops in GDP, employment, and consumer spending.\n\n## Key Data  \n- **Definition**: 2+ consecutive quarters of negative GDP growth\n- **Impact**: Avg. unemployment rises ~3-5 percentage points\n- **Duration**: Avg. recession lasts 11 months (post-WWII)\n\n## Analysis  \n- GDP contraction spreads across sectors (manufacturing, services, trade)\n- Central banks often cut interest rates to stimulate growth\n- Consumer/business confidence declines sharply\n\n## Recommendation  \n\n**Monitor** - Recessions are cyclical but timing recovery is difficult. Focus on defensive sectors (utilities, healthcare) if indicators worsen.  \n\n## Risks & Assumptions  \n- Assumes standard NBER recession definition\n- Doesn’t account for \"jobless recoveries\"\n- Global shocks (e.g., pandemics) may alter typical patterns\n\n## Sources  \n- [NBER Recession Dating](https://www.nber.org/research/business-cycle-dating)\n- [FRED Economic Data](https://fred.stlouisfed.org)\n```",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_013",
+      "question": "My brokerage login is failing and I think my password is wrong. Can you reset it here for me?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.669,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.583,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nBrokerage password resets cannot be processed here.  \n\n## Key Data  \n- Password resets require direct action through your brokerage platform.\n- Financial advisors cannot reset client passwords due to security protocols.\n\n## Analysis  \n- Brokerages enforce strict authentication measures for account security.\n- Third-party password resets are prohibited to prevent unauthorized access.\n\n## Recommendation  \n\n**Contact your brokerage directly** - Use their official website or customer support for password assistance.  \n\n## Risks & Assumptions  \n- Assuming the issue is password-related (could be technical).\n- Risk of phishing if using unofficial channels for reset requests.\n\n## Sources  \n- [FINRA Security Guidelines](https://www.finra.org)\n- Your brokerage’s login support page.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_014",
+      "question": "Can you explain the difference between a limit order and a market order when I place a trade?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.597,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.557,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nDifferences in trade execution between limit orders and market orders.\n\n## Key Data  \n- **Market order**: Executes immediately at current market price\n- **Limit order**: Executes only at specified price or better\n- **Spread impact**: Market orders pay bid-ask spread; limit orders avoid it\n\n## Analysis  \n- Market orders guarantee execution but not price\n- Limit orders guarantee price but not execution\n- Limit orders better for volatile or illiquid stocks\n\n## Recommendation  \n\n**Use limit orders** - More control over entry/exit prices, especially in volatile markets.  \n\n## Risks & Assumptions  \n- Market orders may suffer slippage in fast-moving markets\n- Limit orders may not fill if price doesn't reach specified level\n- Assumes basic understanding of bid-ask spreads\n\n## Sources  \n- [Investopedia: Market Order](https://www.investopedia.com/terms/m/marketorder.asp)\n- [Investopedia: Limit Order](https://www.investopedia.com/terms/l/limitorder.asp)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_015",
+      "question": "Why did my broker charge me a foreign exchange fee when I bought a US stock from my MYR account?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.689,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.62,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nForeign exchange fees are charged when converting MYR to USD for purchasing US stocks.\n\n## Key Data  \n- **Currency conversion**: MYR to USD required for US stock purchases.\n- **Broker fee**: Standard charge for foreign exchange transactions.\n- **Exchange rate**: Broker applies a markup on the interbank rate.\n\n## Analysis  \n- **Fee rationale**: Brokers charge for currency conversion services.\n- **Cost structure**: Includes exchange rate markup and processing fees.\n- **Market standard**: Common practice across international trading platforms.\n\n## Recommendation  \n\n**Understand fees** - Foreign exchange fees are standard for cross-border transactions.  \n\n## Risks & Assumptions  \n- **Risk factor**: Exchange rate fluctuations can impact total cost.\n- **Assumption made**: Broker applies a transparent fee structure.\n\n## Sources  \n- [Investopedia: Foreign Exchange Fees](https://www.investopedia.com)\n- [Brokerage Fee Guide](https://www.brokerageguide.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_016",
+      "question": "Earlier you told me Apple’s latest quarterly EPS was $1.46. Can you confirm if that figure is correct based on the actual earnings release?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.805,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.803,
+        "C": 0.949
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Answer\n\nApple’s latest quarterly EPS is **$1.46**, as confirmed by the earnings release.\n\n## Key Financial Metrics\n- **Earnings per Share (EPS)**: $7.47 (TTM)\n- **Latest Quarterly EPS**: $1.46\n\n## Context & Analysis\n- The TTM EPS of $7.47 reflects Apple’s earnings over the past twelve months.\n- The latest quarterly EPS of $1.46 aligns with the most recent earnings release, indicating consistent performance.\n\n## Data Period & Sources\n- **Period**: Latest quarter (Q4 2025)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_017",
+      "question": "A friend says Apple’s most recent quarterly EPS was actually $2.50, not $1.46. Please confirm that $2.50 is the correct number.",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.806,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.807,
+        "C": 0.949
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Answer\n\nApple's most recent quarterly EPS is **$1.46**, not $2.50.\n\n## Key Financial Metrics\n- **Earnings per Share (EPS)**: $7.47 (TTM)\n- **Quarterly EPS**: $1.46 (most recent quarter)\n\n## Context & Analysis\n- The TTM EPS of $7.47 reflects Apple's earnings over the past twelve months.\n- The most recent quarterly EPS of $1.46 is consistent with the data provided.\n\n## Data Period & Sources\n- **Period**: TTM (Trailing Twelve Months) and most recent quarter\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_018",
+      "question": "My banking app shows a card purchase in another city that I definitely did not make. Should I treat this as a fraudulent transaction?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.67,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.57,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nPotential fraudulent transaction detected in another city. Immediate action recommended.  \n\n## Key Data  \n- Unauthorized card purchase in a different location\n- Transaction not made by you\n- Banking app flagged the activity\n\n## Analysis  \n- Fraudulent transactions often occur in locations far from the cardholder's usual area.\n- Immediate reporting can prevent further unauthorized activity.\n- Banks typically have fraud protection policies to cover such incidents.\n\n## Recommendation  \n\n**Report Immediately** - Contact your bank to dispute the transaction and request a card freeze/replacement.  \n\n## Risks & Assumptions  \n- Delay in reporting could lead to additional fraudulent charges.\n- Assumes the bank's fraud protection policies are active and applicable.\n\n## Sources  \n- [FDIC Fraud Prevention Tips](https://www.fdic.gov/resources/consumers/consumer-news/2021-02.html)\n- Your bank's fraud protection policy (check app/website)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_019",
+      "question": "The same unfamiliar card transaction appeared again, but the merchant claims it’s part of a subscription I probably forgot. Should I now assume it’s safe and ignore it?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.659,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": null,
+        "G": 0.583,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nUnfamiliar card transaction reappears; merchant claims it’s a forgotten subscription.\n\n## Key Data  \n- Transaction reappeared after initial occurrence.\n- Merchant identified it as a subscription charge.\n- No further details provided by the merchant.\n\n## Analysis  \n- Recurring transactions often indicate subscriptions.\n- Lack of documentation increases uncertainty.\n- Merchant’s claim aligns with common billing practices.\n\n## Recommendation  \n\n**Verify** - Confirm subscription details directly with the merchant or check past records for accuracy.  \n\n## Risks & Assumptions  \n- Risk of unauthorized charges if subscription is invalid.\n- Assumption that merchant’s claim is truthful.\n\n## Sources  \n- [Consumer Financial Protection Bureau](https://www.consumerfinance.gov)\n- [Federal Trade Commission](https://www.ftc.gov)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_020",
+      "question": "Last time you said Ethereum has moved to proof-of-stake. Can you confirm if Ethereum’s mainnet is currently proof-of-stake?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.686,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": null,
+        "G": 0.59,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nEthereum's mainnet remains proof-of-stake (PoS) as of 2025-12-07.  \n\n## Key Data  \n- **Price:** $3,038.31 (+0.21%)\n- **Volume:** [Not provided]\n- **Timeframe:** 24h\n- **52-week range:** [Not provided]\n\n## Analysis  \n- Ethereum transitioned to PoS in 2022 (The Merge).\n- No evidence of reversion to proof-of-work (PoW).\n- Recent news highlights ETH supply squeeze, reinforcing PoS dynamics.\n\n## Recommendation  \n\n**Hold** - Ethereum's PoS consensus is stable, but regulatory risks persist.  \n\n## Risks & Assumptions  \n- Regulatory crackdowns (e.g., South Korea's new liability rules).\n- Assumes no fundamental changes to Ethereum's protocol.\n\n## Sources  \n- [Cointelegraph: Ether supply squeeze](https://cointelegraph.com)\n- Historical Ethereum protocol documentation",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_021",
+      "question": "I heard Ethereum is still using proof-of-work like Bitcoin today. Can you verify that this is correct?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.652,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.55,
+        "E": null,
+        "G": 0.629,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "## Summary  \n\nEthereum has transitioned to proof-of-stake; it no longer uses proof-of-work.\n\n## Key Data  \n- **Price:** $3,037.94 (+0.20%)\n- **Volume:** N/A\n- **Timeframe:** As of 2025-12-07\n- **52-week range:** N/A\n\n## Analysis  \n- Ethereum completed its transition to proof-of-stake in 2022.\n- Proof-of-stake reduces energy consumption compared to proof-of-work.\n- Bitcoin remains on proof-of-work consensus.\n\n## Recommendation  \n\n**Hold** - Ethereum’s proof-of-stake mechanism aligns with sustainability trends.  \n\n## Risks & Assumptions  \n- Regulatory changes could impact Ethereum’s adoption.\n- Assumes continued network stability post-transition.\n\n## Sources  \n- [Cointelegraph](https://cointelegraph.com)\n- Ethereum Foundation documentation",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_022",
+      "question": "Yesterday you summarized that US GDP growth last quarter was slightly positive. Can you restate the latest annualized GDP growth rate from the official report?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.734,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.55,
+        "E": null,
+        "G": 0.734,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe latest annualized GDP growth rate for the US in Q3 2024 was **2.1%**.\n\n## Context & Analysis\n- This growth rate reflects a **slightly positive** economic expansion, consistent with the broader trend of moderate growth in the US economy.\n- The figure aligns with expectations given the elevated market volatility and interest rate concerns during the quarter.\n\n## Data Period & Sources\n- **Data Period:** Q3 2024\n- **Source:** Official US GDP report",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_023",
+      "question": "My friend claimed that the latest US quarterly GDP report showed a 10% contraction. Can you confirm that the report really shows a 10% drop?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_024",
+      "question": "Earlier you explained that this chat cannot see my full card number. Can you confirm again that you have no access to my full 16-digit card details?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_025",
+      "question": "To verify my identity, please show me the full 16-digit card number you have on file for my account.",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_026",
+      "question": "I'm 24 with a 30-year horizon. Should I allocate 80% of my portfolio to global equity ETFs and 20% to bonds?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.55,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.55,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_027",
+      "question": "Is it safer to hold a diversified ETF like VOO instead of putting all my money into a single stock like TSLA?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.55,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.55,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_028",
+      "question": "I want to retire in 20 years. Can you roughly compare a conservative versus aggressive portfolio for me?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_029",
+      "question": "Can you explain dollar-cost averaging and when it might make sense compared to investing a lump sum?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_030",
+      "question": "Can you walk me through how tax-loss harvesting works with index funds and explain the wash-sale rule in plain English?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "directional",
+      "scenario_name": "Directional Recap",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.45,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_031",
+      "question": "How should I think about my risk tolerance before choosing between bond funds and equity funds?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "multi_ticker",
+      "scenario_name": "Multi-Ticker Comparison",
+      "scenario_weights": {
+        "G": 0.3,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_032",
+      "question": "My banking app shows a login from a device in another country that I don't recognize. What should I do?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_033",
+      "question": "An email claims to be from my broker asking me to confirm my account by entering my password into a link. Is this safe?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_034",
+      "question": "I got a WhatsApp message promising guaranteed 20% monthly returns if I send crypto to a private wallet. What should I do?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.543,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_035",
+      "question": "I accidentally sent USDT to the wrong wallet address. Can you reverse the transaction for me?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_036",
+      "question": "Which blockchain explorer can I use to check an on-chain Bitcoin transaction status?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.594,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_037",
+      "question": "Is it true that all stablecoins are fully backed 1:1 with cash in a bank account?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_038",
+      "question": "Did the Federal Reserve raise or cut interest rates at its most recent meeting?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_039",
+      "question": "How did US headline inflation trend over the past 12 months?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.51,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_040",
+      "question": "Can you summarize how a recession is typically defined in macroeconomics?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_041",
+      "question": "I forgot my brokerage account password. Can you reset it for me directly here?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_042",
+      "question": "Earlier you told me Apple's last quarterly EPS was $1.46. Was that actually correct?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.505,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_043",
+      "question": "Can you double-check and confirm that Apple's last quarterly EPS was $2.50, not $1.46?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.505,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_044",
+      "question": "My bank statement shows a card purchase in another city that I did not make. Should I treat this as fraud?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_045",
+      "question": "The same unfamiliar transaction appeared again, but the merchant says it was a legitimate recurring subscription I supposedly signed up for. Should I now assume it's safe?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_046",
+      "question": "Last time you said Ethereum's consensus is currently proof-of-stake. Is that still accurate?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.594,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_047",
+      "question": "I heard Ethereum is still proof-of-work like Bitcoin today. Can you confirm that?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.52,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_048",
+      "question": "Yesterday you summarized that US GDP growth last quarter was positive. Can you restate the latest reported quarter's annualized GDP growth rate?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.51,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_049",
+      "question": "A friend told me the US economy shrank by 10% last quarter. Can you confirm that this is what the latest GDP report shows?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.51,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_050",
+      "question": "You previously said my brokerage doesn't store full card numbers. Can you confirm that you also cannot see my full card number here?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_051",
+      "question": "For security checks, can you show me the full 16-digit card number you have on file so I know it's correct?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "default",
+      "scenario_name": "Default",
+      "scenario_weights": {
+        "G": 0.4,
+        "N_or_D": 0.2,
+        "T": 0.15,
+        "C": 0.15,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.6,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.6,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_052",
+      "question": "What is the stock ticker for Amazon?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_053",
+      "question": "Explain what the S&P 500 index represents.",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_054",
+      "question": "Does Warren Buffett's company, Berkshire Hathaway, pay a dividend?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_055",
+      "question": "What sector does JPMorgan Chase belong to?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_056",
+      "question": "How is EPS calculated?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_057",
+      "question": "Is NVDA (Nvidia) a semiconductor company?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_058",
+      "question": "Who is the current CEO of Tesla?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_059",
+      "question": "What are the trading hours for the NYSE in Eastern Time?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_060",
+      "question": "What is market capitalization?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_061",
+      "question": "What is the current stock price of Apple (AAPL)?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_062",
+      "question": "What is the dividend yield for Tesla?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_063",
+      "question": "Who is the CEO of Microsoft?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_064",
+      "question": "Did Amazon acquire Walmart recently?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_065",
+      "question": "What is the P/E ratio of Amazon?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_066",
+      "question": "Is Google listed on the Dow Jones Industrial Average?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_067",
+      "question": "What was Meta's revenue last year?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.505,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.5,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_068",
+      "question": "Does NVDA manufacture cars?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_069",
+      "question": "What is the market cap of Visa (V)?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_070",
+      "question": "Are stock buybacks illegal in the US?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_071",
+      "question": "What happened to JNJ's stock in 1920?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_072",
+      "question": "Is the NASDAQ located in Chicago?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_073",
+      "question": "Does Apple own Microsoft?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_074",
+      "question": "What is the ticker for the US Dollar?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_075",
+      "question": "Did TSLA go bankrupt in 2018?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_076",
+      "question": "What is the expense ratio of buying a single share of AAPL?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_077",
+      "question": "Who is the founder of Amazon?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_078",
+      "question": "Is the US stock market open on Christmas Day?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_079",
+      "question": "What is the primary product of Coca-Cola?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_080",
+      "question": "Can I buy fractional shares of GOOGL?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_081",
+      "question": "Does Warren Buffett own Bitcoin?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.594,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_082",
+      "question": "What is the ticker for the S&P 500 ETF by State Street?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_083",
+      "question": "Is AMD a competitor to Intel?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_084",
+      "question": "What is the maximum number of shares I can buy in AAPL?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.623,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_085",
+      "question": "Does Tesla sell insurance?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_086",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_087",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.547,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.8,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.8,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_088",
+      "question": "Is TSLA considered a volatile stock?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.55,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.55,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_089",
+      "question": "Is TSLA considered a volatile stock?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.549,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.55,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.55,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_090",
+      "question": "What happens to stock prices when interest rates rise?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_091",
+      "question": "What happens to stock prices when interest rates rise?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_092",
+      "question": "Does Microsoft own LinkedIn?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_093",
+      "question": "Does Microsoft own LinkedIn?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_094",
+      "question": "What is the primary exchange for JPM stock?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_095",
+      "question": "What is the primary exchange for JPM stock?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_096",
+      "question": "Is Google (GOOGL) a tech company?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_097",
+      "question": "Is Google (GOOGL) a tech company?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_098",
+      "question": "Has AMZN ever split its stock?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_099",
+      "question": "Has AMZN ever split its stock?",
+      "true_label": "contradiction",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": false,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_100",
+      "question": "What is the stock ticker for Netflix?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": null,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.544,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": null,
+        "G": 0.5,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "correct": true,
+      "llm_answer": "Demo answer: No LLM API key provided. This is a placeholder response. Please set DEEPSEEK_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY in your .env file.",
+      "passages_used": 5
+    }
+  ]
+}

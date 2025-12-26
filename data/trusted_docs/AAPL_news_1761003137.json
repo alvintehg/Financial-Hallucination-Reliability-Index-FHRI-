@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761003137,
+  "headline": "Stock market today: Dow, S&P 500, Nasdaq futures stall as investors eye earnings ahead",
+  "summary": "US stock futures were little changed Monday night as Wall Street geared up for a packed week of corporate earnings.",
+  "url": "https://finnhub.io/api/news?id=eceac59a14d6631b0a83da21b6edc9d769bca035ef4d33da464cd17875478c27"
+}

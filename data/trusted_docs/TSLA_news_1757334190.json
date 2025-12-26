@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757334190,
+  "headline": "Stocks Gain Pre-Bell as Investors Await Key Inflation Data",
+  "summary": "The benchmark US stock measures were tracking in the green before Monday's opening bell as traders a",
+  "url": "https://finnhub.io/api/news?id=034a1771994032c143cdb23be8a97d59dcc0dcf3fa171cd99aed1a2445c67b48"
+}

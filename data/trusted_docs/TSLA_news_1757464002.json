@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757464002,
+  "headline": "MicroStrategy’s $71B treasury tops Apple, Tesla as stock slides 26%",
+  "summary": "Michael Saylor’s Strategy Inc now holds $71B in Bitcoin, bigger than Apple and Tesla’s cash but investors remain cautious as shares slump 26%.",
+  "url": "https://finnhub.io/api/news?id=68a855f9ff6777555ee007e918a2e81e5e254490f86804f6ae98c9ff0c9df70c"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1759901100,
+  "headline": "U.S. Recession: Not Yet, But Possibly Soon",
+  "summary": "The US economy does not appear to be in recession right now, although it would not take much in the way of additional weakness to tip the scales decisively in that direction. Read more here.",
+  "url": "https://finnhub.io/api/news?id=e47eed835deab9432e40e41c57f4f0c434b1e41e4c21f50f1c0fa5f109f5cc6f"
+}

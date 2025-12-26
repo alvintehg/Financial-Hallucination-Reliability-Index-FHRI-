@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757531548,
+  "headline": "Robotaxi Battle Heats Up With Amazon's Las Vegas Zoox Launch, Lyft's Atlanta Expansion",
+  "summary": "Zoox, Amazon's robotaxi subsidiary, said Wednesday that it's now offering rides in Las Vegas.  Amazon stock was lower on a day that also saw Lyft expand its autonomous offerings.  The Amazon robotaxi service is offering free rides along the Las Vegas strip in its boxy Zoox cabs, with plans to expand throughout the city and begin charging for rides after \"the necessary regulatory approval,\" according to a news release. The tech giant acquired Zoox in 2020 for $1.2 billion and has been testing its technology in Las Vegas and San Francisco in recent months.",
+  "url": "https://finnhub.io/api/news?id=3e443027ba782bcd2cb534ce798e358b21a0e1e6d57ef697f8c9cf4260f1e8ae"
+}

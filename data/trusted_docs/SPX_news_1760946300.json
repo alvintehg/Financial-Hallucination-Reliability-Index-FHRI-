@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1760946300,
+  "headline": "Eerie Calm In The Foreign Exchange Market",
+  "summary": "The US dollar is slightly softer against most of the G10 currencies, though the Australian and Canadian dollar are struggling. Most EM currencies are also firmer. Equities are in rally mode.",
+  "url": "https://finnhub.io/api/news?id=ae086d8a3b1d3dcb51a3b1f83134699c61377b73c88b528ca5cff7100e8e95ad"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761316200,
+  "headline": "September Consumer Price Index Less Than Expected, But Still Warm",
+  "summary": "The September CPI rose by 0.3 percent in September, a bit less than the market's expectations of 0.4 percent.",
+  "url": "https://finnhub.io/api/news?id=2abeff95748d913527a7092fb6edf4ae7c3e7bc03a99dfd030e270cac0e61674"
+}

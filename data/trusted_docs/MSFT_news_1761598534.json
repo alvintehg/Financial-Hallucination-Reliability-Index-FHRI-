@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761598534,
+  "headline": "Stock Market Today: Nasdaq Jumps As Palantir Tests Entry; Tesla Up Despite This Elon Musk Warning",
+  "summary": "The Dow rose on U.S.-China trade optimism. Palantir tested an entry on the stock market today. Tesla gained despite an Elon Musk warning.",
+  "url": "https://finnhub.io/api/news?id=1706e494a9b3f305afc9157ee25c1e7232735fcd4c60403a511911dcb29ddd58"
+}

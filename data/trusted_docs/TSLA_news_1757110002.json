@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757110002,
+  "headline": "Equities Fall Following Weak Jobs Report as Potential Fed Rate Cut Looms",
+  "summary": "US equities fell Friday following a weaker-than-expected jobs report that left Wall Street more conv",
+  "url": "https://finnhub.io/api/news?id=5a3bc6d7ed565838dda58580a68f1fff39c949578dd48c77eaaeee24ca2d6c91"
+}

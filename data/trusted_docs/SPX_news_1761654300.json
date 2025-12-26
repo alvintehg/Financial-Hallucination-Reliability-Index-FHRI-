@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761654300,
+  "headline": "Subdued Confidence Points To Cooling U.S. Consumer Spending",
+  "summary": "US consumer confidence dipped again and remains on par with where we were during the pandemic. Read more here.",
+  "url": "https://finnhub.io/api/news?id=92026d9dd35951a6080636676e29b9982dd2c7505467057b64af86a73d45182c"
+}

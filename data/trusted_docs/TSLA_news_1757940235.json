@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757940235,
+  "headline": "5 Things to Know Before the Stock Market Opens",
+  "summary": "News of the day for Sept. 15, 2025",
+  "url": "https://finnhub.io/api/news?id=7df84827289d0793acc2d619a8edc0d474d00613b44ec8db7a0d5410cbd52255"
+}

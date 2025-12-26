@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Finnhub",
+  "datetime": 1761650259,
+  "headline": "Thanks to OpenAI, Microsoft once again exceeds $4 trillion in market capitalization",
+  "summary": "Microsoft announced on Tuesday that it had entered a new phase in its partnership with OpenAI, the owner of ChatGPT, following the signing of a definitive agreement that will allow the two technology...",
+  "url": "https://finnhub.io/api/news?id=601f0e0b170bc053de867a7e0eb773e1ba6e79c7c86f8b798ede727a021dd6a8"
+}

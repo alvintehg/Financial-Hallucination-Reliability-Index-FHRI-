@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757339375,
+  "headline": "Robinhood, Alibaba, Tesla: Trending Stocks",
+  "summary": "Trading platform Robinhood's (HOOD) shares rise after the announcement that it would enter the S&P 500. Alibaba (BABA) - \"China's Amazon\" - is back on the radar after releasing its new artificial intelligence model. Tesla (TSLA) is now up more than 25% in 6 months amid talk of a $1 trillion pay package for Elon Musk. Join Ramzan Karmali as he breaks down today's trending tickers.",
+  "url": "https://finnhub.io/api/news?id=19fadf4ab6e88b806fba4639073b32e8a9b1cce1ccf7d4cd4fe2c5d6d3f0f217"
+}

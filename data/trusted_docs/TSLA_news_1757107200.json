@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757107200,
+  "headline": "These Stocks Moved the Most Today: Broadcom, Nvidia, Lululemon, Tesla, Samsara, Kenvue, Guidewire, and More",
+  "summary": "Broadcom rises sharply after strong earnings and Lululemon sinks after it cuts fiscal-year guidance.",
+  "url": "https://finnhub.io/api/news?id=af9c2b5f558c16cce2512d935625f85fad2d5811d8eea50ead56e04c40a45ae6"
+}

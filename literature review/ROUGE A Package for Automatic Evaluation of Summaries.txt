@@ -1,0 +1,879 @@
+=== Page 1 ===
+ROUGE : A Package for Automatic Evaluation of Summaries  
+Chin -Yew Lin  
+Information Sciences Institute  
+University of Southern California  
+4676 Admiralty Way  
+Marina del Rey, CA  90292  
+cyl@isi.edu  
+ 
+Abstract  
+ROUGE  stands for Recall -Oriented Unde rstudy for 
+Gisting Evaluation. It includes  measures  to aut o-
+matically determine the quality of a summary by 
+comparing it to other (ideal) summaries created by 
+humans. The measure s count the number of ove r-
+lapping  units such as n -gram, word sequences, and 
+word pairs  between the computer -generated su m-
+mary to be evaluated and the ideal summaries cr e-
+ated by humans. This paper introduces four different 
+ROUGE  measures: ROUGE -N, ROUGE -L, ROUGE -W, 
+and ROUGE -S included in the ROUGE  summariz a-
+tion evalu ation package and their evaluatio ns. Three 
+of them have been used in the Document Unde r-
+standing Conference (DUC) 2004, a large -scale 
+summar ization evaluation sponsored by NIST.  
+1 Introduction  
+Traditionally evaluation of summarization i nvolves 
+human judgment s of different quality metrics , for 
+example, coherence, conciseness, grammaticality, 
+readability, and content  (Mani , 2001) . However,  
+even simple manual evaluation of summaries on a 
+large scale over a few lingui stic quality questions 
+and content coverage as in the Document Unde r-
+standing Con ference (DUC) (Over and Yen , 2003)  
+would require over 3 ,000 hours o f human e fforts. 
+This is very ex pensive and difficult to co nduct in a 
+frequent basis.  Therefore, how to evaluate summ a-
+ries automat ically has drawn a lot of attent ion in the 
+summarization re search comm unity in recent years. 
+For examp le, Sa ggion et al. (2002) proposed three  
+content -based evaluation methods that mea sure 
+similarity between summ aries. These methods are:  
+cosine similarity , unit overlap  (i.e. unigram or b i-
+gram) , and longest common subsequence . However, 
+they did not show how the r esults of these automatic 
+evaluation methods correlate to human judgments. 
+Following t he success ful applic ation of automatic 
+evaluation  method s, such as BLEU  (Papineni et al. , 
+2001), in machine translation e valuation, Lin and 
+Hovy (2003 ) showed that methods similar to BLEU , i.e. n-gram  co-occurrence stati stics, could  be applied 
+to evalua te summaries.  In this paper, we introduce a 
+package , ROUGE , for automatic evaluation of su m-
+maries  and its evaluation s. ROUGE  stands for R e-
+call-Oriented Understudy for Gisting Evaluation . It 
+includes several automatic evalu ation methods  that 
+measure the similarity between summaries.  We d e-
+scribe ROUGE -N in Section 2, ROUGE -L in Section 
+3, ROUGE -W in Section 4, and ROUGE -S in Sect ion 
+5. Section 6 show s how these measures correlate 
+with human jud gments using DUC 2001, 2002, and 
+2003 data . Section 7 conclude s this paper and di s-
+cusses future dire ctions. 
+2 ROUGE -N: N -gram Co -Occurrence St atistics  
+Formally, ROUGE -N is an n -gram recall b etween a 
+candidate summary and a set of reference summ a-
+ries. ROUGE -N is computed as follows:  
+ 
+ROUGE -N 
+∑ ∑∑ ∑
+∈ ∈∈ ∈
+=
+} {} {
+) () (
+Summaries ReferenceS S gramSummaries ReferemceS S grammatch
+nnnn
+gram Countgram Count
+ (1) 
+ 
+Where n stands for the length of the n -gram, 
+gram n, and Count match (gram n) is the maximum nu m-
+ber of n -grams co -occurring in a ca ndidate summary 
+and a set of reference summaries.  
+It is clear that ROUGE -N is a recall -related mea s-
+ure because the denominator of the equation is the 
+total sum of the number of n -grams occu rring at the 
+reference summary side. A closely related measure, 
+BLEU, used in automatic evalu ation of machine 
+translation, is a precision -based measure. BLEU 
+measures how well a candidate translation matches 
+a set of reference translations by counting the pe r-
+centage of n -grams in the candidate translation ove r-
+lapping wit h the refe rences. Please  see Papineni et 
+al. (2001) for d etails about BLEU . 
+Note that the number of n -grams in the denomin a-
+tor of the ROUGE -N formula increases as we add 
+more references. This is intuitive and reasonable 
+because there might exist multiple g ood summ aries. 
+
+=== Page 2 ===
+Every time we add a reference into the pool, we e x-
+pand the space of alternative summaries. By co n-
+trolling what types of references we add to the 
+reference pool, we can design evaluations that f ocus 
+on diffe rent aspects of summarization. Also  note 
+that the numerator sums over all reference summ a-
+ries. This effe ctively gives more weight to matching 
+n-grams occurring in multiple references. Therefore 
+a cand idate summary that contains words shared by 
+more references is favored by the ROUGE -N mea s-
+ure. This is again very intuitive and reasonable b e-
+cause we normally prefer a candidate summary that 
+is more similar to consensus among reference su m-
+maries.  
+2.1 Multiple References  
+So far, we only demonstrated how to compute 
+ROUGE -N using a single reference. Wh en mult iple 
+references are used, we compute pairwise su mmary -
+level ROUGE -N between a candidate su mmary s and 
+every reference, ri, in the refe rence set. We then 
+take the maximum of pairwise summary -level 
+ROUGE -N scores as the final multiple refe rence 
+ROUGE -N score. This can be written as fo llows:  
+ 
+ROUGE -Nmulti  = argmax i ROUGE -N(ri,s)  
+ 
+This procedure is also applied to computation of 
+ROUGE -L (Section 3), ROUGE -W (Section 4) , and 
+ROUGE -S (Section 5).  In the implementation, we use 
+a Jackknifing procedure. Giv en M refe rences, we 
+compute the best score over M sets of M -1 refe r-
+ences. The final ROUGE -N score is the average of 
+the M  ROUGE -N scores using different M -1 refe r-
+ences.  The Jac kknifing procedure is adopted since 
+we often need to compare system and human p er-
+formance and the reference su mmaries are usually 
+the only h uman summaries available. Using this 
+procedure, we are able to estimate average human 
+performance by avera ging M  ROUGE -N scores of 
+one refe rence vs. the rest M -1 references. Although 
+the Jackknif ing procedure is not necessary when we 
+just want to compute ROUGE  scores using mu ltiple 
+references, it is applied in all ROUGE  score comp u-
+tations in the ROUGE  evaluation package.  
+In the next section, we describe a ROUGE  measure 
+based on longest common subs equences b etween 
+two summaries.  
+3 ROUGE -L: Longest Common Subs equence  
+A sequence Z = [z1, z2, ..., z n] is a subsequence of 
+another sequence X = [x1, x2, ..., x m], if there exists a 
+strict increasing sequence [ i1, i2, ..., i k] of indices of 
+X such that for a ll j = 1, 2, ..., k , we have xij = zj  
+(Cormen et al. , 1989). Given two s equences X and 
+Y, the longest common subs equence (LCS) of X and Y is a common subsequence with maximum length. 
+LCS has been used in identifying cognate cand i-
+dates during construction of N-best translation lex i-
+con from parallel text. Melamed (1995) used the 
+ratio (LCSR) between the length of the LCS of two 
+words and the length of the longer word of the two 
+words to measure the cognateness between them. 
+He used LCS as an a pproximate stri ng matching 
+algorithm. Saggion et al. (2002) used normalized 
+pairwise LCS to compare simila rity between two 
+texts in aut omatic summarization evaluation.   
+3.1 Sentence -Level LCS  
+To apply LCS in summarization evaluation, we 
+view a summary sentence as a sequence of words. 
+The intuition is that the longer the LCS of two 
+summary sentences is, the more similar the two 
+summ aries are. We propose using LCS -based F -
+measure to estimate the similarity b etween two 
+summaries X of length m and Y of length  n, assu m-
+ing X is a r eference summary sentence and Y is a 
+candidate summary sentence, as fo llows:  
+ 
+Rlcs 
+mYX LCS ),(=       (2 ) 
+Plcs 
+nYX LCS ),(=       (3 ) 
+Flcs  
+lcs lcslcs lcs
+P RPR
+22) 1(
+bb
+++= (4) 
+ 
+Where LCS(X,Y) is the length of a longest co m-
+mon subsequence of X and Y, and ß = Plcs/Rlcs when 
+?Flcs/?Rlcs_=_?Flcs/?Plcs.  In DUC, ß is set to a very 
+big number ( ? 8) . Therefore, only Rlcs is consi d-
+ered. We call the LCS -based F -measure, i.e. Equ a-
+tion 4 , ROUGE -L. Notice that ROUGE -L is 1 when X 
+= Y; while ROUGE -L is zero when LCS(X,Y) = 0, i.e. 
+there is nothing in common b etween X and Y. F-
+measure or its equiv alents has been shown to have 
+met several theoretical criteria in measuring acc u-
+racy involving more than one factor (Van Rijsbe r-
+gen, 1979). The composite fa ctors are LCS -based 
+recall and pr ecision in this case. Melamed et al. 
+(2003) used unigram F -measure to estimate m achine 
+translation quality and showed that un igram F -
+measure was as good as BLEU .  
+One advantage of using LCS is that it does not r e-
+quire consecutive matches but i n-sequence matches 
+that reflect sentence level word order as n -grams. 
+The other advantage is that it automatically i ncludes 
+longest in -sequence common n -grams, therefore no 
+predefined n -gram length is necessary.  
+ROUGE -L as defined in Equation 4 has the pr op-
+erty that its value is less than or equal to the min i-
+mum of unigram F -measure of X and Y. Unigram 
+
+=== Page 3 ===
+recall reflects the proportion of words in X (refe r-
+ence summary sentence) that are also present in Y 
+(candidate summary sentence); while unigram pr e-
+cision i s the proportion of words in Y that are also in 
+X. Unigram recall and precision count all co -
+occurring words regardless their orders; while 
+ROUGE -L counts only in -sequence co -occurrences.  
+By only awarding credit to in -sequence un igram 
+matches, ROUGE -L als o captures sentence level 
+structure in a natural way. Consider the fo llowing 
+example:  
+ 
+S1. police killed the gunman  
+S2. police  kill the gu nman 
+S3. the gunman  kill p olice 
+ 
+We only consider ROUGE -2, i.e. N=2, for the pu r-
+pose of explanation. Using S1 as the refe rence and  
+S2 and S3 as the candidate summary se ntences , S2 
+and S3 would have the same ROUGE -2 score, since 
+they bot h have one bigram, i.e. “the gunman”.  How-
+ever, S2 and S3 have very different meanings.  In the 
+case of ROUGE -L, S2 has a score of 3/4 = 0.75 and 
+S3 has  a score of 2/4 = 0.5, with ß = 1. Ther efore S2 
+is better than S3 according to ROUGE -L. This exa m-
+ple also illustrated that ROUGE -L can work reli ably 
+at sentence level.  
+However, LCS suffers one disadvantage that it 
+only counts the main in -sequence words; ther efore, 
+other alternative L CSes and shorter s equences are 
+not reflected in the final score. For example, given 
+the follo wing candidate sentence:  
+S4. the gunman  police killed  
+Using S1 as its reference, LCS counts either “the 
+gunman” or “p olice killed”, but not both; therefore, 
+S4 has the  same ROUGE -L score as S3. ROUGE -2 
+would prefer S4 than S3.  
+3.2 Summary -Level LCS  
+Previous section described how to compute se n-
+tence -level LCS -based F -measure score. When a p-
+plying to summary -level, we take the union LCS 
+matches between a reference su mmary sent ence, ri, 
+and every candidate summary  sentence, cj. Given a 
+reference summary of u sentences containing a total 
+of m words and a candidate  summary of v sentences 
+containing a total of n word s, the su mmary -level 
+LCS-based F -measure can be computed as follow s: 
+Rlcs mCr LCSu
+ii ∑=∪
+=1),(
+      (5)  
+Plcs nCr LCSu
+ii ∑=∪
+=1),(
+      (6)  Flcs  
+lcs lcslcs lcs
+P RPR
+22) 1(
+bb
+++=    (7)  
+ 
+Again ß is set to a very big number ( ? 8)  in 
+DUC , i.e. only Rlcs is considered.  ),(Cr LCSi ∪is the 
+LCS score of the union  longest common subs e-
+quence between reference sentence ri and cand idate 
+summary C. For example, if ri = w1 w2 w3 w4 w5, and 
+C cont ains two sentences:  c1 = w1 w2 w6 w7 w8 and c2 
+= w1 w3 w8 w9 w5, then the longest common subs e-
+quence  of ri and c1 is “w1 w2” and the longest co m-
+mon subsequence  of ri and c2 is “w1 w3 w5”. The 
+union longest common subsequence  of ri, c1, and c2 
+is “w1 w2 w3 w5” and ),(Cr LCSi ∪= 4/5.  
+3.3 ROUGE -L vs. Normalized Pairwise LCS  
+The normalized pairwise LCS proposed by Radev et 
+al. (page 51, 2002) between two summ aries S1 and 
+S2, LCS(S 1 ,S2)MEAD , is written as fo llows:  
+ 
+∑ ∑∑ ∑
+∈ ∈∈ ∈∈ ∈
+++
+1 21 21 2
+)( )(),( max ),( max
+Ss S sj iSs S sj i Ss j i Ss
+i ji ji j
+s length s lengthss LCS ss LCS (8) 
+ 
+Assuming S1 has m words and S2 has n words, 
+Equation 8 can be rewritten as Equation 9 due to 
+symmetry:  
+ 
+nmss LCSSsj i Ssij
++∑∈∈12),( max *2
+                       (9) 
+ 
+We then define MEAD LCS recall ( Rlcs-MEAD ) and 
+MEAD LCS precision ( Plcs-MEAD ) as follows:  
+ 
+ Rlcs-MEAD  mss LCSSsj i Ssij∑∈∈
+=12),( max
+      (10)  
+Plcs-MEAD  nss LCSSsj i Ssij∑∈∈
+=12),( max
+       (11) 
+ 
+We can rewrite Equation (9) in terms of Rlcs-MEAD  
+and Plcs-MEAD  with a constant parameter ß = 1 as fo l-
+lows:  
+LCS(S 1 ,S2)MEAD  
+MEAD lcs MEAD lcsMEADlcs MEADlcs
+P RP R
+− −− −
+++=22) 1(
+bb (12) 
+Equation 12 shows that normalized pairwise LCS 
+as defined in Radev et al. (2002) and impl emented 
+in MEAD is also a F -measure with ß = 1. Sentence -
+level normalized pairwise LCS is the same as 
+ROUGE -L with ß = 1. Besides setting ß = 1, su m-
+mary -level normalized pairwise LCS is di fferent 
+from ROUGE -L in how a sentence gets its LCS score 
+from its references. Normalized pai rwise LCS takes 
+
+=== Page 4 ===
+the best LCS score while ROUGE -L takes the union 
+LCS score.  
+4 ROUGE -W: Weighted Longest Common Su b-
+sequence  
+LCS has many nice properties as we have d escribed 
+in the previous sections. Unfortunately, the basic 
+LCS also has a problem that it does not di fferentiate 
+LCSes of different spatial relations within their e m-
+beddin g sequences. For example, given a reference 
+sequence X and two candidate sequences Y1 and Y2 
+as follows:  
+ 
+X:  [A B C D E F G]  
+Y1: [A B C D H I K]  
+Y2:  [A H B K C I D] 
+ 
+Y1 and Y2 have the same ROUGE -L score. Ho w-
+ever, in this case, Y1 should be the better ch oice than 
+Y2 because Y1 has consecutive matches. To improve 
+the basic LCS method, we can simply r emember the 
+length of consecutive matches encou ntered so far to 
+a regular two dimensional dynamic program table 
+computing LCS. We call this weighted LCS 
+(WLCS)  and use k to indicate the length of the cu r-
+rent consecutive matches ending at words xi and yj. 
+Given two se ntences X and Y, the WLCS score of X 
+and Y can be computed using the following dynamic 
+programming procedur e: 
+ 
+(1) For ( i = 0; i <=m; i++) 
+        c(i,j) = 0  // initialize c -table  
+        w(i,j) = 0 // initialize w -table  
+(2) For ( i = 1; i <= m; i++) 
+        For (j = 1; j <= n; j++) 
+          If xi = yj Then  
+     // the length of consecutive matches at  
+     // position i -1 and j -1 
+     k = w(i-1,j-1) 
+     c(i,j) = c(i-1,j-1) + f(k+1) – f(k) 
+     // remember the length of consecutive  
+     // matches at position i, j  
+     w(i,j) = k+1 
+          Otherwise  
+     If c(i-1,j) > c(i,j-1) Then  
+    c(i,j) = c(i-1,j) 
+    w(i,j) = 0           // no match at i , j 
+     Else c(i,j) = c(i,j-1) 
+     w(i,j) = 0           // no match at  i, j 
+(3) WLCS (X,Y) = c(m,n) 
+ 
+Where c is the dynamic programming table, c(i,j) 
+stores the WLCS score ending at word xi of X and yj 
+of Y, w is the table storing the length of consec utive 
+matches ended at c table position i and j, and f is a 
+function of consecutive matches at the table pos i-tion, c(i,j). Notice that by providing di fferent 
+weighting function f, we can parameterize the 
+WLCS algorithm to assign different credit to co n-
+secutive in -sequence matches.  
+The weighting function f must have the pro perty 
+that f(x+y) > f(x) + f(y) for any positive int egers x 
+and y. In other words, co nsecutive matches are 
+awarded more scores than non -consecutive matches. 
+For e xample, f(k)-=-ak – b when  k >= 0,  and a, b > 
+0. This function charges a gap pe nalty of –b for 
+each non -consecutive n -gram sequences. Another 
+possible fun ction family is the polynomial family of 
+the form ka where -a > 1. However, in order to 
+norma lize the final ROUGE -W score, we also prefe r 
+to have a function that has a close form inverse 
+function. For example, f(k)-=-k2 has a close form 
+inverse function f -1(k)-=-k1/2. F-measure based on 
+WLCS can be computed as follows, given two s e-
+quences X of length m and Y of length n: 
+Rwlcs  
+
+
+=−
+)(),( 1
+mfYX WLCSf       (13)  
+Pwlcs  
+
+
+=−
+)(),( 1
+nfYX WLCSf       (14)  
+Fwlcs  
+wlcs wlcswlcs wlcs
+P RPR
+22) 1(
+bb
+++=           (15)  
+ 
+Where f -1 is the inverse function of f. In DUC, ß is 
+set to a very big number ( ? 8) . Ther efore, only 
+Rwlcs  is co nsidered. We call the WLCS -based F -
+measure, i.e. Equation 15, ROUGE -W. Using Equ a-
+tion 15 and f(k)-=-k2 as the weighting fun ction, the 
+ROUGE -W scores for s equences Y1 and Y2 are 0.571 
+and 0.286  respe ctively. Therefore, Y1 would be 
+ranked higher than Y2 using WLCS. We use the 
+polynomial fun ction of the form ka in the ROUGE  
+evaluation package. In the next section, we intr o-
+duce the skip -bigram co -occurrence stati stics. 
+5 ROUGE -S: Skip -Bigram Co -Occur rence St a-
+tistics  
+Skip-bigram is any pair of words in their se ntence 
+order, allowing for arbitrary gaps. Skip -bigram co -
+occurrence statistics measure the ove rlap of skip -
+bigrams between a candidate transl ation and a set of 
+reference translations. Using the example given in 
+Section 3.1:  
+ 
+S1. police killed the gu nman 
+S2. police kill the gu nman 
+S3. the gunman kill p olice 
+S4. the gunman police killed  
+
+=== Page 5 ===
+each sentence has C(4,2)1 = 6 skip -bigrams. For e x-
+ample, S1 has the following skip -bigrams:  
+(“police killed ”, “police the ”, “police gunman ”, 
+“killed the ”, “killed gunman ”, “the gu nman”)  
+S2 has three skip -bigram matches with S1 (“ po-
+lice the ”, “police gunman ”, “the gunman ”), S3 has 
+one skip -bigram match with S1 (“ the gu nman”), and 
+S4 has two skip -bigram matches with S1 (“ police 
+killed”, “the gunman ”).  Given tran slations X of 
+length m and Y of length  n, assuming X is a refe r-
+ence translation and Y is a candidate translation, we 
+compute skip -bigram -based F -measure as fo llows:  
+Rskip2  
+)2,(),(2
+mCYX SKIP=           (16)  
+Pskip2  
+)2,(),(2
+nCYX SKIP=           (17)  
+Fskip2  
+22
+22 22
+) 1(
+skip skipskip skip
+P RP R
+bb
+++=   (18)  
+ 
+Where SKIP2 (X,Y) is the number of skip -bigram 
+matches between X and Y, ß controlling the relative 
+importance of  Pskip2  and Rskip2 , and  C is the comb i-
+nation fun ction. We call the skip -bigram -based F -
+measure, i.e. Equ ation 18, ROUGE -S. 
+Using Equation 18 with ß = 1 and S1 as the ref er-
+ence, S2’s ROUGE -S score is 0.5, S3 is 0.167 , and 
+S4 is 0.333. Therefore, S2 is better than S3 and S4, 
+and S4 is better than S3. This result is more intu itive 
+than using BLEU -2 and ROUGE -L. One adva ntage of 
+skip-bigram vs. BLEU  is that it does not require co n-
+secutive matches but is still sens itive t o word order. 
+Comparing skip -bigram with LCS, skip -bigram 
+counts all in -order matching word pairs while LCS 
+only counts one longest common subs equence.  
+Applying skip -bigram without any constraint on 
+the distance between the words, spurious matches 
+such as “the the ” or “ of in ” might be counted as 
+valid matches. To reduce these spur ious matches, 
+we can limit the maximum skip distance, dskip, be-
+tween two in -order words that is allowed to form a 
+skip-bigram. For exa mple, if we set dskip to 0 then 
+ROUGE -S is equ ivalent to bigram overlap F -
+measure. If we set dskip to 4 then only word pairs of 
+at most 4 words apart can form skip -bigrams.  
+Adjusting Equations 16, 17, and 18 to use max i-
+mum skip distance limit is straightforward: we only 
+count the skip -bigram matches, SKIP2 (X,Y), within 
+the maximum skip distance and replace denomin a-
+tors of Equations 16, C(m,2), and 17, C(n,2), with 
+the actual numbers of within distance skip -bigrams 
+from the reference and the candidate respe ctively.  
+ 
+                                                                 
+1 C(4,2) = 4!/(2!*2!) = 6.  5.1 ROUGE -SU: Extension  of ROUGE -S 
+One po tential problem for ROUGE -S is that it does 
+not give any credit to a candidate sentence if the 
+sentence does not have any word pair co -occurring 
+with its references.  For example, the following se n-
+tence  has a ROUGE -S score of zero : 
+ 
+S5. gunman the killed police  
+ 
+S5 is the exact reverse of S1 and there is no skip 
+bigram match between them.  However, we would 
+like to differentiate sentences similar to S5 from 
+sentences that do not have single word co-
+occurrence with S1.  To achieve this, we extend 
+ROUGE -S with the addition of  unigram as counting 
+unit. The extended version is called ROUGE -SU. We 
+can also obtain  ROUGE -SU from ROUGE -S by add-
+ing a b egin-of-sentence marker at the beginning  of 
+candidate and reference  sentences.  
+6 Evaluations of ROUGE  
+To assess the effectiven ess of ROUGE  measures, we 
+comp ute the correlation between ROUGE  assigned 
+summary scores and human assigned su mmary 
+scores.  The intuition is that a good evaluation mea s-
+ure should assign a good score to a good summary  
+and a bad score  to a bad su mmary. The gr ound truth 
+is based on human assigned scores.  Acquiring h u-
+man judgments are usually very expensive; fort u-
+nately, w e have DUC 2001, 2002, and 2003 
+evaluation data  that include  human judgment s for 
+the fo llowing : 
+• Single  document summaries of about 100 
+words : 12 systems 2 for DUC 2001 and 14 sy s-
+tems for 2002. 149 single docu ment summaries 
+were judged  per system in  DUC  2001 and 295 
+were judged in DUC 2002 . 
+• Single document very short summaries of about 
+10 words (headline -like, keywords, or phrases) : 
+14 systems for  DUC 2003 . 624 very short su m-
+maries were judged per system in DUC 2003.  
+• Multi -document summaries of about 10 words: 
+6 systems for DUC 2002 ; 50 words: 14 sy stems 
+for DUC 2001 and 10 systems for DUC 2002; 
+100 words: 14 systems for DUC 2001, 10 sys-
+tems for DU C 2002, and 18 systems for DUC 
+2003; 200 words: 14 systems for DUC 2001 and 
+10 systems for DUC 2002 ; 400 words: 14 sy s-
+tems for  DUC 2001 . 29 summ aries were judged 
+per system per summary size in DUC 2001, 59 
+were judged in DUC 2002, and 30 were judged 
+in DUC  2003.  
+                                                                 
+2 All systems includ e 1 or 2 baselines. Please see DUC 
+website for details.  
+
+=== Page 6 ===
+Besides these human judgments, we also have 3 sets 
+of manual summaries for DUC 2001, 2 sets for 
+DUC 2002, and 4 sets for DUC 2003.  Human 
+judges assigned content coverage scores to a cand i-
+date summary by examining the percentage of co n-
+tent overlap be tween a manual summary unit, i.e. 
+elementary discourse unit or sentence, and the ca n-
+didat e summary using Summary Evaluation Env i-
+ronment 3 (SEE) developed by  the Un iversity of 
+Southern California’s Information Sciences I nstitute  
+(ISI). The overall candidate  summary score is the 
+average of the content co verage score s of all the 
+units in the  manual su mmary.  Note that human 
+judges used only one manual summary in all the 
+evaluations although multiple alternative summ aries 
+were available.  
+With the DUC data, we computed Pearson’s 
+product moment correlation coefficient s, Spea r-
+man’s rank order correlation coefficient s, and 
+Kendall’s correlation coefficient s between systems’ 
+average  ROUGE  scores an d their human a ssigned 
+average coverage scores using single reference  and 
+multiple references.  To investigate the effect of 
+stemming and inclusion or exclusion of stopwords, 
+we also ran experiments over orig inal automatic  and 
+                                                                 
+3 SEE is available online at http://www.isi.edu/~cyl.  manual summaries (CASE  set), stemmed 4 version of 
+the summaries (STEM  set), and stopped  version of 
+the summaries (STOP set). For example, we co m-
+puted ROUGE  scores for the 12 sy stems participated 
+in the DUC 2001 single document summarization 
+evaluation using the CASE set with single refe rence 
+and then calculated the three correl ation scores for 
+these 12 s ystems’ ROUGE  scores vs. human assigned 
+average cove rage scores.  After that w e repeated the 
+process us ing multiple refe rences and then using 
+STEM and STOP sets.  Therefore, 2 (multi or single) 
+x 3 (CASE, STEM, or STOP) x 3 (Pearson, Spea r-
+man, or Kendall) = 18 data points were c ollected for 
+each ROUGE  measure and each DUC task.  To assess 
+the significance of the results, we applied bootstrap 
+resampling technique (Davison and Hinkley , 1997) 
+to estimate 95% confidence intervals for every co r-
+relation computation . 
+17 ROUGE  measures were tested for each run  us-
+ing ROUGE  evaluation package v1.2.1 : ROUGE -N  
+with N = 1 to 9, R OUGE-L, ROUGE -W with 
+weighting factor a  = 1.2, ROUGE -S and ROUGE -SU 
+with max imum skip distance  dskip = 1, 4, and 9.  Due 
+to limitation of space, we  only report correlation 
+analysis results based on Pearson’s co rrelation coe f-
+ficient.  Correlation analyses based on Spea rman’s 
+and Kendall’s corr elation coefficients are tracking 
+Pearson’s very closely and will be posted later at the 
+ROUGE  website 5 for ref erence.  The critical value 6 
+for Pearson’s correl ation is 0.632  at 95% confidence  
+with 8 degrees of fre edom.  
+Table 1 shows the Pearson’s correlation coeff i-
+cients of the 17 ROUGE  measures vs. human judg-
+ments on DUC 2001 and 2002 100 word s single 
+document sum marization data . The best values in 
+each column are marked with dark  (green) color and 
+statistically equivalent values to the best va lues are 
+mark ed with gray.  We found that correl ations were 
+not affected by stemming or removal of stopwords  
+in this data se t, ROUGE -2 performed be tter among 
+the ROUGE -N variants, ROUGE -L, ROUGE -W, and 
+ROUGE -S were all performing well, and using mu l-
+tiple references improved pe rformance though not 
+much.  All ROUGE  measures achieved very good 
+correlation with human jud gments in th e DUC 2002 
+data. This might due to the double sa mple size in 
+DUC 2002 (295 vs. 149 in DUC 2001) for each sy s-
+tem. 
+Table 2  shows the cor relation analysis results on 
+the DUC 2003 single document very short su mmary  
+data.  We found that ROUGE -1, ROUGE -L, ROUGE -
+                                                                 
+4 Porter’s stemmer was used.  
+5 ROUGE  website: http://www.isi.edu/~cyl/ROUGE.  
+6 The critical  values for Pearson’s correlation at 95% 
+confidence wit h 10, 12, 14, and 16 degrees of freedom 
+are 0.576, 0.532, 0.497, and 0.468 respe ctively.  Method CASE STEM STOP CASE STEM STOP CASE STEM STOP CASE STEM STOP
+R-1 0.76 0.76 0.84 0.80 0.78 0.84 0.98 0.98 0.99 0.98 0.98 0.99
+R-2 0.84 0.84 0.83 0.87 0.87 0.86 0.99 0.99 0.99 0.99 0.99 0.99
+R-3 0.82 0.83 0.80 0.86 0.86 0.85 0.99 0.99 0.99 0.99 0.99 0.99
+R-4 0.81 0.81 0.77 0.84 0.84 0.83 0.99 0.99 0.98 0.99 0.99 0.99
+R-5 0.79 0.79 0.75 0.83 0.83 0.81 0.99 0.99 0.98 0.99 0.99 0.98
+R-6 0.76 0.77 0.71 0.81 0.81 0.79 0.98 0.99 0.97 0.99 0.99 0.98
+R-7 0.73 0.74 0.65 0.79 0.80 0.76 0.98 0.98 0.97 0.99 0.99 0.97
+R-8 0.69 0.71 0.61 0.78 0.78 0.72 0.98 0.98 0.96 0.99 0.99 0.97
+R-9 0.65 0.67 0.59 0.76 0.76 0.69 0.97 0.97 0.95 0.98 0.98 0.96
+R-L 0.83 0.83 0.83 0.86 0.86 0.86 0.99 0.99 0.99 0.99 0.99 0.99
+R-S* 0.74 0.74 0.80 0.78 0.77 0.82 0.98 0.98 0.98 0.98 0.97 0.98
+R-S4 0.84 0.85 0.84 0.87 0.88 0.87 0.99 0.99 0.99 0.99 0.99 0.99
+R-S9 0.84 0.85 0.84 0.87 0.88 0.87 0.99 0.99 0.99 0.99 0.99 0.99
+R-SU* 0.74 0.74 0.81 0.78 0.77 0.83 0.98 0.98 0.98 0.98 0.98 0.98
+R-SU4 0.84 0.84 0.85 0.87 0.87 0.87 0.99 0.99 0.99 0.99 0.99 0.99
+R-SU9 0.84 0.84 0.85 0.87 0.87 0.87 0.99 0.99 0.99 0.99 0.99 0.99
+R-W-1.2 0.85 0.85 0.85 0.87 0.87 0.87 0.99 0.99 0.99 0.99 0.99 0.99DUC 2001 100 WORDS SINGLE DOC DUC 2002 100 WORDS SINGLE DOC
+1 REF 3 REFS 1 REF 2 REFS
+Table  1: Pearson’s correlations of 17 ROUGE
+measure scores vs. human judgments for the DUC 
+2001 and 2002 100 words single documen t sum-
+mariz ation tasks  
+1 REF 4REFS 1 REF 4 REFS 1 REF 4 REFS
+Method
+R-1 0.96 0.95 0.95 0.95 0.90 0.90
+R-2 0.75 0.76 0.75 0.75 0.76 0.77
+R-3 0.71 0.70 0.70 0.68 0.73 0.70
+R-4 0.64 0.65 0.62 0.63 0.69 0.66
+R-5 0.62 0.64 0.60 0.63 0.63 0.60
+R-6 0.57 0.62 0.55 0.61 0.46 0.54
+R-7 0.56 0.56 0.58 0.60 0.46 0.44
+R-8 0.55 0.53 0.54 0.55 0.00 0.24
+R-9 0.51 0.47 0.51 0.49 0.00 0.14
+R-L 0.97 0.96 0.97 0.96 0.97 0.96
+R-S* 0.89 0.87 0.88 0.85 0.95 0.92
+R-S4 0.88 0.89 0.88 0.88 0.95 0.96
+R-S9 0.92 0.92 0.92 0.91 0.97 0.95
+R-SU* 0.93 0.90 0.91 0.89 0.96 0.94
+R-SU4 0.97 0.96 0.96 0.95 0.98 0.97
+R-SU9 0.97 0.95 0.96 0.94 0.97 0.95
+R-W-1.2 0.96 0.96 0.96 0.96 0.96 0.96DUC 2003 10 WORDS SINGLE DOC
+CASE STEM STOP
+Table 2 : Pearson’s correlations of 17 ROUGE
+measure scores vs. human judgments for the D UC 
+2003 very short summary task  
+
+=== Page 7 ===
+SU4 and 9, and ROUGE -W were very good measures  
+in this cat egory, ROUGE -N with N > 1 performed 
+significantly worse than all other measures, and e x-
+clusion of stopwords improved performance in ge n-
+eral except for ROUGE -1. Due to the large number 
+of samples (624 ) in this data set, using multiple re f-
+erences did not improve correl ations.  
+In Table 3 A1, A2, and A3, we show correlation 
+analysis results on DUC 2001, 2002, and 2003 100 
+words multi -document summarization data.  The 
+results indicated that using multiple r eferences i m-
+proved correlation and exclusion of stopwords us u-
+ally improved performance. ROUGE -1, 2, and 3 
+performed fine but were not consistent.  ROUGE -1, 
+ROUGE -S4, ROUGE -SU4, ROUGE -S9, and ROUGE -
+SU9 with stopword r emoval ha d correlation above 
+0.70. ROUGE -L and ROUGE -W did not work well in 
+this set of data.  
+Table 3 C, D1, D2, E1, E2, and F show  the corr e-
+lation analyses using  multiple refe rences on the rest 
+of DUC data.  These results again suggested that 
+exclusion of stopwords achieved better pe rformance 
+especially in multi -document summaries of 50 
+words.  Better correlations (> 0.70) were o bserved 
+on long summary tasks, i.e. 200 and 400 words 
+summaries.  The relative performance of ROUGE  
+measures followed the pa ttern of the 100 words 
+multi -document summarizat ion task.  
+Comparing the results in Table 3 with Table s 1 
+and 2, we found that correlation values in the multi -
+document tasks rarely reached high 90% e xcept in 
+long summary tasks.  One possible explan ation of 
+this outcome is that we did not have large  amoun t of 
+samples for the multi -document task s. In the single 
+document summariz ation tasks we had over 100 samples; while we only had about 30 sam ples in the 
+multi -document tasks.  The only task s that had over 
+30 samples was from DUC 2002 and the correl a-
+tions of  ROUGE  measures with human judgments on 
+the 100 words summary task were much better and 
+more stable than similar tasks in DUC 2001 and 
+2003.  Statistically stable human judgments of sy s-
+tem pe rformance might not be obtained due to lack 
+of samples  and this in  turn caused instability  of co r-
+relation analyses.  
+7 Conclusions  
+In this paper , we introduced ROUGE , an automatic 
+evaluatio n package for summarization, and co n-
+ducted comprehensive evaluations of the automatic 
+measures included in the ROUGE  package using 
+three  years of DUC data.  To check the significance 
+of the results, we estimated co nfidence intervals of 
+correlations using bootstrap resampling. We found 
+that (1) ROUGE -2, ROUGE -L, ROUGE -W, and 
+ROUGE -S worked well in single document summ a-
+rization tasks,  (2) ROUGE-1, ROUGE -L, ROUGE -W, 
+ROUGE -SU4, and ROUGE -SU9 performed great in 
+evalua ting very short summaries (or headline -like 
+summ aries), (3) correlation of high 90% was hard to 
+achieve for multi -document summarization task s but 
+ROUGE -1, ROUGE -2, ROUGE -S4, ROUGE -S9, 
+ROUGE -SU4, and ROUGE -SU9 worked reason ably 
+well when stopwords were exc luded from matc hing, 
+(4) exclusion of  stopwords usually improved corr e-
+lation, and (5) correlations to human jud gments 
+were increased by using multiple references.  
+In summary, we sho wed that the ROUGE  package 
+could be used effectively in automatic evalu ation of 
+summaries.  In a separate study (Lin and Och , 2004), Method CASE STEM STOP CASE STEM STOP CASE STEM STOP CASE STEM STOP CASE STEM STOP CASE STEM STOP
+R-1 0.48 0.56 0.86 0.53 0.57 0.87 0.66 0.66 0.77 0.71 0.71 0.78 0.58 0.57 0.71 0.58 0.57 0.71
+R-2 0.55 0.57 0.64 0.59 0.61 0.71 0.83 0.83 0.80 0.88 0.87 0.85 0.69 0.67 0.71 0.79 0.79 0.81
+R-3 0.46 0.45 0.47 0.53 0.53 0.55 0.85 0.84 0.76 0.89 0.88 0.83 0.54 0.51 0.48 0.76 0.75 0.74
+R-4 0.39 0.39 0.43 0.48 0.49 0.47 0.80 0.80 0.63 0.83 0.82 0.75 0.37 0.36 0.36 0.62 0.61 0.52
+R-5 0.38 0.39 0.33 0.47 0.48 0.43 0.73 0.73 0.45 0.73 0.73 0.62 0.25 0.25 0.27 0.45 0.44 0.38
+R-6 0.39 0.39 0.20 0.45 0.46 0.39 0.71 0.72 0.38 0.66 0.64 0.46 0.21 0.21 0.26 0.34 0.31 0.29
+R-7 0.31 0.31 0.17 0.44 0.44 0.36 0.63 0.65 0.33 0.56 0.53 0.44 0.20 0.20 0.23 0.29 0.27 0.25
+R-8 0.18 0.19 0.09 0.40 0.40 0.31 0.55 0.55 0.52 0.50 0.46 0.52 0.18 0.18 0.21 0.23 0.22 0.23
+R-9 0.11 0.12 0.06 0.38 0.38 0.28 0.54 0.54 0.52 0.45 0.42 0.52 0.16 0.16 0.19 0.21 0.21 0.21
+R-L 0.49 0.49 0.49 0.56 0.56 0.56 0.62 0.62 0.62 0.65 0.65 0.65 0.50 0.50 0.50 0.53 0.53 0.53
+R-S* 0.45 0.52 0.84 0.51 0.54 0.86 0.69 0.69 0.77 0.73 0.73 0.79 0.60 0.60 0.67 0.61 0.60 0.70
+R-S4 0.46 0.50 0.71 0.54 0.57 0.78 0.79 0.80 0.79 0.84 0.85 0.82 0.63 0.64 0.70 0.73 0.73 0.78
+R-S9 0.42 0.49 0.77 0.53 0.56 0.81 0.79 0.80 0.78 0.83 0.84 0.81 0.65 0.65 0.70 0.70 0.70 0.76
+R-SU* 0.45 0.52 0.84 0.51 0.54 0.87 0.69 0.69 0.77 0.73 0.73 0.79 0.60 0.59 0.67 0.60 0.60 0.70
+R-SU4 0.47 0.53 0.80 0.55 0.58 0.83 0.76 0.76 0.79 0.80 0.81 0.81 0.64 0.64 0.74 0.68 0.68 0.76
+R-SU9 0.44 0.50 0.80 0.53 0.57 0.84 0.77 0.78 0.78 0.81 0.82 0.81 0.65 0.65 0.72 0.68 0.68 0.75
+R-W-1.2 0.52 0.52 0.52 0.60 0.60 0.60 0.67 0.67 0.67 0.69 0.69 0.69 0.53 0.53 0.53 0.58 0.58 0.58
+Method CASE STEM STOP CASE STEM STOP CASE STEM STOP CASE STEM STOP CASE STEM STOP CASE STEM STOP
+R-1 0.71 0.68 0.49 0.49 0.49 0.73 0.44 0.48 0.80 0.81 0.81 0.90 0.84 0.84 0.91 0.74 0.73 0.90
+R-2 0.82 0.85 0.80 0.43 0.45 0.59 0.47 0.49 0.62 0.84 0.85 0.86 0.93 0.93 0.94 0.88 0.88 0.87
+R-3 0.59 0.74 0.75 0.32 0.33 0.39 0.36 0.36 0.45 0.80 0.80 0.81 0.90 0.91 0.91 0.84 0.84 0.82
+R-4 0.25 0.36 0.16 0.28 0.26 0.36 0.28 0.28 0.39 0.77 0.78 0.78 0.87 0.88 0.88 0.80 0.80 0.75
+R-5 -0.25 -0.25 -0.24 0.30 0.29 0.31 0.28 0.30 0.49 0.77 0.76 0.72 0.82 0.83 0.84 0.77 0.77 0.70
+R-6 0.00 0.00 0.00 0.22 0.23 0.41 0.18 0.21 -0.17 0.75 0.75 0.67 0.78 0.79 0.77 0.74 0.74 0.63
+R-7 0.00 0.00 0.00 0.26 0.23 0.50 0.11 0.16 0.00 0.72 0.72 0.62 0.72 0.73 0.74 0.70 0.70 0.58
+R-8 0.00 0.00 0.00 0.32 0.32 0.34 -0.11 -0.11 0.00 0.68 0.68 0.54 0.71 0.71 0.70 0.66 0.66 0.52
+R-9 0.00 0.00 0.00 0.30 0.30 0.34 -0.14 -0.14 0.00 0.64 0.64 0.48 0.70 0.69 0.59 0.63 0.62 0.46
+R-L 0.78 0.78 0.78 0.56 0.56 0.56 0.50 0.50 0.50 0.81 0.81 0.81 0.88 0.88 0.88 0.82 0.82 0.82
+R-S* 0.83 0.82 0.69 0.46 0.45 0.74 0.46 0.49 0.80 0.80 0.80 0.90 0.84 0.85 0.93 0.75 0.74 0.89
+R-S4 0.85 0.86 0.76 0.40 0.41 0.69 0.42 0.44 0.73 0.82 0.82 0.87 0.91 0.91 0.93 0.85 0.85 0.85
+R-S9 0.82 0.81 0.69 0.42 0.41 0.72 0.40 0.43 0.78 0.81 0.82 0.86 0.90 0.90 0.92 0.83 0.83 0.84
+R-SU* 0.75 0.74 0.56 0.46 0.46 0.74 0.46 0.49 0.80 0.80 0.80 0.90 0.84 0.85 0.93 0.75 0.74 0.89
+R-SU4 0.76 0.75 0.58 0.45 0.45 0.72 0.44 0.46 0.78 0.82 0.83 0.89 0.90 0.90 0.93 0.84 0.84 0.88
+R-SU9 0.74 0.73 0.56 0.44 0.44 0.73 0.41 0.45 0.79 0.82 0.82 0.88 0.89 0.89 0.92 0.83 0.82 0.87
+R-W-1.2 0.78 0.78 0.78 0.56 0.56 0.56 0.51 0.51 0.51 0.84 0.84 0.84 0.90 0.90 0.90 0.86 0.86 0.86(A1) DUC 2001 100 WORDS MULTI (A2) DUC 2002 100 WORDS MULTI (A3) DUC 2003 100 WORDS MULTI
+1 RFF 3 REFS 1 REF 2 REFS 1 REF 4 REFS
+(E2) DUC02 200 (F) DUC01 400 (C) DUC02 10 (D1) DUC01 50 (D2) DUC02 50 (E1) DUC01 200
+Table 3:  Pearson’s correla tions of 17 ROUGE  measure scores vs. human judgments for 
+the DUC 2001, 2002, and 2003 mul ti-document summarization tasks  
+
+=== Page 8 ===
+ROUGE -L, W, and S were also shown to be very 
+effective  in automatic  evaluation of machine 
+translation. The stability and rel iability of ROUGE  at 
+different sample sizes was reported by the author in 
+(Lin, 2004). However, how to achieve high correl a-
+tion with human judgments in multi -document 
+summarization tasks as ROUGE  already did in single 
+document summarization tasks is still an open r e-
+search topic.  
+8  Acknowledgements  
+The author would like to thank the anonymous r e-
+viewers  for their constructive comments, Paul Over 
+at NIST , U.S.A , and ROUGE  users around the world  
+for testing and providing useful feedback on ea rlier 
+version s of the  ROUGE  evaluation package, and the 
+DARPA TIDES project for supporting this r esearch.  
+References  
+ 
+Cormen, T. R., C. E. Leiserson, and R. L. Rivest. 
+1989. Introduction to Algorithms . The MIT Press.  
+Davison, A. C. and D. V. Hinkley. 1997. Bootstrap 
+Methods an d Their Application . Cambridge Un i-
+versity Press.  
+Lin, C. -Y. and E.  H. Hovy . 2003. Automatic e valua-
+tion of summaries u sing n-gram co-occurrence 
+statistics. In Proceedings of 2003 Language 
+Technology Confe rence (HLT -NAACL 2003), 
+Edmonton, Ca nada. 
+Lin, C. -Y. 2004. Looking for a f ew good metrics: 
+ROUGE  and its evaluation. In Proceedings of 
+NTCIR Workshop 2004 , Tokyo, Japan.  
+Lin, C. -Y. and F.  J. Och. 2004.  Automatic evalua-
+tion of machine t ranslation quality using longest 
+common subsequence and skip-bigram s tatistics. 
+In Procee dings of 42nd Annual Meeting of ACL  
+(ACL 200 4), Barcelona , Spain. 
+Mani, I. 200 1. Automatic Summarization . John Be n-
+jamins Pu blishing Co.  
+Melamed, I. D.  1995. Automatic evaluation and un i-
+form f ilter cascades for inducing n-best transla-
+tion lexicons. In Proceedings of the 3rd Workshop 
+on Very Large Corpora (WVLC3) . Boston, 
+U.S.A.  
+Melamed, I. D., R. Green and J. P. Turian (2003). 
+Precision and recall of machine t ranslation . In 
+Procee dings of 2003 Language Technology Co n-
+ference  (HLT -NAA CL 2003), Edmonton, Ca n-
+ada. 
+Over, P. and J. Yen. 2003. An i ntrod uction to DUC 
+2003 – Intrinsic e valuation of generic news text 
+summariz ation s ystems.  AAAAAAAAAA                                http://www -nlpir.nist.gov/projects/duc/pubs/ 
+2003slides/duc2003in tro.pdf  
+Papineni, K., S. Roukos, T. Ward, and W. -J. Zhu. 
+2001. BLEU : A method for automatic evaluation 
+of machine translation . IBM Research Report 
+RC22176 (W0109 -022). 
+Saggion H., D. Radev, S. Teufel, and W. Lam. 
+2002. Meta -evaluation of summaries in a c ross-
+lingual env ironment using c ontent -based m etrics. 
+In Procee dings of COLING -2002 , Taipei, Ta i-
+wan.  
+Radev,  D.  S. Teufel, H. Saggion, W. Lam, J. Bli t-
+zer, A. Gelebi, H. Qi, E. Drabek, and D. Liu. 
+2002. Evalu ation of Text Summarization in a 
+Cross -Lingual Info rmation Retrieval Framework . 
+Technical report, Center for Language and 
+Speech Processing, Johns Hopkins University, 
+Baltimore, MD, USA.  
+Van Rijsbergen, C.  J. 1979. Information Retrieval . 
+Butterworths. London.  

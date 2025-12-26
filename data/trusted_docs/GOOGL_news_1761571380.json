@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761571380,
+  "headline": "BrokerListings Publishes New Analysis of 1,000 Broker Complaints and Reveals Key Pain Points Amongst Traders",
+  "summary": "BrokerListings.com has published its Broker Complaints Report 2025 – an analysis of approximately 1,000 one- and two-star user reviews for 10 well-known brokerages.",
+  "url": "https://finnhub.io/api/news?id=0860faf986323673052c4eee0567c9ebca893cb4d8a32e516a399ba738076789"
+}

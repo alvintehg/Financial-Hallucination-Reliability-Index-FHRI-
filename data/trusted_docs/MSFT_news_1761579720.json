@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761579720,
+  "headline": "Microsoft Before Q1 Earnings: Should Investors Buy the Stock?",
+  "summary": "MSFT's Q1 FY2026 results are expected to reflect strong Azure growth and AI momentum. Robust cloud demand, Copilot adoption support buy rating despite premium valuation.",
+  "url": "https://finnhub.io/api/news?id=217ead1b53f254d0ef2eb75f6950c6ba38a8129021f256e7e0b42febd421a51d"
+}

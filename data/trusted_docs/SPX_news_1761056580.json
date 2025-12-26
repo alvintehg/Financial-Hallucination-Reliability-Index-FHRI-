@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "SPX",
+  "source": "SeekingAlpha",
+  "datetime": 1761056580,
+  "headline": "Business Conditions Monthly August 2025",
+  "summary": "Consumer confidence softened in September and early October as Americans grew less optimistic about inflation and the labor market.",
+  "url": "https://finnhub.io/api/news?id=5af53673e265cff9760f996c787169b9b23529d4a2a1293c1df677907a4b1f5b"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757085822,
+  "headline": "Stock Market Hits New Highs On Google, Broadcom, Jobs Report: Weekly Review",
+  "summary": "The Dow Jones, S&P 500 and Nasdaq hit record highs Friday, buoyed by Google, Broadcom and the monthly jobs report.",
+  "url": "https://finnhub.io/api/news?id=da0577ce2a0192db630e5acca2bca7493c8fe8e9f6e0fc4776695fb10159b2e6"
+}

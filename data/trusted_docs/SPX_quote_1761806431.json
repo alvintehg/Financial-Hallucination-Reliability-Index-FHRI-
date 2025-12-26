@@ -1,0 +1,15 @@
+{
+  "type": "quote",
+  "ticker": "SPX",
+  "datetime": 1761806431,
+  "quote": {
+    "c": 0,
+    "d": null,
+    "dp": null,
+    "h": 0,
+    "l": 0,
+    "o": 0,
+    "pc": 0,
+    "t": 0
+  }
+}

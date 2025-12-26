@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "MarketWatch",
+  "datetime": 1761140640,
+  "headline": "Dow's 450-point fall led by losses for shares of Caterpillar, Apple",
+  "summary": "Dow's 450-point fall led by losses for shares of Caterpillar, Apple",
+  "url": "https://finnhub.io/api/news?id=180a28abca4d3bc9ae49a991624ea86c864841fb128606ca8bc3721e27b67c73"
+}

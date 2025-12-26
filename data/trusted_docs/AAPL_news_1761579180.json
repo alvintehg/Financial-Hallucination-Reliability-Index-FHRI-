@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761579180,
+  "headline": "Major candy company files Chapter 11 bankruptcy in Halloween week",
+  "summary": "The retail sector has battled a variety of economic challenges this year that have resulted in a decline in revenues for certain companies and financial distress. Retailers have often blamed higher costs of labor and products driven by rising inflation, increased interest rates on their debt ...",
+  "url": "https://finnhub.io/api/news?id=d38fb6f564832e2bc6e9c98647ced45981d5f09b176e15270e825a15d366ae0b"
+}

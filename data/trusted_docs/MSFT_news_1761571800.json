@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761571800,
+  "headline": "TeamDynamix Expands AI ITSM to Target Operational Efficiency and Faster IT Service Delivery",
+  "summary": "COLUMBUS, Ohio, October 27, 2025--TeamDynamix releases next wave of AI Agents for IT Service Management (ITSM) focused on reducing resolution time and improving response accuracy.",
+  "url": "https://finnhub.io/api/news?id=05bf14af1714f03334feed56ca1b9a6f6718ee5901e1a211a3e90e9b5c134b93"
+}

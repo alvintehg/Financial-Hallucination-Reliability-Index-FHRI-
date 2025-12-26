@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "TSLA",
+  "source": "Yahoo",
+  "datetime": 1757974018,
+  "headline": "Dow Jones Futures: Nvidia, Shopify, Uber In Buy Zones; Fed Meeting Next",
+  "summary": "Dow Jones Futures: Nvidia stock, Shopify and Uber are in buy zones Monday. The Fed's two-day policy meeting kicks off Tuesday.",
+  "url": "https://finnhub.io/api/news?id=81e9d12de53c28610e13547108504346906f253a065c607ea8a2bbce7b4cd1a3"
+}

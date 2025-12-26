@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761590706,
+  "headline": "New AI-powered anti-scam tool wins praise from UK fraud minister",
+  "summary": "Starling tool can scan images of items and ads on sites such as Facebook Marketplace, eBay, Vinted and Etsy",
+  "url": "https://finnhub.io/api/news?id=55c759cda5125025cce9f6152b340faa02b4885aeebb53ad1f793c0cb3bbaf4f"
+}

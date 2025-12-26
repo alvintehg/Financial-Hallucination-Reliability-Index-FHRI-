@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "MSFT",
+  "source": "Yahoo",
+  "datetime": 1761577090,
+  "headline": "Stock Market Today: Dow Up On U.S.-China Trade Hopes; These Rare Earth Stocks Plummet (Live Coverage)",
+  "summary": "The Dow Jones index popped on U.S.-China trade optimism. Nvidia stock and Tesla rallied. Rare earth stocks fell on the stock market today.",
+  "url": "https://finnhub.io/api/news?id=9e242f0262cf2e6e0899b1081e3fd361ba4bfb3afc396514f20a2c3003b387f3"
+}

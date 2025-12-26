@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1760964640,
+  "headline": "Will your spending habits change if Rachel Reeves hikes taxes?",
+  "summary": "As consumer confidence slumps, tax rises in the upcoming budget could lead to even lower household spending.",
+  "url": "https://finnhub.io/api/news?id=643ef40e3eea235de150b9a202de97509d0f84f321725c5491021b388e698006"
+}

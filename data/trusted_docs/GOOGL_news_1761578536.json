@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "GOOGL",
+  "source": "Yahoo",
+  "datetime": 1761578536,
+  "headline": "Why markets may not be in a bubble quite yet",
+  "summary": "It's a big week on Wall Street as five of the Magnificent Seven tech companies will be reporting earnings results: Meta Platforms (META), Microsoft (MSFT), Alphabet (GOOGL, GOOG), Amazon (AMZN), and Apple (AAPL). On top of all this, investors continue to chatter over whether an AI-fueled bubble is forming around markets (^DJI, ^IXIC, ^GSPC) or not. Goldman Sachs global head of energy strategy Peter Oppenheimer sits down with Market Catalysts host Julie Hyman to explain some of the market conditions that are not indicating a sign of a bubble just yet. To watch more expert insights and analysis on the latest market action, check out more Market Catalysts.",
+  "url": "https://finnhub.io/api/news?id=912954d01c1e0c61d25331945cd74a80f3fbae2204a864c2d9005ef3571b2a06"
+}

@@ -1,0 +1,1296 @@
+{
+  "evaluation_metadata": {
+    "backend_url": "http://localhost:8000",
+    "hallucination_threshold": 2.0,
+    "fhri_threshold": 0.7,
+    "total_samples": 29,
+    "evaluation_date": "2025-12-12 00:06:56"
+  },
+  "metrics": {
+    "hallucination": {
+      "precision": 0.8,
+      "recall": 0.16,
+      "f1_score": 0.2667,
+      "accuracy": 0.2414,
+      "true_positives": 4,
+      "false_positives": 1,
+      "false_negatives": 21,
+      "true_negatives": 3,
+      "support": 25
+    },
+    "accurate": {
+      "precision": 0.0833,
+      "recall": 0.6667,
+      "f1_score": 0.1481,
+      "accuracy": 0.2069,
+      "true_positives": 2,
+      "false_positives": 22,
+      "false_negatives": 1,
+      "true_negatives": 4,
+      "support": 3
+    },
+    "contradiction": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.9655,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "true_negatives": 28,
+      "support": 1
+    },
+    "overall": {
+      "accuracy": 0.2069,
+      "macro_f1": 0.1383,
+      "total_samples": 29,
+      "correct_predictions": 6
+    }
+  },
+  "confusion_matrix": {
+    "accurate": {
+      "accurate": 2,
+      "hallucination": 1
+    },
+    "hallucination": {
+      "accurate": 21,
+      "hallucination": 4
+    },
+    "contradiction": {
+      "accurate": 1
+    }
+  },
+  "detailed_results": [
+    {
+      "sample_id": "fhri_060",
+      "question": "What is market capitalization?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.791388750076294,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.794,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.627,
+        "C": 0.837
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "## Summary  \n\nMarket capitalization is the total market value of a company's outstanding shares.\n\n## Key Data  \n- **Formula**: Share price × Total outstanding shares\n- **Categories**:\n- Large-cap: $10B+\n- Mid-cap: $2B–$10B\n- Small-cap: <$2B\n- **Example**: MSFT at $420/share with 7.44B shares = $3.125T market cap\n\n## Analysis  \n- Reflects **investor sentiment** and company size.\n- Used to compare companies within the same sector.\n- Influences index weighting (e.g., S&P 500).\n\n## Recommendation  \n\n**Monitor** - Market cap trends indicate relative growth and sector dominance.  \n\n## Risks & Assumptions  \n- Doesn’t account for debt or cash reserves.\n- Volatile for small-cap stocks.\n- Assumes liquid markets for accurate pricing.\n\n## Sources  \n- [Investopedia: Market Capitalization](https://www.investopedia.com/terms/m/marketcapitalization.asp)\n- [SEC: Investor Bulletin](https://www.sec.gov/files/ib_marketcap.pdf)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_061",
+      "question": "What is the current stock price of Apple (AAPL)?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.790924310684204,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.983,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.793,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": {
+        "enabled": false,
+        "has_reference": false,
+        "has_answer_price": false,
+        "relative_error": null,
+        "is_mismatch": false
+      },
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe current stock price of Apple (AAPL) as of **2025-12-11 23:55:00 UTC** is **$275.68**.\n\n## Key Financial Metrics\n- **Price**: $275.68\n- **Day High**: $279.59\n- **Day Low**: $273.81\n- **Previous Close**: $278.78\n- **Change**: $-3.10 (-1.11%)\n\n## Context & Analysis\n- The stock price decreased by **1.11%** from the previous close.\n- The trading range for the day was between **$273.81** and **$279.59**.\n\n## Data Period & Sources\n- **Data Period**: Live as of 2025-12-11 23:55:00 UTC\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_062",
+      "question": "What is the dividend yield for Tesla?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": 1.7911113500595093,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.532,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.806,
+        "C": 0.837
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": {
+        "enabled": false,
+        "has_reference": false,
+        "has_answer_price": false,
+        "relative_error": null,
+        "is_mismatch": false
+      },
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "## Answer\n\nTesla (TSLA) does not currently pay a dividend, so its **dividend yield is 0%**.\n\n## Key Financial Metrics\n- **Revenue (TTM):** $95.63B\n- **Profit Margin:** 5.31%\n- **P/E Ratio:** 313.51\n\n## Context & Analysis\n- Tesla reinvests its earnings into growth initiatives (e.g., R&D, production scaling) rather than distributing dividends.\n- The high P/E ratio suggests investors prioritize future growth over current income.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_063",
+      "question": "Who is the CEO of Microsoft?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7912702560424805,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.81,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.713,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer  \n\nThe CEO of Microsoft is **Satya Nadella**.  \n\n## Context & Analysis  \n- While the name is not explicitly mentioned in the provided context, Satya Nadella has been Microsoft's CEO since 2014.\n- Recent news (2025-12-11) references the CEO's comments on AI and emotional intelligence, aligning with Nadella's leadership focus.\n\n## Data Period & Sources  \n- News source: [Yahoo](https://www.yahoo.com) (2025-12-11)\n- Historical leadership data: Public records.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_064",
+      "question": "Did Amazon acquire Walmart recently?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7912890911102295,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.948,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.806,
+        "C": 0.949
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary\n\nNo evidence of Amazon acquiring Walmart recently.\n\n## Key Data\n- **Price:** $229.90 (-0.81%)\n- **Volume:** N/A\n- **Timeframe:** As of 2025-12-11\n- **52-week range:** N/A\n\n## Analysis\n- No recent news or reports indicate an acquisition.\n- Both companies remain independent competitors.\n- Financial metrics show Amazon's strong market position.\n\n## Recommendation\n\n**Hold** - No acquisition-related activity justifies a change in position.\n\n## Risks & Assumptions\n- Assumes no undisclosed acquisition talks.\n- Market rumors could impact stock volatility.\n\n## Sources\n- [Yahoo Finance](https://finance.yahoo.com)\n- [Finnhub](https://finnhub.io)\n- [AlphaVantage](https://www.alphavantage.co)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_065",
+      "question": "What is the P/E ratio of Amazon?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": 1.7916841506958008,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.532,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.806,
+        "C": 0.837
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": {
+        "enabled": false,
+        "has_reference": false,
+        "has_answer_price": false,
+        "relative_error": null,
+        "is_mismatch": false
+      },
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "## Answer\n\nThe **P/E ratio** of Amazon (AMZN) is **32.78**.\n\n## Key Financial Metrics\n- **P/E Ratio**: 32.78\n- **Earnings per Share (EPS)**: $7.07\n- **Market Cap**: $2.48T\n\n## Context & Analysis\n- The P/E ratio of 32.78 indicates that investors are willing to pay $32.78 for every $1 of Amazon's earnings.\n- This ratio suggests a **higher valuation** compared to the market average, reflecting investor confidence in Amazon's growth prospects.\n\n## Data Period & Sources\n- **Period**: TTM (Trailing Twelve Months)\n- **Sources**: Finnhub, AlphaVantage",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_066",
+      "question": "Is Google listed on the Dow Jones Industrial Average?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7911961078643799,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.892,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nNo, Google (GOOGL) is **not** listed on the Dow Jones Industrial Average (DJIA).\n\n## Context & Analysis\n- The Dow Jones Industrial Average consists of 30 large, publicly traded companies in the U.S., primarily from industrial and financial sectors.\n- Google (Alphabet Inc.) is a technology company and is listed on the **NASDAQ** rather than the DJIA.\n\n## Data Period & Sources\n- Data as of: 2025-12-11\n- Sources: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_067",
+      "question": "What was Meta's revenue last year?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.791697382926941,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.928,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.95,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": {
+        "enabled": false,
+        "has_reference": false,
+        "has_answer_price": false,
+        "relative_error": null,
+        "is_mismatch": false
+      },
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nMeta's revenue last year (TTM) was **$189.46B**.\n\n## Key Financial Metrics\n- **Revenue (TTM):** $189.46B\n- **Gross Profit (TTM):** $155.38B\n- **Profit Margin:** 30.90%\n\n## Context & Analysis\n- Meta's revenue reflects its strong performance in digital advertising and its expanding ecosystem.\n- The **profit margin** of 30.90% indicates efficient cost management and high profitability.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_068",
+      "question": "Does NVDA manufacture cars?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7913991212844849,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.796,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nNo, NVDA (NVIDIA) does not manufacture cars. NVIDIA is primarily known for its **graphics processing units (GPUs)** and **AI technologies**, which are used in industries like gaming, data centers, and autonomous vehicles, but it does not produce cars itself.\n\n## Context & Analysis\n- NVIDIA's focus is on **semiconductors** and **AI-driven solutions**, including hardware and software for autonomous vehicle systems.\n- The company collaborates with automakers to provide technology for self-driving cars but does not engage in car manufacturing.\n\n## Data Period & Sources\n- Data period: TTM (Trailing Twelve Months)\n- Sources: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_069",
+      "question": "What is the market cap of Visa (V)?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7905712127685547,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.879,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.797,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": {
+        "enabled": false,
+        "has_reference": false,
+        "has_answer_price": false,
+        "relative_error": null,
+        "is_mismatch": false
+      },
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nVisa's (V) market cap is **$628.63B**.\n\n## Key Financial Metrics\n- **Revenue (TTM):** $40.00B\n- **P/E Ratio:** 31.93\n- **Profit Margin:** 50.10%\n\n## Context & Analysis\n- Visa's market cap reflects its dominant position in the payments industry, supported by high profitability metrics (e.g., **50.10% profit margin**).\n- The **P/E ratio of 31.93** indicates a premium valuation relative to earnings, typical for high-growth financial services firms.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_070",
+      "question": "Are stock buybacks illegal in the US?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7916077375411987,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.837,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.627,
+        "C": 0.837
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary\n\nStock buybacks are **legal** in the US under specific regulations.\n\n## Key Data\n- Stock buybacks are governed by **SEC Rule 10b-18**.\n- Companies must disclose buyback details in **quarterly filings**.\n- Buybacks cannot exceed **25% of average daily trading volume**.\n\n## Analysis\n- Buybacks are used to **return capital** to shareholders.\n- They can **boost EPS** by reducing outstanding shares.\n- Critics argue buybacks may **prioritize short-term gains** over long-term investment.\n\n## Recommendation\n\n**Neutral** - Buybacks are a common corporate practice but should be evaluated in the context of broader financial strategy.\n\n## Risks & Assumptions\n- Risk of **market manipulation** if not properly regulated.\n- Assumption that buybacks are **transparent** and compliant with SEC rules.\n\n## Sources\n- [SEC Rule 10b-18](https://www.sec.gov)\n- [Investopedia: Stock Buybacks](https://www.investopedia.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_071",
+      "question": "What happened to JNJ's stock in 1920?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7914791107177734,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.927,
+      "fhri_subscores": {
+        "N_or_D": 0.75,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.949
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe provided financial metrics and context do not include data or information about JNJ's stock performance in **1920**. The data available covers the **TTM (Trailing Twelve Months)** period up to **2025-12-12**.\n\n## Key Financial Metrics\n- **Revenue (TTM):** $92.15B\n- **Market Cap:** $497.62B\n- **EPS:** $10.35\n\n## Context & Analysis\n\nThe data focuses on JNJ's recent financial performance, not historical events like its stock activity in **1920**. For historical stock data, consult specialized historical financial databases or archives.\n\n## Data Period & Sources\n- **Period:** TTM (up to 2025-12-12)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_072",
+      "question": "Is the NASDAQ located in Chicago?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": 1.7917124032974243,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.631,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.837
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "## Answer  \n\nNo, the NASDAQ is not located in Chicago. It is headquartered in **New York City**, specifically at 151 W 42nd Street, New York, NY 10036.  \n\n## Key Financial Metrics  \n- Not applicable to the location question.\n\n## Context & Analysis  \n- NASDAQ is a major U.S. stock exchange focused on technology and growth companies.\n- Primary U.S. stock exchange locations:\n- NYSE: New York City\n- NASDAQ: New York City\n- CBOE (Chicago Board Options Exchange): Chicago\n\n## Data Period & Sources  \n- Not applicable to the location question.\n- General knowledge on stock exchange locations.\n\n- Note: The provided financial data is for REFI, not relevant to the NASDAQ location question.*",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_073",
+      "question": "Does Apple own Microsoft?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7916326522827148,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.854,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.795,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer  \n\nNo, Apple does not own Microsoft. Both are separate, publicly traded companies with distinct ownership structures.\n\n## Key Financial Metrics  \n- **Apple (AAPL) Market Cap**: $4.14T\n- **Microsoft (MSFT) Market Cap**: Not explicitly provided, but current share price ($480.72) suggests a market cap in the trillions (exact figure would require shares outstanding data).\n\n## Context & Analysis  \n- Apple and Microsoft are competitors in the tech industry (e.g., operating systems, cloud services).\n- No ownership ties are indicated in the provided data or recent news.\n\n## Data Period & Sources  \n- **Data Period**: TTM (Trailing Twelve Months)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_074",
+      "question": "What is the ticker for the US Dollar?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7913109064102173,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.669,
+      "fhri_subscores": {
+        "N_or_D": 0.5,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.585,
+        "C": 0.707
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe ticker for the US Dollar is **USD**.\n\n## Key Financial Metrics\n- Not applicable for this question.\n\n## Context & Analysis\n- The US Dollar is the official currency of the United States and is widely used in global financial markets.\n- Its ticker symbol, **USD**, is commonly used in forex trading and financial reporting.\n\n## Data Period & Sources\n- Not applicable for this question.\n- General financial knowledge.",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_075",
+      "question": "Did TSLA go bankrupt in 2018?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.791129469871521,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 1.0,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.975
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary  \n\nTSLA did not go bankrupt in 2018; it remains a leading EV manufacturer with strong market presence.  \n\n## Key Data  \n- **Price:** $442.32 (-2.02%)\n- **Volume:** [Not provided]\n- **Timeframe:** 2018 - Present\n- **52-week range:** [Not provided]\n\n## Analysis  \n- TSLA faced financial challenges in 2018 but avoided bankruptcy.\n- Company secured funding and ramped up Model 3 production.\n- Current metrics show high valuation (P/E 313.51) and moderate profitability (5.31% margin).\n\n## Recommendation  \n\n**Hold** - TSLA's valuation remains elevated, but its market position and growth potential justify monitoring.  \n\n## Risks & Assumptions  \n- High P/E ratio suggests overvaluation risk.\n- Assumes continued EV market growth and execution.\n\n## Sources  \n- [Yahoo Finance - TSLA](https://finance.yahoo.com/quote/TSLA/)\n- [SEC EDGAR](https://www.sec.gov/edgar.shtml)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_076",
+      "question": "What is the expense ratio of buying a single share of AAPL?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7914974689483643,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.961,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.792,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe **expense ratio** of buying a single share of AAPL is **not directly provided** in the financial metrics or context. The expense ratio typically refers to the cost of owning a mutual fund or ETF, not an individual stock. For buying a single share, you would incur transaction costs (e.g., brokerage fees), which vary by platform and are not included in the provided data.\n\n## Key Financial Metrics\n- **Price (as of 2025-12-12):** $275.94\n- **Dividend Yield:** 0.37%\n- **P/E Ratio:** 37.37\n\n## Context & Analysis\n- The **expense ratio** is not applicable to individual stock purchases.\n- Transaction costs (e.g., brokerage fees) are the primary expense when buying a single share.\n- The **P/E ratio** and **dividend yield** provide insights into the stock's valuation and income potential.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_077",
+      "question": "Who is the founder of Amazon?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7915798425674438,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.868,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.742
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nThe founder of Amazon is **Jeff Bezos**.\n\n## Context & Analysis\n\nJeff Bezos founded Amazon in 1994 as an online bookstore. The company has since grown into one of the largest e-commerce and cloud computing companies globally.\n\n## Data Period & Sources\n- **Data Period**: N/A (Historical context)\n- **Data Sources**: Publicly available historical records",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_078",
+      "question": "Is the US stock market open on Christmas Day?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7916507720947266,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.78,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.595,
+        "C": 0.707
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary  \n\nThe US stock market is **closed** on Christmas Day.\n\n## Key Data  \n- Christmas Day is a **federal holiday** in the US.\n- Major US stock exchanges (NYSE, NASDAQ) are **closed** on Christmas Day.\n- Trading resumes the **next business day** after the holiday.\n\n## Analysis  \n- Stock market closures align with federal holidays.\n- Christmas Day closures are **consistent annually**.\n- No trading activity occurs on this day.\n\n## Recommendation  \n\n**Avoid** - No trading is possible on Christmas Day due to market closure.  \n\n## Risks & Assumptions  \n- Assumes Christmas Day falls on a weekday.\n- Risk of missing trading opportunities on adjacent days.\n\n## Sources  \n- [NYSE Holidays](https://www.nyse.com/markets/hours-calendars)\n- [NASDAQ Trading Hours](https://www.nasdaq.com/market-hours)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_079",
+      "question": "What is the primary product of Coca-Cola?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7913818359375,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.748,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.58,
+        "C": 0.592
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary  \n\nCoca-Cola's primary product is **carbonated soft drinks**, led by its flagship Coca-Cola beverage.  \n\n## Key Data  \n- Coca-Cola is the **world's most valuable soft drink brand**.\n- The company operates in **over 200 countries**.\n- Coca-Cola accounts for **~40% of the global carbonated soft drink market**.\n\n## Analysis  \n- Coca-Cola dominates the **carbonated soft drink industry**.\n- The brand has **strong global recognition and loyalty**.\n- Diversification into other beverages (e.g., water, juices) supports growth.\n\n## Recommendation  \n\n**Hold** - Coca-Cola maintains a strong market position but faces competition from health-conscious alternatives.  \n\n## Risks & Assumptions  \n- Declining demand for sugary drinks in health-conscious markets.\n- Regulatory risks related to sugar taxes and labeling.\n- Assumes continued global brand recognition.\n\n## Sources  \n- [Coca-Cola Company Overview](https://www.coca-colacompany.com/)\n- [Statista: Coca-Cola Market Share](https://www.statista.com/)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_080",
+      "question": "Can I buy fractional shares of GOOGL?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7912200689315796,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.906,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.806,
+        "C": 0.837
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary  \n\nGOOGL is a strong performer with solid fundamentals, but recent price decline suggests caution.\n\n## Key Data  \n- **Price:** $315.87 (-1.36%)\n- **Volume:** N/A\n- **Timeframe:** 2025-12-12\n- **52-week range:** $313.58 - $321.12\n\n## Analysis  \n- **Revenue growth** remains robust at $385.48B TTM.\n- **Profitability metrics** (ROE: 35.40%, ROA: 16.30%) indicate efficient capital use.\n- Recent **price decline** (-1.36%) may signal short-term volatility.\n- **P/E ratio** of 31.64 suggests the stock is fairly valued.\n\n## Recommendation  \n\n**Hold** - Strong fundamentals support long-term value, but short-term volatility warrants caution.  \n\n## Risks & Assumptions  \n- Market volatility could persist due to macroeconomic factors.\n- AI sector competition may impact future growth.\n- Assumes current financial metrics remain stable.\n\n## Sources  \n- [Finnhub](https://finnhub.io)\n- [AlphaVantage](https://www.alphavantage.co)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_081",
+      "question": "Does Warren Buffett own Bitcoin?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.7916042804718018,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.772,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.608,
+        "C": 0.707
+      },
+      "scenario_detected": "crypto",
+      "scenario_name": "Crypto / Blockchain",
+      "scenario_weights": {
+        "G": 0.35,
+        "N_or_D": 0.15,
+        "T": 0.2,
+        "C": 0.2,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary  \n\nWarren Buffett does not own Bitcoin and remains skeptical of cryptocurrencies.\n\n## Key Data  \n- **Price:** $89,772.71 (-2.35%)\n- **Volume:** N/A\n- **Timeframe:** N/A\n- **52-week range:** N/A\n\n## Analysis  \n- Buffett views Bitcoin as non-productive and speculative.\n- He prefers tangible assets like stocks and businesses.\n- Berkshire Hathaway has no exposure to cryptocurrencies.\n\n## Recommendation  \n\n**Avoid** - Buffett’s investment philosophy does not align with cryptocurrency ownership.  \n\n## Risks & Assumptions  \n- Assumes Buffett’s stance remains unchanged.\n- Ignores potential future shifts in Berkshire’s strategy.\n\n## Sources  \n- [Berkshire Hathaway Annual Meeting 2025](https://www.berkshirehathaway.com)\n- [CNBC Interview with Warren Buffett](https://www.cnbc.com)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_082",
+      "question": "What is the ticker for the S&P 500 ETF by State Street?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.791337013244629,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.83,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.7,
+        "E": 0.58,
+        "G": 0.794,
+        "C": 0.742
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer  \n\nThe ticker for the **S&P 500 ETF by State Street** is **SPY** (SPDR S&P 500 ETF Trust).  \n\n## Key Financial Metrics (Not Applicable)  \n- Your question was about an ETF ticker, not financial metrics for \"S\" (SentinelOne).\n\n## Context & Analysis  \n- SPY is the largest and most widely traded S&P 500 ETF, managed by State Street Global Advisors.\n- The data provided pertains to SentinelOne (ticker: **S**), which is unrelated to the ETF query.\n\n## Data Period & Sources  \n- Not applicable (general market knowledge).",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_083",
+      "question": "Is AMD a competitor to Intel?",
+      "true_label": "hallucination",
+      "predicted_label": "hallucination",
+      "entropy": 1.7916913032531738,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.643,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": true,
+        "high_risk_floor_breach": false,
+        "needs_review": true
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "## Answer\n\nYes, **AMD** is a direct competitor to **Intel** in the semiconductor industry, particularly in CPUs and GPUs.\n\n## Key Financial Metrics\n- **Intel (INTC)**:\n- Revenue (TTM): $53.44B\n- Market Cap: $194.52B\n- P/E Ratio: 679.67\n- **AMD**:\n- Revenue (TTM): $23.60B (as of latest available data)\n- Market Cap: $213.57B (implied from stock price)\n- P/E Ratio: 35.20 (as of latest available data)\n\n## Context & Analysis\n- Both companies compete in the design and manufacturing of **microprocessors** and **graphics processing units (GPUs)**.\n- AMD has gained significant market share in recent years, particularly in the **consumer CPU** and **data center** markets, challenging Intel's dominance.\n- Intel's **P/E ratio** is significantly higher than AMD's, reflecting its lower earnings relative to its stock price, while AMD has shown stronger profitability metrics in recent years.\n\n## Data Period & Sources\n- **Period**: TTM (Trailing Twelve Months)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_084",
+      "question": "What is the maximum number of shares I can buy in AAPL?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.791424036026001,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.969,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.787,
+        "C": 0.975
+      },
+      "scenario_detected": "regulatory",
+      "scenario_name": "Regulatory / Policy",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.05,
+        "T": 0.2,
+        "C": 0.4,
+        "E": 0.15
+      },
+      "fhri_threshold_used": 0.7,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.7,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Summary  \n\nConsider **Hold** due to stable fundamentals but limited short-term growth potential.\n\n## Key Data  \n- **Price:** $276.37 (-0.87%)\n- **Volume:** N/A\n- **Timeframe:** TTM\n- **52-week range:** $273.81 - $279.59\n\n## Analysis  \n- Strong revenue ($416.16B) and profit margins (26.90%).\n- High P/E ratio (37.37) suggests overvaluation.\n- Recent news highlights leadership changes but no immediate impact.\n- Technical indicators show minor price decline.\n\n## Recommendation  \n\n**Hold** - AAPL maintains solid fundamentals but lacks catalysts for significant short-term growth.  \n\n## Risks & Assumptions  \n- Market volatility could impact stock price.\n- High P/E ratio may deter new investors.\n- Assumes no major disruptions in Apple’s operations.\n\n## Sources  \n- [Yahoo Finance](https://finance.yahoo.com)\n- [Finnhub](https://finnhub.io)\n- [AlphaVantage](https://www.alphavantage.co)",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_085",
+      "question": "Does Tesla sell insurance?",
+      "true_label": "hallucination",
+      "predicted_label": "accurate",
+      "entropy": 1.791496992111206,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.892,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.866
+      },
+      "scenario_detected": "fundamentals",
+      "scenario_name": "Fundamentals / Long Horizon",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.4,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.1
+      },
+      "fhri_threshold_used": 0.65,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.65,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Tesla sells insurance. Tesla Insurance offers coverage tailored to Tesla vehicles, leveraging real-time driving data to provide personalized rates.\n\n## Key Financial Metrics\n- **Revenue (TTM):** $95.63B\n- **Gross Profit (TTM):** $16.26B\n- **Profit Margin:** 5.31%\n\n## Context & Analysis\n\nTesla Insurance is part of Tesla's broader ecosystem, aiming to enhance customer experience and retention. While the financial impact of Tesla Insurance is not explicitly broken out in the provided metrics, it contributes to Tesla's overall revenue and profitability.\n\n## Data Period & Sources\n- **Period:** TTM (Trailing Twelve Months)\n- **Sources:** Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_086",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "accurate",
+      "predicted_label": "hallucination",
+      "entropy": 1.7911510467529297,
+      "is_hallucination_detected": true,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.531,
+      "fhri_subscores": {
+        "N_or_D": 0.3,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.791,
+        "C": 0.866
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": true,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": true,
+        "high_risk_floor_breach": true,
+        "needs_review": true
+      },
+      "numeric_price_check": {
+        "enabled": false,
+        "has_reference": false,
+        "has_answer_price": false,
+        "relative_error": null,
+        "is_mismatch": false
+      },
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer  \n\nYes, Apple (AAPL) pays a dividend with a current **dividend yield of 0.37%** (TTM).  \n\n## Key Financial Metrics  \n- **Dividend Yield**: 0.37%\n- **Earnings per Share (EPS)**: $7.46\n- **Profit Margin**: 26.90%\n\n## Context & Analysis  \n- Apple's dividend yield of 0.37% is relatively low, reflecting its focus on growth and stock buybacks.\n- The strong **profit margin (26.90%)** and **EPS ($7.46)** suggest Apple has ample earnings to sustain its dividend.\n\n## Data Period & Sources  \n- **Period**: TTM (Trailing Twelve Months)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_087",
+      "question": "Does Apple (AAPL) pay a dividend?",
+      "true_label": "contradiction",
+      "predicted_label": "accurate",
+      "entropy": 1.7910668849945068,
+      "is_hallucination_detected": false,
+      "contradiction_score": 0.14415179193019867,
+      "contradiction_type": null,
+      "fhri": 0.856,
+      "fhri_subscores": {
+        "N_or_D": 0.7,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.805,
+        "C": 0.949
+      },
+      "scenario_detected": "numeric_kpi",
+      "scenario_name": "Numeric KPI / Ratios",
+      "scenario_weights": {
+        "G": 0.2,
+        "N_or_D": 0.5,
+        "T": 0.2,
+        "C": 0.05,
+        "E": 0.05
+      },
+      "fhri_threshold_used": 0.75,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.75,
+        "high_risk_numeric": true,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": {
+        "enabled": false,
+        "has_reference": false,
+        "has_answer_price": false,
+        "relative_error": null,
+        "is_mismatch": false
+      },
+      "validation_flags": {},
+      "correct": false,
+      "llm_answer": "## Answer\n\nYes, Apple (AAPL) pays a dividend with a **dividend yield of 0.37%** as of the trailing twelve months (TTM).\n\n## Key Financial Metrics\n- **Dividend Yield**: 0.37%\n- **Earnings per Share (EPS)**: $7.46\n- **Profit Margin**: 26.90%\n\n## Context & Analysis\n- Apple's dividend yield of 0.37% indicates a modest return for income-focused investors.\n- The company's strong **profit margin** and **EPS** suggest it has the financial health to sustain dividend payments.\n\n## Data Period & Sources\n- **Period**: TTM (Trailing Twelve Months)\n- **Sources**: Finnhub, AlphaVantage, SEC EDGAR",
+      "passages_used": 5
+    },
+    {
+      "sample_id": "fhri_088",
+      "question": "Is TSLA considered a volatile stock?",
+      "true_label": "accurate",
+      "predicted_label": "accurate",
+      "entropy": 1.791245460510254,
+      "is_hallucination_detected": false,
+      "contradiction_score": null,
+      "contradiction_type": null,
+      "fhri": 0.972,
+      "fhri_subscores": {
+        "N_or_D": 0.92,
+        "T": 0.75,
+        "E": 0.58,
+        "G": 0.922,
+        "C": 0.975
+      },
+      "scenario_detected": "advice",
+      "scenario_name": "Portfolio Advice / Suitability",
+      "scenario_weights": {
+        "G": 0.25,
+        "N_or_D": 0.3,
+        "T": 0.15,
+        "C": 0.1,
+        "E": 0.2
+      },
+      "fhri_threshold_used": 0.5,
+      "fhri_flagged": false,
+      "fhri_risk": {
+        "threshold": 0.5,
+        "high_risk_numeric": false,
+        "below_threshold": false,
+        "high_risk_floor_breach": false,
+        "needs_review": false
+      },
+      "numeric_price_check": null,
+      "validation_flags": {},
+      "correct": true,
+      "llm_answer": "## Summary  \n\nTSLA remains a **volatile stock** with mixed signals from recent news and financial metrics.\n\n## Key Data  \n- **Price:** $442.27 (-2.03%)\n- **Volume:** N/A\n- **Timeframe:** TTM (Trailing Twelve Months)\n- **52-week range:** $440.33 - $449.27\n\n## Analysis  \n- Recent downgrades highlight **valuation concerns**.\n- **High P/E ratio** (313.51) suggests overvaluation.\n- **Low profit margin** (5.31%) indicates weak profitability.\n- **Technical observation:** Price near day low, showing bearish momentum.\n\n## Recommendation  \n\n**Avoid** - High volatility and valuation concerns outweigh potential upside.  \n\n## Risks & Assumptions  \n- **Risk factor 1:** Continued downgrades could pressure stock further.\n- **Risk factor 2:** Market sentiment shifts could amplify volatility.\n- **Assumption made:** Current financial metrics remain stable.\n\n## Sources  \n- [Yahoo Finance](https://finance.yahoo.com)\n- [Finnhub](https://finnhub.io)\n- [AlphaVantage](https://www.alphavantage.co)",
+      "passages_used": 5
+    }
+  ]
+}

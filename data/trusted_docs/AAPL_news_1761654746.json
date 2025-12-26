@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761654746,
+  "headline": "Corning results hit by weakness in optical fiber unit, shares fall",
+  "summary": "Shares of the Apple supplier fell more than 7% in premarket trading after the results, though the stock is still up about 88% so far this year.  The company's optical communications division, which accounts for nearly 40% of total revenue, recorded net sales of $1.65 billion for the third quarter, below analysts' average estimate of $1.73 billion, according to LSEG data.  U.S. optical fiber companies Corning, OFS-Felite and Drake Communications have been pressured by slower network investment in China, where authorities in September imposed a 37.9% anti-dumping tariff on imports of Corning's optical fiber products and other cable providers.",
+  "url": "https://finnhub.io/api/news?id=7f47be244ee6bf2db90659e2eb21f295523cae207874b2d7c947d13c976aa3a6"
+}

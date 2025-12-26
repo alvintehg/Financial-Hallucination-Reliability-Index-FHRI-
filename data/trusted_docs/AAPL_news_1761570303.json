@@ -1,0 +1,9 @@
+{
+  "type": "news",
+  "ticker": "AAPL",
+  "source": "Yahoo",
+  "datetime": 1761570303,
+  "headline": "US-China trade, Big Tech earnings, Fed decision: 3 Things",
+  "summary": "US stock futures (ES=F, NQ=F, YM=F) are rising Monday morning ahead of President Trump's meeting with Chinese President Xi Jinping in South Korea this Thursday, October 30. Big Tech is on deck for earnings season as Magnificent Seven companies Meta Platforms (META), Microsoft (MSFT), Alphabet (GOOGL, GOOG), Amazon (AMZN), and Apple (AAPL) will be reporting quarterly results throughout the week. Federal Reserve officials will be convening in Washington, D.C., this week for their October FOMC meeting with Wall Street expecting the central bank to cut interest rates. To watch more expert insights and analysis on the latest market action, check out more Morning Brief.",
+  "url": "https://finnhub.io/api/news?id=b007ece9fb7ec86bd33ff7efbfc0dcdefbc5654dde2cf95ca6348fbe3fee7000"
+}
