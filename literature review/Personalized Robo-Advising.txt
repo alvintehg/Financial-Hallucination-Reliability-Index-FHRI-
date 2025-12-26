@@ -1,2574 +1,0 @@
-=== Page 1 ===
-Personalized Robo-Advising:
-Enhancing Investment through Client Interaction
-Agostino CapponiySveinn OlafssonzThaleia Zariphopouloux
-Abstract
-Automated investment managers, or robo-advisors, have emerged as an alternative to traditional
-nancial advisors. The viability of robo-advisors crucially depends on their ability to oer personalized
-nancial advice. We introduce a novel framework, in which a robo-advisor interacts with a client to solve
-an adaptive mean-variance portfolio optimization problem. The risk-return tradeo adapts to the client's
-risk prole, which depends on idiosyncratic characteristics, market returns, and economic conditions. We
-show that the optimal investment strategy includes both myopic and intertemporal hedging terms which
-reect the dynamic risk prole of the client. We characterize the optimal portfolio personalization via
-a tradeo faced by the robo-advisor between receiving information from the client in a timely manner
-and mitigating behavioral biases in the communicated risk prole. We argue that the optimal portfolio's
-Sharpe ratio and return distribution improve if the robo-advisor counters the client's tendency to reduce
-market exposure during economic contractions when the market risk-return tradeo is more favorable.
-1 Introduction
-Automated investment managers, commonly referred to as robo-advisors, have gained widespread popular-
-ity in recent years. The value of assets under management by robo-advisors is the highest in the United
-States, and exceeded $650 billion in 2020. Prominent robo-advising rms include Vanguard Personal Ad-
-visor Services, with about $140 billion of assets under management, Schwab Intelligent Portfolios ($40bn),
-We are grateful for constructive comments from Peter Carr, Anthony Ledford, Charles-Albert Lehalle, Alberto Rossi, and
-seminar and conference participants at Vanguard, Georgetown University's Robo-Advising Day, Boston University, University
-of Southern California, New England Statistics Symposium, CFS Workshop on AI/ML in Financial Services, Oxford-Man
-Institute, NUS Quantitative Finance Series, Brooklyn Quant Experience Lecture Series, ACPR Workshop on Robo-Advising,
-New Ideas in Quantitative Finance Workshop at Stony Brook University, 2019 SIAM-FM Annual Meeting, ICIAM 2019, and
-the 2020 INFORMS Annual Meeting.
-yDepartment of Industrial Engineering and Operations Research, Columbia University, New York, NY 10027, USA,
-ac3827@columbia.edu.
-zDepartment of Industrial Engineering and Operations Research, Columbia University, New York, NY 10027, USA,
-so2570@columbia.edu
-xDepartments of Mathematics and IROM, The University of Texas at Austin, and the Oxford-Man Institute, University of
-Oxford, zariphop@math.utexas.edu
-1
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 2 ===
-Wealthfront ($20bn), and Betterment ($18bn). Robo-advisors are also on the rise in other parts of the world.
-They currently manage over $100 billion in Europe, and are exhibiting rapid growth in Asia where China
-($75bn) and Japan ($30bn) have become the world's second and third largest markets in terms of assets
-under management (Statista [2020]).
-The rst robo-advisors were launched in the wake of the 2008 nancial crisis and the ensuing loss of trust
-in established nancial services institutions. Examples of pioneering robo-advising rms are Betterment and
-Wealthfront, which began oering services formerly considered exclusive to the general public, including
-individuals who did not meet the minimum investment levels of traditional nancial advisors. In the years
-that followed, industry incumbents - such as Vanguard and Charles Schwab - followed suit and began oering
-their own robo-advising services, taking advantage of their existing customer bases to quickly gain a large
-market share. With the focus of most robo-advisors being on passive long-term portfolio management, the
-rise of robo-advising since the nancial crisis has also been compounded by the seismic shift towards passive
-investing and low cost exchange-traded funds.1
-Robo-advising is a term that encompasses various forms of digital nancial advice for investment manage-
-ment and trading. A recent survey paper by D'Acunto and Rossi [2020] distinguishes between digital tools
-and services that aid in short-term active trading, where the client is signicantly involved in the strategy
-implementation, and those that focus on long-term passive investing, where the robo-advisor performs the
-majority of investment decisions. We develop a framework for automated investment management which
-belongs to the latter category, where the robo-advisor uses quantitative methods and algorithms to manage
-the client's portfolio. We explore how the robo-advisor can use features of the client's risk prole to deter-
-mine a frequency of interaction with the client that ensures a high level of portfolio personalization.2We
-also analyze the dilemma faced by the robo-advisor when it comes to either catering to the client's wishes,
-i.e., investing in accordance with the client's risk prole, or going against the client's wishes in order to seek
-better investment performance.
-In our framework, the robo-advisor interacts repeatedly with the client to learn about changes in her risk
-prole. This risk prole is characterized by a risk aversion process, which captures three fundamental aspects
-of individual investor behavior. First, the client's risk aversion is sensitive to the passage of time, consistent
-with empirical research that has identied a positive and potentially nonlinear trend in risk aversion as a
-function of age (see, e.g., Brooks et al. [2018] and Hallahan et al. [2004]). This type of time-dependence
-has also been used in the construction of target-date funds , which are widely used retirement portfolios that
-1Seehttps://www.cnbc.com/2018/09/14/the-trillion-dollar-etf-boom-triggered-by-the-financial-crisis.html
-2Robo-advisors are duciaries under the Investment Advisers Act of 1940, and as such are subject to the duty of acting in
-the client's best interest.
-2
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 3 ===
-reduce market risk as the client gets closer to retirement.3Second, risk aversion is impacted by idiosyncratic
-shocks, such as a change in disposable income or an increase in the client's educational level or nancial
-literacy (see, e.g, Hallahan et al. [2004] and Allgood and Walstad [2016]). These shocks in particular capture
-changes in unobservable factors driving the client's risk aversion, consistent with empirical studies that have
-identied a substantial variation in idiosyncratic risk preferences that are unexplained by consumer attributes
-and demographic characteristics (see, e.g., Guiso and Paiella [2008], Sahm [2012], and Van de Venter et
-al. [2012]). Third, the client's risk aversion depends on realized market returns and prevailing economic
-conditions. Specically, the countercyclical nature of risk aversion has been extensively documented in the
-literature (see Bucciol and Miniaci [2018], Cohn et al. [2015], and Guiso et al. [2018], among others, for
-recent empirical and experimental evidence).
-The robo-advisor adopts a multi-period mean-variance investment criterion with a nite investment
-horizon. It is worth noting that most robo-advising rms employ asset allocation algorithms based on
-mean-variance analysis, citing, among other things, its tractability and the intuitive interpretation of the
-risk-return tradeo (see, for instance, Beketov et al. [2018]). While these robo-advising algorithms assume
-the risk-return tradeo coecient to be constant throughout the investment period, and statically reoptimize
-the portfolio in response to changes in the client's risk prole, our framework enables the construction of a
-portfolio strategy that dynamically adapts to the robo-advisor's model of the client's risk aversion process.
-Such a model is constructed from two sources of information. First, the robo-advisor observes both realized
-market returns and changes in the state of the economy, and continuously updates its model to reect this
-information. Second, at times of interaction with the client, the robo-advisor receives information about the
-idiosyncratic component of the client's risk aversion.
-We show that the stock market allocation resulting from the dynamic mean-variance optimization consists
-of two components. The rst component is akin to the standard single-period Markowitz strategy, but also
-takes into account the expectation and variance of the optimal strategy's return throughout the investment
-period. The second component is intertemporal hedging demand, which depends on the relation between
-the current market return and future portfolio returns. A novel feature of our model is that this relation
-is driven by the client's dynamic risk prole, in contrast to extant literature (e.g., Liu [2007] and Basak
-and Chabakauri [2010]) where it depends only on the correlation between market returns and changes in a
-stochastic state variable.
-To understand why intertemporal hedging demand arises in our model, consider the case where positive
-3Target-date funds (TDFs) are similar to the \set-and-forget" portfolios oered by the rst generation of robo-advisors,
-where changes in allocation over time were solely based on the client's age. While TDFs have virtually stayed the same since
-their inception over a quarter century ago, the technology-driven personalized advice of robo-advisors has continued to evolve.
-3
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 4 ===
-(negative) market returns have a tempering (inating) eect on the client's risk aversion process. A positive
-market return thus leads to increased future stock market exposure, whereas a negative return has the
-opposite eect. This relation amplies the eect of the current market return on the variance of the client's
-terminal wealth, making the stock market a less attractive investment option. As a result, for a client whose
-risk aversion is negatively correlated with market returns, there is a negative hedging demand, i.e., the
-robo-advisor reduces her market exposure relative to a client whose risk aversion is not sensitive to market
-returns.
-We show the existence of a tradeo between the rate of information acquisition from the client and
-the accuracy of the acquired information. On the one hand, if interaction does not occur at all times, the
-robo-advisor may not always have access to up-to-date information about the client's risk prole. On the
-other hand, information communicated to the robo-advisor may not be representative of the client's true risk
-aversion, as the client is subject to behavioral biases, such as trend-chasing.4For example, if recent market
-returns have exceeded expectations, the client may feel overly exuberant and communicate a risk aversion
-value that is lower than her actual risk aversion. Vice versa, following a market underperformance, the client
-may feel overly pessimistic and exaggerate her risk aversion when communicating with the robo-advisor.
-The suboptimality of high interaction frequencies then hinges on the fact that reducing the frequency of
-interaction mitigates the eect of the client's biases, which is consistent with the notion of myopic loss
-aversion, introduced in Benartzi and Thaler [1995].5The rationale for this eect in our model is that over
-longer time periods, uctuations in realized market returns average out, dampening their impact on the
-client's risk aversion.
-We introduce a measure of portfolio personalization to analyze the aforementioned tradeo. This measure
-is dened in terms of the dierence between the client's actual risk aversion and the robo-advisor's model
-of it. The lower this measure, the closer the investment strategy implemented by the robo-advisor is to
-the strategy matching the client's risk prole. We show that for a xed level of behavioral bias, quantied
-by the client's sensitivity to market return uctuations, this measure is minimized by a unique interaction
-frequency. Such a frequency allows the robo-advisor to strike a balance between obtaining information from
-the client in a timely manner and ensuring that the communicated information is not overly biased by recent
-market returns. Our result is supported by the practices of current robo-advising rms, which encourage
-clients to refrain from making frequent changes to their risk proles, and even limit their ability to do so.6
-We also show that the optimal interaction frequency is decreasing in the amount of behavioral bias, and
-4See Kahneman and Riepe [1998] for a discussion of common behavioral biases and strategies to overcome them.
-5Loss aversion refers to the notion that negative market returns (losses) have a greater impact than positive returns (gains)
-on the risk-taking behavior of investors.
-6Wealthfront provides the following guidelines: \Our software limits our clients to one risk-score change per month. We
-encourage people who attempt more than three risk-score changes over the course of a year to try another investment manager."
-4
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 5 ===
-increasing in the rate at which the idiosyncratic component of the client's risk aversion changes. Therefore,
-a higher level of personalization is achieved for clients with limited behavioral biases and stable risk proles.
-We compare the investment performance of strategies that invest the same proportion of wealth in the
-stock market during periods of economic growth but dier in their market exposure during contractions.
-We show analytically that the Sharpe ratio of such strategies is generally increasing in the proportion of
-wealth allocated to the stock market in a state of contraction, when the market risk-return tradeo is more
-favorable.7Because individual investors typically have a countercyclical risk aversion process, the client is
-inclined to reduce market exposure during economic contractions and, as a result, attain a lower Sharpe
-ratio from her investment. This brings up the question of to what extent, if any, the robo-advisor should
-deviate from the strategy implied by the client's risk prole in order to improve the investment performance.
-We show that the Sharpe ratio of the optimal portfolio is concave with respect to the change in the market
-allocation when the economy moves to a state of contraction. This means that the Sharpe ratio drops more
-if the allocation is reduced, compared to how much it improves if the allocation is increased by the same
-amount. Our analysis thus suggests that a good middle ground for the robo-advisor is to rebalance the
-portfolio and maintain prespecied weights throughout the business cycle. This investment pattern is also
-in line with the long-term investment principle of riding out business cycles, and further reinforced by the
-fact that, in practice, it is dicult to detect changes in economic regimes and thus estimate the prevailing
-market risk-return tradeo.
-The remainder of the paper is organized as follows. In Section 2, we briey review the related literature.
-In Section 3, we introduce our robo-advising framework. In Section 4, we present the solution to the
-associated optimal investment problem. In Section 5, we introduce and study performance metrics for the
-robo-advisor's investment strategy. Section 6 oers concluding remarks. Appendix A contains theoretical
-and computational properties of the optimal investment strategy. Appendix B and Appendix C contain
-proofs and auxiliary results related to Sections 4 and 5, respectively.
-2 Literature Review
-Our study contributes to the growing literature on robo-advising. D'Acunto and Rossi [2020] describe the
-main components of robo-advising systems and propose a classication in terms of four main features: (i)
-portfolio personalization, (ii) client involvement, (iii) client discretion, and (iv) human interaction. We oer a
-quantitative framework that aligns with this classication and is consistent with that of the most prominent
-7Since the seminal work of Fama and French [1989], it has been extensively documented that the market risk-return tradeo
-is countercyclical, i.e., higher at business cycle troughs than peaks.
-5
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 6 ===
-stand-alone robo-advising rms. We proceed to briey describe each of the four features and how they t
-into our framework.
-(i)Portfolio personalization refers to the robo-advisor's ability to oer nancial advice tailored to the
-client's needs. A common criticism of robo-advising is the lack of customization, with risk proling based
-on information that is too limited.8In our framework, the robo-advisor achieves portfolio personalization
-by repeatedly soliciting information from the client. We do not explicitly model the information collecting
-process, which can be based on both online questionnaires (i.e., self-reported information) and automated
-gathering of information from the client (e.g., data on savings and spending behavior).
-(ii)Client involvement refers to the client's participation in the design of the investment strategy. At
-one end of the spectrum, there are robo-advisors that require the client to approve every single trading
-decision. In this case, the client is actively involved and the term robo- advisor is descriptive, because the
-client decides in what way to follow the advice provided. Our model lies at the other end of the spectrum,
-where the robo-advisor automatically manages the portfolio on the client's behalf and for which the term
-robo- manager is more descriptive.
-(iii) Client discretion is the client's ability to override the robo-advisor's recommendation. In our frame-
-work, the client's behavioral biases can be viewed as the client overriding the robo-advisor's recommendations.
-This is considered a low level of discretion. It is consistent with the operations of robo-advisors focusing on
-long-term investing, where the client is allowed to adjust the level of portfolio risk, but has no control over
-which parts of the investment portfolio are modied.
-(iv) Human interaction refers to the degree of interaction between the client and a human-advisor. In
-our framework, there is no human contact which is also the case for automated robo-advisors that strive to
-minimize operating costs.
-The above classication is qualitative in nature. The quantitative components of our framework are
-constructed to resemble the algorithmic principles of actual robo-advisors. Beketov et al. [2018] provide
-an industry overview based on the analysis of over 200 robo-advisors globally. Their study shows that a
-large majority of robo-advisors use an asset allocation framework based on mean-variance analysis, with the
-asset universe consisting of low cost exchange-traded funds. They also show that risk proling of clients is
-primarily done using online questionnaires.
-Rossi and Utkus [2019a] conduct an extensive survey to study the \needs and wants" of individuals when
-8Risk proling can, in principle, be innitely customizable. Barron's 2019 annual ranking of robo-advisors (available at https:
-//webreprints.djreprints.com/4642511400002.pdf) reports the latest growth in robo-advising to be in cash management,
-with robo-advisors aiming to become everyday money managers of their clients, in addition to long-term investment planners.
-Robo-advising rms already oer cash management services such as direct deposits of paychecks, automatic bill payments, and
-FDIC-insured checking and savings accounts. This implies increased access to data which can in turn be used by robo-advisors
-to improve investment recommendations.
-6
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 7 ===
-they hire nancial advisors. They show that for traditionally-advised clients, algorithm aversion and the
-inability to interact with a human are the main obstacles for switching to robo-advising, while robo-advised
-clients do not have the same need for trust and access to expert opinion. Our model lends theoretical support
-to the notion that robo-advisors may be less suitable for algorithmic-averse clients. Namely, the robo-advisor
-can improve the portfolio performance by going against the wishes of the client, i.e., by investing in a way
-that may seem counterintuitive to the client. Doing so is more challenging for a robo-advisor than for a
-human-advisor, because market returns are random, and an algorithmic-averse client will be less forgiving
-to the robo-advisor in the event of adverse market returns.
-From a methodological perspective, our work contributes to the literature on time-inconsistent stochastic
-control (Bj ork and Murgoci [2013]). Other related works include Li and Ng [2010] who solve a multi-period
-version of the classical Markowitz problem, and Basak and Chabakauri [2010] who solve a continuous-time
-version of the same problem. Bj ork et al. [2014] solve the dynamic mean-variance problem in continuous
-time, with the mean-variance utility function applied to returns as in the classical single-period mean-variance
-analysis. A recent study of Dai et al. [2019] further develops a dynamic mean-variance framework based
-on log-returns, with the aim of generating policies conforming with conventional investment wisdom. In all
-of these works, the risk-return tradeo is assumed to be constant throughout the investment horizon. By
-contrast, in our model, the risk-return tradeo coecient is stochastic, with explicitly modeled dynamics
-that can be used to generate investment policies tailored to the client's risk prole.
-Our paper is also related to the literature on portfolio optimization models where the security price
-dynamics are driven by stochastic factors. Unlike Liu [2007] and Basak and Chabakauri [2010], intertemporal
-hedging demand does not arise because of dependence between the stochastic factor and market returns,
-which are assumed to be uncorrelated in our model. Rather, intertemporal hedging terms appear because
-of the correlation between market returns and future changes in the investor's risk aversion. Additionally,
-the stochastic factor itself impacts the client's risk aversion dynamics, which in turn determine the optimal
-allocation. It is widely agreed upon that risk aversion varies with the business cycle, and this characteristic is
-highly relevant for robo-advising where a signicant challenge is to keep clients invested in the stock market
-during economic downturns.9
-9The seminal work of Campbell and Cochrane [1999] provides an asset pricing framework that rationalizes the counter-
-cyclicality of both risk aversion and the market risk-return tradeo; see, also, Lettau and Ludvigson [2010] for a survey of the
-literature and extensive empirical evidence.
-7
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 8 ===
-3 Modeling Framework
-Our robo-advising framework has four main components: (i) a regime switching model of market returns,
-(ii) a mechanism of interaction between the client and the robo-advisor, (iii) a dynamic model for the client's
-risk preferences, and (iv) an optimal investment criterion. We describe each of these components in Sections
-3.1-3.4.
-3.1 Market and Wealth Dynamics
-The market consists of a risk-free money market account, ( Bn)n0, and a risky asset, ( Sn)n0, whose
-dynamics are described by the equations
-Bn+1= (1 +r(Yn))Bn; Sn+1= (1 +Zn+1(Yn))Sn;
-whereB0= 1 andS0>0 is a given constant. The risky asset is representative of the overall stock market,
-and for this reason we will refer to returns of the risky asset as market returns.
-The above dynamics are modulated by an observable state process, ( Yn)n0, which captures macroeco-
-nomic conditions aecting interest rates and market returns (cf. Hamilton [1989]). We assume the economic
-state variable ( Yn)n0to be a time-homogeneous Markov chain with transition matrix P, taking values in a
-nite setY:=f1;2;:::;Mg, for someM1. Conditioned on Yn=y2Y, the risk-free interest rate r(y) is
-constant, while the risky asset's return, Zn+1(y), admits a probability density function fZjywhich depends
-only on the current economic state y, and has mean (y) and variance 0 <2(y)<1.
-For notational simplicity, we omit the dependence on the economic state. Hence, we use Zn+1in place
-ofZn+1(Yn), and denote its state-dependent mean and variance by n+1:=(Yn) and2
-n+1:=2(Yn),
-respectively. Similarly, we use rn+1in place of r(Yn), and letRn+1:= 1 +rn+1. We denote by eZn+1:=
-Zn+1 rn+1the excess return of the risky asset over the risk-free rate, which has state-dependent mean and
-variance given by ~ n+1:=n+1 rn+1and2
-n+1, respectively.
-We denote by Xnthe wealth of the client at time n, allocated between the risky asset and the money
-market account, and use nto denote the amount invested in the risky asset. For a given self-nancing
-trading strategy := (n)n0, the wealth process ( X
-n)n0follows the dynamics
-X
-n+1=Rn+1X
-n+eZn+1n; X
-0=x0: (3.1)
-The initial wealth, x02R+, and the initial state of the economy, Y02Y, are assumed to be non-random.
-8
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 9 ===
-The random variables ( Yn)n1and (Zn)n0are dened on a probability space (
- ;F;P), which additionally
-supports a sequence ( n)n1of independent real-valued random variables. This source of randomness cap-
-tures idiosyncratic changes to the client's risk preferences. Moreover, ( n)n1is independent of ( Yn)n0and
-(Zn)n1. We use (Fn)n0to denote the ltration generated by the three stochastic processes in our model:
-Fn:=(Y(n);Z(n);(n)); (3.2)
-whereY(n):= (Y0;:::;Yn),Z(n):= (Z1;:::;Zn), and(n):= (1;:::;n). We will use analogous notation to
-denote the paths of other stochastic processes throughout the paper.
-Remark 3.1. In our discrete-time model, the price of the risky asset is not restricted from becoming negative.
-However, at any given time the optimal investment strategy presented in Section 4 does not depend on the
-current price of the risky asset, but only on the rst two moments of its returns distribution. Hence, for the
-optimal investment problem to be well-dened, it is sucient to assume the existence of a returns process
-(Zn)n1with a nite variance as described above.
-3.2 Interaction between Client and Robo-Advisor
-A key component of the proposed framework is the interaction between the client and the robo-advisor.
-Following an initial interaction at the beginning of the investment process, the client and the robo-advisor
-interact repeatedly throughout the investment period. At each interaction time, the client translates the
-information communicated by the client into a numerical value, herein referred to as a risk aversion parameter.
-In our quantitative framework, we abstract from the construction of such a mapping, eectively assuming
-that the client communicates directly a single risk aversion parameter to the robo-advisor.10Note that
-between consecutive interaction times, the robo-advisor receives no input from the client.
-The interaction schedule, denoted by ( Tk)k0, is an increasing sequence of stopping times with respect
-to the ltration ( Fn)n0, dened in (3.2). That is, T0= 0,Tk<Tk+1, andfTkng2Fn, for anyn0.
-Hence, interaction can be triggered by any combination of client-specic events, changes in the state of the
-economy, and market events such as a cascade of negative market returns.
-The rule used to determine the interaction schedule ( Tk)k0is decided at the beginning of the investment
-10The majority of robo-advisors elicit risk preferences by means of online questionnaires (Beketov et al. [2018]). The client
-is presented with questions regarding, e.g., demographics, investment goals, education and nancial literacy, and potential
-reactions to hypothetical gambles and market events. We refer to Charness et al. [2013] for an outline of the pros and cons of
-dierent methods used to assess risk preferences, and Cox and Harrion [2008] for a more comprehensive overview.
-9
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 10 ===
-process, and used throughout it. For future reference, we also dene the process ( n)n0, where
-n:= supfTk:Tkng;
-is the last interaction time prior to and including time n.
-3.3 Client's Risk Aversion Process
-We rst introduce the client's actual risk aversion process , (C
-n)n0, which is an R+
-0-valued stochastic process
-adapted to the ltration ( Fn)n0dened in (3.2). This means that at time n, the client's risk aversion may
-have shifted from its initial value due to changes in economic regimes, Y(n), and realized market returns Z(n),
-as well as because of idiosyncratic shocks to the client's risk aversion, (n).
-We also introduce the ( Fn)n0-adapted process ( n)n0, wheren2R+
-0is the risk aversion parameter
-communicated by the client at the most recent interaction time, n. Observe that the process ( n)n0
-depends on the interaction schedule ( Tk)k0and, by construction, it remains constant between consecutive
-interaction times where no new information comes from the client, i.e., n=n.
-The robo-advisor then constructs a model of the client's risk aversion process , denoted by ( n)n0, and
-uses it to solve the optimal investment problem. While it is generally desirable for the model ( n)n0to
-accurately track the client's actual risk aversion, ( C
-n)n0, the two processes may not coincide due to the
-following reasons. First, the client and the robo-advisor may not interact at all times, so the robo-advisor
-does not always have access to up-to-date information about the client's risk preferences. Specically, while
-the robo-advisor observes both market returns and changes in the economic regime, it cannot observe in real
-time the idiosyncratic shocks to the client's risk aversion. Second, even if interaction were to occur at all
-times, information communicated by the client may not be representative of the client's true risk preferences
-due to her behavioral biases (see Section 5.1 for further details).
-Formally, the risk aversion process ( n)n0is an R+
-0-valued stochastic process adapted to the robo-
-advisor's ltration , (FR
-n)n0, which is generated by the random variables ( Dn)n0, dened as
-Dn:= (Y(n);Z(n);(n);(n))2Dn;Dn:=Yn+1RnNn+1(R+
-0)n+1: (3.3)
-It then follows that at time n, the risk aversion process may be written as
-n:=n(Dn)2FR
-n; (3.4)
-10
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 11 ===
-for a measurable function n:Dn7!R+
-0.
-Remark 3.2. The random variable Dnin (3.3) can be decomposed as Dn= (Mn;In), whereMn:=
-(Y(n);Z(n)), andIn:= ((n);(n)). This shows that the robo-advisor's ltration ( FR
-n)n0has two sources
-of information. The rst component, Mn, reects the fact that the robo-advisor has the ability to process
-all available information about the market and the economy. The second component, In, is the result of its
-interaction with the client, and contains both the history of interaction times and the communicated risk
-aversion values. Under mild conditions, the robo-advisor's ltration grows with the frequency of interaction,
-and, if interaction occurs at all times, it becomes equal to the ltration ( Fn)n0.11
-3.4 Investment Criterion
-The robo-advisor's objective is to optimally invest the client's wealth, taking into account the stochastic
-nature of the client's risk preferences. For this purpose, we develop a dynamic version of the standard
-Markowitz [1952] mean-variance problem that adapts to the client's changing risk preferences. We proceed
-to introduce this criterion, which we refer to as an adaptive mean-variance criterion.
-LetT1 be a xed investment horizon. For each n2f0;1;:::;T 1g,x2R0,d2Dn, and a control
-law:= (n)n0, we consider the mean-variance functional
-Jn(x;d;) :=En;x;d[r
-n;T] n(d)
-2Varn;x;d[r
-n;T]; (3.5)
-where, at time n, the risk-return tradeo nis the robo-advisor's model of the client's risk aversion at this
-time, andr
-n;Tis the simple return obtained by following the control law until the terminal date T,
-r
-n;T:=X
-T Xn
-Xn: (3.6)
-The initial condition in (3.5) is given by Xn=xandDn=d, and both the expectation and the variance are
-computed with respect to the probability measure Pn;x;d() :=P(jXn=x;Dn=d). For future reference,
-we also introduce the probability measure Pn;d() :=P(jDn=d).
-Observe that the risk-return tradeo ndoes not depend on the client's wealth. There are important
-reasons behind this assumption. First, it is consistent with the Markowitz mean-variance criterion, which
-is recovered as a special case of our model when there is a single investment period. Second, as we will see
-in Section 4, the optimal investment strategy turns out to be consistent with that of an investor exhibit-
-11For example, assume the interaction times to be given by Tk=k, for some1. If the sum of idiosyncratic shocks,
-(Pn
-k=1k)n0is measurable with respect to the robo-advisor's ltration, then ( FR
-n)n0increases to (Fn)n0, as#1.
-11
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 12 ===
-ing constant relative risk aversion (CRRA), i.e., whose proportion of wealth invested in the risky asset is
-independent of the wealth level.12
-The objective functional (3.5), together with the risk aversion process (3.4), dene a family of sequentially
-adaptive optimization problems, in the sense that at each time a new problem arises, with properties that
-depend on realized market returns, economic state changes, and client-communicated information, but with
-the same initially specied terminal date. Moreover, observe that it is the robo-advisor that solves the
-optimization problem, and the initial condition of each optimization problem xes the value of the stochastic
-process that generates the robo-advisor's ltration, as well as the value of the client's wealth process.
-The control law in (3.5), also referred to as a strategy or allocation, is such that for each n, the control
-nis a measurable real-valued function of the state variables XnandDn. Additionally, admissible control
-laws are assumed to be self-nancing and to satisfy the square-integrability condition EPT 1
-n=02
-n
-<1.
-Remark 3.3. We assume the investment horizon Tto be deterministic and xed. A stochastic horizon
-can be captured through distributional assumptions on the risk aversion process ( n)n0. For example, the
-possibility of client death can be modeled by introducing a time-dependent probability pnof the risk aversion
-parametern+1becoming \innite". The probability pnwould be increasing in n, and innity would be
-an absorbing state reached only in the event that the client dies. In the death-state, the client's portfolio
-is liquidated and the client's entire wealth is allocated to the risk-free asset. For the optimization problem
-described in this section, a non-zero value of pnwould have the eect of tilting the risky asset allocation
-upward, because no more investing is possible after death. In the same vein as when accounting for client
-death, we may impose conditions on the dynamics of the risk aversion process that halt investment if certain
-market events or economic conditions occur.
-Remark 3.4. There is a non-zero probability that the client's wealth becomes negative. This can be
-either due to short-selling or to an extreme negative return of the risky asset (see Remark 3.1). Although
-the objective functional (3.5) and the optimal strategy presented in Section 4 are well-dened for negative
-wealth levels, they are not economically meaningful and, in practice, the robo-advisor would liquidate the
-client's portfolio as soon as the wealth becomes negative.
-In Appendix A.3, we modify the optimal strategy in a way that forces liquidation of the entire risky
-position if the wealth is negative. We show that the change in expectation and variance of the optimal
-portfolio's return (given in (3.6)), resulting from imposing this liquidation condition, can be bounded by
-12Empirical evidence suggests that CRRA is a good description of microeconomic behavior (see, e.g., extensive panel data
-studies carried out in Brunnermeier and Nagel [2008], Chiappori and Paiella [2011], and Sahm [2012]). However, the evidence is
-not universal. For instance, Calvet and Sodini [2014] and Guiso and Paiella [2008] reject CRRA in favor of decreasing relative
-risk aversion.
-12
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 13 ===
-a term that is extremely small for plausible values of the model parameters. It then follows that forcing
-liquidation has a small impact on the value of the objective functional (3.5).
-The liquidation condition is imposed ad hoc on the optimal strategy. Hence, it is myopic in the sense
-that the modied strategy coincides with the optimal strategy until the wealth achieves a negative value.
-In Appendix A.3, we also discuss how the optimal investment problem can be adjusted to handle portfolio
-constraints which are typically imposed by robo-advising rms, such as no borrowing and no short-selling.
-In that case, the constraints also aect the optimal strategy at times before they become binding, because
-of the dynamic nature of the optimization problem.
-Through the wealth dynamics (3.1), the mean-variance functional Jndepends on the control law 
-restricted to the time points fn;n+ 1;:::;T 1gand the robo-advisor chooses the control ngiven future
-control decisions n+1:T:=fn+1;n+2;:::;T 1g. Therefore, any candidate optimal control law is such
-that for each n2f0;1;:::;T 1g,x2R0, andd2Dn,
-sup
-2A
-n+1Jn(x;d;) =Jn(x;d;); (3.7)
-whereA
-n+1:=f:n+1:T=
-n+1:Tgis the set of control laws that coincide with after timen. If a
-control law satisfying (3.7) exists, we dene the corresponding value function at time nas
-Vn(x;d) :=Jn(x;d;): (3.8)
-It is worth noticing that when seeking an optimal control 
-nat timen, the robo-advisor takes into
-account the dynamics of fn;n+1;:::;T 1g, i.e., the dynamics of the risk-return coecient throughout the
-investment horizon, with only the current valuenbeing known. At the subsequent time n+1, the dynamics
-of the remaining values fn+1;:::;T 1gare updated by the robo-advisor, and n+1becomes known. If
-n+ 1 is a non-interaction time, this update is based only on information about market returns and economic
-states, while if n+ 1 is a time of interaction it also accounts for information received from the client.
-4 Optimal Investment Strategy
-We analyze the optimization problem dened by the sequence of objective functionals ( Jn)0n<Tin (3.5) and
-the optimality criterion in (3.7). It is well known that, even if the risk-return tradeo ( n)n0is constant
-through time, the family of optimization problems dened by (3.5) is time-inconsistent in the sense that the
-Bellman optimality principle does not hold. This means that if, at time n, the control law maximizes the
-13
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 14 ===
-objective functional Jn, then, at time n+ 1, the restriction of to the time points fn+ 1;n+ 2;:::;T 1g
-may not maximize Jn+1. We refer to Bj ork and Murgoci [2013] and references therein for a general framework
-of time-inconsistent stochastic control in discrete time.
-As standard in this literature, we view the optimization problem in (3.7) as a multi-player game, where
-the player at each time n2f0;1;:::;T 1gis thought of as a future self of the client. Player nthen wishes
-to maximize the objective functional Jn, but decides only the strategy nat timen, whilen+1;:::;T 1
-are determined by her future selves. The resulting optimal control strategy, , is the subgame perfect
-equilibrium of this game, and can be computed using backward induction. At time n=T 1, the equilibrium
-control
-T 1is obtained by maximizing JT 1overT 1, which is a standard single-period optimization
-problem. For n < T 1, the equilibrium control 
-nis then obtained by letting player nchoosento
-maximizeJn, given that player n0will use
-n0, forn0=n+ 1;n+ 2;:::;T 1.
-In Appendix B, we derive an extended Hamilton-Jacobi-Bellman (HJB) system of equations satised by
-the value function of the optimization problem. The following result presents the solution to this system,
-which is the optimal investment strategy for an interaction schedule ( Tk)k0and a risk aversion process
-(n)n0of the general form, respectively introduced in Sections 3.2 and 3.3.
-Proposition 4.1. The dynamic optimization problem (3.7) admits a solution of the form
-
-n(x;d) = ~
-n(d)x;0n<T;
-forx2R0andd2Dn. The optimal proportion of wealth allocated to the risky asset is given by
-~
-n(d) =1
-nEn;d[eZn+1~r
-n+1;T]
-Varn;d[eZn+1~r
-n+1;T] Rn+1Covn;d[eZn+1~r
-n+1;T;~r
-n+1;T]
-Varn;d[eZn+1~r
-n+1;T]; (4.1)
-where we recall that Rn+1andeZn+1have been dened in Section 3.1, and
-~r
-n+1;T:= 1 +r
-n+1;T=X
-T
-Xn+1;
-is the terminal value of one dollar invested in the optimal strategy at timen+ 1.
-The above proposition characterizes the structure of the optimal strategy. It shows that the optimal
-allocation, i.e., the relative fraction of wealth allocated to each asset, is independent of the wealth level.
-In Appendix A, we use backward induction to develop an explicit representation of the optimal strategy,
-and discuss the computational complexity of this procedure. As a byproduct, we obtain formulas for the
-expected value and variance of the optimal portfolio's return, which in turn can be used to compute the
-14
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 15 ===
-value function (3.8).
-It is evident from (4.1) that the optimal strategy can be decomposed into two terms. The rst term
-resembles the standard single-period Markowitz strategy, ~ n+1=(n2
-n+1). However, rather than depending
-only on statistics of the market return between nandn+1, it also accounts for the return ~ r
-n+1;Tachieved by
-the optimal portfolio between times n+ 1 andT. The second term in the decomposition is the intertemporal
-hedging demand , which can be rewritten as
-Covn;deZn+1~r
-n+1;T;~r
-n+1;T
-=Covn;d
-(eZn+1 ~n+1)~r
-n+1;T;~r
-n+1;T
-+ ~n+1Varn;d(~r
-n+1;T);
-where the rst term captures the contribution of dynamic risk aversion. To analyze this term, it is convenient
-to rst rewrite it as
-Covn;d
-(eZn+1 ~n+1)~r
-n+1;T;~r
-n+1;T
-=Covn;d
-(eZn+1 ~n+1)En+1;Dn+1[~r
-n+1;T];En+1;Dn+1[~r
-n+1;T]
-;
-which shows that its sign depends predominantly on the covariance between eZn+1 ~n+1, i.e., the current
-excess market return, and En+1;Dn+1[~r
-n+1;T], i.e., the future expected portfolio return. This covariance is
-generally positive, resulting in a negative hedging demand. To see this, observe that we generally expect an
-above average market return, eZn+1 ~n+1>0, to push down the future risk aversion values ( k)n+1k<T;
-this, in turn, implies a positive relation between eZn+1 ~n+1and future risky asset allocations (~ 
-k)n+1k<T.
-As a result, the expectation En+1;Dn+1[~r
-n+1;T], achieved through the allocations (~ 
-k)n+1k<T, is larger
-following a positive value of eZn+1 ~n+1. Altogether, the current market return and the future expected
-portfolio return thus move in the same direction, amplifying the eect of the current market return on the
-variance of the terminal wealth and leading to a negative hedging demand.
-This is akin to the intertemporal hedging term in Basak and Chabakauri [2010], which arises because
-of covariation between market returns and the state variable. In their setting, the hedging demand would
-vanish if market returns and changes in the state variable were uncorrelated, in which case trading in the
-risky asset cannot hedge uctuations in the state variable. In our setting, the hedging demand is driven
-by the dynamic risk aversion process that links current market return with future portfolio returns. This
-hedging demand appears even though the market returns in our model are conditionally independent of
-changes in the state variable.13
-Next, we consider the special case where intertemporal hedging due to dynamic risk aversion vanishes,
-i.e., when future risk aversion values are conditionally independent of the current market return. In this
-13Conditionally on the value of Yn, the market return eZn+1is independent of Yn+1 Yn.
-15
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 16 ===
-case, the optimal allocation strategy admits a more explicit expression, given only in terms of the rst two
-moments of the return variables eZn+1and ~r
-n+1;T.
-Corollary 4.2. GivenDn=d, assume the risk aversion values (n+1;n+2;:::;T 1)to be independent of
-the market return eZn+1. The optimal proportion of wealth allocated to the risky asset at time nis given by
-~
-n(d) =1
-n~n+1En;d[~r
-n+1;T]
-2
-n+1En;d[(~r
-n+1;T)2] + ~2
-n+1Varn;d[~r
-n+1;T] Rn+1~n+1Varn;d[~r
-n+1;T]
-2
-n+1En;d[(~r
-n+1;T)2] + ~2
-n+1Varn;d[~r
-n+1;T];
-where ~n+1=En;d[eZn+1]and2
-n+1=Varn;d[eZn+1].
-The optimal allocation given in the corollary can alternatively be written as14
-~
-n(d) =~n+1
-n2
-n+1En;d[~r
-n+1;T] Rn+1n 
-En;d[(~r
-n+1;T)2] (En;d[~r
-n+1;T])2
-En;d[(~r
-n+1;T)2] +
-~n+1
-n+12 
-En;d[(~r
-n+1;T)2] (En;d[~r
-n+1;T])2;(4.2)
-which allows to pin down the relation with the optimal investment strategy in the classical mean-variance
-setup. Specically, it is proportional to the single-period Markowitz strategy, ~ n+1=(n2
-n+1), i.e., the
-optimal allocation of a myopic investor whose objective functional spans a single period. This fraction
-depends on the current economic conditions, and the client's current risk aversion. The proportionality
-factor in (4.2) depends on the future return of the investment strategy, ~ r
-n+1;T, which in turn depends on
-both future economic conditions and the client's future risk aversion dynamics. Consistently with intuition,
-this factor is increasing in the rst moment of ~ r
-n+1;Tand decreasing in its second moment. In the nal
-time period, the proportionality factor is equal to one and the optimal allocation is given explicitly by the
-Markowitz strategy in this time period.
-5 Performance of the Robo-Advising Framework
-We analyze the investment performance of the proposed robo-advising framework. Our analysis will be
-based on a specic model that ts into the general framework, and which we introduce in Section 5.1.
-In Section 5.2, we consider the interplay between interaction and portfolio personalization, and show the
-existence of a tradeo between the rate of information acquisition from the client and the eect of the client's
-behavioral biases . In Section 5.3, we explore how the optimal investment strategy is aected by transitions
-between economic states and the associated changes in the client's risk aversion. We also discuss whether
-the robo-advisor should cater to client wishes or go against them to improve the investment performance.
-14An extension of formula (4.2) can be derived for the general model considered in Proposition 4.1 (see Appendix B).
-16
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 17 ===
-5.1 A Robo-Advising Model
-In the following paragraphs, we specify each component of the framework introduced in Sections 3.1-3.4.
-Market Dynamics. The risky asset has conditionally Gaussian returns. That is, given the economic state
-Yn=yat timen, the return Zn+1has a Gaussian distribution with mean (y) and variance 2(y).
-State Process Dynamics. We assume a two-state economy ( Yn)n0. This choice is supported by the
-methodology of the National Bureau of Economic Research (NBER), which splits business cycles into periods
-of economic expansions and contractions.15We usey= 1 to denote the state of economic growth and y= 2
-to denote the state of recession. We use Pto denote the transition probability matrix, so that Pijis the
-probability that the economy transits from state ito statejin a single time step.
-Interaction Schedule. The sequence of interaction times is deterministic and equally spaced. The inter-
-action schedule ( Tk)k0is then characterized by a xed integer parameter 1, withTk=k. The two
-extreme cases are = 1, which corresponds to communication of risk preferences at all times, and T,
-which corresponds to risk preferences communicated only at the beginning of the investment process.
-Client's Risk Aversion. The client's risk aversion process, ( C
-n)n0, is of the form
-C
-n=enid
-nY
-n: (5.1)
-The rst component, ( en)n0, is deterministic and time-varying. For example, the specication en=
-e (T n)captures the empirical observation that risk aversion increases with age, with the parameter 0
-species the rate of increase.
-The second component, ( id
-n)n0, depends on the client's personal circumstances and has stochastic
-dynamics,id
-n=id
-n 1en, where (n)n1is an i.i.d. sequence of random variables. Specically, n=Wn 2
-
-2
-with probability p2[0;1], where>0 and (Wn)n1is an i.i.d. sequence of standard Gaussian random
-variables, and n= 0 with probability 1  p. This component captures idiosyncratic shocks to the client's
-risk aversion, which are unrelated to economic state transitions and market dynamics. The multiplicative
-innovation terms ( en)n1are independent and with unit mean, making ( id
-n)n0a martingale, devoid of a
-predictable component.
-15The work of Chauvet and Hamilton [2006] shows that a Markov switching model successfully identies NBER's business
-cycle turning points.
-17
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 18 ===
-The third component, ( Y
-n)n0, is given by Y
-n= n(Yn), where n:Y7!R+
-0is a possibly time-varying
-function of the current economic state. This component captures the empirical fact that risk aversion varies
-with the business cycle.
-Client's Behavioral Bias. At timen, the risk aversion parameter communicated by the client at the
-most recent interaction time, n, is of the form
-n=C
-nZ
-n:=C
-ne  
-1
-Pn 1
-k=n (Zk+1 k+1)
-; (5.2)
-whereZ
-nis a factor that inates or deates the client's actual risk aversion, C
-n, based on recent market
-returns. Namely, the sum in the exponent is the cumulative excess return of the risky asset over its expected
-value, since the previous interaction time, n . Because previous market returns have no predictive
-value for future market returns, given the state of the economy, the factor Z
-nis representative of common
-behavioral biases, and the coecient 0 determines the magnitude of this eect.
-We emphasize two important properties of the component Z
-n. First, the convexity of the exponential
-function allows us to capture loss aversion: the upward risk aversion bias following a market underperfor-
-mance is greater than the downward bias when the market exceeds expectations by the same amount (Tversky
-and Kahneman [1979]). Second, in a model with a single economic state y, we have E[Z
-n] =e2(y)
-2, which
-shows that the average eect of the behavioral bias decreases as the time between interaction increases,16
-consistent with the notion of myopic loss aversion, introduced in Benartzi and Thaler [1995].
-The biasZ
-nmay be interpreted as the client overriding the robo-advisor's decisions. That is, at an
-interaction time n, the robo-advisor proposes a portfolio tailored to the client's characteristics, C
-n, but the
-client makes changes to the proposed allocation based on recent market returns. This results in a portfolio
-allocation consistent with a risk aversion coecient C
-nZ
-n. The eect of this override, which is driven by
-the client's behavioral biases, prevails until the subsequent time of interaction, n+, when the client again
-adjusts the portfolio allocation proposed by the robo-advisor. This time, however, the adjustment is based
-on market returns realized in the time interval [ n;n+].
-Robo-Advisor's Model of Client's Risk Aversion. The risk aversion process ( n)n0is of the form
-n=en nnY
-n
-Yn: (5.3)
-16In a setup with multiple economic states we have, conditionally on Yn =y2Y, that E[Z
-n] =e2(y)
-2+O(1 P
-y;y).
-18
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 19 ===
-The component nis the risk aversion parameter communicated by the client at the most recent interaction
-time,n, and, in the robo-advisor's model, it stays constant until the subsequent time of interaction, n+.
-On the other hand, the model is adjusted for the passage of time through the factor en n, and for changes
-in economic states through the ratio Y
-n=Y
-n. The above equation can be written in an alternative form as
-n=n(d) =Z
-nEn;d[C
-n];
-where we recall from (3.3) that Dn=dis the information set of the robo-advisor at time n. This shows that
-the robo-advisor's view of the client risk aversion is equal to the expectation of client's actual risk aversion
-times bias factor from the previous interaction time.
-From the above expression it can be observed that interaction impacts the robo-advisor's inferred value
-of the client's risk aversion in two dierent ways. First, between interaction times, the expectation En;d[C
-n]
-is not updated in response to changes in the idiosyncratic component of the client's risk aversion, because
-such changes cannot be inferred from observables like market returns or economic indicators. Second, a
-higher interaction frequency comes at the expense of increased behavioral bias, tilting the robo-advisor's
-model further away from the client's actual risk aversion.
-Calibration of Risk Aversion Process. The multiplicative model introduced in this section provides a
-parsimonious description of the client's risk aversion. Under this specication, the risk aversion is guaranteed
-to be non-negative, and its parameters can be estimated from historical portfolio allocations. We next sketch
-a calibration procedure for models of this form.
-Consider a sequence of historical portfolio allocations for a set of self-directed investors. Such data is
-available to nancial rms oering discount brokerage services, in particular the growing number of low-
-cost online brokerages.17Assume that the portfolio allocations are consistent with a myopic mean-variance
-criterion, for which there exists a one-to-one relationship between allocations and risk aversion levels. Then,
-the allocations can equivalently be viewed as historical sequences of implied risk aversion coecients.
-For a given client, the risk aversion model can be calibrated using the subset of investors that have
-demographic characteristics similar to the client.18Specically, the three components of the risk aversion
-process (5.1) and the behavioral bias in (5.2) can be estimated using the following sequential procedure.
-First, the temporal component can be inferred from the initial portfolio composition chosen by investors at
-dierent life stages. For a personalized service, this component can also be used to incorporate a client-specic
-17See, among others, the seminal work of Barber and Odean [2000] where such a data set is analyzed and Glaser and Weber
-[2009] for a more recent study using online brokerage data.
-18In practice, robo-advising rms manage a nite number of portfolios and group clients with similar proles into risk
-categories. For instance, Wealthfront constructs a composite Risk Score ranging from 0.5 to 10, in increments of 0.5.
-19
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 20 ===
-time-dependence of risk aversion. Adjusting for the eect of time, the average investment levels during each
-economic regime (e.g., periods of expansions and contractions - see Section 5.3) then provide information
-about the process component which depends on the economic state. Next, the extent of behavioral bias can
-be estimated from the relationship between market returns and subsequent changes in the portfolio's market
-exposure.19In addition, for a given client, data on nancial literacy, investment experience, and cognitive
-abilities, can be used to adjust the estimated behavioral bias (see, e.g., studies by Oechssler et al. [1997]
-and Seasholes and Feng [2005]). Finally, after adjusting for the passage of time, economic regimes, and bias,
-the size and frequency of allocation changes made by investors provide information about the idiosyncratic
-component of the risk aversion process.
-Sensitivity of Optimal Allocation to Idiosyncratic Shock and Behavioral Bias. In Figure 1,
-we display how the optimal allocation in Proposition 4.1 depends on the variability of the idiosyncratic
-component of the client's risk aversion and the client's behavioral bias. The left panel shows that if the
-client's idiosyncratic risk preferences uctuate more due to a larger value of the parameter p, then the
-optimal allocation deviates more from that of the benchmark case with no idiosyncratic shocks. The right
-panel shows that the client's behavioral bias following a negative market return ( Z
-n>1) has a stronger
-inuence on the optimal allocation than the bias following a positive market return of the same magnitude
-(Z
-n<1). This numerical nding is consistent with the notion of loss aversion, as discussed above.
-5.2 Interaction and Optimal Personalization
-In our framework, the client and robo-advisor do not interact at all times and, thus, the robo-advisor is
-not always immediately aware of changes in the client's risk prole. While a higher interaction frequency is
-the only way to reduce this information asymmetry, it also increases the amount of behavioral bias in the
-communicated information. The goal of this section is to analyze this tradeo quantitatively.
-We start by dening a measure of portfolio personalization. This measure depends on the relation between
-the client's risk aversion process, ( C
-n)n0, given by (5.1), and the robo-advisor's model of the client's risk
-aversion, (n)n0, given by (5.3). Recall from Section 4 that at time n=T 1, the optimal risky asset
-allocation is proportional to the risk tolerance parameter 1 =n, and it is approximately proportional to
-1=nforn < T 1 (see (4.2)). We therefore choose to dene personalization in terms of the expected
-relative dierence between the risk tolerance parameters 1 =nand 1=C
-n, averaged over the investment
-19The literature on individual investor performance focuses to a large extent on biases and investor's mistakes. For instance,
-Statman et al. [2006] study the role of investor overcondence by examining the lead-lag relationship between market returns
-and trading volume.
-20
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 21 ===
-Figure 1: The graphs plot the optimal allocation ~ 
-nas a function of the client's risk aversion C
-n, for the model in
-Section 5.1, where we set Y0= 1 andPequal to the two-dimensional identity matrix. In both graphs, the solid line
-refers to the benchmark case of constant risk aversion and no behavioral bias, i.e., n=p== 0.
-Left panel: Impact of idiosyncratic risk aversion shocks, obtained by letting p2f0:05;0:10gand= 0:64. Right
-panel: Impact of behavioral bias, obtained by choosing = 4 andZ
-n2f0:76;1:30g. These values of andZ
-n
-correspond to a cumulative market return between two interaction times which is 1 :3 standard deviations above/below
-its expected value. The annualized market parameters in state Y0are set tor(Y0) = 0,(Y0) = 0:10,(Y0) = 0:20,
-and one time step in the model corresponds to one month. The investment horizon is T= 36 months, and the time
-between interaction is = 3 months. We show the allocations prevailing one year after the start of the investment
-process, i.e., at time n= 12.
-period. Specically, for 1 and0, we introduce the personalization measure
-R(;) :=E"
-1
-TT 1X
-n=01
-n 1
-Cn
-1
-Cn#
-: (5.4)
-A lower value ofR(;) means a higher level of portfolio personalization. Full personalization is achieved if
-and only if = 1 and= 0, which leads to R(1;0) = 0. This is because the processes ( n)n0and (C
-n)n0
-coincide only in this case, when there is no behavioral bias and the client and the robo-advisor interact at all
-times. Although not explicitly highlighted in the notation, we note that the value of R(;) also depends
-on the parameters p2[0;1] and>0, which govern the distribution of idiosyncratic risk aversion shocks.
-For a given value of , our objective is to study the dependence of the measure Ron. For this, we
-consider an approximation eRthat is analytically more tractable than R. In the following proposition, we
-characterize this approximation and show that it is minimized by a unique value of . In Figure 2, we show
-graphically that eRandRare close, for dierent interaction frequencies and levels of behavioral bias.
-Proposition 5.1. Set0:=(Y0). The following statements hold:
-(i) The measure R(;)satises the relation
-T
-TeR(;) +ER (;)T
-TeR(;) +E; (5.5)
-21
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 22 ===
-whereT(resp.T) is the largest (resp. smallest) multiple of that is less than (resp. greater than)
-or equal to T, the error termEis of orderO(p2
-2
-+2) +O(1 PT 1
-y0;y0), and
-eR(;) :=r
-2
-0p
-1  1
-2p
-+s
-22
-0
-+2 1
-2p
-:
-(ii) Letandpbe such that +p>0. Then, there exists a unique value of 1that minimizes
-eR(;).20Specically,
-arg min
-1eR(;) =8
->>>><
->>>>:1;  = 0;
-02[1;1);  > 0; p>0;
-1; p = 0:
-Furthermore, 0satises the monotonicity properties
-@0
-@>0;@0
-@0>0;@0
-@p<0;@0
-@<0: (5.6)
-The error term of order O(1 PT 1
-y0;y0) in the approximation (5.5) results from xing the economic state
-throughout the investment period. Typically, transitions between economic states are infrequent (see (5.12)
-in Section 5.3) and the error term vanishes if the model consists of a single economic state. From the signs
-of the derivatives given in (5.6), it can be seen that if the economy transits to a state with a higher return
-volatility, i.e., if 0increases, the optimal time between consecutive interactions also increases. This is
-because the client's behavioral bias is based on market return uctuations, which are magnied if the return
-volatility is higher.
-The above proposition conrms two intuitive claims. First, in the absence of behavioral biases, i.e.,
-= 0, it is optimal for the robo-advisor to interact with the client at all times. Second, if there are no
-idiosyncratic risk aversion shocks, i.e., p= 0, then it is optimal to never interact. Most interestingly, if both
- >0 andp>0, then it may be suboptimal to interact at all times. This is because a higher frequency of
-interaction comes at the expense of increased behavioral bias in the communicated risk aversion parameter.
-Furthermore, the signs of the derivatives in (5.6) show that a larger value of increases the optimal time
-between consecutive interactions, while larger values of pandimply a greater variance of idiosyncratic
-risk aversion shocks and push down the optimal time between interaction. In the proof of the proposition,
-20If=p= 0, the valuesR(;) andeR(;) are independent of .
-22
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 23 ===
-Figure 2: The graphs plot the personalization measure R(;) and its approximation eR(;) as a function of the
-timebetween consecutive interactions. Each panel corresponds to a dierent value of the parameter . We consider
-the same market parameters and investment horizon as in Figure 1, with Y0= 1,P=I2, and each time step in the
-model corresponding to one month. The parameters of the risk aversion model are n= 0,p= 0:05, and= 0:64.
-we show that
-p
-0<1 =)@eR(;)
-@
-=1<0;
-which gives a sucient condition for when it is optimal to refrain from interacting at all times.21In the
-above inequality, we compare the rate of change of the idiosyncratic risk-aversion component, as measured
-byp, with the amount of behavioral bias, quantied by the product 0of the client's sensitivity to
-market returns and the volatility of returns. If the latter is greater than the former, then the derivative of
-eRat= 1 is negative, i.e., it is suboptimal to interact at all times.
-To ensure a high level of personalization, the robo-advisor must construct a process ( n)n0which is as
-close as possible to the client's actual risk aversion process ( C
-n)n0. A related measure of personalization
-may thus be directly built on the proximity of the investment strategy corresponding to ( n)n0and the
-21This condition is also close to being necessary. See Eq. (C.2) in Appendix C.
-23
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 24 ===
-strategy corresponding to ( C
-n)n0. The latter is the strategy that achieves full personalization and can
-only be attained if interaction occurs at all times and there is no behavioral bias, in which case the two risk
-aversion processes coincide.
-Denote by (~ 
-n(n))0n<T and (~
-n(C
-n))0n<T the optimal allocations corresponding to ( n)0n<T and
-(C
-n)0n<T, respectively. In line with the denition of R(;) in (5.4), we introduce the measure
-S(;) :=E"
-1
-TT 1X
-n=0~
-n(n) ~
-n(C
-n)
-~n(Cn)#
-:
-A smaller value of S(;) implies a higher level of personalization, and full personalization is achieved if and
-only ifS(;) = 0. We observe that the dierence between ~ 
-n(n) and ~
-n(C
-n) is not a simple function of
-the dierence between nandC
-n. Nevertheless, in Appendix C we establish a direct relation between the
-two measuresRandS, namely,
-S(;) =R(;) +O(( 1)p2
-) +O22
-2
-; (5.7)
-which shows that a small dierence between ( n)0n<T and (C
-n)0n<T translates into a small dierence
-between the corresponding investment strategies. In the above equation, the rst error term is due to the
-idiosyncratic component of the client's risk aversion and it vanishes if = 1. The second error term originates
-from the client's behavioral bias and it is maximized at = 1.
-Figure 3 indicates that the value of that minimizesR(;) is a lower bound for the value of that
-minimizesS(;). In other words, minimizing R(;) provides a conservative estimate for the time between
-interaction that minimizes the allocation dierence S(;). This is because R(;) underestimates the
-impact of the client's behavior bias. Specically, R(;) equals the average relative dierence between
-(C
-n)n0and (n)n0in any single time interval dened by two consecutive interaction times. Instead, the
-optimal allocation at any given time depends on all future allocations and, thus, on the future path of the
-client's risk aversion. As a result, the behavioral bias in future investment decisions feeds into the investment
-decisions made at earlier times, and this is accounted for by the measure S(;).
-Remark 5.2. Uniformly spaced interaction times yield a conservative estimate for the optimal interaction
-frequency. If the client were to interact with the robo-advisor at times triggered by market conditions, then
-we expect interaction to be more likely to occur after a period of extreme returns. The client would either
-be overly exuberant following a period of positive returns, or overly pessimistic after a period of negative
-returns. This magnies the impact of the client's behavioral bias, relative to a uniform interaction schedule,
-and would result in a larger value for .
-24
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 25 ===
-Figure 3: The graphs plot the personalization measures S(;) (lefty-axis) andR(;) (righty-axis) as a function
-of the time between consecutive interactions. Each panel corresponds to a dierent value of the parameter . The
-model parameters are the same as in Figure 2.
-5.3 Economic Transitions, Risk Aversion, and Investment Performance
-We analyze how the optimal investment strategy is aected by economic state transitions and the correspond-
-ing changes in the client's risk aversion. To focus exclusively on the implications of economic transitions on
-investment decisions, we let the client's risk aversion depend only on the current economic state. In this
-case, the risk aversion process in (5.3) takes the form n= n(Yn). We calibrate this process so that the
-resulting optimal allocation (~ 
-n)0n<Tis time-homogeneous, given the current economic state. Specically,
-in Appendix C (see Proposition C.1) we show that, for a given  >0 and> 1, there exists a unique risk
-aversion process ( ()
-n)n0such that the corresponding optimal allocation is given by
-~
-n=8
-><
->:; Y n= 1;
-(1 +); Yn= 2:(5.8)
-25
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 26 ===
-That is, in times of growth ( y= 1), the client's risky asset allocation is equal to  ,22and when the economy
-transits to the recessionary regime ( y= 2), the allocation changes to  (1+), where the value of determines
-the change in allocation.
-It is well known from empirical studies that both the market Sharpe ratio and the risk aversion of retail
-investors are higher during periods of contractions. Consequently, retail investors may shift wealth away
-from the risky asset precisely when the benet of investing, as measured by the expected reward per unit
-risk, is higher.23For these investors, a robo-advisor which caters to the client's wishes would construct a
-risk aversion process ( ()
-n)n0such that <0. By contrast, a robo-advisor which goes against the client's
-wishes would construct a risk aversion process ( ()
-n)n0such that0, i.e., invest more in the risky asset
-when the economy is in a state of contraction and the return per unit risk is high.
-The remainder of the section proceeds as follows. In Section 5.3.1, we analyze the Sharpe ratio achieved
-by the optimal investment strategy and its dependence on the parameter . In Section 5.3.2, we analyze
-numerically the dependence of the client's terminal wealth distribution on and discuss how the robo-
-advisor should balance the client's risk preferences with the opportunity to improve the portfolio's investment
-performance.
-5.3.1 Sharpe Ratio of Optimal Investment Strategy
-The Sharpe ratio of the strategy (5.8) is dened as
-s() :=~
-; (5.9)
-where ~andare the long-run24mean and volatility of the excess returns achieved by :
-~:= lim
-T!1Eh1
-TT 1X
-n=0(r
-n;n+1 rn+1)i
-;()2:= lim
-T!1Eh1
-TT 1X
-n=0(r
-n;n+1 rn+1 ~)2i
-:
-We recall that r
-n;n+1is the return of the strategy , between times nandn+ 1, and that rn+1is the
-risk-free rate. In Lemma C.2 we show that the Sharpe ratio (5.9) can be explicitly computed.
-Figure 4 indicates that, for a xed value of , the portfolio's Sharpe ratio is increasing in the stationary
-22For example,  = 0:60 corresponds to the classical 60/40 portfolio composition. This strategy was popularized by Jack
-Bogle, the founder of Vanguard, and is commonly used as a benchmark in portfolio allocation.
-23The economic state variable ( Yn)n0is assumed to be observable, and it follows from (5.1) that the client's risk aversion
-reacts instantaneously to a change in economic conditions. In reality, the economic state may be hidden, and its value can only
-be inferred probabilistically. We expect that extending the model to such a setting would not have a qualitative eect on our
-results. Namely, the extended model would capture the fact that, throughout the business cycle, the client is on average less
-willing to invest in the risky asset when the market Sharpe ratio is high.
-24We compute the \long-run" Sharpe ratio of the strategy , which is independent of the initial economic state, Y0.
-26
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 27 ===
-probability of the recessionary state ( y= 2). Formally, := limn!1P(Yn= 2), andalso equals the
-long-run proportion of time spent in the recessionary state. Additionally, the Sharpe ratio is increasing in
-a:= ~(2)=~(1), which is the relative change in mean excess returns between the two states, and decreasing
-inb:=(2)=(1), which is the relative change in the return volatility. These monotonicity properties turn
-out to hold under mild conditions (see Lemma C.3).
-Furthermore, Figure 4 shows that the Sharpe ratio (C.5) is generally increasing in , i.e., it is higher if a
-larger amount of wealth is invested in the risky asset when the economy is in a state of recession and, thus,
-the market Sharpe ratio is high. However, as the third panel shows, there may be situations when a larger
-value ofmay result in a smaller Sharpe ratio.
-In Lemma C.3, we derive the following characterization for the monotonicity of the Sharpe ratio with
-respect to,
-@s()
-@>0() 1 +2(1)
-~2(1)>a
-1 +b22(1)
-a2~2(1)
-(1 +): (5.10)
-Whether or not the condition above is satised depends on the values of aandb, which determine the
-dierence in market Sharpe ratios between the two economic states. In particular, consider the case where
-the allocation is the same in both economic states, i.e., = 0. For a xed b >1, it can be observed from
-(5.10) that there exists a threshold a(b)>bthataneeds to exceed for the condition to be satised. In other
-words, for the portfolio's Sharpe ratio to increase with additional investment during recessions, the market
-Sharpe ratio needs to be suciently high in such an economic state. The reason for why a marginally higher
-market Sharpe ratio may be insucient is that larger market returns in an economic state increase both
-the numerator and the denominator of the Sharpe ratio, because the \between-state" standard deviation of
-returns is then higher. We refer to the discussion following Lemma C.3 for additional details.
-Condition (5.10) is generally satised for empirically plausible parameter values. That is, the portfolio's
-Sharpe ratio increases if more wealth is allocated to the risky asset when the market Sharpe ratio is high.
-However, Figure 4 indicates that the gain is modest, and that the Sharpe ratio decreases more when the
-allocation to the risky asset is decreased, compared to how much it increases when the allocation to the risky
-asset is increased by the same amount. In Appendix C, we show that s() is concave in a neighborhood
-of= 0, namely,
-@2s()
-@2
-=0/ 2(1)
-~2(1)
-a2+b22(1)
-~2(1)
-+O(2): (5.11)
-This conrms that in order to maintain a satisfactory Sharpe ratio, it is more important not to reduce the
-27
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 28 ===
-Figure 4: The graphs plot the Sharpe ratio (5.9) as a function of . We set the state-dependent parameters r;;
-and the transition matrix Pto the values specied in (5.12)-(5.13). This specication yields = 1=3,a= 2:1, and
-b= 1:1. Left panel: We vary the parameter , while keeping aandbxed. Middle panel: We vary the parameter a,
-while keeping andbxed. Right panel: We vary the parameter b, while keeping andaxed. Each time step in
-the model is one month, and we annualize the Sharpe ratio by multiplying (5.9) byp
-12.
-risky asset allocation in a state of recession than to increase it.
-5.3.2 Wealth Distribution and Cyclicality of Risk Aversion
-The portfolio's Sharpe ratio is determined by the rst two moments of its returns, which may not be sucient
-to characterize the entire return distribution. Therefore, comparing portfolios in terms of their Sharpe ratios
-therefore leaves out the impact of higher return moments. This is especially relevant in the presence of
-multiple economic states, given that the unconditional return distribution is then leptokurtic and skewed.
-We use numerical simulations to estimate the terminal distribution of the client's wealth, for dierent
-values of the parameter . We assume monthly portfolio rebalancing (a time step of one month) and set the
-transition matrix of the state variable ( Yn)n0to
-P="
-P11P12
-P21P22#
-="
-0:95 0:05
-0:10 0:90#
-: (5.12)
-These transition probabilities are based on empirical values reported in Chauvet and Hamilton [2006], who
-also show that a regime switching model captures well the economic state transitions described by the
-NBER's business cycle chronology. These values show that, on average, economic expansions last longer
-than contractions.
-We set the state-dependent return parameters in accordance with Tang and Whitelaw [2011], who report
-historical averages for changes in the mean and volatility of stock market returns, as well as for changes in
-the market Sharpe ratio, between the peak of the business cycle and the subsequent trough. Specically, we
-28
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 29 ===
-set the annual risk-free rate, mean and volatility of market returns to
-r= (0:015;0);  = (0:081;0:137);  = (0:155;0:173): (5.13)
-Figure 5 shows the simulated distribution of the return of the optimal investment strategy at maturity,
-and the corresponding annualized rate of return. It is evident from the gure that the skewness and kurtosis
-are higher when the risky asset allocation is maintained or increased in a state of recession, and that in those
-cases, the return upside is considerably higher, with a limited additional downside risk. The same pattern
-is observed from the summary statistics of the simulations, reported in Table 1.
-The above ndings indicate that both the Sharpe ratio and the terminal wealth achieved by the strategy
-dened in (5.8) are higher if 0, compared to the case  <0. In other words, the investment benets
-are greater if the risky asset allocation is maintained or increased during recessions ( 0). The question
-thus arises of how far the robo-advisor can reach \against the will" of a client whose risk preferences are
-countercylical and thus consistent with the case <0.
-While higher expected returns will be obtained in the long run, the client may suer from adverse market
-moves in the short run, and may not have an adequate understanding of the long-term benets. In a state of
-recession, with worsening economic outlook and risk aversion rising, the client may be particularly sensitive
-to what can be perceived as an investment mistake of the robo-advisor. The importance of this dilemma faced
-by robo-advisors is emphasized by Rossi and Utkus [2019a], who show empirically that algorithm aversion,
-i.e., the tendency of individuals to prefer a human forecaster over an algorithm, and to more quickly lose
-condence in an algorithm than in a human after observing them make the same mistake (Dietvorst et al.
-[2015]), is one of the main obstacles for the adoption of robo-advising.
-Our analysis suggests that a good middle ground for the robo-advisor is to encourage the client to simply
-maintain a xed portfolio composition, which is consistent with the long-term investing principle of riding
-out business cycles. To that end, the robo-advisor may present statistics such as those reported in Table
-1 and Figure 5 to the client. Thus, the client may observe that, over time, higher returns can be earned
-with limited additional risk by maintaining exposure to the risky asset during recessions instead of reducing
-it.25This behavior would also be consistent with that of most robo-advising rms. Namely, modifying the
-portfolio allocation based on economic conditions is a form of active management and, in general, robo-
-advising rms which focus on long-term investing do not engage in such market timing.26Rather, they urge
-25In the context our model, this amounts to \changing" the client's risk aversion process from ( ()
-n)n0such that<0, to
-((0)
-n)n0. We recall that ( ()
-n) is the risk aversion process implied by the strategy given in (5.8).
-26One of the claimed benets of robo-advising is that by managing the portfolio on the client's behalf, the client is helped
-to resist the temptation of attempting to time the market. The robo-advising rms Betterment and Wealthfront also mention
-29
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 30 ===
-clients to stay the course through changing market conditions, in order to reap the benets of long-term
-investing.
-Figure 5: Simulated distributions of the return of the strategy (5.8) between time 0 and time T(top panels),
-and the corresponding annualized rate of return (bottom panels). The parameters of the strategy are  = 0:6 and
-2 f  0:3;0;0:3g. One time step in the model corresponds to one month, the market parameters are given in
-(5.12)-(5.13), the initial economic state is Y0= 1, and the investment horizon is T= 120 months.
-Mean SD Skewness Kurtosis 90% VaR 95% VaR 99% VaR
-<00.740 0.485 0.838 4.257 -0.179 -0.067 0.117
-= 0 0.881 0.589 0.970 4.712 -0.213 -0.085 0.118
->01.036 0.735 1.231 5.934 -0.233 -0.091 0.134
-<00.053 0.029 0.066 3.011 -0.017 -0.006 0.012
-= 0 0.061 0.032 0.092 3.016 -0.019 -0.008 0.012
->00.068 0.037 0.162 3.089 -0.021 -0.009 0.014
-Table 1: Summary statistics for the simulated return distributions in Figure 5. The top half of the table reports
-statistics for the return of the strategy throughout the investment period. The bottom half of the table gives the
-statistics for the annualized rate of return.
-empirical work, such as the Dalbar's annual Quantitative Analysis of Investors report, which shows that investors who try
-to time the market tend to perform much worse than a \buy-and-hold" investor, and that the average investor signicantly
-underperforms a broad stock market index.
-30
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 31 ===
-6 Concluding Remarks
-The past decade has witnessed the rapid emergence of robo-advisors, which are online platforms allowing
-clients to interact directly with automated investment algorithms. Recent literature has provided empirical
-evidence on the characteristics of those investors who are more likely to switch to robo-advising, and how
-robo-advising tools aect the portfolio composition of investors.
-In this work, we build a novel framework that incorporates important features of modern robo-advising
-systems. In this framework, a robo-advisor undertakes the task of optimally investing a client's wealth. The
-client has a risk prole that changes in response to market returns, economic conditions, and idiosyncratic
-events, and to which the robo-advisor's investment performance criterion dynamically adapts. We derive
-and analyze optimal investment strategies, and highlight the role of risk aversion process in driving the
-intertemporal hedging demand.
-The frequency of interaction between the client and robo-advisor determines the level of portfolio person-
-alization, which is dened in terms of how accurately the robo-advisor is able to track the client's risk prole.
-We show that there exists an optimal interaction frequency, which maximizes portfolio personalization by
-striking a balance between receiving information from the client in a timely manner, and mitigating the
-eect of the client's behavioral biases.
-We quantify how the Sharpe ratio of the optimal investment strategy depends on the allocation of wealth
-within economic regimes, and study the potential gains achieved by a robo-advisor's strategy during periods
-of high market Sharpe ratio. The implementation of this strategy may require the robo-advisor to go
-against the client's wishes, because both the client's risk aversion and the market Sharpe ratio tend to be
-countercyclical. We show that by simply rebalancing the portfolio to maintain constant weights throughout
-the business cycle, the portfolio's Sharpe ratio is close to being optimal. We also show that the portfolio
-return distribution is signicantly improved relative to the situation where the investment in the risky asset
-is reduced during periods of economic contractions.
-Our framework can be extended and further aligned to the practices of modern robo-advising systems.
-Indeed, the market model can be allowed to include multiple tradable assets and portfolio rebalanced only if
-the portfolio weights have drifted signicantly from the target weights, due to price moves of the underlying
-securities. Robo-advisors generally use such threshold updating rules to rebalance their portfolios (Beketov
-et al. [2018]), while minimizing expense ratios and maximizing tax eciency. Furthermore, the regime
-switching model can be generalized to make the economic state variable hidden, in line with the fact that
-economic conditions are typically not transparently observed, or observed with a lag. If the state variable is
-hidden, then the robo-advisor runs the risk of not acting in the client's best interest by making investment
-31
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 32 ===
-decisions based on misclassied economic conditions. Finally, one may account for noise in the information
-communicated by the client. As the level of noise is expected to increase with the frequency of interaction,
-this would act as a further incentive to reduce interaction with the client.
-Herein, market returns are assumed to be conditionally independent of economic state transitions. Nev-
-ertheless, these transitions are commonly associated with signicant market moves, in particular when the
-economy enters a recession.27Such market moves would eectively result in the client \buying high" and
-\selling low", and thus exacerbate the adverse eects of comonotonicity between risk aversion and the market
-Sharpe ratio. This would further incentivize the robo-advisor to act against the client's wishes, e.g., if a
-market drop is likely to happen following a change in economic conditions, the portfolio's market exposure
-could be adjusted to account for the probability of a near term market drop.28
-A Properties of Optimal Investment Strategy
-A.1 Computation of Optimal Investment Strategy
-In the following proposition, we provide a characterization of the optimal investment strategy given in
-Proposition 4.1, which depends on recursively computable expressions.
-Proposition A.1. The optimal allocation in Proposition 4.1 admits the representation
-~
-n(d) =1
-naz
-n(d) Rn+1n(bz
-n(d) a
-n(d)az
-n(d))
-bz2
-n(d) (azn(d))2; (A.1)
-for anyd2Dn, where
-a
-n(d) :=En;d[an+1(Dn+1)]; az
-n(d) :=En;d[an+1(Dn+1)eZn+1];
-b
-n(d) :=En;d[bn+1(Dn+1)]; bz
-n(d) :=En;d[bn+1(Dn+1)eZn+1]; bz2
-n(d) :=En;d[bn+1(Dn+1)eZ2
-n+1]:(A.2)
-27This is also the case in the consumption-based asset pricing frameworks which generate countercyclical variation in risk
-aversion, such as Campbell and Cochrane [1999]. In their framework, a worsening economic outlook leads to an increase in risk
-aversion, and investors demand higher reward for carrying risk, which in turn leads to a fall in stock prices.
-28Portfolio allocation under regime switching is widely studied. Related to our work, Tang and Whitelaw [2011] show how
-simple market timing strategies can exploit the fact that Sharpe ratios are countercyclical, and Coudert and Gex [2008] show
-that risk aversion indices published by nancial institutions are good leading indicators of stock market crises. Kritzman et al.
-[2012] show how a Markov switching model can be used to avoid large portfolio losses related to \event regimes", during which
-asset return dynamics start deviating from their past levels and the market risk premium is low.
-32
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 33 ===
-The sequences (an(d))0n<T and(bn(d))0n<T satisfy the recursions
-an(d) :=En;d[(Rn+1+eZn+1~
-n(d))an+1(Dn+1)];
-bn(d) :=En;d[(Rn+1+eZn+1~
-n(d))2bn+1(Dn+1)];(A.3)
-withaT(d) =bT(d) = 1 , for alld2DT.
-The quantities an(d) andbn(d) in Proposition A.1 are the rst and second moments of the future value
-of one dollar invested optimally between time nand the terminal date T, conditionally on Dn=d. That is,
-an(d) :=En;d[1 +r
-n;T]; bn(d) :=En;d[(1 +r
-n;T)2]; (A.4)
-with the simple return r
-n;Tdened in (3.6). Because both an(d) andbn(d) are independent of the wealth x
-at timen, it follows from (3.8) that the value function at time nis also independent of x, and given by
-Vn(x;d) =Vn(d) :=an(d) 1 n(d)
-2(bn(d) a2
-n(d)): (A.5)
-Finally, Proposition A.1 shows that the optimal proportion of wealth allocated to the risky asset, ~ 
-n, is also
-independent of the wealth variable.
-The expected values in (A.2) admit integral representations, which in turn can be used to compute the
-expected values in (A.3). Next, we provide such a representation for az
-n(d), both in the general case and in
-the specic case described in Section 5.1.
-Lemma A.2. (a) Assume that given Dn=d, the random variable (n+1)admits a generalized probability
-density function, f(n+1)jd. Then,
-az
-n(d) =X
-y02YPyn;y0Z
-z02RZ
-02Rn+1an+1(Dn+1)~z0fZjyn(z0)f(n+1)jd(0)dz0d0;
-where ~z0:=z0 r(yn), andDn+1= (Y(n+1);Z(n+1);(n+1);(n+1))2Dn+1is such that Y(n+1)= (y;y0),
-Z(n+1)= (z;z0),(n+1)= (;n+1), and(n+1)= (;n+1). The value of n+1is determined by the
-triplet (Y(n+1);Z(n+1);(n+1)). Ifn+1=n, thenn+1=n, while ifn+1=n+ 1,n+1is determined
-by(Y(n+1);Z(n+1);(n+1)).
-(b) For the model in Section 5.1, i.e., where the risk aversion process (n)n0is given by (5.3) and the
-33
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 34 ===
-interaction times are of the form Tk=k, for some1, we have
-az
-n(d) =(P
-y02YPyn;y0R
-z02Ran+1(Dn+1)~z0fZjyn(z0)dz0;  n+1<n+ 1;
-P
-y02YPyn;y0R
-z02RR
-02Ran+1(Dn+1)~z0fZjyn(z0)f()
-(0)dz0d0; n+1=n+ 1;(A.6)
-wherefZjynis the Gaussian probability density function with mean (yn)and variance 2(yn),f()
-is
-the-fold convolution of the generalized density function of the i.i.d. sequence (n)n1, and29
-Dn+1=( 
-(y;y0);(z;z0);(;n)
-; n+1<n+ 1;
- 
-(y;y0);(z;z0);(;n+1)
-; n+1=n+ 1:
-Ifn+1=n+ 1, thenn+1is given by an explicit function of ((y;y0);(z;z0);n;0).
-Equation (A.6) shows that two distinct cases need to be considered, depending on whether or not the
-client's risk preferences are solicited at time n. In both cases, the computation of az
-n(d) involves a sum over
-the distribution of the economic state Yn+1, and an integral with respect to the distribution of the market
-returnZn+1. Additionally, if n+1=n+ 1, the client's risk preferences are solicited at time n+ 1 andaz
-n(d)
-involves an additional integral with respect to the distribution of the cumulative idiosyncratic risk aversion
-shockPn
-k=nk+1. Hence, the probability distributions fZjyn,Pyn;, andf()
-, link the optimal allocation at
-timento the optimal allocations at time n+ 1. We observe that if n+1< n+ 1, the dynamics are only
-based on incoming market and economic information, modeled through Zn+1andYn+1, while, in the case
-n+1=n+ 1, they also depend on information received from the client, given byPn
-k=nk+1.
-Remark A.3. Equation (A.3) shows how the rst two moments of 1 + r
-n;Tcan be computed recursively.
-This can be extended to the m-th nite moment, (m)
-n(d) :=En;d[(1 +r
-n;T)m], which satises the recursion
-(m)
-n(d) =En;d 
-Rn+1+eZn+1~
-n(d)m(m)
-n+1(Dn+1)
-:
-Under mild conditions, a probability distribution with nite moments of all orders is uniquely determined
-by its moments (see Billingsley [1995], Sec. 30). In that case, the distribution of the portfolio return r
-n;T
-can be recovered from a nite set of moments (1)
-n;:::;(M)
-n, for someM1.
-29With a deterministic interaction schedule, we omit the interaction times nfrom the state variable Dn.
-34
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 35 ===
-A.2 Computational Complexity of Optimal Investment Strategy
-The optimal investment strategy in Proposition A.1 is computed using backward induction, which requires
-discretization of the state variable Dn, for eachn. This variable is high-dimensional, as it contains the history
-of economic states, market returns, interaction times, and communicated risk aversion parameters. However,
-the optimal investment strategy at time ncan in general be written as a function of a lower-dimensional
-random variable eDn, which is measurable with respect to Dn. For instance, in the model of Section 5.1, the
-variableeDnconsists of four components:30
-eDn:=
-n;n 1X
-k=n (Zk+1 k+1);n 1X
-k=n 
-Zk+1 k+1
-;Yn
-2R+
-0R2Y:
-That is,eDnconsists of the most recently communicated risk aversion parameter, the sum of excess market
-returns between the two most recent interaction times, the sum of excess market returns since the most
-recent interaction time, and the current economic state. If a step size  is used to discretize the risk
-aversion parameter, a step size  zis used for each of the return variables, and a general number jYj 1 of
-economic states is assumed, the number of points in the discretization grid is of order
-TjYj
-z1
-z1f>1g+1f=1g
-;
-where each point requires numerical integration to compute each of the expected values in (A.2) (see (A.6)).
-In the general case, one may use properties of the risk aversion process to reduce the computational
-complexity. For example, to compute az
-nin Lemma A.2, the numerical integration can be avoided by
-evaluatingZn+1at its expected value, n+1. This leads to the approximation
-az
-n(d) =En;d[an+1(Dn+1)~Zn+1jZn+1=n+1] +OT 1X
-k=n+1E
-(~
-k(k) ~
-k(0
-k))21=2
-:
-In the above error term, (~ (0
-k))T 1
-k=n+1are the future optimal allocations corresponding to ( 0
-k)T 1
-k=n+1, which
-is the risk aversion process resulting from setting Zn+1=n+1. In particular, if the future risk aversion
-values are independent of Zn+1, then (0
-k)T 1
-k=n+1= (k)T 1
-k=n+1, and the error term vanishes. In general, the
-eect of a single market return on the future risk aversion path is limited - either temporary, or quickly
-diluted by the eect of future returns. For instance, in the risk aversion model of Section 5.1, the return
-Zn+1impacts the risk aversion process only in a time interval bounded by two consecutive interaction times.
-30The functional Jnin (3.5) depends on d2Dn. In this example, for a xed ~d2R+
-0R2Y, the value of Jnis the same
-for anyd2Dnsuch that if Dn=dtheneDn=~d.
-35
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 36 ===
-The computational complexity can also be reduced by using properties of the economic state transition
-matrix. In particular, for a single time step, the transition probability out of the current state is generally
-small (see (5.12)). In the computation of az
-n(d), this leads to the approximation
-az
-n(d) =X
-y02eYPyn;y0En;d
-an+1(Dn+1)~Zn+1Yn+1=y0
-+O
-1 X
-y02eYPyn;y0
-;
-whereeYY . For instance, if eY=fyng, we condition on staying in the current economic state, while if
-eY=fyn 1;yn;yn+ 1g, we condition on staying in the current state or transitioning to neighboring states.
-A.3 Investment Constraints
-The dynamic optimization problem analyzed in Section 3 can be enhanced to handle portfolio constraints
-typically imposed by robo-advising rms. For example, we may assume that the space of admissible strategies
-is restricted to control laws = (n)0n<T such that the proportion of wealth invested in the risky asset,
-denoted by ~ = (~n)0n<T, satises
- 1<n~nn<1; (A.7)
-where (n)0n<Tand (n)0n<Tare deterministic sequences. In particular, no short-selling and no borrow-
-ing constraints correspond to 0 and1, respectively.
-In this case, the optimal allocation formula is given by a truncated version of the unconstrained optimal
-allocation formula. Namely, in the unconstrained case, the proof of Proposition 4.1 shows that the optimal
-allocation ~
-nis obtained by maximizing a second order polynomial hnwith a negative leading order coecient
-(see (B.9)). Under the above portfolio constraint, the optimal allocation is thus obtained by truncating the
-outcome of the unconstrained allocation formula (A.1) from below by n, and from above by n.
-We next consider the eect of truncating the optimal investment strategy to zero whenever the wealth
-level is negative. This results in the investment strategy ogiven by
-o
-n(x;d) =
-n(x;d)1fx0g: (A.8)
-Hence,ocoincides with the optimal strategy if the wealth variable xis non-negative, but switches to
-a risk-free portfolio when the wealth becomes negative. In the following lemma, we study the dierence
-between the strategies oand.
-36
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 37 ===
-Lemma A.4. Letbe the optimal strategy in Proposition 4.1 under the constraint (A.7) with 0and
-1. Forx >0andd2Dn, we have the following relations between the expectation and variance of the
-portfolio return achieved under the strategy and the constrained strategy odened in (A.8):
-En;x;d[1 +ro
-n;T] =En;d[1 +r
-n;T] +O(Pn;d(eZn+1< 1));
-Varn;x;d[1 +ro
-n;T] =Varn;d[1 +r
-n;T] +O(Pn;d(eZn+1< 1)):
-Furthermore, for x>0andd2Dn, the objective functional (3.5) evaluated at osatises the relation
-Jn(x;d;o) =Vn(d) +O(Pn;d(eZn+1< 1));
-whereVn(d)is the value function in (A.5).
-Observe that in the previous lemma, the expectation and variance terms under odo not depend on the
-value ofx, as long as x>0. The same is true if x<0, in which case they only depend on the risk-free rate
-throughout the investment horizon, and can be written as
-En;x;d[1 +ro
-n;T] =En;dhT 1Y
-k=nRk+1i
-; Var n;x;d[1 +ro
-n;T] =Varn;dhT 1Y
-k=nRk+1i
-:
-The proof of the lemma shows that the constants in the O-terms admit explicit upper bounds depending
-only onnand can thus be uniformly bounded for all 0 n < T . The order of the O-terms can also be
-uniformly bounded by a constant independent of nandd, because
-Pn;d(eZn+1< 1)max
-y2YP(eZ1< 1jY0=y):
-For reasonable parameter values, the above probability is very small. For example, standard annualized
-parameter values for the mean and variance of eZ1are ~= 0:1 and= 0:2. In that case, the event
-fZ1< 1gcorresponds to a negative return whose magnitude exceeds ve standard deviations. As the
-discrete step size in the model gets smaller (e.g., monthly rather than annual), the probability becomes
-smaller, and vanishes in the continuous-time limit. This can be seen explicitly for the model considered in
-Section 5.1, where returns are conditionally Gaussian. In that case, we have the bound
-P(eZn+1< 1jYn=y)(y)e 1
-22(y);
-and the right-hand side converges to zero as (y) tends to zero.
-37
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 38 ===
-B Proofs and Auxiliary Results for Section 4
-We start by proving a lemma that will be used in the proof of Proposition 4.1.
-Lemma B.1. Let= (n)n0be an admissible control law of the form
-n(x;d) = ~n(d)x; (B.1)
-for anyx2R, andd2Dn. Then, the return moments
-a
-n(d) :=En;d[1 +r
-n;T]; b
-n(d) :=En;d[(1 +r
-n;T)2];
-satisfy the recursions in (A.3) with =.
-Proof of Lemma B.1: Forn=T 1, it follows from the wealth dynamics (3.1) that
-En;d[1 +r
-n;T] =En;d[Rn+1+eZn+1~n(d)] =Rn+1+ ~n+1~n(d):
-Next, letn2f0;1;:::;T 2gand assume that the result holds for n+ 1;n+ 2;:::;T 1. Then,
-En;d[1 +r
-n;T] =En;x;dh
-(Rn+1+eZn+1~n(d))T 1Y
-k=n+1(Rk+1+eZk+1~k(Dk))i
-=En;x;dh
-(Rn+1+eZn+1~n(d))En+1;X
-n+1;Dn+1hT 1Y
-k=n+1(Rk+1+eZk+1~k(Dk))ii
-=En;x;d[(Rn+1+eZn+1~n(d))a
-n+1(Dn+1)]
-=En;d[(Rn+1+eZn+1~n(d))a
-n+1(Dn+1)];
-The assertion for the bn-sequence is shown in the same way.
-Next, we derive the extended HJB system of equations necessarily satised by an optimal control law for
-the optimization problem dened by (3.5)-(3.7). To simplify notation, we introduce the random variable
-eDn:= (Xn;Dn)2eDn+1:=R0Dn:
-Furthermore, we write
-eD
-n+1= (X
-n+1;Dn+1);
-38
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 39 ===
-whereX
-n+1is obtained by applying the control law to the wealth xat timen.
-Proposition B.2. Assume that an optimal control law for the optimization problem (3.5)-(3.7) exists.
-Then, the value function (3.8) satises the recursive equation
-Vn(~d) = sup
-n
-En;~d[Vn+1(eD
-n+1)] 
-En;~d[fn+1;n+1(eD
-n+1;eD
-n+1)] En;~d[fn+1;n(eD
-n+1;~d)]
-(B.2)
- 
-En;~dhn+1(Dn+1)
-2gn+1(eD
-n+1)
-X
-n+12i
- n(d)
-2
-En;~dhgn+1(eD
-n+1)
-xi2o
-;
-for0n<T and ~d= (x;d)2eDn, with terminal condition
-VT(~d) = 0;~d2eDT:
-Herein, for any xed k= 0;1;:::;T and ~d0= (x0;d0)2eDk, the function sequence (fn;k(;~d0))0nT, where
-fn;k(;~d0) :eDn7!R, is determined by the recursion
-fn;k(~d;~d0) =En;~d[fn+1;k(eD
-n+1;~d0)];~d2eDn;0n<T;
-fT;k(~d;~d0) =x
-x0 1 k(d0)
-2x
-x02
-;~d2eDT;
-and the function sequence (gn)0nT, wheregn:eDn7!R, is determined by the recursion
-gn(~d) =En;~d[gn+1(eD
-n+1)];~d2eDn;0n<T;
-gT(~d) =x; ~d2eDT:
-Furthermore, the function sequences admit the probabilistic representations
-fn;k(~d;~d0) =En;~dhX
-T
-x0 1 k(d0)
-2X
-T
-x02i
-; gn(~d) =En;d[X
-T]:
-Proof of Proposition B.2: We write the objective functional at time nas
-Jn(~d;) =En;~d[Fn(~d;X
-T)] +Gn(~d;En;~d[X
-T]);
-where, for ~d= (x;d)2eDnandy2R,
-Fn(~d;y) :=y
-x 1 n(~d)
-2y
-x2
-; Gn(~d;y) :=n(~d)
-2y
-x2
-: (B.3)
-39
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 40 ===
-The proof now consists of two parts. First, we derive the recursive equation satised by the sequence of
-objective functionals for any admissible control law . Then, we derive the system of equations that an
-optimal control law must satisfy.
-Step 1: Recursion for Jn(~d;).For a given admissible control law , and xed 0kTand ~d02eDk, we
-dene the function sequences
-f
-n;k(~d;~d0) :=En;~d[Fk(~d0;X
-T)];~d2eDn;0nT;
-g
-n(~d) :=En;~d[X
-T]; ~d2eDn;0nT;(B.4)
-and note that, by the law of iterated expectations,
-f
-n;k(~d;~d0) =En;~d[f
-n+1;k(eD
-n+1;~d0)]; g
-n(~d) =En;~d[g
-n+1(eD
-n+1)]: (B.5)
-ForeDn+12eDn+1, the objective functional at time n+ 1 can then be written as
-Jn+1(eDn+1;) =En+1;eDn+1[Fn+1(eDn+1;X
-T)] +Gn+1(eDn+1;En+1;eDn+1[X
-T])
-=f
-n+1;n+1(eDn+1;eDn+1) +Gn+1(eDn+1;g
-n+1(eDn+1)):
-Taking expectations with respect to Pn;~dand applying the control law at timenyields
-En;~d[Jn+1(eD
-n+1;)] =En;~d[f
-n+1;n+1(eD
-n+1;eD
-n+1)] +En;~d[Gn+1(eD
-n+1;g
-n+1(eD
-n+1)]:
-Adding and subtracting Jn(~d;) gives
-En;~d[Jn+1(eD
-n+1;)] =Jn(~d;) +En;~d[f
-n+1;n+1(eD
-n+1;eD
-n+1)] En;~d[Fn(~d;X
-T)]
-+En;~d[Gn+1(eD
-n+1;g
-n+1(eD
-n+1))] Gn(~d;En;~d[X
-T]):
-Using (B.4)-(B.5), we then obtain
-Jn(~d;) =En;~d[Jn+1(eD
-n+1;)] 
-En;~d[f
-n+1;n+1(eD
-n+1;eD
-n+1)] En;~d[f
-n+1;n(eD
-n+1;~d)]
- 
-En;~d[Gn+1(eD
-n+1;g
-n+1(eD
-n+1)] Gn(~d;En;~d[g
-n+1(eD
-n+1)])
-:(B.6)
-Step 2: Recursion for Vn(~d).Assume the existence of an optimal control law and consider a control law
-40
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 41 ===
-that coincides with after timen, i.e.,k
-k, fork=n+ 1;:::;T 1. By denition, we then have
-Jn(~d;)Vn(~d) =Jn(~d;);~d2eDn:
-Recall the denition of function sequences in (B.4). For the optimal control law , let
-fn;k(~d;~d0) :=f
-n;k(~d;~d0); gn(~d) :=g
-n(~d): (B.7)
-Sinceandcoincide after time n, for anyeDn+12eDn+1we have that
-Jn+1(eDn+1;) =Vn+1(eDn+1); fn+1;k(eDn+1;~d0) =f
-n+1;k(eDn+1;~d0); gn+1(eDn+1) =g
-n+1(eDn+1):
-In turn, using the recursion (B.6) for Jn(d;), we may write for ~d2eDn,
-Vn(~d) = sup
-n
-En;~d[Vn+1(eD
-n+1)] 
-En;~d[fn+1;n+1(eD
-n+1;eD
-n+1)] En;~d[fn+1;n(eD
-n+1;~d)]
- 
-En;~d[Gn+1(eD
-n+1;gn+1(eD
-n+1)] Gn(~d;En;~d[gn+1(eD
-n+1)])o
-;
-with the terminal condition VT(~d) = 0, for ~d2DT. The recursions and probabilistic representations of
-(fn;k(;~d0))0nTand (gn)0nTthen follow from (B.3)-(B.5), and (B.7).
-Proof of Proposition 4.1: Assuming the existence of an optimal control law , the value function at
-timen+ 1 satises
-Vn+1(eDn+1) =fn+1;n+1(eDn+1;eDn+1) +n+1(Dn+1)
-2 
-gn+1(eDn+1)
-Xn+1!2
-:
-Plugging the above expression into the HJB equation (B.2) gives
-Vn(~d) = sup
-n
-En;~d[fn+1;n(eD
-n+1;~d)] +n(d)
-2 
-En;~d[gn+1(eD
-n+1)]
-x!2o
-: (B.8)
-Next, we look for a candidate optimal control law of form (B.1), i.e., n(~d) = ~n(d)x. It then follows from
-Lemma B.1, along with (B.3), (B.4), and (B.7) that, for this candidate optimal law,
-fn+1;n(~d;~d0) =a
-n+1(d)x
-x0 1 n(~d0)
-2b
-n+1(d)x
-x02
-;
-gn+1(~d) =a
-n+1(d)x:
-41
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 42 ===
-Plugging the above expression into (B.8), using the wealth dynamics (3.1) and, for brevity, writing Rfor
-Rn+1, ~nfor ~n(d),a
-n+1fora
-n+1(Dn+1), andb
-n+1forb
-n+1(Dn+1), yields
-Vn(~d) = sup
-n
-En;~dh
-a
-n+1X
-n+1
-x 1 n(d)
-2b
-n+1X
-n+1
-x2i
-+n(d)
-2
-En;~dh
-a
-n+1X
-n+1
-xi2o
-(B.9)
-= sup
-n
-En;~dh
-a
-n+1(R+eZn+1~n) 1 n(d)
-2b
-n+1(R+eZn+1~n)2i
-+n(d)
-2
-En;~d[a
-n+1(R+eZn+1~n)]2o
-= sup
-n
-En;~dh
-a
-n+1(R+eZn+1~n) 1 n(d)
-2b
-n+1(R2+ 2R~neZn+1+ ~2
-neZ2
-n+1)i
-+n(d)
-2
-R2(En;~d[a
-n+1])2+ 2R~nEn;~d[a
-n+1]En;~d[a
-n+1eZn+1] + ~2
-n(En;~d[a
-n+1eZn+1])2o
-=: sup
-hn(~n);
-wherehnis a second order polynomial with derivative
-h0
-n(~n) =En;~d[a
-n+1eZn+1] Rn(d) 
-En;~d[b
-n+1eZn+1] En;~d[a
-n+1]En;~d[a
-n+1eZn+1]
- n(d) 
-En;~d[b
-n+1eZ2
-n+1] (En;~d[a
-n+1eZn+1])2
-~n:
-By Jensen's inequality, En;~d[b
-n+1eZ2
-n+1] (En;~d[a
-n+1eZn+1])2>0, and solving for h0
-n(~n) = 0 yields the
-formulation in Proposition 4.1. One can then easily check that this solves the HJB equation (B.2). To
-obtain the allocation formula (4.1), we rst use (A.3) and the law of iterated expectations to rewrite the
-identities in (A.2),
-a
-n(d) =En;d[En+1;Dn+1[1 +r
-n+1;T]] =En;d[1 +r
-n+1;T];
-az
-n(d) =En;d[eZn+1En+1;Dn+1[1 +r
-n+1;T]] =En;d[eZn+1(1 +r
-n+1;T)];
-bz
-n(d) =En;d[eZn+1En+1;Dn+1[(1 +r
-n+1;T)2]] =En;d[eZn+1(1 +r
-n+1;T)2];
-bz2
-n(d) =En;d[eZ2
-n+1En+1;Dn+1[(1 +r
-n+1;T)2]] =En;d[eZ2
-n+1(1 +r
-n+1;T)2]:
-It then follows from the denition of variance and covariance that
-bz2
-n(d) (az
-n(d))2=Varn;d[eZn+1(1 +r
-n+1;T)];
-bz
-n(d) a
-n(d)az
-n(d) =Covn;d[eZn+1(1 +r
-n+1;T);1 +r
-n+1;T];
-and (4.1) is obtained by plugging the above into formula (A.1).
-Proof of Proposition A.1: It follows directly from the proof of Proposition 4.1.
-42
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 43 ===
-Proof of Lemma A.4: Observe that no short-selling and borrowing implies 0 ~
-n(d)1. Let
-An(d) :=f1 +eZn+1~
-n(d)<0g;
-which, for any positive wealth level at time n, is the event of the wealth becoming negative at time n+ 1.
-Recall from (A.4) the return moments an(d) andbn(d) for the optimal strategy , and, forx >0, dene
-forothe return moments
-ao
-n(d) :=En;x;d[1 +ro
-n;T]; bo
-n(d) :=En;x;d
-(1 +ro
-n;T)2
-;
-which are independent of the value of x. This is because the probability of the wealth becoming negative,
-Pn;x;d 
-Xo
-k<0 for somek2fn+ 1;:::;T 1g
-, is independent of the value of x>0.
-We use induction to show that, for any d2Dn,
-jao
-n(d) an(d)j2 
-T (n+ 1)
-KT nPn;d eZn+1< 1
-:=Kn:
-whereK:= maxy2Y 
-1 +r(y) +EeZ1jY0=y
-is a constant. First, for n=T 1, we haveao
-n(d) =an(d).
-Then, for a general n2f0;1;:::;T 2g, we have
-ao
-n(d) =En;d
-(Rn+1+eZn+1~
-n(d))ao
-n+1(Dn+1)1Acn
-+En;d
-(Rn+1+eZn+1~
-n(d))ao
-n+1(Dn+1)1An
-=En;d
-(Rn+1+eZn+1~
-n(d))ao
-n+1(Dn+1)
- En;d
-(Rn+1+eZn+1~
-n(d))ao
-n+1(Dn+1)1An
-+En;d
-(Rn+1+eZn+1~
-n(d))T 1Y
-k=n+1Rk+1
-1An
-;
-so, assuming the conjecture to hold for n+ 1, and by using 0 ~
-n1,Rn+1= 1 +rn+1, and thateZn+1
-has meann+1 rn+1, we obtain
-jao
-n(d) an(d)jKn+1En;d
-jRn+1+eZn+1~
-n(d)j
-+En;d
-jRn+1+eZn+1~
-n(d)jao
-n+1(Dn+1)1An
-+En;dh
-jRn+1+eZn+1~
-n(d)jT 1Y
-k=n+1Rk+1
-1Ani
-Kn+1K+ 2KT nPn;d(eZn+1< 1)
-2(T (n+ 2))KT nPn;d(eZn+1< 1) + 2KT nPn;d(eZn+1< 1)
-=Kn:
-43
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 44 ===
-A similar result can be derived for the second moment bo(d). The results for the variance and objective
-functional then follow.
-Proof of Lemma A.2: The formulas for az
-n(d) follow directly from (A.2)-(A.3) and the denition of the
-random variable Dn+1. In part (a), the value of n+1is determined by ( Y(n+1);Z(n+1);(n+1)), because the
-interaction schedule ( Tk)k0is adapted to the ltration ( Fn)n0in (3.2). Conditionally on n+1=n+ 1,
-the value of n+1is determined by ( Y(n+1);Z(n+1);(n+1)) for the same reason. In part (b), (5.1) and (5.2)
-yield that if n+1=n+ 1, then
-n+1=en+1 nnePn
-k=nk+1n+1(Yn+1)
-n(Yn)Z
-n+1
-Zn;
-whereZ
-n+1andZ
-ndepend onfYn ;:::;YngandfZn +1;:::;Zn+1g, andn= 1 is the interaction
-time prior to n+ 1.
-Proof of (4.2): The optimal allocation in Proposition 4.1 can be written as
-~
-n(d) =~n+1
-n2
-n+1En;dheZn+1
-~n+1~r
-n+1;Ti
- Rn+1n
-En;dheZn+1
-~n+1(~r
-n+1;T)2i
- En;dheZn+1
-~n+1~r
-n+1;Ti
-En;d
-~r
-n+1;T
-En;dheZn+1
-n+1~r
-n+1;T2i
- 
-En;dheZn+1
-n+1~r
-n+1;Ti2:
-This simplies to formula (4.2) under the assumption of Corollary 4.2, in which case the expected values in
-the previous formula factor into products of expectations.
-C Proofs and Auxiliary Results for Section 5
-Proof of Proposition 5.1: From the denitions of nandC
-n, it follows that
-R(;) =1
-TT 1X
-n=0Ehid
-n
-idnZn 1i
-: (C.1)
-LetY0=y0and extend the probability space (
- ;F;P) to include an independent sequence of random
-variables (Zn)n0, such that ZnN(~(y0);2(y0)). For a given n, dene the event An:=fYn ==
-Yn 1=y0g, on which the economic state variable is xed. We then have
-Ehid
-n
-idnZn 1i
-=Ehe 
-1
-Pn 1
-k=n Zk+1 k+1
-+Pn 1
-k=nk+1 1Ani
-+O 
-1 Pn 1
-y0;y0
-;
-44
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 45 ===
-wherePn 1
-y0;y0:= (Pn 1)y0;y0is the probability of staying in state y0from time zero to time n 1. For the
-rst term appearing in the exponent, we have
-1
-n 1X
-k=n Zk+1 k+1AnN
-0;22
-0
-
-:
-For the second term, we dene the random variable J:=jfnkn 1 :k+16= 0gj Bin(n n;p),
-which is equal to the number of idiosyncratic risk aversion jumps between times nandn. Hence,
-n 1X
-k=nk+1fJ=jgN
- j2
-
-2;j2
-
-:
-ForZN(0;1),a2R, andb0, we have E[jea+bZ 1j] =bE[jZj] +O(jaj+b2). Therefore, conditioning
-on the value of Jand using the absolute Gaussian moment formula gives
-Ehid
-n
-idnZn 1i
-=r
-2
-
-(1 p)n n0p+ (n n)p(1 p)n n 1s
-22
-0
-+2
-+  +O(1 Pn 1
-y0;y0);
-where we have denoted by  a term of order O(p22
-+2). Next, plugging the above expression into (C.1),
-and noting that the sum is the same for each interval bounded by consecutive times of interaction, we obtain
-R(;)T
-Tr
-2
-1
-0p 1X
-n=0(1 p)n+s
-22
-0
-+2 1X
-n=0np(1 p)n 1
-+  +O(1 PT  1
-y0;y0)
-=T
-Tr
-2
-1
-0p1 (1 p)
-p+s
-22
-0
-+21 (1 p) (1 p) 1p
-p
-+  +O(1 PT  1
-y0;y0)
-=T
-TeR(;) +  +O(1 PT 1
-y0;y0);
-where the nal equality follows from using a third-order Taylor approximation for (1  p)and the fact that
-PT  1
-y0;y0is increasing in 1. The upper bound in (5.5) follows from a symmetric argument.
-Next, to show that there exists a unique minimizing foreR(;), we dene the function
-f() :=r
-2
-eR(;) =0p
-1  1
-2p
-+s
-22
-0
-+2 1
-2p:
-Observe that f0 and that if p= 0 and= 0, thenf0. Ifp= 0 and > 0, thenfis strictly
-decreasing for 1, and converges to zero as !1 . If= 0 andp>0, thenfis strictly increasing for
-45
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 46 ===
-1, and equal to zero for = 1. Furthermore,
-f0() = 1
-20
-3=2
-1  1
-2p
- 0pp
-2 1
-2q
-22
-0
-+222
-0
-2 1
-2p+s
-22
-0
-+2p
-2
-=1
-20p
-2
- p
-p+1
-2
-1 1q
-1 +2
-22
-0p
-( 1) +s
-1 +2
-22
-0 1
-3=2
-=:1
-20p
-2g();
-and it follows that the derivative of fat= 1 satises
-f0(1) =1
-20ps
-1 +2
-22
-0 1 1
-p
-0()p2
-
-22
-02 +1
-p:
-Observe that, since the value pis in general small, we have
-p2
-
-22
-02 +1
-p()p
-0p
-1 + 2p1; (C.2)
-which shows that p=(0)>1 is, at this approximation level, a sucient and necessary condition for
-f0(1)<0. Furthermore,
-g0() = 1
-2 1=2
-p+h1
-2
-1 1q
-1 +2
-22
-0p
-( 1)i0
-+3
-2s
-1 +2
-22
-0 1
-1=2+1
-2q
-1 +2
-22
-02
-
-22
-03=2
-1
-2 1=2
- 1
-p+s
-1 +2
-22
-0 1
-
-1
-2 1=2g(1):
-It then follows that if g(1)0, theng0()0, for all1. Hence, f0()0 for all1, andfis
-minimized for = 1. Ifg(1)<0, and thus f0(1)<0, it can be shown that gis strictly convex and g()!1 ,
-as!1 . Hence, there exists a unique point where g() = 0, and where fis minimized. Finally, from the
-form of the function f, it is easy to see the sign of the derivatives of the optimal value of with respect to
-;0;p, and.
-Proof of (5.7): For the two investment strategies we denote the coecient a
-n(Dn) in (A.2) by a
-n(n)
-anda
-n(C
-n), and show inductively that
-E[ja
-n(n) a
-n(C
-n)j] =O(( 1)p2
-) +O22
-2
-:
-46
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 47 ===
-Analogous identities can be obtained for b
-n,az
-n,az2
-n, andbz
-n. One may, then, inductively show that
-~
-n(n) =C
-n
-n~
-n(C
-n) +O(( 1)p2
-) +O22
-2
-;
-and the result follows.
-The following proposition shows that there exists a one-to-one relation between risk aversion processes
-and investment strategies that depend only on time and the economic state. For such investment strategies,
-the proof shows how the corresponding risk aversion process can be constructed using backward induction.
-Proposition C.1. Fix a sequence (~n)0n<T, with ~n:Y7!R+
-0. Then, there exists a unique risk aversion
-process (n)n0, withn:Y 7! R+
-0, such that (~n)0n<T is the optimal relative risky asset allocation
-corresponding to (n)0n<T.
-Proof of Proposition C.1: We construct the process ( n)0n<T using backward induction. First, for
-n=T 1, we have n(y) = ~(y)=(~n(y)2(y)). Forn<T 1, consider the function
-h:
-0;1
-R(y)a
-n
-bn (an)2
-7!( ~n(y);1); h(x) =~(y)
-x2(y)a
-n R(y)x(b
-n (a
-n)2)
-bn+
-~(y)
-(y)2
-(bn (an)2) ~n(y);
-whereR(y) := 1 +r(y),a
-n=a
-n(y), andb
-n=b
-n(y). The function his strictly decreasing on its domain,
-and we set the value of n(y) to be the unique root of h. Using Proposition A.1 and (4.2), it is simple to
-check that (~ n)0n<Tis the optimal allocation corresponding to the constructed process ( n)0n<T.
-In the following lemma, we compute the Sharpe ratio (5.9) for a strategy of the form
-~n= (Yn): (C.3)
-That is, at any time n, in economic state y2Y, the proportion of wealth invested in the risky asset is given
-by (y), for some function  :Y7!R+
-0. For brevity, we write  yfor (y). Additionally, we denote the mean
-~(y) and standard deviation (y) of excess market returns by ~ yandy, respectively, and the stationary
-distribution of the Markov chain ( Yn)n0by (y)y2Y.
-47
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 48 ===
-Lemma C.2.
-(a) The Sharpe ratio (5.9) of the strategy in (C.3) satises
-s=~
-=P
-y2Yy~yyqP
-y2Yy 
-2y2y+ (~yy ~)2: (C.4)
-Moreover,
-(i)smax
-y2Y~y
-y; (ii)s !y0q
-y0(1 y0)2+2
-y0P
-y6=y0y;if~y0!1;
-and the maximum in (i) is achieved if and only if jYj= 1.
-(b) IfjYj= 2and2= 1(1 +), formula (C.4) can be written as
-s=1q
-2(1)
-~2(1)1 2+2b2(1+)2
-(1+2(a(1+) 1))2+1 2+2a2(1+)2
-(1+2(a(1+) 1))2 1; (C.5)
-wherea:= ~(2)=~(1)andb:= ~(2)=~(1).
-The previous lemma shows that the Sharpe ratio of is bounded by the largest market Sharpe ratio,
-and is equal to the market Sharpe ratio in the case of a single economic state. From (i) it also follows that
-if all states have the same market Sharpe ratio  >0, then the Sharpe ratio of is strictly smaller than .
-This can be seen by looking at the contribution of state yto the variance in the Sharpe ratio formula (C.4),
-which consists of a \within-state" variance term, 2
-y2
-y, and a \between-state" variance term, (~ yy ~)2,
-where ~=P
-y2Yy~yyis the mean excess return of the strategy. Without the between-state term, the
-Sharpe ratio of would be equal to .
-The between-state variance term is also the reason why a larger expected return in a given economic
-state does not always translate into a higher Sharpe ratio of , as can be seen from the limit in (ii). More
-concretely, ifjYj= 2, the Sharpe ratio converges top
-2=1if ~2!1 . Hence, if 2is small, i.e., if little
-time is spent in state y= 2, then the Sharpe ratio eect of higher expected returns in this state is dominated
-by the eect of increasing between-state variance. In Lemma C.3, we focus on the case of two economic
-states, and study the sensitivity of the Sharpe ratio of with respect to the model parameters.
-48
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 49 ===
-Proof of Lemma C.2: Using that the portfolio return r
-n;n+1is independent of the investment horizon T
-and thatYnconverges in distribution to a random variable with distribution ( y)y2Y, we have
-~= lim
-n!1E[r
-n;n+1 rn+1] =E[r
-0;1 r1jY0] =X
-y2Yy~yy;
-()2= lim
-n!1E[(r
-n;n+1 rn+1 ~)2] =E[(r
-0;1 r1 ~)2jY0] =X
-y2Yy 
-2
-y2
-y+ (~yy ~)2
-:
-By Jensen's inequality we deduce
-sP
-y2Yy~yyqP
-y2Yy2y2yP
-y2Yy~yyP
-y2Yyyy=1
-P
-y2Y1
-~y=yy~yyP
-y02Yy~y0y0max
-y2Y~y
-y:
-If ~y0!1 for somey02Y, then
-s !y0y0q
-y0(y0 y0y0)2+P
-y6=y0y2
-y02
-y0=y0q
-y0(1 y0)2+2
-y0P
-y6=y0y:
-The special case in part (b) follows by simple calculations.
-Lemma C.3. Letu:= ((1)=~(1))2. We have the following characterizations for the sensitivities of the
-Sharpe ratio s()dened in (C.5):
-@s()
-@a>0()a<1 +u
-1 ++
-1 ub2(1 +);
-@s()
-@b<0()b>0;
-@s()
-@>0()>(a2+ub2)(1 +)2 (1 +u)(2a(1 +) 1)
-(a(1 +) 1)((a2+ub2)(1 +)2 (1 +u));
-@s()
-@>0() 1 +u>a
-1 +b2
-a2u
-(1 +):
-Furthermore,
-lim
-a!1s() =r
-
-1 ; lim
-b!1s() = 0; s()
-=0=~(1)
-(1); s()
-=1=~(2)
-(2):
-The inequality conditions for the parameters in the previous lemma are not restrictive. For instance, let
-us consider the values of the derivatives in the case = 0, which corresponds to equal market allocation in
-49
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 50 ===
-both states. First, for the a-derivative, we have
-@s()
-@a
-=0>0()a<1 +u+
-1 ub2<1 +u;
-which is trivially satised for realistic parameter values.31Next, for the -derivative, we consider two cases:
-@s()
-@
-=0>0()>a2+ub2 (1 +u)(2a 1)
-(a 1)(a2+ub2 (1 +u))=8
-><
->:1
-a+1; b =a;
-a (1+u)
-a(a+u) (1+u); b =pa:
-First, in the case b=a, the market Sharpe ratio is the same in both states. The Sharpe ratio of is then
-maximized for 2f0;1g, in which case it is equal to the market Sharpe ratio, while for 0 << 1 the Sharpe
-ratio is strictly lower (see discussion following Lemma C.2), and it is minimized at = 1=(a+ 1). We also
-consider the case b=pa, and assume a >1, leading to a higher market Sharpe ratio in the recessionary
-state, consistent with empirical evidence. (The case a<1 can be similarly analyzed.) The portfolio's Sharpe
-ratio is then increasing in for 0<< 1, because, as mentioned above, the condition a<1+uis in general
-satised. Note that for the parameter values in (5.13), ba0:15<a1=2, and the portfolio's Sharpe ratio is
-increasing for 0 << 1.
-Finally, for the -derivative, we assume that ~ (1)<(1), which typically holds for stock market returns.
-For a xed value of b>0, one can then show that the right-hand side of the inequality is decreasing in afor
-0<a<a 0(b), witha0(b) :=b(1)=~(1), and is increasing in a, fora>a 0(b). The inequality is clearly not
-satised for a=band is satised for a=a0(b) if and only if
-1 +u>2bpu:
-The above inequality holds for standard parameter values, such as those in (5.13) with monthly portfolio
-rebalancing. In other words, there exists a threshold a(b)> b thataneeds to exceed for s() to be
-increasing at = 0. Notably, there also exists an upper threshold a(b)> a(b) such that if aa(b),
-then the condition is no longer satised.32These thresholds are due to the between-state variance of portfolio
-returns, and we again refer to the discussion following Lemma C.2 for more details.
-31For example, for the parameter values in (5.13) and monthly portfolio rebalancing, a2:1 andu66:2.
-32For plausible values of the parameters, such as those in (5.13), the upper bound is very large and not exceeded.
-50
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 51 ===
-Proof of Lemma C.3: To show the result for the a-derivative, let
-h(a;; ) :=(1 )(1 +u) +(a2+ub2)(1 +)2
-(1 +(a(1 +) 1))2=(1 )(1 +u) +ub2(1 +)2+a2(1 +)2
-(1 +a(1 +))2
-=:c0+c1a2
-(d0+d1a)2;
-and note that s() in (C.5) is increasing in aif and only if his decreasing in a. We then have
-@h(a;; )
-@a=2c1a(d0+d1a)2 2(d0+d1a)d1(c0+c1a2)
-(d0+d1a)4=2c1a(d0+d1a) 2d1(c0+c1a2)
-(d0+d1a)3;
-and the result is obtained by solving@h(a;; )
-@a<0 fora. The results for the - and-derivatives are obtained
-in the same way by noting that s() is decreasing in andif and only if his decreasing in and. The
-rest of the lemma follows directly from the formula for s().
-Proof of (5.11): Letu:= ((1)=~2(1))2. The Sharpe ratio formula (C.5) can be written as
-s() =1 +(a 1) +aq
-(+u)(1 ) + 
-a2(1 ) +ub2
-(1 +)2+ 2a( 1)(1 +)=:d0+d1p
-c0+c1(1 +) +c2(1 +)2:
-Let() :=p
-c0+c1(1 +) +c2(1 +)2. Straightforward computations yield
-@s()
-@=d12() 1
-2(d0+d1)(c1+ 2c2(1 +))
-3();
-@2s()
-@2= (d0+d1) 
-c22() 3
-4(c1+ 2c2(1 +))2
-+d1(c1+ 2c2(1 +))2()
-5():
-Evaluating the second derivative at = 0, we obtain
-@2s()
-@2
-=0= d0 
-c0c2 3
-4c2
-1 2c1c2 2c2
-2
-+d1(c1+ 2c2)(c0+c1+c2)
-5(0)
-=s(0)
-d05
- (a2u+b2u2)+O(2)
-;
-and the result follows.
-References
-S. Allgood and W. Walstad. The Eects of Perceived and Actual Financial Literacy on Financial Behaviors.
-Economic Inquiry , 54(1), 675{697, 2016.
-51
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 52 ===
-B. Barber and T. Odean. Trading is hazardous to your wealth: The common stock investment performance
-of individual investors. Journal of Finance , 5, 773{806, 2000.
-S. Basak and G. Chabakauri. Dynamic Mean Variance Asset Allocation. Review of Financial Studies , 23(8),
-2970{3016, 2010.
-M. Beketov, K. Lehmann, and M. Wittke. Robo Advisors: Quantitative Methods Inside the Robots. Journal
-of Asset Management , 19, 363{370, 2018.
-S. Benartzi and R. Thaler. Myopic Loss Aversion and the Equity Premium Puzzle. The Quarterly Journal
-of Economics , 110(1), 73{92, 1995.
-P. Billingsley. Probability and Measure , 3rd edition. John Wiley & Sons, 1995.
-T. Bj ork and A. Murgoci. A Theory of Markovian Time Inconsistent Stochastic Control in Discrete Time.
-Finance & Stochastics , 18(3), 545{592, 2013.
-T. Bj ork, A. Murgoci, and X. Zhou. Mean-Variance Portfolio Optimization with State-Dependent Risk
-Aversion. Mathematical Finance , 24(1), 1{24, 2014.
-C. Brooks, I. Sangiorgi, C. Hillenbrand, and K. Money. Why are older investors less willing to take nancial
-risks? International Review of Financial Analysis , 56, 52|72, 2018.
-M. Brunnermeier and S. Nagel. Do Wealth Fluctuations Generate Time-Varying Risk Aversion? Micro-
-Evidence on Individuals' Asset Allocation. American Economic Review , 98(3), 713{736, 2008.
-A. Bucciol and R. Miniaci. Financial Risk Propensity, Business Cycles and Perceived Risk Exposure. Oxford
-Bulleting of Economics and Statistics , 80(1), 160{183, 2018.
-L. Calvet and P. Sodini. Twin Picks: Disentangling the Determinants of Risk-Taking in Household Portfolios.
-Journal of Finance , 69(2), 867{906, 2014.
-J. Campbell and J. Cochrane. By Force of Habit: A Consumption-Based Explanation of Aggregate Stock
-Market Behavior. Journal of Political Economy , 107(2), 205{251, 1999.
-G. Charness, U. Gneezy, and A. Imas. Experimental Methods: Eliciting Risk Preferences. Journal of
-Economic Behavior & Organization , 87, 43{51, 2013.
-M. Chauvet and J. Hamilton. Dating Business Cycle Turning Points. In Nonlinear Time Series Analysis of
-Business Cycles , ed. C. Milas, P. Rothman, and D. van Dijk, 1{54. Elsevier. 2006
-52
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 53 ===
-P-A. Chiappori and M. Paiella. Relative Risk Aversion Is Constant: Evidence From Panel Data. Journal of
-the European Economic Association , 9(6), 1021{1052, 2011.
-A. Cohn, J. Engelmann, E. Fehr, and M. Mar echal. Evidence for Countercyclical Risk Aversion: An Exper-
-iment with Financial Professionals. American Economic Review , 105(2), 860-{885, 2015.
-J. Cox and G. Harrison. Risk Aversion in Experiments , Vol. 12 of Research in Experimental Economics.
-Emerald Group Publishing Limited, United Kingdom, 2008.
-F. D'Acunto and A. Rossi. Robo-Advising. Palgrave Macmillan Handbook of Technological Finance , Forth-
-coming. Editors: R. Rau, R. Wardrop, and L. Zingales.
-M. Dai, H. Jin, S. Kou, and Y. Xu. A Dynamic Mean-Variance Analysis for Log Returns. Forthcoming in
-Management Science , 2020.
-B. Dietvorst, J. Simmons, and C. Massey. Algorithm Aversion: People Erroneously Avoid Algorithms after
-Seeing Them Err. Journal of Experimental Psychology: General , 144(1), 114{126, 2015.
-E. Fama and K. French. Business Conditions and Expected Returns on Stocks and Bonds. Journal of
-Financial Economics , 25(1), 23{49, 1989.
-V. Coudert and M. Gex. Does Risk Aversion Drive Financial Crises? Testing the Predictive Power of
-Empirical Indicators. Journal of Empirical Finance , 15(2), 167{184, 2008.
-M. Glaser and M. Weber. Which Past Returns Aect Trading Volume? Journal of Financial Markets , 12(1),
-1{31, 2009.
-L. Guiso and M. Paiella. Risk Aversion, Wealth, and Background Risk. Journal of the European Economic
-Association , 6(6), 1109{1150, 2008.
-L. Guiso, P. Sapienza, and L. Zingales. Time Varying Risk Aversion. Journal of Financial Economics ,
-128(3), 403{421, 2018.
-H. Guo and R. Whitelaw. Uncovering The Risk-Return Relation In The Stock Market. Journal of Finance ,
-61(3), 1433{1463, 2006.
-T. Hallahan, R. Fa, and M. McKenzie. An Empirical Investigation of Personal Financial Risk Tolerance.
-Financial Services Review , 13, 57|78, 2004.
-J. Hamilton. A new Approach to the Economic Analysis of Nonstationary Time Series and the Business
-Cycle. Econometrica , 57, 357{384, 1989.
-53
-Electronic copy available at: https://ssrn.com/abstract=3453975
-
-=== Page 54 ===
-D. Kahneman and M. Riepe. Aspects of Investor Psychology: Beliefs, Preferences, and Biases Investment
-Advisors Should Know about. The Journal of Portfolio Management , 24(4) 52{65, 1998.
-M. Kritzman, S. Page, and D. Turkington. Regime Shifts: Implications for Dynamic Strategies. Financial
-Analysts Journal , 68(2), 2012.
-M. Lettau and S. Ludvigson. Measuring and Modeling Variation in the Risk-Return Tradeo. Handbook of
-Financial Econometrics , 1, 617{690, 2010.
-D. Li and W-L. Ng. Optimal Dynamic Portfolio Selection: Multiperiod Mean-Variance Formulation. Math-
-ematical Finance , 10(3), 387{406, 2000.
-J. Liu. Portfolio Selection in Stochastic Environments. Review of Financial Studies , 20, 1{39, 2007.
-H. Markowitz. Portfolio Selection. Journal of Finance , 7(1), 77{91, 1952.
-J. Oechssler, A. Roider, and P. Schmitz. Cognitive Abilities and Behavioral Biases. Journal of Economic
-Behavior & Organization , 72(1), 147{152, 1997.
-A. Rossi and S. Utkus. The Needs and Wants in Financial Advice: Humans versus Robo-Advising. Working
-Paper , Georgetown University, 2019.
-C. Sahm. How Much Does Risk Tolerance Change? Quarterly Journal of Finance , 2(4), 1{38, 2012.
-M. Seasholes and L. Feng. Do Investor Sophistication and Trading Experience Eliminate Behavioral Biases
-in Financial Markets? Review of Finance , 9, 305{351, 2005.
-Statista. FinTech Report 2020 - Personal Finance. Available at https://www.statista.com/study/41710/
-fintech-report-personal-finance/ .
-M. Statman, S. Thorley, and K. Vorkink. Investor Overcondence and Trading Volume. Review of Financial
-Studies . 19(4), 1531{1565, 2006.
-Y. Tang and R. Whitelaw. Time-Varying Sharpe Ratios and Market Timing. Quarterly Journal of Finance ,
-1(3), 465{493, 2011.
-A. Tversky and D. Kahneman. Prospect Theory: An Analysis of Decision under Risk, Econometrica , 47(4),
-263{291, 1979.
-G. Van de Venter, D. Michayluk, and G. Davey. A Longitudinal Study of Financial Risk Tolerance. Journal
-of Economic Psychology , 33, pp. 794{800, 2012.
-54
-Electronic copy available at: https://ssrn.com/abstract=3453975
