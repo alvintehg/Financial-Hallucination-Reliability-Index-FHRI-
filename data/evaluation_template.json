@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "dataset_name": "Financial Chatbot Evaluation Dataset",
+    "version": "1.0",
+    "description": "Annotated Q&A pairs for evaluating hallucination and contradiction detection",
+    "annotation_date": "2025-10-12",
+    "annotator": "Your Name",
+    "total_samples": 0
+  },
+  "annotation_guidelines": {
+    "hallucination": {
+      "label": "hallucination",
+      "description": "Mark as 'hallucination' if the answer contains factually incorrect information, fabricated data, or unsupported claims not present in the retrieved passages",
+      "examples": [
+        "Answer claims revenue of $200B when sources say $85.8B",
+        "Answer invents product names not mentioned in context",
+        "Answer provides specific numbers without source support"
+      ]
+    },
+    "accurate": {
+      "label": "accurate",
+      "description": "Mark as 'accurate' if the answer correctly reflects information from the retrieved passages and doesn't add unsupported claims",
+      "examples": [
+        "Answer correctly summarizes revenue from passages",
+        "Answer admits lack of information when sources insufficient",
+        "Answer paraphrases source material without distortion"
+      ]
+    },
+    "contradiction": {
+      "label": "contradiction",
+      "description": "Mark as 'contradiction' if the current answer contradicts the previous assistant response",
+      "examples": [
+        "Previous: 'Q3 revenue was $85B', Current: 'Q3 revenue was $61B'",
+        "Previous: 'Stock performed well', Current: 'Stock underperformed'",
+        "Previous: 'Diversification reduces risk', Current: 'Diversification increases risk'"
+      ]
+    }
+  },
+  "samples": [
+    {
+      "id": "sample_001",
+      "question": "What was Apple's Q3 2024 revenue?",
+      "retrieved_passages": [
+        "Apple Inc. (AAPL) reported Q3 2024 revenue of $85.8 billion, up 5% YoY. The company's performance exceeded S&P 500 returns by 3.2 percentage points during the same quarter. iPhone sales reached $39.3 billion, representing the strongest Q3 in company history."
+      ],
+      "llm_answer": "According to the sources, Apple Inc. reported Q3 2024 revenue of $85.8 billion, which represents a 5% year-over-year increase. This was a strong quarter with iPhone sales reaching $39.3 billion.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Example of accurate answer - correctly cites source data without fabrication"
+    },
+    {
+      "id": "sample_002",
+      "question": "How did Microsoft's cloud services perform in Q3 2024?",
+      "retrieved_passages": [
+        "Microsoft Corporation (MSFT) Q3 2024 revenue was $61.9 billion, up 17% YoY. Cloud services (Azure) grew 31%, significantly outperforming the broader market. The stock returned 8.5% in Q3 vs S&P 500's 4.2%."
+      ],
+      "llm_answer": "Microsoft's cloud services, particularly Azure, experienced exceptional growth with a 45% year-over-year increase in Q3 2024. This made it the fastest-growing cloud platform in the industry.",
+      "ground_truth_label": "hallucination",
+      "your_annotation": "",
+      "notes": "Example of hallucination - answer claims 45% growth when source says 31%, and adds unsupported claim about 'fastest-growing platform'"
+    },
+    {
+      "id": "sample_003",
+      "question": "What is portfolio diversification?",
+      "retrieved_passages": [
+        "Portfolio diversification is a risk management strategy that mixes a wide variety of investments within a portfolio. The rationale is that a portfolio constructed of different kinds of assets will, on average, yield higher returns and pose a lower risk than any individual investment found within the portfolio."
+      ],
+      "llm_answer": "Based on the sources, portfolio diversification is a risk management strategy that involves mixing a wide variety of investments within a portfolio. The goal is that a diversified portfolio will yield higher returns and lower risk compared to individual investments.",
+      "ground_truth_label": "accurate",
+      "your_annotation": "",
+      "notes": "Example of accurate answer - correctly paraphrases source definition"
+    },
+    {
+      "id": "contradiction_sample_001",
+      "question_sequence": [
+        {
+          "turn": 1,
+          "question": "How did the S&P 500 perform in Q3 2024?",
+          "answer": "The S&P 500 index returned 4.2% in Q3 2024, driven primarily by technology sector gains. Market volatility remained elevated due to interest rate concerns."
+        },
+        {
+          "turn": 2,
+          "question": "And what about the energy sector?",
+          "answer": "The energy sector had strong performance in Q3 2024, returning over 5% and outperforming the broader market average."
+        }
+      ],
+      "ground_truth_label": "contradiction",
+      "your_annotation": "",
+      "notes": "Example of contradiction - first answer says S&P 500 returned 4.2%, second answer claims energy returned 5%+ and outperformed, but actual data shows energy returned only 1.8% and underperformed"
+    }
+  ],
+  "instructions_for_annotation": [
+    "1. Read each question and the retrieved passages carefully",
+    "2. Read the LLM's answer",
+    "3. Determine if the answer is 'accurate' or 'hallucination' based on the guidelines above",
+    "4. For contradiction samples, check if the second answer contradicts the first",
+    "5. Fill in the 'your_annotation' field with either 'accurate', 'hallucination', or 'contradiction'",
+    "6. Add any notes about your reasoning in the 'notes' field",
+    "7. Add more samples by copying the template structure below",
+    "8. Aim for at least 50-100 samples for meaningful evaluation",
+    "9. Try to balance the dataset: ~40% accurate, ~40% hallucination, ~20% contradiction",
+    "10. Save your annotated file as 'evaluation_dataset.json'"
+  ],
+  "empty_template": {
+    "id": "sample_XXX",
+    "question": "",
+    "retrieved_passages": [],
+    "llm_answer": "",
+    "ground_truth_label": "",
+    "your_annotation": "",
+    "notes": ""
+  }
+}
