@@ -2,7 +2,9 @@
 
 Code, dataset, and demo app for the **Finance Hallucination Reliability Index (FHRI)**, a scenario-aware composite score for detecting hallucinations and contradictions in LLM-powered financial chatbots.
 
-> 📄 **Paper:** _<paper title>_, _<venue, year>_. [[Link]](<paper-url>)
+> 📄 **Paper:** [FHRI: Scenario-Aware Reliability Scoring for Hallucination and Contradiction Detection in Financial LLM Responses](https://ieeexplore.ieee.org/document/11720077)  
+> Yi Cheng Teh, Dilshani Mallikarachchi (Xiamen University Malaysia).  
+> *2026 IEEE 9th International Conference on Signal and Image Processing Applications (ICSIPA)*, pp. 1–6. DOI: [10.1109/ICSIPA69622.2026.11720077](https://doi.org/10.1109/ICSIPA69622.2026.11720077)
 
 FHRI scores each chatbot answer in `[0, 1]` by combining five reliability signals. Answers that fall below a per-scenario threshold are flagged as likely hallucinations. The repo also contains a full-stack robo-advisor (FastAPI + React) that runs FHRI live on every response.
 
@@ -132,11 +134,13 @@ The demo app wraps FHRI in a full advisory workflow: live portfolio tracking, ma
 ## Citation
 
 ```bibtex
-@inproceedings{teh_fhri,
-  title     = {<paper title>},
-  author    = {Teh, Alvin Yi Cheng and others},
-  booktitle = {<venue>},
-  year      = {<year>}
+@inproceedings{teh2026fhri,
+  title     = {{FHRI}: Scenario-Aware Reliability Scoring for Hallucination and Contradiction Detection in Financial {LLM} Responses},
+  author    = {Teh, Yi Cheng and Mallikarachchi, Dilshani},
+  booktitle = {2026 IEEE 9th International Conference on Signal and Image Processing Applications (ICSIPA)},
+  pages     = {1--6},
+  year      = {2026},
+  doi       = {10.1109/ICSIPA69622.2026.11720077}
 }
 ```
 
